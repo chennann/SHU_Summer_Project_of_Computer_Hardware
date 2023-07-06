@@ -1,0 +1,96 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.400 ns
+From           : clk
+To             : inst4
+From Clock     : --
+To Clock       : reset
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 164.400 ns
+From           : 74194:inst115|41
+To             : light
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.700 ns
+From           : clk
+To             : s0_8
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 129.700 ns
+From           : reset
+To             : inst4
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.37 MHz ( period = 119.500 ns )
+From           : 74192:inst3|23
+To             : inst4
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'mode'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.73 MHz ( period = 114.500 ns )
+From           : 74192:inst3|23
+To             : inst4
+From Clock     : mode
+To Clock       : mode
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : startmod:inst220|74193:inst|24
+To             : inst4
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 87
+
+Type           : Clock Hold: 'mode'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74192:inst|26
+To             : inst4
+From Clock     : mode
+To Clock       : mode
+Failed Paths   : 77
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 164
+
+--------------------------------------------------------------------------------------
+

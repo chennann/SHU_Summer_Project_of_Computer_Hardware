@@ -1,0 +1,893 @@
+Simulator report for clock
+Wed Jul 05 10:41:51 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 100.0 us     ;
+; Simulation Netlist Size     ; 516 nodes    ;
+; Simulation Coverage         ;      58.56 % ;
+; Total Number of Transitions ; 49762        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; ACEX1K       ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                               ;
++--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
+; Option                                                                                     ; Setting                             ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                          ; Timing        ;
+; Start time                                                                                 ; 0 ns                                ; 0 ns          ;
+; Vector input source                                                                        ; D:\Personal\dc\clock_test\clock.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                  ; On            ;
+; Check outputs                                                                              ; Off                                 ; Off           ;
+; Report simulation coverage                                                                 ; On                                  ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                  ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                  ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                  ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                 ; Off           ;
+; Detect glitches                                                                            ; Off                                 ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                 ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                 ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                 ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                  ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                          ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                 ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                                  ;               ;
+; Glitch Filtering                                                                           ; Off                                 ; Off           ;
++--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      58.56 % ;
+; Total nodes checked                                 ; 516          ;
+; Total output ports checked                          ; 514          ;
+; Total output ports with complete 1/0-value coverage ; 301          ;
+; Total output ports with no 1/0-value coverage       ; 209          ;
+; Total output ports with no 1-value coverage         ; 210          ;
+; Total output ports with no 0-value coverage         ; 212          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                      ;
++---------------------------------------+---------------------------------------+------------------+
+; Node Name                             ; Output Port Name                      ; Output Port Type ;
++---------------------------------------+---------------------------------------+------------------+
+; |clock|light                          ; |clock|light                          ; pin_out          ;
+; |clock|inst117                        ; |clock|inst117                        ; out0             ;
+; |clock|inst64                         ; |clock|inst64                         ; out0             ;
+; |clock|inst182                        ; |clock|inst182                        ; out              ;
+; |clock|inst68                         ; |clock|inst68                         ; out0             ;
+; |clock|inst166                        ; |clock|inst166                        ; out0             ;
+; |clock|in_countdown                   ; |clock|in_countdown                   ; out              ;
+; |clock|inst123                        ; |clock|inst123                        ; out0             ;
+; |clock|inst177                        ; |clock|inst177                        ; out0             ;
+; |clock|inst226                        ; |clock|inst226                        ; out0             ;
+; |clock|clk                            ; |clock|clk                            ; out              ;
+; |clock|mode                           ; |clock|mode                           ; out              ;
+; |clock|inst61                         ; |clock|inst61                         ; out0             ;
+; |clock|inst162                        ; |clock|inst162                        ; out0             ;
+; |clock|inst159                        ; |clock|inst159                        ; out0             ;
+; |clock|inst158                        ; |clock|inst158                        ; out0             ;
+; |clock|inst164                        ; |clock|inst164                        ; out0             ;
+; |clock|inst160                        ; |clock|inst160                        ; out0             ;
+; |clock|inst157                        ; |clock|inst157                        ; out0             ;
+; |clock|inst165                        ; |clock|inst165                        ; out0             ;
+; |clock|inst156                        ; |clock|inst156                        ; out0             ;
+; |clock|inst163                        ; |clock|inst163                        ; out0             ;
+; |clock|inst128                        ; |clock|inst128                        ; out0             ;
+; |clock|inst161                        ; |clock|inst161                        ; out0             ;
+; |clock|inst175                        ; |clock|inst175                        ; out0             ;
+; |clock|inst176                        ; |clock|inst176                        ; out0             ;
+; |clock|in                             ; |clock|in                             ; out              ;
+; |clock|inst23                         ; |clock|inst23                         ; out0             ;
+; |clock|inst4                          ; |clock|inst4                          ; out              ;
+; |clock|inst20                         ; |clock|inst20                         ; out0             ;
+; |clock|inst31                         ; |clock|inst31                         ; out              ;
+; |clock|inst29                         ; |clock|inst29                         ; out0             ;
+; |clock|inst25                         ; |clock|inst25                         ; out0             ;
+; |clock|inst9                          ; |clock|inst9                          ; out0             ;
+; |clock|inst14                         ; |clock|inst14                         ; out0             ;
+; |clock|inst17                         ; |clock|inst17                         ; out0             ;
+; |clock|inst19                         ; |clock|inst19                         ; out0             ;
+; |clock|inst18                         ; |clock|inst18                         ; out0             ;
+; |clock|reset                          ; |clock|reset                          ; out              ;
+; |clock|inst67                         ; |clock|inst67                         ; out0             ;
+; |clock|inst94                         ; |clock|inst94                         ; out0             ;
+; |clock|inst95                         ; |clock|inst95                         ; out0             ;
+; |clock|inst96                         ; |clock|inst96                         ; out0             ;
+; |clock|inst62                         ; |clock|inst62                         ; out0             ;
+; |clock|inst90                         ; |clock|inst90                         ; out0             ;
+; |clock|inst91                         ; |clock|inst91                         ; out0             ;
+; |clock|inst92                         ; |clock|inst92                         ; out0             ;
+; |clock|inst93                         ; |clock|inst93                         ; out0             ;
+; |clock|s0_1                           ; |clock|s0_1                           ; pin_out          ;
+; |clock|inst121                        ; |clock|inst121                        ; out0             ;
+; |clock|inst219                        ; |clock|inst219                        ; out0             ;
+; |clock|inst6                          ; |clock|inst6                          ; out0             ;
+; |clock|s0_2                           ; |clock|s0_2                           ; pin_out          ;
+; |clock|inst127                        ; |clock|inst127                        ; out0             ;
+; |clock|inst122                        ; |clock|inst122                        ; out0             ;
+; |clock|inst8                          ; |clock|inst8                          ; out0             ;
+; |clock|s0_8                           ; |clock|s0_8                           ; pin_out          ;
+; |clock|inst147                        ; |clock|inst147                        ; out0             ;
+; |clock|inst142                        ; |clock|inst142                        ; out0             ;
+; |clock|inst21                         ; |clock|inst21                         ; out0             ;
+; |clock|s0_4                           ; |clock|s0_4                           ; pin_out          ;
+; |clock|inst137                        ; |clock|inst137                        ; out0             ;
+; |clock|inst132                        ; |clock|inst132                        ; out0             ;
+; |clock|inst10                         ; |clock|inst10                         ; out0             ;
+; |clock|s1_1                           ; |clock|s1_1                           ; pin_out          ;
+; |clock|inst180                        ; |clock|inst180                        ; out0             ;
+; |clock|inst152                        ; |clock|inst152                        ; out0             ;
+; |clock|inst24                         ; |clock|inst24                         ; out0             ;
+; |clock|s1_2                           ; |clock|s1_2                           ; pin_out          ;
+; |clock|inst181                        ; |clock|inst181                        ; out0             ;
+; |clock|inst153                        ; |clock|inst153                        ; out0             ;
+; |clock|inst35                         ; |clock|inst35                         ; out0             ;
+; |clock|s1_8                           ; |clock|s1_8                           ; pin_out          ;
+; |clock|inst186                        ; |clock|inst186                        ; out0             ;
+; |clock|inst179                        ; |clock|inst179                        ; out0             ;
+; |clock|inst47                         ; |clock|inst47                         ; out0             ;
+; |clock|s1_4                           ; |clock|s1_4                           ; pin_out          ;
+; |clock|inst184                        ; |clock|inst184                        ; out0             ;
+; |clock|inst178                        ; |clock|inst178                        ; out0             ;
+; |clock|inst41                         ; |clock|inst41                         ; out0             ;
+; |clock|m0_1                           ; |clock|m0_1                           ; pin_out          ;
+; |clock|inst191                        ; |clock|inst191                        ; out0             ;
+; |clock|inst187                        ; |clock|inst187                        ; out0             ;
+; |clock|inst52                         ; |clock|inst52                         ; out0             ;
+; |clock|m0_2                           ; |clock|m0_2                           ; pin_out          ;
+; |clock|inst192                        ; |clock|inst192                        ; out0             ;
+; |clock|m0_8                           ; |clock|m0_8                           ; pin_out          ;
+; |clock|inst194                        ; |clock|inst194                        ; out0             ;
+; |clock|inst190                        ; |clock|inst190                        ; out0             ;
+; |clock|inst73                         ; |clock|inst73                         ; out0             ;
+; |clock|m0_4                           ; |clock|m0_4                           ; pin_out          ;
+; |clock|inst193                        ; |clock|inst193                        ; out0             ;
+; |clock|h1_1                           ; |clock|h1_1                           ; pin_out          ;
+; |clock|inst215                        ; |clock|inst215                        ; out0             ;
+; |clock|inst211                        ; |clock|inst211                        ; out0             ;
+; |clock|inst85                         ; |clock|inst85                         ; out0             ;
+; |clock|h1_2                           ; |clock|h1_2                           ; pin_out          ;
+; |clock|inst216                        ; |clock|inst216                        ; out0             ;
+; |clock|h1_4                           ; |clock|h1_4                           ; pin_out          ;
+; |clock|inst217                        ; |clock|inst217                        ; out0             ;
+; |clock|h1_8                           ; |clock|h1_8                           ; pin_out          ;
+; |clock|inst218                        ; |clock|inst218                        ; out0             ;
+; |clock|inst214                        ; |clock|inst214                        ; out0             ;
+; |clock|inst118                        ; |clock|inst118                        ; out0             ;
+; |clock|h0_8                           ; |clock|h0_8                           ; pin_out          ;
+; |clock|inst210                        ; |clock|inst210                        ; out0             ;
+; |clock|inst206                        ; |clock|inst206                        ; out0             ;
+; |clock|inst84                         ; |clock|inst84                         ; out0             ;
+; |clock|h0_4                           ; |clock|h0_4                           ; pin_out          ;
+; |clock|inst209                        ; |clock|inst209                        ; out0             ;
+; |clock|h0_2                           ; |clock|h0_2                           ; pin_out          ;
+; |clock|inst208                        ; |clock|inst208                        ; out0             ;
+; |clock|h0_1                           ; |clock|h0_1                           ; pin_out          ;
+; |clock|inst207                        ; |clock|inst207                        ; out0             ;
+; |clock|inst203                        ; |clock|inst203                        ; out0             ;
+; |clock|inst80                         ; |clock|inst80                         ; out0             ;
+; |clock|m1_8                           ; |clock|m1_8                           ; pin_out          ;
+; |clock|inst202                        ; |clock|inst202                        ; out0             ;
+; |clock|inst198                        ; |clock|inst198                        ; out0             ;
+; |clock|inst78                         ; |clock|inst78                         ; out0             ;
+; |clock|m1_4                           ; |clock|m1_4                           ; pin_out          ;
+; |clock|inst201                        ; |clock|inst201                        ; out0             ;
+; |clock|inst197                        ; |clock|inst197                        ; out0             ;
+; |clock|inst76                         ; |clock|inst76                         ; out0             ;
+; |clock|m1_1                           ; |clock|m1_1                           ; pin_out          ;
+; |clock|inst199                        ; |clock|inst199                        ; out0             ;
+; |clock|inst195                        ; |clock|inst195                        ; out0             ;
+; |clock|inst74                         ; |clock|inst74                         ; out0             ;
+; |clock|m1_2                           ; |clock|m1_2                           ; pin_out          ;
+; |clock|inst200                        ; |clock|inst200                        ; out0             ;
+; |clock|inst89                         ; |clock|inst89                         ; out0             ;
+; |clock|74192:inst58|100               ; |clock|74192:inst58|100               ; out0             ;
+; |clock|74192:inst58|21                ; |clock|74192:inst58|21                ; out0             ;
+; |clock|74192:inst58|26                ; |clock|74192:inst58|26                ; out              ;
+; |clock|74192:inst58|24                ; |clock|74192:inst58|24                ; out              ;
+; |clock|74192:inst58|51                ; |clock|74192:inst58|51                ; out0             ;
+; |clock|74192:inst58|76                ; |clock|74192:inst58|76                ; out0             ;
+; |clock|74192:inst58|73                ; |clock|74192:inst58|73                ; out0             ;
+; |clock|74192:inst58|77                ; |clock|74192:inst58|77                ; out0             ;
+; |clock|74192:inst11|94                ; |clock|74192:inst11|94                ; out0             ;
+; |clock|74192:inst11|14                ; |clock|74192:inst11|14                ; out0             ;
+; |clock|74192:inst11|92                ; |clock|74192:inst11|92                ; out0             ;
+; |clock|74192:inst11|16                ; |clock|74192:inst11|16                ; out0             ;
+; |clock|74192:inst11|95                ; |clock|74192:inst11|95                ; out0             ;
+; |clock|74192:inst11|13                ; |clock|74192:inst11|13                ; out0             ;
+; |clock|74192:inst11|93                ; |clock|74192:inst11|93                ; out0             ;
+; |clock|74192:inst11|15                ; |clock|74192:inst11|15                ; out0             ;
+; |clock|74192:inst2|94                 ; |clock|74192:inst2|94                 ; out0             ;
+; |clock|74192:inst2|14                 ; |clock|74192:inst2|14                 ; out0             ;
+; |clock|74192:inst2|92                 ; |clock|74192:inst2|92                 ; out0             ;
+; |clock|74192:inst2|16                 ; |clock|74192:inst2|16                 ; out0             ;
+; |clock|74192:inst2|95                 ; |clock|74192:inst2|95                 ; out0             ;
+; |clock|74192:inst2|13                 ; |clock|74192:inst2|13                 ; out0             ;
+; |clock|74192:inst2|93                 ; |clock|74192:inst2|93                 ; out0             ;
+; |clock|74192:inst2|15                 ; |clock|74192:inst2|15                 ; out0             ;
+; |clock|74192:inst13|94                ; |clock|74192:inst13|94                ; out0             ;
+; |clock|74192:inst13|14                ; |clock|74192:inst13|14                ; out0             ;
+; |clock|74192:inst13|92                ; |clock|74192:inst13|92                ; out0             ;
+; |clock|74192:inst13|16                ; |clock|74192:inst13|16                ; out0             ;
+; |clock|74192:inst13|95                ; |clock|74192:inst13|95                ; out0             ;
+; |clock|74192:inst13|13                ; |clock|74192:inst13|13                ; out0             ;
+; |clock|74192:inst13|93                ; |clock|74192:inst13|93                ; out0             ;
+; |clock|74192:inst13|15                ; |clock|74192:inst13|15                ; out0             ;
+; |clock|74192:inst|25                  ; |clock|74192:inst|25                  ; out              ;
+; |clock|74192:inst|94                  ; |clock|74192:inst|94                  ; out0             ;
+; |clock|74192:inst|14                  ; |clock|74192:inst|14                  ; out0             ;
+; |clock|74192:inst|23                  ; |clock|74192:inst|23                  ; out              ;
+; |clock|74192:inst|92                  ; |clock|74192:inst|92                  ; out0             ;
+; |clock|74192:inst|16                  ; |clock|74192:inst|16                  ; out0             ;
+; |clock|74192:inst|100                 ; |clock|74192:inst|100                 ; out0             ;
+; |clock|74192:inst|21                  ; |clock|74192:inst|21                  ; out0             ;
+; |clock|74192:inst|26                  ; |clock|74192:inst|26                  ; out              ;
+; |clock|74192:inst|52                  ; |clock|74192:inst|52                  ; out0             ;
+; |clock|74192:inst|95                  ; |clock|74192:inst|95                  ; out0             ;
+; |clock|74192:inst|13                  ; |clock|74192:inst|13                  ; out0             ;
+; |clock|74192:inst|24                  ; |clock|74192:inst|24                  ; out              ;
+; |clock|74192:inst|93                  ; |clock|74192:inst|93                  ; out0             ;
+; |clock|74192:inst|15                  ; |clock|74192:inst|15                  ; out0             ;
+; |clock|74192:inst|51                  ; |clock|74192:inst|51                  ; out0             ;
+; |clock|74192:inst|76                  ; |clock|74192:inst|76                  ; out0             ;
+; |clock|74192:inst|73                  ; |clock|74192:inst|73                  ; out0             ;
+; |clock|74192:inst|77                  ; |clock|74192:inst|77                  ; out0             ;
+; |clock|74192:inst1|25                 ; |clock|74192:inst1|25                 ; out              ;
+; |clock|74192:inst1|94                 ; |clock|74192:inst1|94                 ; out0             ;
+; |clock|74192:inst1|14                 ; |clock|74192:inst1|14                 ; out0             ;
+; |clock|74192:inst1|92                 ; |clock|74192:inst1|92                 ; out0             ;
+; |clock|74192:inst1|16                 ; |clock|74192:inst1|16                 ; out0             ;
+; |clock|74192:inst1|26                 ; |clock|74192:inst1|26                 ; out              ;
+; |clock|74192:inst1|52                 ; |clock|74192:inst1|52                 ; out0             ;
+; |clock|74192:inst1|95                 ; |clock|74192:inst1|95                 ; out0             ;
+; |clock|74192:inst1|13                 ; |clock|74192:inst1|13                 ; out0             ;
+; |clock|74192:inst1|24                 ; |clock|74192:inst1|24                 ; out              ;
+; |clock|74192:inst1|93                 ; |clock|74192:inst1|93                 ; out0             ;
+; |clock|74192:inst1|15                 ; |clock|74192:inst1|15                 ; out0             ;
+; |clock|74192:inst1|51                 ; |clock|74192:inst1|51                 ; out0             ;
+; |clock|74192:inst1|73                 ; |clock|74192:inst1|73                 ; out0             ;
+; |clock|74192:inst3|94                 ; |clock|74192:inst3|94                 ; out0             ;
+; |clock|74192:inst3|14                 ; |clock|74192:inst3|14                 ; out0             ;
+; |clock|74192:inst3|92                 ; |clock|74192:inst3|92                 ; out0             ;
+; |clock|74192:inst3|16                 ; |clock|74192:inst3|16                 ; out0             ;
+; |clock|74192:inst3|95                 ; |clock|74192:inst3|95                 ; out0             ;
+; |clock|74192:inst3|13                 ; |clock|74192:inst3|13                 ; out0             ;
+; |clock|74192:inst3|93                 ; |clock|74192:inst3|93                 ; out0             ;
+; |clock|74192:inst3|15                 ; |clock|74192:inst3|15                 ; out0             ;
+; |clock|74192:inst70|94                ; |clock|74192:inst70|94                ; out0             ;
+; |clock|74192:inst70|14                ; |clock|74192:inst70|14                ; out0             ;
+; |clock|74192:inst70|72                ; |clock|74192:inst70|72                ; out0             ;
+; |clock|74192:inst70|23                ; |clock|74192:inst70|23                ; out              ;
+; |clock|74192:inst70|92                ; |clock|74192:inst70|92                ; out0             ;
+; |clock|74192:inst70|16                ; |clock|74192:inst70|16                ; out0             ;
+; |clock|74192:inst70|26                ; |clock|74192:inst70|26                ; out              ;
+; |clock|74192:inst70|95                ; |clock|74192:inst70|95                ; out0             ;
+; |clock|74192:inst70|13                ; |clock|74192:inst70|13                ; out0             ;
+; |clock|74192:inst70|93                ; |clock|74192:inst70|93                ; out0             ;
+; |clock|74192:inst70|15                ; |clock|74192:inst70|15                ; out0             ;
+; |clock|74192:inst70|22                ; |clock|74192:inst70|22                ; out0             ;
+; |clock|74192:inst69|28                ; |clock|74192:inst69|28                ; out0             ;
+; |clock|74192:inst69|94                ; |clock|74192:inst69|94                ; out0             ;
+; |clock|74192:inst69|14                ; |clock|74192:inst69|14                ; out0             ;
+; |clock|74192:inst69|72                ; |clock|74192:inst69|72                ; out0             ;
+; |clock|74192:inst69|23                ; |clock|74192:inst69|23                ; out              ;
+; |clock|74192:inst69|92                ; |clock|74192:inst69|92                ; out0             ;
+; |clock|74192:inst69|16                ; |clock|74192:inst69|16                ; out0             ;
+; |clock|74192:inst69|26                ; |clock|74192:inst69|26                ; out              ;
+; |clock|74192:inst69|95                ; |clock|74192:inst69|95                ; out0             ;
+; |clock|74192:inst69|13                ; |clock|74192:inst69|13                ; out0             ;
+; |clock|74192:inst69|93                ; |clock|74192:inst69|93                ; out0             ;
+; |clock|74192:inst69|15                ; |clock|74192:inst69|15                ; out0             ;
+; |clock|74192:inst69|22                ; |clock|74192:inst69|22                ; out0             ;
+; |clock|74192:inst66|28                ; |clock|74192:inst66|28                ; out0             ;
+; |clock|74192:inst66|94                ; |clock|74192:inst66|94                ; out0             ;
+; |clock|74192:inst66|14                ; |clock|74192:inst66|14                ; out0             ;
+; |clock|74192:inst66|72                ; |clock|74192:inst66|72                ; out0             ;
+; |clock|74192:inst66|23                ; |clock|74192:inst66|23                ; out              ;
+; |clock|74192:inst66|92                ; |clock|74192:inst66|92                ; out0             ;
+; |clock|74192:inst66|16                ; |clock|74192:inst66|16                ; out0             ;
+; |clock|74192:inst66|26                ; |clock|74192:inst66|26                ; out              ;
+; |clock|74192:inst66|52                ; |clock|74192:inst66|52                ; out0             ;
+; |clock|74192:inst66|95                ; |clock|74192:inst66|95                ; out0             ;
+; |clock|74192:inst66|13                ; |clock|74192:inst66|13                ; out0             ;
+; |clock|74192:inst66|24                ; |clock|74192:inst66|24                ; out              ;
+; |clock|74192:inst66|54                ; |clock|74192:inst66|54                ; out0             ;
+; |clock|74192:inst66|93                ; |clock|74192:inst66|93                ; out0             ;
+; |clock|74192:inst66|15                ; |clock|74192:inst66|15                ; out0             ;
+; |clock|74192:inst66|22                ; |clock|74192:inst66|22                ; out0             ;
+; |clock|74192:inst65|28                ; |clock|74192:inst65|28                ; out0             ;
+; |clock|74192:inst65|94                ; |clock|74192:inst65|94                ; out0             ;
+; |clock|74192:inst65|14                ; |clock|74192:inst65|14                ; out0             ;
+; |clock|74192:inst65|72                ; |clock|74192:inst65|72                ; out0             ;
+; |clock|74192:inst65|23                ; |clock|74192:inst65|23                ; out              ;
+; |clock|74192:inst65|92                ; |clock|74192:inst65|92                ; out0             ;
+; |clock|74192:inst65|16                ; |clock|74192:inst65|16                ; out0             ;
+; |clock|74192:inst65|26                ; |clock|74192:inst65|26                ; out              ;
+; |clock|74192:inst65|95                ; |clock|74192:inst65|95                ; out0             ;
+; |clock|74192:inst65|13                ; |clock|74192:inst65|13                ; out0             ;
+; |clock|74192:inst65|93                ; |clock|74192:inst65|93                ; out0             ;
+; |clock|74192:inst65|15                ; |clock|74192:inst65|15                ; out0             ;
+; |clock|74192:inst65|22                ; |clock|74192:inst65|22                ; out0             ;
+; |clock|74192:inst60|28                ; |clock|74192:inst60|28                ; out0             ;
+; |clock|74192:inst60|94                ; |clock|74192:inst60|94                ; out0             ;
+; |clock|74192:inst60|14                ; |clock|74192:inst60|14                ; out0             ;
+; |clock|74192:inst60|72                ; |clock|74192:inst60|72                ; out0             ;
+; |clock|74192:inst60|23                ; |clock|74192:inst60|23                ; out              ;
+; |clock|74192:inst60|92                ; |clock|74192:inst60|92                ; out0             ;
+; |clock|74192:inst60|16                ; |clock|74192:inst60|16                ; out0             ;
+; |clock|74192:inst60|26                ; |clock|74192:inst60|26                ; out              ;
+; |clock|74192:inst60|52                ; |clock|74192:inst60|52                ; out0             ;
+; |clock|74192:inst60|95                ; |clock|74192:inst60|95                ; out0             ;
+; |clock|74192:inst60|13                ; |clock|74192:inst60|13                ; out0             ;
+; |clock|74192:inst60|24                ; |clock|74192:inst60|24                ; out              ;
+; |clock|74192:inst60|54                ; |clock|74192:inst60|54                ; out0             ;
+; |clock|74192:inst60|93                ; |clock|74192:inst60|93                ; out0             ;
+; |clock|74192:inst60|15                ; |clock|74192:inst60|15                ; out0             ;
+; |clock|74192:inst60|22                ; |clock|74192:inst60|22                ; out0             ;
+; |clock|startmod:inst220|inst3         ; |clock|startmod:inst220|inst3         ; out0             ;
+; |clock|startmod:inst220|74193:inst|25 ; |clock|startmod:inst220|74193:inst|25 ; out              ;
+; |clock|startmod:inst220|74193:inst|6  ; |clock|startmod:inst220|74193:inst|6  ; out0             ;
+; |clock|startmod:inst220|74193:inst|26 ; |clock|startmod:inst220|74193:inst|26 ; out              ;
+; |clock|startmod:inst220|74193:inst|24 ; |clock|startmod:inst220|74193:inst|24 ; out              ;
+; |clock|startmod:inst220|74193:inst|50 ; |clock|startmod:inst220|74193:inst|50 ; out0             ;
+; |clock|startmod:inst220|74193:inst|22 ; |clock|startmod:inst220|74193:inst|22 ; out0             ;
+; |clock|74194:inst154|41               ; |clock|74194:inst154|41               ; out              ;
+; |clock|74192:inst59|28                ; |clock|74192:inst59|28                ; out0             ;
+; |clock|74192:inst59|25                ; |clock|74192:inst59|25                ; out              ;
+; |clock|74192:inst59|94                ; |clock|74192:inst59|94                ; out0             ;
+; |clock|74192:inst59|14                ; |clock|74192:inst59|14                ; out0             ;
+; |clock|74192:inst59|74                ; |clock|74192:inst59|74                ; out0             ;
+; |clock|74192:inst59|72                ; |clock|74192:inst59|72                ; out0             ;
+; |clock|74192:inst59|23                ; |clock|74192:inst59|23                ; out              ;
+; |clock|74192:inst59|92                ; |clock|74192:inst59|92                ; out0             ;
+; |clock|74192:inst59|16                ; |clock|74192:inst59|16                ; out0             ;
+; |clock|74192:inst59|26                ; |clock|74192:inst59|26                ; out              ;
+; |clock|74192:inst59|52                ; |clock|74192:inst59|52                ; out0             ;
+; |clock|74192:inst59|95                ; |clock|74192:inst59|95                ; out0             ;
+; |clock|74192:inst59|13                ; |clock|74192:inst59|13                ; out0             ;
+; |clock|74192:inst59|24                ; |clock|74192:inst59|24                ; out              ;
+; |clock|74192:inst59|93                ; |clock|74192:inst59|93                ; out0             ;
+; |clock|74192:inst59|15                ; |clock|74192:inst59|15                ; out0             ;
+; |clock|74192:inst59|71                ; |clock|74192:inst59|71                ; out0             ;
+; |clock|74192:inst59|22                ; |clock|74192:inst59|22                ; out0             ;
+; |clock|74194:inst115|41               ; |clock|74194:inst115|41               ; out              ;
++---------------------------------------+---------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                         ;
++---------------------------------------+---------------------------------------+------------------+
+; Node Name                             ; Output Port Name                      ; Output Port Type ;
++---------------------------------------+---------------------------------------+------------------+
+; |clock|inst126                        ; |clock|inst126                        ; out0             ;
+; |clock|in_s0_8                        ; |clock|in_s0_8                        ; out              ;
+; |clock|inst125                        ; |clock|inst125                        ; out0             ;
+; |clock|in_s0_4                        ; |clock|in_s0_4                        ; out              ;
+; |clock|in_s0_1                        ; |clock|in_s0_1                        ; out              ;
+; |clock|inst124                        ; |clock|inst124                        ; out0             ;
+; |clock|in_s0_2                        ; |clock|in_s0_2                        ; out              ;
+; |clock|inst131                        ; |clock|inst131                        ; out0             ;
+; |clock|in_s1_8                        ; |clock|in_s1_8                        ; out              ;
+; |clock|inst130                        ; |clock|inst130                        ; out0             ;
+; |clock|in_s1_4                        ; |clock|in_s1_4                        ; out              ;
+; |clock|inst136                        ; |clock|inst136                        ; out0             ;
+; |clock|in_m0_8                        ; |clock|in_m0_8                        ; out              ;
+; |clock|inst135                        ; |clock|inst135                        ; out0             ;
+; |clock|in_m0_4                        ; |clock|in_m0_4                        ; out              ;
+; |clock|inst133                        ; |clock|inst133                        ; out0             ;
+; |clock|in_m0_1                        ; |clock|in_m0_1                        ; out              ;
+; |clock|inst134                        ; |clock|inst134                        ; out0             ;
+; |clock|in_m0_2                        ; |clock|in_m0_2                        ; out              ;
+; |clock|inst141                        ; |clock|inst141                        ; out0             ;
+; |clock|in_m1_8                        ; |clock|in_m1_8                        ; out              ;
+; |clock|inst140                        ; |clock|inst140                        ; out0             ;
+; |clock|in_m1_4                        ; |clock|in_m1_4                        ; out              ;
+; |clock|inst138                        ; |clock|inst138                        ; out0             ;
+; |clock|in_m1_1                        ; |clock|in_m1_1                        ; out              ;
+; |clock|inst139                        ; |clock|inst139                        ; out0             ;
+; |clock|in_m1_2                        ; |clock|in_m1_2                        ; out              ;
+; |clock|in_s1_1                        ; |clock|in_s1_1                        ; out              ;
+; |clock|inst129                        ; |clock|inst129                        ; out0             ;
+; |clock|in_s1_2                        ; |clock|in_s1_2                        ; out              ;
+; |clock|inst146                        ; |clock|inst146                        ; out0             ;
+; |clock|in_h0_8                        ; |clock|in_h0_8                        ; out              ;
+; |clock|inst145                        ; |clock|inst145                        ; out0             ;
+; |clock|in_h0_4                        ; |clock|in_h0_4                        ; out              ;
+; |clock|inst143                        ; |clock|inst143                        ; out0             ;
+; |clock|in_h0_1                        ; |clock|in_h0_1                        ; out              ;
+; |clock|inst144                        ; |clock|inst144                        ; out0             ;
+; |clock|in_h0_2                        ; |clock|in_h0_2                        ; out              ;
+; |clock|inst151                        ; |clock|inst151                        ; out0             ;
+; |clock|in_h1_8                        ; |clock|in_h1_8                        ; out              ;
+; |clock|inst150                        ; |clock|inst150                        ; out0             ;
+; |clock|in_h1_4                        ; |clock|in_h1_4                        ; out              ;
+; |clock|inst148                        ; |clock|inst148                        ; out0             ;
+; |clock|in_h1_1                        ; |clock|in_h1_1                        ; out              ;
+; |clock|inst149                        ; |clock|inst149                        ; out0             ;
+; |clock|in_h1_2                        ; |clock|in_h1_2                        ; out              ;
+; |clock|inst87                         ; |clock|inst87                         ; out0             ;
+; |clock|inst110                        ; |clock|inst110                        ; out0             ;
+; |clock|inst56                         ; |clock|inst56                         ; out0             ;
+; |clock|inst55                         ; |clock|inst55                         ; out0             ;
+; |clock|inst53                         ; |clock|inst53                         ; out0             ;
+; |clock|inst54                         ; |clock|inst54                         ; out0             ;
+; |clock|inst34                         ; |clock|inst34                         ; out0             ;
+; |clock|inst33                         ; |clock|inst33                         ; out0             ;
+; |clock|inst30                         ; |clock|inst30                         ; out0             ;
+; |clock|inst28                         ; |clock|inst28                         ; out0             ;
+; |clock|inst27                         ; |clock|inst27                         ; out0             ;
+; |clock|inst26                         ; |clock|inst26                         ; out0             ;
+; |clock|inst51                         ; |clock|inst51                         ; out0             ;
+; |clock|inst50                         ; |clock|inst50                         ; out0             ;
+; |clock|inst48                         ; |clock|inst48                         ; out0             ;
+; |clock|inst49                         ; |clock|inst49                         ; out0             ;
+; |clock|inst15                         ; |clock|inst15                         ; out0             ;
+; |clock|inst32                         ; |clock|inst32                         ; out              ;
+; |clock|inst46                         ; |clock|inst46                         ; out0             ;
+; |clock|inst45                         ; |clock|inst45                         ; out0             ;
+; |clock|inst43                         ; |clock|inst43                         ; out0             ;
+; |clock|inst44                         ; |clock|inst44                         ; out0             ;
+; |clock|inst39                         ; |clock|inst39                         ; out0             ;
+; |clock|inst38                         ; |clock|inst38                         ; out0             ;
+; |clock|inst36                         ; |clock|inst36                         ; out0             ;
+; |clock|inst37                         ; |clock|inst37                         ; out0             ;
+; |clock|inst12                         ; |clock|inst12                         ; out0             ;
+; |clock|inst111                        ; |clock|inst111                        ; out0             ;
+; |clock|inst112                        ; |clock|inst112                        ; out0             ;
+; |clock|inst113                        ; |clock|inst113                        ; out0             ;
+; |clock|inst82                         ; |clock|inst82                         ; out0             ;
+; |clock|inst106                        ; |clock|inst106                        ; out0             ;
+; |clock|inst107                        ; |clock|inst107                        ; out0             ;
+; |clock|inst108                        ; |clock|inst108                        ; out0             ;
+; |clock|inst109                        ; |clock|inst109                        ; out0             ;
+; |clock|inst77                         ; |clock|inst77                         ; out0             ;
+; |clock|inst102                        ; |clock|inst102                        ; out0             ;
+; |clock|inst103                        ; |clock|inst103                        ; out0             ;
+; |clock|inst104                        ; |clock|inst104                        ; out0             ;
+; |clock|inst105                        ; |clock|inst105                        ; out0             ;
+; |clock|inst97                         ; |clock|inst97                         ; out0             ;
+; |clock|inst72                         ; |clock|inst72                         ; out0             ;
+; |clock|inst98                         ; |clock|inst98                         ; out0             ;
+; |clock|inst99                         ; |clock|inst99                         ; out0             ;
+; |clock|inst100                        ; |clock|inst100                        ; out0             ;
+; |clock|inst101                        ; |clock|inst101                        ; out0             ;
+; |clock|inst188                        ; |clock|inst188                        ; out0             ;
+; |clock|inst57                         ; |clock|inst57                         ; out0             ;
+; |clock|inst189                        ; |clock|inst189                        ; out0             ;
+; |clock|inst71                         ; |clock|inst71                         ; out0             ;
+; |clock|inst212                        ; |clock|inst212                        ; out0             ;
+; |clock|inst88                         ; |clock|inst88                         ; out0             ;
+; |clock|inst213                        ; |clock|inst213                        ; out0             ;
+; |clock|inst114                        ; |clock|inst114                        ; out0             ;
+; |clock|inst205                        ; |clock|inst205                        ; out0             ;
+; |clock|inst83                         ; |clock|inst83                         ; out0             ;
+; |clock|inst204                        ; |clock|inst204                        ; out0             ;
+; |clock|inst81                         ; |clock|inst81                         ; out0             ;
+; |clock|inst196                        ; |clock|inst196                        ; out0             ;
+; |clock|inst75                         ; |clock|inst75                         ; out0             ;
+; |clock|pin_name                       ; |clock|pin_name                       ; pin_out          ;
+; |clock|inst22                         ; |clock|inst22                         ; out0             ;
+; |clock|74192:inst11|25                ; |clock|74192:inst11|25                ; out              ;
+; |clock|74192:inst11|53                ; |clock|74192:inst11|53                ; out0             ;
+; |clock|74192:inst11|23                ; |clock|74192:inst11|23                ; out              ;
+; |clock|74192:inst11|55                ; |clock|74192:inst11|55                ; out0             ;
+; |clock|74192:inst11|100               ; |clock|74192:inst11|100               ; out0             ;
+; |clock|74192:inst11|21                ; |clock|74192:inst11|21                ; out0             ;
+; |clock|74192:inst11|26                ; |clock|74192:inst11|26                ; out              ;
+; |clock|74192:inst11|52                ; |clock|74192:inst11|52                ; out0             ;
+; |clock|74192:inst11|24                ; |clock|74192:inst11|24                ; out              ;
+; |clock|74192:inst11|54                ; |clock|74192:inst11|54                ; out0             ;
+; |clock|74192:inst11|51                ; |clock|74192:inst11|51                ; out0             ;
+; |clock|74192:inst11|76                ; |clock|74192:inst11|76                ; out0             ;
+; |clock|74192:inst11|73                ; |clock|74192:inst11|73                ; out0             ;
+; |clock|74192:inst11|77                ; |clock|74192:inst11|77                ; out0             ;
+; |clock|74192:inst2|25                 ; |clock|74192:inst2|25                 ; out              ;
+; |clock|74192:inst2|53                 ; |clock|74192:inst2|53                 ; out0             ;
+; |clock|74192:inst2|23                 ; |clock|74192:inst2|23                 ; out              ;
+; |clock|74192:inst2|55                 ; |clock|74192:inst2|55                 ; out0             ;
+; |clock|74192:inst2|100                ; |clock|74192:inst2|100                ; out0             ;
+; |clock|74192:inst2|21                 ; |clock|74192:inst2|21                 ; out0             ;
+; |clock|74192:inst2|26                 ; |clock|74192:inst2|26                 ; out              ;
+; |clock|74192:inst2|52                 ; |clock|74192:inst2|52                 ; out0             ;
+; |clock|74192:inst2|24                 ; |clock|74192:inst2|24                 ; out              ;
+; |clock|74192:inst2|54                 ; |clock|74192:inst2|54                 ; out0             ;
+; |clock|74192:inst2|51                 ; |clock|74192:inst2|51                 ; out0             ;
+; |clock|74192:inst2|76                 ; |clock|74192:inst2|76                 ; out0             ;
+; |clock|74192:inst2|73                 ; |clock|74192:inst2|73                 ; out0             ;
+; |clock|74192:inst13|25                ; |clock|74192:inst13|25                ; out              ;
+; |clock|74192:inst13|53                ; |clock|74192:inst13|53                ; out0             ;
+; |clock|74192:inst13|23                ; |clock|74192:inst13|23                ; out              ;
+; |clock|74192:inst13|55                ; |clock|74192:inst13|55                ; out0             ;
+; |clock|74192:inst13|100               ; |clock|74192:inst13|100               ; out0             ;
+; |clock|74192:inst13|21                ; |clock|74192:inst13|21                ; out0             ;
+; |clock|74192:inst13|26                ; |clock|74192:inst13|26                ; out              ;
+; |clock|74192:inst13|52                ; |clock|74192:inst13|52                ; out0             ;
+; |clock|74192:inst13|24                ; |clock|74192:inst13|24                ; out              ;
+; |clock|74192:inst13|54                ; |clock|74192:inst13|54                ; out0             ;
+; |clock|74192:inst13|51                ; |clock|74192:inst13|51                ; out0             ;
+; |clock|74192:inst13|76                ; |clock|74192:inst13|76                ; out0             ;
+; |clock|74192:inst13|73                ; |clock|74192:inst13|73                ; out0             ;
+; |clock|74192:inst13|77                ; |clock|74192:inst13|77                ; out0             ;
+; |clock|74192:inst|53                  ; |clock|74192:inst|53                  ; out0             ;
+; |clock|74192:inst|55                  ; |clock|74192:inst|55                  ; out0             ;
+; |clock|74192:inst|54                  ; |clock|74192:inst|54                  ; out0             ;
+; |clock|74192:inst1|53                 ; |clock|74192:inst1|53                 ; out0             ;
+; |clock|74192:inst1|23                 ; |clock|74192:inst1|23                 ; out              ;
+; |clock|74192:inst1|55                 ; |clock|74192:inst1|55                 ; out0             ;
+; |clock|74192:inst1|100                ; |clock|74192:inst1|100                ; out0             ;
+; |clock|74192:inst1|21                 ; |clock|74192:inst1|21                 ; out0             ;
+; |clock|74192:inst1|54                 ; |clock|74192:inst1|54                 ; out0             ;
+; |clock|74192:inst1|76                 ; |clock|74192:inst1|76                 ; out0             ;
+; |clock|74192:inst3|25                 ; |clock|74192:inst3|25                 ; out              ;
+; |clock|74192:inst3|53                 ; |clock|74192:inst3|53                 ; out0             ;
+; |clock|74192:inst3|23                 ; |clock|74192:inst3|23                 ; out              ;
+; |clock|74192:inst3|55                 ; |clock|74192:inst3|55                 ; out0             ;
+; |clock|74192:inst3|100                ; |clock|74192:inst3|100                ; out0             ;
+; |clock|74192:inst3|21                 ; |clock|74192:inst3|21                 ; out0             ;
+; |clock|74192:inst3|26                 ; |clock|74192:inst3|26                 ; out              ;
+; |clock|74192:inst3|52                 ; |clock|74192:inst3|52                 ; out0             ;
+; |clock|74192:inst3|24                 ; |clock|74192:inst3|24                 ; out              ;
+; |clock|74192:inst3|54                 ; |clock|74192:inst3|54                 ; out0             ;
+; |clock|74192:inst3|51                 ; |clock|74192:inst3|51                 ; out0             ;
+; |clock|74192:inst3|76                 ; |clock|74192:inst3|76                 ; out0             ;
+; |clock|74192:inst3|73                 ; |clock|74192:inst3|73                 ; out0             ;
+; |clock|74192:inst70|25                ; |clock|74192:inst70|25                ; out              ;
+; |clock|74192:inst70|53                ; |clock|74192:inst70|53                ; out0             ;
+; |clock|74192:inst70|74                ; |clock|74192:inst70|74                ; out0             ;
+; |clock|74192:inst70|55                ; |clock|74192:inst70|55                ; out0             ;
+; |clock|74192:inst70|52                ; |clock|74192:inst70|52                ; out0             ;
+; |clock|74192:inst70|24                ; |clock|74192:inst70|24                ; out              ;
+; |clock|74192:inst70|54                ; |clock|74192:inst70|54                ; out0             ;
+; |clock|74192:inst70|71                ; |clock|74192:inst70|71                ; out0             ;
+; |clock|74192:inst69|25                ; |clock|74192:inst69|25                ; out              ;
+; |clock|74192:inst69|53                ; |clock|74192:inst69|53                ; out0             ;
+; |clock|74192:inst69|74                ; |clock|74192:inst69|74                ; out0             ;
+; |clock|74192:inst69|55                ; |clock|74192:inst69|55                ; out0             ;
+; |clock|74192:inst69|52                ; |clock|74192:inst69|52                ; out0             ;
+; |clock|74192:inst69|24                ; |clock|74192:inst69|24                ; out              ;
+; |clock|74192:inst69|54                ; |clock|74192:inst69|54                ; out0             ;
+; |clock|74192:inst69|71                ; |clock|74192:inst69|71                ; out0             ;
+; |clock|74192:inst66|25                ; |clock|74192:inst66|25                ; out              ;
+; |clock|74192:inst66|53                ; |clock|74192:inst66|53                ; out0             ;
+; |clock|74192:inst66|74                ; |clock|74192:inst66|74                ; out0             ;
+; |clock|74192:inst66|55                ; |clock|74192:inst66|55                ; out0             ;
+; |clock|74192:inst66|71                ; |clock|74192:inst66|71                ; out0             ;
+; |clock|74192:inst65|25                ; |clock|74192:inst65|25                ; out              ;
+; |clock|74192:inst65|53                ; |clock|74192:inst65|53                ; out0             ;
+; |clock|74192:inst65|74                ; |clock|74192:inst65|74                ; out0             ;
+; |clock|74192:inst65|55                ; |clock|74192:inst65|55                ; out0             ;
+; |clock|74192:inst65|52                ; |clock|74192:inst65|52                ; out0             ;
+; |clock|74192:inst65|24                ; |clock|74192:inst65|24                ; out              ;
+; |clock|74192:inst65|54                ; |clock|74192:inst65|54                ; out0             ;
+; |clock|74192:inst65|71                ; |clock|74192:inst65|71                ; out0             ;
+; |clock|74192:inst60|25                ; |clock|74192:inst60|25                ; out              ;
+; |clock|74192:inst60|53                ; |clock|74192:inst60|53                ; out0             ;
+; |clock|74192:inst60|74                ; |clock|74192:inst60|74                ; out0             ;
+; |clock|74192:inst60|55                ; |clock|74192:inst60|55                ; out0             ;
+; |clock|74192:inst60|71                ; |clock|74192:inst60|71                ; out0             ;
+; |clock|startmod:inst220|74193:inst|23 ; |clock|startmod:inst220|74193:inst|23 ; out              ;
+; |clock|74192:inst59|53                ; |clock|74192:inst59|53                ; out0             ;
+; |clock|74192:inst59|55                ; |clock|74192:inst59|55                ; out0             ;
+; |clock|74192:inst59|54                ; |clock|74192:inst59|54                ; out0             ;
++---------------------------------------+---------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                         ;
++---------------------------------------+---------------------------------------+------------------+
+; Node Name                             ; Output Port Name                      ; Output Port Type ;
++---------------------------------------+---------------------------------------+------------------+
+; |clock|inst126                        ; |clock|inst126                        ; out0             ;
+; |clock|in_s0_8                        ; |clock|in_s0_8                        ; out              ;
+; |clock|inst125                        ; |clock|inst125                        ; out0             ;
+; |clock|in_s0_4                        ; |clock|in_s0_4                        ; out              ;
+; |clock|in_s0_1                        ; |clock|in_s0_1                        ; out              ;
+; |clock|inst124                        ; |clock|inst124                        ; out0             ;
+; |clock|in_s0_2                        ; |clock|in_s0_2                        ; out              ;
+; |clock|init                           ; |clock|init                           ; out              ;
+; |clock|inst131                        ; |clock|inst131                        ; out0             ;
+; |clock|in_s1_8                        ; |clock|in_s1_8                        ; out              ;
+; |clock|inst130                        ; |clock|inst130                        ; out0             ;
+; |clock|in_s1_4                        ; |clock|in_s1_4                        ; out              ;
+; |clock|inst136                        ; |clock|inst136                        ; out0             ;
+; |clock|in_m0_8                        ; |clock|in_m0_8                        ; out              ;
+; |clock|inst135                        ; |clock|inst135                        ; out0             ;
+; |clock|in_m0_4                        ; |clock|in_m0_4                        ; out              ;
+; |clock|inst133                        ; |clock|inst133                        ; out0             ;
+; |clock|in_m0_1                        ; |clock|in_m0_1                        ; out              ;
+; |clock|inst134                        ; |clock|inst134                        ; out0             ;
+; |clock|in_m0_2                        ; |clock|in_m0_2                        ; out              ;
+; |clock|inst141                        ; |clock|inst141                        ; out0             ;
+; |clock|in_m1_8                        ; |clock|in_m1_8                        ; out              ;
+; |clock|inst140                        ; |clock|inst140                        ; out0             ;
+; |clock|in_m1_4                        ; |clock|in_m1_4                        ; out              ;
+; |clock|inst138                        ; |clock|inst138                        ; out0             ;
+; |clock|in_m1_1                        ; |clock|in_m1_1                        ; out              ;
+; |clock|inst139                        ; |clock|inst139                        ; out0             ;
+; |clock|in_m1_2                        ; |clock|in_m1_2                        ; out              ;
+; |clock|in_s1_1                        ; |clock|in_s1_1                        ; out              ;
+; |clock|inst129                        ; |clock|inst129                        ; out0             ;
+; |clock|in_s1_2                        ; |clock|in_s1_2                        ; out              ;
+; |clock|inst146                        ; |clock|inst146                        ; out0             ;
+; |clock|in_h0_8                        ; |clock|in_h0_8                        ; out              ;
+; |clock|inst145                        ; |clock|inst145                        ; out0             ;
+; |clock|in_h0_4                        ; |clock|in_h0_4                        ; out              ;
+; |clock|inst143                        ; |clock|inst143                        ; out0             ;
+; |clock|in_h0_1                        ; |clock|in_h0_1                        ; out              ;
+; |clock|inst144                        ; |clock|inst144                        ; out0             ;
+; |clock|in_h0_2                        ; |clock|in_h0_2                        ; out              ;
+; |clock|inst151                        ; |clock|inst151                        ; out0             ;
+; |clock|in_h1_8                        ; |clock|in_h1_8                        ; out              ;
+; |clock|inst150                        ; |clock|inst150                        ; out0             ;
+; |clock|in_h1_4                        ; |clock|in_h1_4                        ; out              ;
+; |clock|inst148                        ; |clock|inst148                        ; out0             ;
+; |clock|in_h1_1                        ; |clock|in_h1_1                        ; out              ;
+; |clock|inst149                        ; |clock|inst149                        ; out0             ;
+; |clock|in_h1_2                        ; |clock|in_h1_2                        ; out              ;
+; |clock|inst87                         ; |clock|inst87                         ; out0             ;
+; |clock|inst110                        ; |clock|inst110                        ; out0             ;
+; |clock|inst56                         ; |clock|inst56                         ; out0             ;
+; |clock|inst55                         ; |clock|inst55                         ; out0             ;
+; |clock|inst53                         ; |clock|inst53                         ; out0             ;
+; |clock|inst54                         ; |clock|inst54                         ; out0             ;
+; |clock|inst34                         ; |clock|inst34                         ; out0             ;
+; |clock|inst33                         ; |clock|inst33                         ; out0             ;
+; |clock|inst30                         ; |clock|inst30                         ; out0             ;
+; |clock|inst28                         ; |clock|inst28                         ; out0             ;
+; |clock|inst27                         ; |clock|inst27                         ; out0             ;
+; |clock|inst26                         ; |clock|inst26                         ; out0             ;
+; |clock|inst51                         ; |clock|inst51                         ; out0             ;
+; |clock|inst50                         ; |clock|inst50                         ; out0             ;
+; |clock|inst48                         ; |clock|inst48                         ; out0             ;
+; |clock|inst49                         ; |clock|inst49                         ; out0             ;
+; |clock|inst15                         ; |clock|inst15                         ; out0             ;
+; |clock|inst32                         ; |clock|inst32                         ; out              ;
+; |clock|inst46                         ; |clock|inst46                         ; out0             ;
+; |clock|inst45                         ; |clock|inst45                         ; out0             ;
+; |clock|inst43                         ; |clock|inst43                         ; out0             ;
+; |clock|inst44                         ; |clock|inst44                         ; out0             ;
+; |clock|inst39                         ; |clock|inst39                         ; out0             ;
+; |clock|inst38                         ; |clock|inst38                         ; out0             ;
+; |clock|inst36                         ; |clock|inst36                         ; out0             ;
+; |clock|inst37                         ; |clock|inst37                         ; out0             ;
+; |clock|inst12                         ; |clock|inst12                         ; out0             ;
+; |clock|inst111                        ; |clock|inst111                        ; out0             ;
+; |clock|inst112                        ; |clock|inst112                        ; out0             ;
+; |clock|inst113                        ; |clock|inst113                        ; out0             ;
+; |clock|inst82                         ; |clock|inst82                         ; out0             ;
+; |clock|inst106                        ; |clock|inst106                        ; out0             ;
+; |clock|inst107                        ; |clock|inst107                        ; out0             ;
+; |clock|inst108                        ; |clock|inst108                        ; out0             ;
+; |clock|inst109                        ; |clock|inst109                        ; out0             ;
+; |clock|inst77                         ; |clock|inst77                         ; out0             ;
+; |clock|inst102                        ; |clock|inst102                        ; out0             ;
+; |clock|inst103                        ; |clock|inst103                        ; out0             ;
+; |clock|inst104                        ; |clock|inst104                        ; out0             ;
+; |clock|inst105                        ; |clock|inst105                        ; out0             ;
+; |clock|inst97                         ; |clock|inst97                         ; out0             ;
+; |clock|inst72                         ; |clock|inst72                         ; out0             ;
+; |clock|inst98                         ; |clock|inst98                         ; out0             ;
+; |clock|inst99                         ; |clock|inst99                         ; out0             ;
+; |clock|inst100                        ; |clock|inst100                        ; out0             ;
+; |clock|inst101                        ; |clock|inst101                        ; out0             ;
+; |clock|timing                         ; |clock|timing                         ; out              ;
+; |clock|inst188                        ; |clock|inst188                        ; out0             ;
+; |clock|inst57                         ; |clock|inst57                         ; out0             ;
+; |clock|inst189                        ; |clock|inst189                        ; out0             ;
+; |clock|inst71                         ; |clock|inst71                         ; out0             ;
+; |clock|inst212                        ; |clock|inst212                        ; out0             ;
+; |clock|inst88                         ; |clock|inst88                         ; out0             ;
+; |clock|inst213                        ; |clock|inst213                        ; out0             ;
+; |clock|inst114                        ; |clock|inst114                        ; out0             ;
+; |clock|inst205                        ; |clock|inst205                        ; out0             ;
+; |clock|inst83                         ; |clock|inst83                         ; out0             ;
+; |clock|inst204                        ; |clock|inst204                        ; out0             ;
+; |clock|inst81                         ; |clock|inst81                         ; out0             ;
+; |clock|inst196                        ; |clock|inst196                        ; out0             ;
+; |clock|inst75                         ; |clock|inst75                         ; out0             ;
+; |clock|pin_name                       ; |clock|pin_name                       ; pin_out          ;
+; |clock|inst22                         ; |clock|inst22                         ; out0             ;
+; |clock|74192:inst11|25                ; |clock|74192:inst11|25                ; out              ;
+; |clock|74192:inst11|53                ; |clock|74192:inst11|53                ; out0             ;
+; |clock|74192:inst11|23                ; |clock|74192:inst11|23                ; out              ;
+; |clock|74192:inst11|55                ; |clock|74192:inst11|55                ; out0             ;
+; |clock|74192:inst11|100               ; |clock|74192:inst11|100               ; out0             ;
+; |clock|74192:inst11|21                ; |clock|74192:inst11|21                ; out0             ;
+; |clock|74192:inst11|26                ; |clock|74192:inst11|26                ; out              ;
+; |clock|74192:inst11|52                ; |clock|74192:inst11|52                ; out0             ;
+; |clock|74192:inst11|24                ; |clock|74192:inst11|24                ; out              ;
+; |clock|74192:inst11|54                ; |clock|74192:inst11|54                ; out0             ;
+; |clock|74192:inst11|51                ; |clock|74192:inst11|51                ; out0             ;
+; |clock|74192:inst11|76                ; |clock|74192:inst11|76                ; out0             ;
+; |clock|74192:inst11|73                ; |clock|74192:inst11|73                ; out0             ;
+; |clock|74192:inst11|77                ; |clock|74192:inst11|77                ; out0             ;
+; |clock|74192:inst2|25                 ; |clock|74192:inst2|25                 ; out              ;
+; |clock|74192:inst2|53                 ; |clock|74192:inst2|53                 ; out0             ;
+; |clock|74192:inst2|23                 ; |clock|74192:inst2|23                 ; out              ;
+; |clock|74192:inst2|55                 ; |clock|74192:inst2|55                 ; out0             ;
+; |clock|74192:inst2|100                ; |clock|74192:inst2|100                ; out0             ;
+; |clock|74192:inst2|21                 ; |clock|74192:inst2|21                 ; out0             ;
+; |clock|74192:inst2|26                 ; |clock|74192:inst2|26                 ; out              ;
+; |clock|74192:inst2|52                 ; |clock|74192:inst2|52                 ; out0             ;
+; |clock|74192:inst2|24                 ; |clock|74192:inst2|24                 ; out              ;
+; |clock|74192:inst2|54                 ; |clock|74192:inst2|54                 ; out0             ;
+; |clock|74192:inst2|51                 ; |clock|74192:inst2|51                 ; out0             ;
+; |clock|74192:inst2|76                 ; |clock|74192:inst2|76                 ; out0             ;
+; |clock|74192:inst2|73                 ; |clock|74192:inst2|73                 ; out0             ;
+; |clock|74192:inst13|25                ; |clock|74192:inst13|25                ; out              ;
+; |clock|74192:inst13|53                ; |clock|74192:inst13|53                ; out0             ;
+; |clock|74192:inst13|23                ; |clock|74192:inst13|23                ; out              ;
+; |clock|74192:inst13|55                ; |clock|74192:inst13|55                ; out0             ;
+; |clock|74192:inst13|100               ; |clock|74192:inst13|100               ; out0             ;
+; |clock|74192:inst13|21                ; |clock|74192:inst13|21                ; out0             ;
+; |clock|74192:inst13|26                ; |clock|74192:inst13|26                ; out              ;
+; |clock|74192:inst13|52                ; |clock|74192:inst13|52                ; out0             ;
+; |clock|74192:inst13|24                ; |clock|74192:inst13|24                ; out              ;
+; |clock|74192:inst13|54                ; |clock|74192:inst13|54                ; out0             ;
+; |clock|74192:inst13|51                ; |clock|74192:inst13|51                ; out0             ;
+; |clock|74192:inst13|76                ; |clock|74192:inst13|76                ; out0             ;
+; |clock|74192:inst13|73                ; |clock|74192:inst13|73                ; out0             ;
+; |clock|74192:inst13|77                ; |clock|74192:inst13|77                ; out0             ;
+; |clock|74192:inst|53                  ; |clock|74192:inst|53                  ; out0             ;
+; |clock|74192:inst|55                  ; |clock|74192:inst|55                  ; out0             ;
+; |clock|74192:inst|54                  ; |clock|74192:inst|54                  ; out0             ;
+; |clock|74192:inst1|53                 ; |clock|74192:inst1|53                 ; out0             ;
+; |clock|74192:inst1|23                 ; |clock|74192:inst1|23                 ; out              ;
+; |clock|74192:inst1|55                 ; |clock|74192:inst1|55                 ; out0             ;
+; |clock|74192:inst1|100                ; |clock|74192:inst1|100                ; out0             ;
+; |clock|74192:inst1|21                 ; |clock|74192:inst1|21                 ; out0             ;
+; |clock|74192:inst1|54                 ; |clock|74192:inst1|54                 ; out0             ;
+; |clock|74192:inst1|76                 ; |clock|74192:inst1|76                 ; out0             ;
+; |clock|74192:inst3|25                 ; |clock|74192:inst3|25                 ; out              ;
+; |clock|74192:inst3|53                 ; |clock|74192:inst3|53                 ; out0             ;
+; |clock|74192:inst3|23                 ; |clock|74192:inst3|23                 ; out              ;
+; |clock|74192:inst3|55                 ; |clock|74192:inst3|55                 ; out0             ;
+; |clock|74192:inst3|100                ; |clock|74192:inst3|100                ; out0             ;
+; |clock|74192:inst3|21                 ; |clock|74192:inst3|21                 ; out0             ;
+; |clock|74192:inst3|26                 ; |clock|74192:inst3|26                 ; out              ;
+; |clock|74192:inst3|52                 ; |clock|74192:inst3|52                 ; out0             ;
+; |clock|74192:inst3|24                 ; |clock|74192:inst3|24                 ; out              ;
+; |clock|74192:inst3|54                 ; |clock|74192:inst3|54                 ; out0             ;
+; |clock|74192:inst3|51                 ; |clock|74192:inst3|51                 ; out0             ;
+; |clock|74192:inst3|76                 ; |clock|74192:inst3|76                 ; out0             ;
+; |clock|74192:inst3|73                 ; |clock|74192:inst3|73                 ; out0             ;
+; |clock|74192:inst70|25                ; |clock|74192:inst70|25                ; out              ;
+; |clock|74192:inst70|53                ; |clock|74192:inst70|53                ; out0             ;
+; |clock|74192:inst70|74                ; |clock|74192:inst70|74                ; out0             ;
+; |clock|74192:inst70|55                ; |clock|74192:inst70|55                ; out0             ;
+; |clock|74192:inst70|52                ; |clock|74192:inst70|52                ; out0             ;
+; |clock|74192:inst70|24                ; |clock|74192:inst70|24                ; out              ;
+; |clock|74192:inst70|54                ; |clock|74192:inst70|54                ; out0             ;
+; |clock|74192:inst70|71                ; |clock|74192:inst70|71                ; out0             ;
+; |clock|74192:inst69|25                ; |clock|74192:inst69|25                ; out              ;
+; |clock|74192:inst69|53                ; |clock|74192:inst69|53                ; out0             ;
+; |clock|74192:inst69|74                ; |clock|74192:inst69|74                ; out0             ;
+; |clock|74192:inst69|55                ; |clock|74192:inst69|55                ; out0             ;
+; |clock|74192:inst69|52                ; |clock|74192:inst69|52                ; out0             ;
+; |clock|74192:inst69|24                ; |clock|74192:inst69|24                ; out              ;
+; |clock|74192:inst69|54                ; |clock|74192:inst69|54                ; out0             ;
+; |clock|74192:inst69|71                ; |clock|74192:inst69|71                ; out0             ;
+; |clock|74192:inst66|25                ; |clock|74192:inst66|25                ; out              ;
+; |clock|74192:inst66|53                ; |clock|74192:inst66|53                ; out0             ;
+; |clock|74192:inst66|74                ; |clock|74192:inst66|74                ; out0             ;
+; |clock|74192:inst66|55                ; |clock|74192:inst66|55                ; out0             ;
+; |clock|74192:inst66|71                ; |clock|74192:inst66|71                ; out0             ;
+; |clock|74192:inst65|25                ; |clock|74192:inst65|25                ; out              ;
+; |clock|74192:inst65|53                ; |clock|74192:inst65|53                ; out0             ;
+; |clock|74192:inst65|74                ; |clock|74192:inst65|74                ; out0             ;
+; |clock|74192:inst65|55                ; |clock|74192:inst65|55                ; out0             ;
+; |clock|74192:inst65|52                ; |clock|74192:inst65|52                ; out0             ;
+; |clock|74192:inst65|24                ; |clock|74192:inst65|24                ; out              ;
+; |clock|74192:inst65|54                ; |clock|74192:inst65|54                ; out0             ;
+; |clock|74192:inst65|71                ; |clock|74192:inst65|71                ; out0             ;
+; |clock|74192:inst60|25                ; |clock|74192:inst60|25                ; out              ;
+; |clock|74192:inst60|53                ; |clock|74192:inst60|53                ; out0             ;
+; |clock|74192:inst60|74                ; |clock|74192:inst60|74                ; out0             ;
+; |clock|74192:inst60|55                ; |clock|74192:inst60|55                ; out0             ;
+; |clock|74192:inst60|71                ; |clock|74192:inst60|71                ; out0             ;
+; |clock|startmod:inst220|74193:inst|28 ; |clock|startmod:inst220|74193:inst|28 ; out0             ;
+; |clock|74192:inst59|53                ; |clock|74192:inst59|53                ; out0             ;
+; |clock|74192:inst59|55                ; |clock|74192:inst59|55                ; out0             ;
+; |clock|74192:inst59|54                ; |clock|74192:inst59|54                ; out0             ;
++---------------------------------------+---------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Jul 05 10:41:51 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off clock -c clock
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of clock.vwf called clock.sim_ori.vwf is created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|clock|74192:inst59|25"
+Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|clock|inst182"
+Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|clock|74192:inst58|23"
+Warning: Found clock-sensitive change during active clock edge at time 1.45 us on register "|clock|74192:inst|26"
+Warning: Found clock-sensitive change during active clock edge at time 1.45 us on register "|clock|74192:inst1|26"
+Warning: Found clock-sensitive change during active clock edge at time 1.45 us on register "|clock|74192:inst|23"
+Warning: Found clock-sensitive change during active clock edge at time 4.2 us on register "|clock|inst31"
+Warning: Found clock-sensitive change during active clock edge at time 38.21 us on register "|clock|inst4"
+Warning: Found clock-sensitive change during active clock edge at time 41.59 us on register "|clock|74192:inst59|24"
+Warning: Found clock-sensitive change during active clock edge at time 42.15 us on register "|clock|74192:inst58|24"
+Warning: Found clock-sensitive change during active clock edge at time 42.15 us on register "|clock|74192:inst58|25"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      58.56 %
+Info: Number of transitions in simulation is 49762
+Info: Vector file clock.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 11 warnings
+    Info: Processing ended: Wed Jul 05 10:41:51 2023
+    Info: Elapsed time: 00:00:00
+
+

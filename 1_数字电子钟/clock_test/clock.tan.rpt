@@ -1,0 +1,1384 @@
+Timing Analyzer report for clock
+Wed Jul 05 12:20:58 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. Clock Setup: 'mode'
+  7. Clock Hold: 'clk'
+  8. Clock Hold: 'mode'
+  9. tsu
+ 10. tco
+ 11. tpd
+ 12. th
+ 13. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                    ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------+-------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                           ; To    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------+-------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 7.400 ns                         ; clk                            ; inst4 ; --         ; reset    ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 164.400 ns                       ; 74194:inst115|41               ; light ; clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 24.700 ns                        ; clk                            ; s0_8  ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 129.700 ns                       ; reset                          ; inst4 ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A                                      ; None          ; 8.37 MHz ( period = 119.500 ns ) ; 74192:inst3|23                 ; inst4 ; clk        ; clk      ; 0            ;
+; Clock Setup: 'mode'          ; N/A                                      ; None          ; 8.73 MHz ( period = 114.500 ns ) ; 74192:inst3|23                 ; inst4 ; mode       ; mode     ; 0            ;
+; Clock Hold: 'clk'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; startmod:inst220|74193:inst|24 ; inst4 ; clk        ; clk      ; 87           ;
+; Clock Hold: 'mode'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; 74192:inst|26                  ; inst4 ; mode       ; mode     ; 77           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                                ;       ;            ;          ; 164          ;
++------------------------------+------------------------------------------+---------------+----------------------------------+--------------------------------+-------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1K30TC144-3      ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                         ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; mode            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s1_1         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h1_4         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s1_4         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s0_8         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m1_1         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h0_1         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m1_2         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s0_2         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m0_4         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s1_8         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h0_4         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h1_8         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s0_4         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m1_4         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h0_8         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s1_2         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m0_2         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m0_8         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h1_2         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h0_2         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_h1_1         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m0_1         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_m1_8         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; in_s0_1         ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; timing          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; reset           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                   ;
++-------+------------------------------------------------+--------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                           ; To                             ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+--------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 8.37 MHz ( period = 119.500 ns )               ; 74192:inst3|23                 ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 9.25 MHz ( period = 108.100 ns )               ; 74192:inst70|23                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 9.46 MHz ( period = 105.700 ns )               ; 74192:inst3|24                 ; 74192:inst3|24                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 9.51 MHz ( period = 105.200 ns )               ; 74192:inst13|23                ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 9.66 MHz ( period = 103.500 ns )               ; 74192:inst70|24                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 9.67 MHz ( period = 103.400 ns )               ; 74192:inst3|25                 ; 74192:inst3|25                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 10.11 MHz ( period = 98.900 ns )               ; 74192:inst70|25                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 5.400 ns                ;
+; N/A   ; 10.31 MHz ( period = 97.000 ns )               ; 74192:inst3|23                 ; 74192:inst3|23                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 10.54 MHz ( period = 94.900 ns )               ; 74192:inst70|26                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 6.100 ns                ;
+; N/A   ; 10.79 MHz ( period = 92.700 ns )               ; 74192:inst69|23                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 9.700 ns                ;
+; N/A   ; 10.94 MHz ( period = 91.400 ns )               ; 74192:inst3|26                 ; 74192:inst3|26                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 11.45 MHz ( period = 87.300 ns )               ; 74192:inst69|24                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 11.51 MHz ( period = 86.900 ns )               ; 74192:inst70|23                ; 74192:inst70|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 11.93 MHz ( period = 83.800 ns )               ; 74192:inst13|23                ; 74192:inst13|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 11.93 MHz ( period = 83.800 ns )               ; 74192:inst2|23                 ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 12.05 MHz ( period = 83.000 ns )               ; 74192:inst13|24                ; 74192:inst13|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 12.09 MHz ( period = 82.700 ns )               ; 74192:inst69|25                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 8.400 ns                ;
+; N/A   ; 12.12 MHz ( period = 82.500 ns )               ; 74192:inst70|24                ; 74192:inst70|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 12.80 MHz ( period = 78.100 ns )               ; 74192:inst70|25                ; 74192:inst70|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 13.00 MHz ( period = 76.900 ns )               ; 74192:inst13|25                ; 74192:inst13|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 13.11 MHz ( period = 76.300 ns )               ; 74192:inst13|26                ; 74192:inst13|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 13.11 MHz ( period = 76.300 ns )               ; 74192:inst2|25                 ; 74192:inst2|25                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 13.14 MHz ( period = 76.100 ns )               ; 74192:inst70|26                ; 74192:inst70|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 13.21 MHz ( period = 75.700 ns )               ; 74192:inst2|25                 ; inst32                         ; clk        ; clk      ; None                        ; None                      ; 2.900 ns                ;
+; N/A   ; 13.59 MHz ( period = 73.600 ns )               ; 74192:inst2|23                 ; 74192:inst2|23                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 14.10 MHz ( period = 70.900 ns )               ; 74192:inst69|26                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 14.18 MHz ( period = 70.500 ns )               ; 74192:inst69|23                ; 74192:inst69|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 14.39 MHz ( period = 69.500 ns )               ; 74192:inst11|23                ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; 14.88 MHz ( period = 67.200 ns )               ; 74192:inst2|24                 ; 74192:inst2|24                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 14.99 MHz ( period = 66.700 ns )               ; 74192:inst2|24                 ; inst32                         ; clk        ; clk      ; None                        ; None                      ; 2.600 ns                ;
+; N/A   ; 15.11 MHz ( period = 66.200 ns )               ; 74192:inst66|23                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 6.200 ns                ;
+; N/A   ; 15.15 MHz ( period = 66.000 ns )               ; 74192:inst69|24                ; 74192:inst69|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.82 MHz ( period = 63.200 ns )               ; 74192:inst69|25                ; 74192:inst69|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.92 MHz ( period = 62.800 ns )               ; 74192:inst66|24                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 7.500 ns                ;
+; N/A   ; 16.67 MHz ( period = 60.000 ns )               ; 74192:inst69|26                ; 74192:inst69|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 16.78 MHz ( period = 59.600 ns )               ; 74192:inst2|26                 ; 74192:inst2|26                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 17.30 MHz ( period = 57.800 ns )               ; 74192:inst66|25                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 7.400 ns                ;
+; N/A   ; 18.08 MHz ( period = 55.300 ns )               ; 74192:inst65|25                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 8.300 ns                ;
+; N/A   ; 18.32 MHz ( period = 54.600 ns )               ; 74192:inst11|23                ; 74192:inst11|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 19.16 MHz ( period = 52.200 ns )               ; 74192:inst66|23                ; 74192:inst66|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 19.46 MHz ( period = 51.400 ns )               ; 74192:inst66|26                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 20.08 MHz ( period = 49.800 ns )               ; 74192:inst65|23                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 6.800 ns                ;
+; N/A   ; 20.70 MHz ( period = 48.300 ns )               ; 74192:inst11|24                ; 74192:inst11|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 21.05 MHz ( period = 47.500 ns )               ; 74192:inst66|24                ; 74192:inst66|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 21.14 MHz ( period = 47.300 ns )               ; 74192:inst65|26                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 9.000 ns                ;
+; N/A   ; 21.83 MHz ( period = 45.800 ns )               ; 74192:inst11|25                ; 74192:inst11|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 22.12 MHz ( period = 45.200 ns )               ; 74192:inst1|23                 ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 6.900 ns                ;
+; N/A   ; 22.27 MHz ( period = 44.900 ns )               ; 74192:inst65|25                ; 74192:inst65|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 22.47 MHz ( period = 44.500 ns )               ; 74192:inst66|25                ; 74192:inst66|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 22.99 MHz ( period = 43.500 ns )               ; 74192:inst1|25                 ; 74192:inst1|25                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 22.99 MHz ( period = 43.500 ns )               ; 74192:inst11|26                ; 74192:inst11|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 23.42 MHz ( period = 42.700 ns )               ; 74192:inst1|25                 ; inst31                         ; clk        ; clk      ; None                        ; None                      ; 1.800 ns                ;
+; N/A   ; 23.92 MHz ( period = 41.800 ns )               ; 74192:inst66|26                ; 74192:inst66|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.13 MHz ( period = 39.800 ns )               ; 74192:inst65|23                ; 74192:inst65|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 26.04 MHz ( period = 38.400 ns )               ; 74192:inst60|25                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 26.39 MHz ( period = 37.900 ns )               ; 74192:inst65|26                ; 74192:inst65|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 26.67 MHz ( period = 37.500 ns )               ; 74192:inst1|23                 ; 74192:inst1|23                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 29.94 MHz ( period = 33.400 ns )               ; 74192:inst1|24                 ; inst31                         ; clk        ; clk      ; None                        ; None                      ; 2.100 ns                ;
+; N/A   ; 30.58 MHz ( period = 32.700 ns )               ; 74192:inst1|24                 ; 74192:inst1|24                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 31.65 MHz ( period = 31.600 ns )               ; 74192:inst60|26                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 7.600 ns                ;
+; N/A   ; 31.85 MHz ( period = 31.400 ns )               ; 74192:inst59|23                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 32.47 MHz ( period = 30.800 ns )               ; 74192:inst60|23                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 6.000 ns                ;
+; N/A   ; 34.13 MHz ( period = 29.300 ns )               ; 74192:inst60|25                ; 74192:inst60|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 35.34 MHz ( period = 28.300 ns )               ; 74192:inst1|26                 ; 74192:inst1|26                 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 36.36 MHz ( period = 27.500 ns )               ; 74192:inst|23                  ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 38.17 MHz ( period = 26.200 ns )               ; 74192:inst59|23                ; 74192:inst59|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 38.17 MHz ( period = 26.200 ns )               ; 74192:inst60|26                ; 74192:inst60|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 38.17 MHz ( period = 26.200 ns )               ; 74192:inst60|23                ; 74192:inst60|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 38.17 MHz ( period = 26.200 ns )               ; 74192:inst59|24                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 7.600 ns                ;
+; N/A   ; 42.55 MHz ( period = 23.500 ns )               ; 74192:inst59|24                ; 74192:inst59|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 46.30 MHz ( period = 21.600 ns )               ; 74192:inst59|25                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 47.85 MHz ( period = 20.900 ns )               ; 74192:inst|23                  ; 74192:inst|23                  ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 49.75 MHz ( period = 20.100 ns )               ; 74192:inst|24                  ; 74192:inst|24                  ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 59.17 MHz ( period = 16.900 ns )               ; 74192:inst59|25                ; 74192:inst59|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 63.29 MHz ( period = 15.800 ns )               ; 74192:inst|25                  ; 74192:inst|25                  ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 65.36 MHz ( period = 15.300 ns )               ; 74192:inst59|26                ; 74192:inst59|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 65.79 MHz ( period = 15.200 ns )               ; 74192:inst|26                  ; 74192:inst|26                  ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 67.57 MHz ( period = 14.800 ns )               ; 74192:inst|26                  ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 5.200 ns                ;
+; N/A   ; 68.97 MHz ( period = 14.500 ns )               ; 74192:inst59|26                ; inst182                        ; clk        ; clk      ; None                        ; None                      ; 5.900 ns                ;
+; N/A   ; 78.74 MHz ( period = 12.700 ns )               ; 74192:inst58|23                ; 74192:inst58|23                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 135.14 MHz ( period = 7.400 ns )               ; startmod:inst220|74193:inst|24 ; startmod:inst220|74193:inst|24 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 153.85 MHz ( period = 6.500 ns )               ; 74192:inst58|24                ; 74192:inst58|24                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 175.44 MHz ( period = 5.700 ns )               ; startmod:inst220|74193:inst|24 ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 5.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; startmod:inst220|74193:inst|25 ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 8.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; startmod:inst220|74193:inst|25 ; startmod:inst220|74193:inst|25 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst58|25                ; 74192:inst58|25                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; startmod:inst220|74193:inst|26 ; inst4                          ; clk        ; clk      ; None                        ; None                      ; 8.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; startmod:inst220|74193:inst|26 ; startmod:inst220|74193:inst|26 ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst58|26                ; 74192:inst58|26                ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+--------------------------------+--------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'mode'                                                                                                                                                                                    ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 8.73 MHz ( period = 114.500 ns )               ; 74192:inst3|23  ; inst4           ; mode       ; mode     ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 9.98 MHz ( period = 100.200 ns )               ; 74192:inst13|23 ; inst4           ; mode       ; mode     ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 10.53 MHz ( period = 95.000 ns )               ; 74192:inst70|23 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 5.700 ns                ;
+; N/A   ; 10.79 MHz ( period = 92.700 ns )               ; 74192:inst3|24  ; 74192:inst3|24  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 11.06 MHz ( period = 90.400 ns )               ; 74192:inst3|25  ; 74192:inst3|25  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 11.06 MHz ( period = 90.400 ns )               ; 74192:inst70|24 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 11.66 MHz ( period = 85.800 ns )               ; 74192:inst70|25 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 5.400 ns                ;
+; N/A   ; 11.90 MHz ( period = 84.000 ns )               ; 74192:inst3|23  ; 74192:inst3|23  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 12.22 MHz ( period = 81.800 ns )               ; 74192:inst70|26 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 6.100 ns                ;
+; N/A   ; 12.56 MHz ( period = 79.600 ns )               ; 74192:inst69|23 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 9.700 ns                ;
+; N/A   ; 12.69 MHz ( period = 78.800 ns )               ; 74192:inst2|23  ; inst4           ; mode       ; mode     ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 12.76 MHz ( period = 78.400 ns )               ; 74192:inst3|26  ; 74192:inst3|26  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 13.48 MHz ( period = 74.200 ns )               ; 74192:inst69|24 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 13.55 MHz ( period = 73.800 ns )               ; 74192:inst70|23 ; 74192:inst70|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 14.12 MHz ( period = 70.800 ns )               ; 74192:inst13|23 ; 74192:inst13|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 14.29 MHz ( period = 70.000 ns )               ; 74192:inst13|24 ; 74192:inst13|24 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 14.37 MHz ( period = 69.600 ns )               ; 74192:inst69|25 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 8.400 ns                ;
+; N/A   ; 14.41 MHz ( period = 69.400 ns )               ; 74192:inst70|24 ; 74192:inst70|24 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.38 MHz ( period = 65.000 ns )               ; 74192:inst70|25 ; 74192:inst70|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.50 MHz ( period = 64.500 ns )               ; 74192:inst11|23 ; inst4           ; mode       ; mode     ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; 15.65 MHz ( period = 63.900 ns )               ; 74192:inst13|25 ; 74192:inst13|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.80 MHz ( period = 63.300 ns )               ; 74192:inst13|26 ; 74192:inst13|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.80 MHz ( period = 63.300 ns )               ; 74192:inst2|25  ; 74192:inst2|25  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.87 MHz ( period = 63.000 ns )               ; 74192:inst70|26 ; 74192:inst70|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 15.95 MHz ( period = 62.700 ns )               ; 74192:inst2|25  ; inst32          ; mode       ; mode     ; None                        ; None                      ; 2.900 ns                ;
+; N/A   ; 16.50 MHz ( period = 60.600 ns )               ; 74192:inst2|23  ; 74192:inst2|23  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 17.30 MHz ( period = 57.800 ns )               ; 74192:inst69|26 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 4.500 ns                ;
+; N/A   ; 17.42 MHz ( period = 57.400 ns )               ; 74192:inst69|23 ; 74192:inst69|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 18.45 MHz ( period = 54.200 ns )               ; 74192:inst2|24  ; 74192:inst2|24  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 18.62 MHz ( period = 53.700 ns )               ; 74192:inst2|24  ; inst32          ; mode       ; mode     ; None                        ; None                      ; 2.600 ns                ;
+; N/A   ; 18.83 MHz ( period = 53.100 ns )               ; 74192:inst66|23 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 6.200 ns                ;
+; N/A   ; 18.90 MHz ( period = 52.900 ns )               ; 74192:inst69|24 ; 74192:inst69|24 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 19.96 MHz ( period = 50.100 ns )               ; 74192:inst69|25 ; 74192:inst69|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 20.12 MHz ( period = 49.700 ns )               ; 74192:inst66|24 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 7.500 ns                ;
+; N/A   ; 21.32 MHz ( period = 46.900 ns )               ; 74192:inst69|26 ; 74192:inst69|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 21.46 MHz ( period = 46.600 ns )               ; 74192:inst2|26  ; 74192:inst2|26  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 22.37 MHz ( period = 44.700 ns )               ; 74192:inst66|25 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 7.400 ns                ;
+; N/A   ; 23.70 MHz ( period = 42.200 ns )               ; 74192:inst65|25 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 8.300 ns                ;
+; N/A   ; 24.04 MHz ( period = 41.600 ns )               ; 74192:inst11|23 ; 74192:inst11|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 24.88 MHz ( period = 40.200 ns )               ; 74192:inst1|23  ; inst4           ; mode       ; mode     ; None                        ; None                      ; 6.900 ns                ;
+; N/A   ; 25.58 MHz ( period = 39.100 ns )               ; 74192:inst66|23 ; 74192:inst66|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 26.11 MHz ( period = 38.300 ns )               ; 74192:inst66|26 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 27.25 MHz ( period = 36.700 ns )               ; 74192:inst65|23 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 6.800 ns                ;
+; N/A   ; 28.33 MHz ( period = 35.300 ns )               ; 74192:inst11|24 ; 74192:inst11|24 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 29.07 MHz ( period = 34.400 ns )               ; 74192:inst66|24 ; 74192:inst66|24 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 29.24 MHz ( period = 34.200 ns )               ; 74192:inst65|26 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 9.000 ns                ;
+; N/A   ; 30.49 MHz ( period = 32.800 ns )               ; 74192:inst11|25 ; 74192:inst11|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 31.45 MHz ( period = 31.800 ns )               ; 74192:inst65|25 ; 74192:inst65|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 31.85 MHz ( period = 31.400 ns )               ; 74192:inst66|25 ; 74192:inst66|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 32.79 MHz ( period = 30.500 ns )               ; 74192:inst1|25  ; 74192:inst1|25  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 32.79 MHz ( period = 30.500 ns )               ; 74192:inst11|26 ; 74192:inst11|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 33.67 MHz ( period = 29.700 ns )               ; 74192:inst1|25  ; inst31          ; mode       ; mode     ; None                        ; None                      ; 1.800 ns                ;
+; N/A   ; 34.84 MHz ( period = 28.700 ns )               ; 74192:inst66|26 ; 74192:inst66|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 37.45 MHz ( period = 26.700 ns )               ; 74192:inst65|23 ; 74192:inst65|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 39.53 MHz ( period = 25.300 ns )               ; 74192:inst60|25 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 40.32 MHz ( period = 24.800 ns )               ; 74192:inst65|26 ; 74192:inst65|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 40.82 MHz ( period = 24.500 ns )               ; 74192:inst1|23  ; 74192:inst1|23  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 44.44 MHz ( period = 22.500 ns )               ; 74192:inst|23   ; inst4           ; mode       ; mode     ; None                        ; None                      ; 6.300 ns                ;
+; N/A   ; 49.02 MHz ( period = 20.400 ns )               ; 74192:inst1|24  ; inst31          ; mode       ; mode     ; None                        ; None                      ; 2.100 ns                ;
+; N/A   ; 50.76 MHz ( period = 19.700 ns )               ; 74192:inst1|24  ; 74192:inst1|24  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 54.05 MHz ( period = 18.500 ns )               ; 74192:inst60|26 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 7.600 ns                ;
+; N/A   ; 54.64 MHz ( period = 18.300 ns )               ; 74192:inst59|23 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 56.50 MHz ( period = 17.700 ns )               ; 74192:inst60|23 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 6.000 ns                ;
+; N/A   ; 61.73 MHz ( period = 16.200 ns )               ; 74192:inst60|25 ; 74192:inst60|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 65.36 MHz ( period = 15.300 ns )               ; 74192:inst1|26  ; 74192:inst1|26  ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 76.34 MHz ( period = 13.100 ns )               ; 74192:inst59|23 ; 74192:inst59|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 76.34 MHz ( period = 13.100 ns )               ; 74192:inst60|26 ; 74192:inst60|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 76.34 MHz ( period = 13.100 ns )               ; 74192:inst60|23 ; 74192:inst60|23 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 76.34 MHz ( period = 13.100 ns )               ; 74192:inst59|24 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 7.600 ns                ;
+; N/A   ; 96.15 MHz ( period = 10.400 ns )               ; 74192:inst59|24 ; 74192:inst59|24 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 102.04 MHz ( period = 9.800 ns )               ; 74192:inst|26   ; inst4           ; mode       ; mode     ; None                        ; None                      ; 5.200 ns                ;
+; N/A   ; 117.65 MHz ( period = 8.500 ns )               ; 74192:inst59|25 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 8.600 ns                ;
+; N/A   ; 126.58 MHz ( period = 7.900 ns )               ; 74192:inst|23   ; 74192:inst|23   ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 140.85 MHz ( period = 7.100 ns )               ; 74192:inst|24   ; 74192:inst|24   ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst59|25 ; 74192:inst59|25 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst|25   ; 74192:inst|25   ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst|26   ; 74192:inst|26   ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst59|26 ; 74192:inst59|26 ; mode       ; mode     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74192:inst59|26 ; inst182         ; mode       ; mode     ; None                        ; None                      ; 5.900 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                       ;
++------------------------------------------+--------------------------------+--------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                           ; To                             ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+--------------------------------+--------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; startmod:inst220|74193:inst|24 ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 5.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|26                  ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 5.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; startmod:inst220|74193:inst|26 ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 8.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; startmod:inst220|74193:inst|25 ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 8.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|23                  ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 6.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|23                 ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 6.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|23                 ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 4.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|26                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 5.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|23                ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 7.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|24                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 7.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|24                 ; 74192:inst3|24                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|23                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|25                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 8.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|23                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 8.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|26                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 7.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|25                 ; 74192:inst3|25                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|23                ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 3.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|25                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 8.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|26                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 9.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|23                 ; inst4                          ; clk        ; clk      ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|26                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 4.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|23                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 6.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|25                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 8.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|26                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 4.500 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|23                 ; 74192:inst3|23                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|25                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 7.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|23                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 6.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|24                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 7.500 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|26                 ; 74192:inst3|26                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|26                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 6.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|25                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 8.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|25                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 5.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|24                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 5.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|23                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 5.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|24                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 9.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|23                ; 74192:inst70|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|23                ; inst182                        ; clk        ; clk      ; None                       ; None                       ; 9.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|23                ; 74192:inst13|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|24                ; 74192:inst13|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|24                ; 74192:inst70|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|25                ; 74192:inst70|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|25                ; 74192:inst13|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|25                 ; inst32                         ; clk        ; clk      ; None                       ; None                       ; 2.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|24                 ; inst32                         ; clk        ; clk      ; None                       ; None                       ; 2.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|26                ; 74192:inst13|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|25                 ; 74192:inst2|25                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|26                ; 74192:inst70|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|23                 ; 74192:inst2|23                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|23                ; 74192:inst69|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|24                 ; 74192:inst2|24                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|24                ; 74192:inst69|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|25                ; 74192:inst69|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|26                ; 74192:inst69|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|26                 ; 74192:inst2|26                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|23                ; 74192:inst11|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|23                ; 74192:inst66|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|24                ; 74192:inst11|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|24                ; 74192:inst66|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|25                ; 74192:inst11|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|25                ; 74192:inst65|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|25                ; 74192:inst66|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|25                 ; inst31                         ; clk        ; clk      ; None                       ; None                       ; 1.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|25                 ; 74192:inst1|25                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|26                ; 74192:inst11|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|24                 ; inst31                         ; clk        ; clk      ; None                       ; None                       ; 2.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|26                ; 74192:inst66|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|23                ; 74192:inst65|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|26                ; 74192:inst65|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|23                 ; 74192:inst1|23                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|24                 ; 74192:inst1|24                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|25                ; 74192:inst60|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|26                 ; 74192:inst1|26                 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|23                ; 74192:inst59|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|26                ; 74192:inst60|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|23                ; 74192:inst60|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|24                ; 74192:inst59|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|23                  ; 74192:inst|23                  ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|24                  ; 74192:inst|24                  ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|25                ; 74192:inst59|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|25                  ; 74192:inst|25                  ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|26                ; 74192:inst59|26                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|26                  ; 74192:inst|26                  ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst58|23                ; 74192:inst58|23                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; startmod:inst220|74193:inst|24 ; startmod:inst220|74193:inst|24 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst58|24                ; 74192:inst58|24                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; startmod:inst220|74193:inst|25 ; startmod:inst220|74193:inst|25 ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst58|25                ; 74192:inst58|25                ; clk        ; clk      ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+--------------------------------+--------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'mode'                                                                                                                                                                        ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 74192:inst|26   ; inst4           ; mode       ; mode     ; None                       ; None                       ; 5.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|23   ; inst4           ; mode       ; mode     ; None                       ; None                       ; 6.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|23  ; inst4           ; mode       ; mode     ; None                       ; None                       ; 6.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|23  ; inst4           ; mode       ; mode     ; None                       ; None                       ; 4.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|26 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 5.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|23 ; inst4           ; mode       ; mode     ; None                       ; None                       ; 7.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|24 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 7.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|24  ; 74192:inst3|24  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|23 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 6.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|25 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 8.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|23 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 8.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|25  ; 74192:inst3|25  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|26 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 7.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|23 ; inst4           ; mode       ; mode     ; None                       ; None                       ; 3.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|25 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 8.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|23  ; inst4           ; mode       ; mode     ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|26 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 9.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|26 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 4.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|23 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 6.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|25 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 8.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|26 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 4.500 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|23  ; 74192:inst3|23  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|25 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 7.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|23 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 6.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|24 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 7.500 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst3|26  ; 74192:inst3|26  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|26 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 6.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|25 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 8.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|25 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 5.400 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|24 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 5.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|23 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 5.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|24 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 9.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|23 ; 74192:inst70|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|23 ; inst182         ; mode       ; mode     ; None                       ; None                       ; 9.700 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|23 ; 74192:inst13|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|24 ; 74192:inst13|24 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|24 ; 74192:inst70|24 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|25 ; 74192:inst70|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|25 ; 74192:inst13|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|25  ; inst32          ; mode       ; mode     ; None                       ; None                       ; 2.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|24  ; inst32          ; mode       ; mode     ; None                       ; None                       ; 2.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst13|26 ; 74192:inst13|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|25  ; 74192:inst2|25  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst70|26 ; 74192:inst70|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|23  ; 74192:inst2|23  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|23 ; 74192:inst69|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|24  ; 74192:inst2|24  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|24 ; 74192:inst69|24 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|25 ; 74192:inst69|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst69|26 ; 74192:inst69|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst2|26  ; 74192:inst2|26  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|23 ; 74192:inst11|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|23 ; 74192:inst66|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|24 ; 74192:inst11|24 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|24 ; 74192:inst66|24 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|25 ; 74192:inst11|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|25 ; 74192:inst65|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|25 ; 74192:inst66|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|25  ; inst31          ; mode       ; mode     ; None                       ; None                       ; 1.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|25  ; 74192:inst1|25  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst11|26 ; 74192:inst11|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|24  ; inst31          ; mode       ; mode     ; None                       ; None                       ; 2.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst66|26 ; 74192:inst66|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|23 ; 74192:inst65|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst65|26 ; 74192:inst65|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|23  ; 74192:inst1|23  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|24  ; 74192:inst1|24  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|25 ; 74192:inst60|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst1|26  ; 74192:inst1|26  ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|23 ; 74192:inst59|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|26 ; 74192:inst60|26 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst60|23 ; 74192:inst60|23 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|24 ; 74192:inst59|24 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|23   ; 74192:inst|23   ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|24   ; 74192:inst|24   ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst59|25 ; 74192:inst59|25 ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74192:inst|25   ; 74192:inst|25   ; mode       ; mode     ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++--------------------------------------------------------------+
+; tsu                                                          ;
++-------+--------------+------------+-------+-------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To    ; To Clock ;
++-------+--------------+------------+-------+-------+----------+
+; N/A   ; None         ; 7.400 ns   ; clk   ; inst4 ; reset    ;
+; N/A   ; None         ; 7.300 ns   ; clk   ; inst4 ; mode     ;
+; N/A   ; None         ; -0.200 ns  ; mode  ; inst4 ; reset    ;
+; N/A   ; None         ; -0.300 ns  ; reset ; inst4 ; reset    ;
+; N/A   ; None         ; -0.300 ns  ; mode  ; inst4 ; mode     ;
+; N/A   ; None         ; -0.300 ns  ; clk   ; inst4 ; clk      ;
+; N/A   ; None         ; -0.400 ns  ; reset ; inst4 ; mode     ;
+; N/A   ; None         ; -7.900 ns  ; mode  ; inst4 ; clk      ;
+; N/A   ; None         ; -8.000 ns  ; reset ; inst4 ; clk      ;
++-------+--------------+------------+-------+-------+----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+--------------------------------+-------+------------+
+; Slack ; Required tco ; Actual tco ; From                           ; To    ; From Clock ;
++-------+--------------+------------+--------------------------------+-------+------------+
+; N/A   ; None         ; 164.400 ns ; 74194:inst115|41               ; light ; clk        ;
+; N/A   ; None         ; 151.800 ns ; 74194:inst115|41               ; light ; mode       ;
+; N/A   ; None         ; 150.300 ns ; 74192:inst3|24                 ; h1_4  ; clk        ;
+; N/A   ; None         ; 145.700 ns ; 74192:inst3|25                 ; h1_2  ; clk        ;
+; N/A   ; None         ; 143.000 ns ; 74192:inst3|23                 ; h1_8  ; clk        ;
+; N/A   ; None         ; 137.700 ns ; 74192:inst3|24                 ; h1_4  ; mode       ;
+; N/A   ; None         ; 133.100 ns ; 74192:inst3|25                 ; h1_2  ; mode       ;
+; N/A   ; None         ; 131.900 ns ; 74192:inst3|26                 ; h1_1  ; clk        ;
+; N/A   ; None         ; 130.400 ns ; 74192:inst3|23                 ; h1_8  ; mode       ;
+; N/A   ; None         ; 128.500 ns ; 74192:inst13|23                ; h0_8  ; clk        ;
+; N/A   ; None         ; 127.200 ns ; 74192:inst70|23                ; h1_8  ; clk        ;
+; N/A   ; None         ; 124.300 ns ; 74192:inst13|24                ; h0_4  ; clk        ;
+; N/A   ; None         ; 124.000 ns ; 74192:inst70|24                ; h1_4  ; clk        ;
+; N/A   ; None         ; 119.600 ns ; 74192:inst70|25                ; h1_2  ; clk        ;
+; N/A   ; None         ; 119.300 ns ; 74192:inst13|25                ; h0_2  ; clk        ;
+; N/A   ; None         ; 119.300 ns ; 74192:inst3|26                 ; h1_1  ; mode       ;
+; N/A   ; None         ; 115.900 ns ; 74192:inst13|23                ; h0_8  ; mode       ;
+; N/A   ; None         ; 114.900 ns ; 74192:inst70|26                ; h1_1  ; clk        ;
+; N/A   ; None         ; 114.500 ns ; 74192:inst70|23                ; h1_8  ; mode       ;
+; N/A   ; None         ; 113.300 ns ; 74192:inst13|26                ; h0_1  ; clk        ;
+; N/A   ; None         ; 111.900 ns ; 74192:inst2|25                 ; m1_2  ; clk        ;
+; N/A   ; None         ; 111.700 ns ; 74192:inst13|24                ; h0_4  ; mode       ;
+; N/A   ; None         ; 111.300 ns ; 74192:inst70|24                ; h1_4  ; mode       ;
+; N/A   ; None         ; 108.700 ns ; 74192:inst2|23                 ; m1_8  ; clk        ;
+; N/A   ; None         ; 107.800 ns ; 74192:inst69|23                ; h0_8  ; clk        ;
+; N/A   ; None         ; 106.900 ns ; 74192:inst70|25                ; h1_2  ; mode       ;
+; N/A   ; None         ; 106.700 ns ; 74192:inst13|25                ; h0_2  ; mode       ;
+; N/A   ; None         ; 104.400 ns ; 74192:inst69|24                ; h0_4  ; clk        ;
+; N/A   ; None         ; 104.300 ns ; 74192:inst2|24                 ; m1_4  ; clk        ;
+; N/A   ; None         ; 102.200 ns ; 74192:inst70|26                ; h1_1  ; mode       ;
+; N/A   ; None         ; 100.700 ns ; 74192:inst13|26                ; h0_1  ; mode       ;
+; N/A   ; None         ; 99.300 ns  ; 74192:inst2|25                 ; m1_2  ; mode       ;
+; N/A   ; None         ; 99.200 ns  ; 74192:inst69|25                ; h0_2  ; clk        ;
+; N/A   ; None         ; 96.100 ns  ; 74192:inst2|23                 ; m1_8  ; mode       ;
+; N/A   ; None         ; 95.100 ns  ; 74192:inst69|23                ; h0_8  ; mode       ;
+; N/A   ; None         ; 93.700 ns  ; 74192:inst69|26                ; h0_1  ; clk        ;
+; N/A   ; None         ; 91.700 ns  ; 74192:inst2|24                 ; m1_4  ; mode       ;
+; N/A   ; None         ; 91.700 ns  ; 74192:inst69|24                ; h0_4  ; mode       ;
+; N/A   ; None         ; 91.500 ns  ; 74192:inst2|26                 ; m1_1  ; clk        ;
+; N/A   ; None         ; 88.200 ns  ; 74192:inst11|23                ; m0_8  ; clk        ;
+; N/A   ; None         ; 86.500 ns  ; 74192:inst69|25                ; h0_2  ; mode       ;
+; N/A   ; None         ; 86.100 ns  ; 74192:inst66|23                ; m1_8  ; clk        ;
+; N/A   ; None         ; 83.800 ns  ; 74192:inst66|24                ; m1_4  ; clk        ;
+; N/A   ; None         ; 81.600 ns  ; 74192:inst11|24                ; m0_4  ; clk        ;
+; N/A   ; None         ; 81.000 ns  ; 74192:inst69|26                ; h0_1  ; mode       ;
+; N/A   ; None         ; 78.900 ns  ; 74192:inst2|26                 ; m1_1  ; mode       ;
+; N/A   ; None         ; 77.100 ns  ; 74192:inst66|25                ; m1_2  ; clk        ;
+; N/A   ; None         ; 76.900 ns  ; 74192:inst11|25                ; m0_2  ; clk        ;
+; N/A   ; None         ; 75.600 ns  ; 74192:inst11|23                ; m0_8  ; mode       ;
+; N/A   ; None         ; 74.400 ns  ; 74192:inst11|26                ; m0_1  ; clk        ;
+; N/A   ; None         ; 73.400 ns  ; 74192:inst66|23                ; m1_8  ; mode       ;
+; N/A   ; None         ; 73.000 ns  ; 74192:inst65|25                ; m0_2  ; clk        ;
+; N/A   ; None         ; 72.600 ns  ; 74192:inst66|26                ; m1_1  ; clk        ;
+; N/A   ; None         ; 71.100 ns  ; 74192:inst66|24                ; m1_4  ; mode       ;
+; N/A   ; None         ; 71.000 ns  ; 74192:inst1|25                 ; s1_2  ; clk        ;
+; N/A   ; None         ; 69.000 ns  ; 74192:inst11|24                ; m0_4  ; mode       ;
+; N/A   ; None         ; 68.900 ns  ; 74192:inst65|23                ; m0_8  ; clk        ;
+; N/A   ; None         ; 66.700 ns  ; 74192:inst1|23                 ; s1_8  ; clk        ;
+; N/A   ; None         ; 64.400 ns  ; 74192:inst66|25                ; m1_2  ; mode       ;
+; N/A   ; None         ; 64.300 ns  ; 74192:inst11|25                ; m0_2  ; mode       ;
+; N/A   ; None         ; 64.200 ns  ; 74192:inst65|26                ; m0_1  ; clk        ;
+; N/A   ; None         ; 61.800 ns  ; 74192:inst11|26                ; m0_1  ; mode       ;
+; N/A   ; None         ; 61.300 ns  ; 74192:inst1|24                 ; s1_4  ; clk        ;
+; N/A   ; None         ; 60.300 ns  ; 74192:inst65|25                ; m0_2  ; mode       ;
+; N/A   ; None         ; 59.900 ns  ; 74192:inst66|26                ; m1_1  ; mode       ;
+; N/A   ; None         ; 58.400 ns  ; 74192:inst1|25                 ; s1_2  ; mode       ;
+; N/A   ; None         ; 58.200 ns  ; 74192:inst60|25                ; s1_2  ; clk        ;
+; N/A   ; None         ; 56.200 ns  ; 74192:inst65|23                ; m0_8  ; mode       ;
+; N/A   ; None         ; 54.100 ns  ; 74192:inst1|23                 ; s1_8  ; mode       ;
+; N/A   ; None         ; 53.600 ns  ; 74192:inst1|26                 ; s1_1  ; clk        ;
+; N/A   ; None         ; 51.500 ns  ; 74192:inst65|26                ; m0_1  ; mode       ;
+; N/A   ; None         ; 50.300 ns  ; 74192:inst60|23                ; s1_8  ; clk        ;
+; N/A   ; None         ; 50.300 ns  ; 74192:inst59|23                ; s0_8  ; clk        ;
+; N/A   ; None         ; 50.100 ns  ; 74192:inst|23                  ; s0_8  ; clk        ;
+; N/A   ; None         ; 49.200 ns  ; 74192:inst60|26                ; s1_1  ; clk        ;
+; N/A   ; None         ; 48.700 ns  ; 74192:inst1|24                 ; s1_4  ; mode       ;
+; N/A   ; None         ; 47.100 ns  ; 74192:inst59|24                ; s0_4  ; clk        ;
+; N/A   ; None         ; 45.600 ns  ; 74192:inst|24                  ; s0_4  ; clk        ;
+; N/A   ; None         ; 45.500 ns  ; 74192:inst60|25                ; s1_2  ; mode       ;
+; N/A   ; None         ; 41.400 ns  ; 74192:inst|25                  ; s0_2  ; clk        ;
+; N/A   ; None         ; 41.200 ns  ; 74192:inst59|25                ; s0_2  ; clk        ;
+; N/A   ; None         ; 41.000 ns  ; 74192:inst1|26                 ; s1_1  ; mode       ;
+; N/A   ; None         ; 37.900 ns  ; 74192:inst|26                  ; s0_1  ; clk        ;
+; N/A   ; None         ; 37.600 ns  ; 74192:inst60|23                ; s1_8  ; mode       ;
+; N/A   ; None         ; 37.600 ns  ; 74192:inst59|23                ; s0_8  ; mode       ;
+; N/A   ; None         ; 37.500 ns  ; 74192:inst|23                  ; s0_8  ; mode       ;
+; N/A   ; None         ; 36.500 ns  ; 74192:inst60|26                ; s1_1  ; mode       ;
+; N/A   ; None         ; 36.500 ns  ; 74192:inst59|26                ; s0_1  ; clk        ;
+; N/A   ; None         ; 34.400 ns  ; 74192:inst59|24                ; s0_4  ; mode       ;
+; N/A   ; None         ; 34.000 ns  ; 74194:inst115|41               ; light ; in_m1_1    ;
+; N/A   ; None         ; 33.000 ns  ; 74192:inst|24                  ; s0_4  ; mode       ;
+; N/A   ; None         ; 32.700 ns  ; 74194:inst115|41               ; light ; in_m0_4    ;
+; N/A   ; None         ; 32.600 ns  ; 74194:inst115|41               ; light ; in_m0_8    ;
+; N/A   ; None         ; 32.400 ns  ; 74194:inst115|41               ; light ; in_h1_4    ;
+; N/A   ; None         ; 32.300 ns  ; 74194:inst115|41               ; light ; in_h0_1    ;
+; N/A   ; None         ; 32.200 ns  ; 74194:inst115|41               ; light ; in_m0_2    ;
+; N/A   ; None         ; 31.900 ns  ; 74194:inst115|41               ; light ; in_h1_8    ;
+; N/A   ; None         ; 31.800 ns  ; 74194:inst115|41               ; light ; in_m1_4    ;
+; N/A   ; None         ; 31.600 ns  ; 74194:inst115|41               ; light ; in_h0_4    ;
+; N/A   ; None         ; 31.600 ns  ; 74194:inst115|41               ; light ; in_h0_8    ;
+; N/A   ; None         ; 31.600 ns  ; 74194:inst115|41               ; light ; in_h1_2    ;
+; N/A   ; None         ; 31.500 ns  ; 74194:inst115|41               ; light ; in_s1_8    ;
+; N/A   ; None         ; 31.500 ns  ; 74194:inst115|41               ; light ; in_s0_4    ;
+; N/A   ; None         ; 31.300 ns  ; 74194:inst115|41               ; light ; in_m1_2    ;
+; N/A   ; None         ; 31.200 ns  ; 74194:inst115|41               ; light ; in_s1_1    ;
+; N/A   ; None         ; 30.700 ns  ; startmod:inst220|74193:inst|24 ; s0_8  ; clk        ;
+; N/A   ; None         ; 30.600 ns  ; 74194:inst115|41               ; light ; in_h1_1    ;
+; N/A   ; None         ; 30.500 ns  ; 74194:inst115|41               ; light ; in_s1_2    ;
+; N/A   ; None         ; 30.400 ns  ; startmod:inst220|74193:inst|24 ; m1_8  ; clk        ;
+; N/A   ; None         ; 30.400 ns  ; 74194:inst115|41               ; light ; in_s0_8    ;
+; N/A   ; None         ; 30.400 ns  ; 74194:inst115|41               ; light ; in_m0_1    ;
+; N/A   ; None         ; 30.300 ns  ; 74194:inst115|41               ; light ; in_s0_2    ;
+; N/A   ; None         ; 30.300 ns  ; 74194:inst115|41               ; light ; in_s0_1    ;
+; N/A   ; None         ; 30.200 ns  ; 74194:inst115|41               ; light ; in_m1_8    ;
+; N/A   ; None         ; 30.100 ns  ; 74194:inst115|41               ; light ; in_s1_4    ;
+; N/A   ; None         ; 30.000 ns  ; startmod:inst220|74193:inst|24 ; s1_8  ; clk        ;
+; N/A   ; None         ; 30.000 ns  ; startmod:inst220|74193:inst|24 ; s1_2  ; clk        ;
+; N/A   ; None         ; 29.900 ns  ; startmod:inst220|74193:inst|24 ; s1_1  ; clk        ;
+; N/A   ; None         ; 29.900 ns  ; startmod:inst220|74193:inst|25 ; s0_8  ; clk        ;
+; N/A   ; None         ; 29.900 ns  ; startmod:inst220|74193:inst|24 ; s0_2  ; clk        ;
+; N/A   ; None         ; 29.800 ns  ; startmod:inst220|74193:inst|24 ; s0_1  ; clk        ;
+; N/A   ; None         ; 29.600 ns  ; startmod:inst220|74193:inst|25 ; m1_8  ; clk        ;
+; N/A   ; None         ; 29.600 ns  ; 74194:inst115|41               ; light ; in_h0_2    ;
+; N/A   ; None         ; 29.300 ns  ; startmod:inst220|74193:inst|24 ; m1_1  ; clk        ;
+; N/A   ; None         ; 29.300 ns  ; startmod:inst220|74193:inst|24 ; m0_4  ; clk        ;
+; N/A   ; None         ; 29.300 ns  ; startmod:inst220|74193:inst|24 ; m0_2  ; clk        ;
+; N/A   ; None         ; 29.300 ns  ; startmod:inst220|74193:inst|24 ; m0_1  ; clk        ;
+; N/A   ; None         ; 29.200 ns  ; startmod:inst220|74193:inst|24 ; h0_1  ; clk        ;
+; N/A   ; None         ; 29.200 ns  ; startmod:inst220|74193:inst|24 ; h0_2  ; clk        ;
+; N/A   ; None         ; 29.200 ns  ; startmod:inst220|74193:inst|25 ; s1_8  ; clk        ;
+; N/A   ; None         ; 29.200 ns  ; startmod:inst220|74193:inst|25 ; s1_2  ; clk        ;
+; N/A   ; None         ; 29.100 ns  ; startmod:inst220|74193:inst|24 ; m0_8  ; clk        ;
+; N/A   ; None         ; 29.100 ns  ; startmod:inst220|74193:inst|25 ; s1_1  ; clk        ;
+; N/A   ; None         ; 29.100 ns  ; startmod:inst220|74193:inst|25 ; s0_2  ; clk        ;
+; N/A   ; None         ; 29.000 ns  ; startmod:inst220|74193:inst|24 ; m1_4  ; clk        ;
+; N/A   ; None         ; 29.000 ns  ; startmod:inst220|74193:inst|25 ; s0_1  ; clk        ;
+; N/A   ; None         ; 28.900 ns  ; startmod:inst220|74193:inst|24 ; s1_4  ; clk        ;
+; N/A   ; None         ; 28.900 ns  ; startmod:inst220|74193:inst|24 ; s0_4  ; clk        ;
+; N/A   ; None         ; 28.800 ns  ; 74192:inst|25                  ; s0_2  ; mode       ;
+; N/A   ; None         ; 28.600 ns  ; startmod:inst220|74193:inst|24 ; m1_2  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|25 ; m1_1  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|24 ; h1_4  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|24 ; h1_2  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|24 ; h1_1  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|25 ; m0_4  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|25 ; m0_2  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; startmod:inst220|74193:inst|25 ; m0_1  ; clk        ;
+; N/A   ; None         ; 28.500 ns  ; 74192:inst59|25                ; s0_2  ; mode       ;
+; N/A   ; None         ; 28.400 ns  ; startmod:inst220|74193:inst|25 ; h0_1  ; clk        ;
+; N/A   ; None         ; 28.400 ns  ; startmod:inst220|74193:inst|25 ; h0_2  ; clk        ;
+; N/A   ; None         ; 28.300 ns  ; startmod:inst220|74193:inst|24 ; h0_8  ; clk        ;
+; N/A   ; None         ; 28.300 ns  ; startmod:inst220|74193:inst|24 ; h1_8  ; clk        ;
+; N/A   ; None         ; 28.300 ns  ; startmod:inst220|74193:inst|25 ; m0_8  ; clk        ;
+; N/A   ; None         ; 28.200 ns  ; startmod:inst220|74193:inst|25 ; m1_4  ; clk        ;
+; N/A   ; None         ; 28.100 ns  ; startmod:inst220|74193:inst|25 ; s1_4  ; clk        ;
+; N/A   ; None         ; 28.100 ns  ; startmod:inst220|74193:inst|25 ; s0_4  ; clk        ;
+; N/A   ; None         ; 27.800 ns  ; startmod:inst220|74193:inst|25 ; m1_2  ; clk        ;
+; N/A   ; None         ; 27.700 ns  ; startmod:inst220|74193:inst|25 ; h1_4  ; clk        ;
+; N/A   ; None         ; 27.700 ns  ; startmod:inst220|74193:inst|25 ; h1_2  ; clk        ;
+; N/A   ; None         ; 27.700 ns  ; startmod:inst220|74193:inst|25 ; h1_1  ; clk        ;
+; N/A   ; None         ; 27.500 ns  ; startmod:inst220|74193:inst|24 ; h0_4  ; clk        ;
+; N/A   ; None         ; 27.500 ns  ; startmod:inst220|74193:inst|25 ; h0_8  ; clk        ;
+; N/A   ; None         ; 27.500 ns  ; startmod:inst220|74193:inst|25 ; h1_8  ; clk        ;
+; N/A   ; None         ; 27.300 ns  ; startmod:inst220|74193:inst|26 ; s0_8  ; clk        ;
+; N/A   ; None         ; 27.000 ns  ; startmod:inst220|74193:inst|26 ; m1_8  ; clk        ;
+; N/A   ; None         ; 26.700 ns  ; startmod:inst220|74193:inst|25 ; h0_4  ; clk        ;
+; N/A   ; None         ; 26.600 ns  ; startmod:inst220|74193:inst|26 ; s1_8  ; clk        ;
+; N/A   ; None         ; 26.600 ns  ; startmod:inst220|74193:inst|26 ; s1_2  ; clk        ;
+; N/A   ; None         ; 26.500 ns  ; startmod:inst220|74193:inst|26 ; s1_1  ; clk        ;
+; N/A   ; None         ; 26.500 ns  ; startmod:inst220|74193:inst|26 ; s0_2  ; clk        ;
+; N/A   ; None         ; 26.400 ns  ; startmod:inst220|74193:inst|26 ; s0_1  ; clk        ;
+; N/A   ; None         ; 25.900 ns  ; startmod:inst220|74193:inst|26 ; m1_1  ; clk        ;
+; N/A   ; None         ; 25.900 ns  ; startmod:inst220|74193:inst|26 ; m0_4  ; clk        ;
+; N/A   ; None         ; 25.900 ns  ; startmod:inst220|74193:inst|26 ; m0_2  ; clk        ;
+; N/A   ; None         ; 25.900 ns  ; startmod:inst220|74193:inst|26 ; m0_1  ; clk        ;
+; N/A   ; None         ; 25.800 ns  ; startmod:inst220|74193:inst|26 ; h0_1  ; clk        ;
+; N/A   ; None         ; 25.800 ns  ; startmod:inst220|74193:inst|26 ; h0_2  ; clk        ;
+; N/A   ; None         ; 25.700 ns  ; startmod:inst220|74193:inst|26 ; m0_8  ; clk        ;
+; N/A   ; None         ; 25.600 ns  ; startmod:inst220|74193:inst|26 ; m1_4  ; clk        ;
+; N/A   ; None         ; 25.500 ns  ; startmod:inst220|74193:inst|26 ; s1_4  ; clk        ;
+; N/A   ; None         ; 25.500 ns  ; startmod:inst220|74193:inst|26 ; s0_4  ; clk        ;
+; N/A   ; None         ; 25.500 ns  ; 74194:inst115|41               ; light ; timing     ;
+; N/A   ; None         ; 25.300 ns  ; 74192:inst|26                  ; s0_1  ; mode       ;
+; N/A   ; None         ; 25.200 ns  ; startmod:inst220|74193:inst|26 ; m1_2  ; clk        ;
+; N/A   ; None         ; 25.100 ns  ; startmod:inst220|74193:inst|26 ; h1_4  ; clk        ;
+; N/A   ; None         ; 25.100 ns  ; startmod:inst220|74193:inst|26 ; h1_2  ; clk        ;
+; N/A   ; None         ; 25.100 ns  ; startmod:inst220|74193:inst|26 ; h1_1  ; clk        ;
+; N/A   ; None         ; 24.900 ns  ; startmod:inst220|74193:inst|26 ; h0_8  ; clk        ;
+; N/A   ; None         ; 24.900 ns  ; startmod:inst220|74193:inst|26 ; h1_8  ; clk        ;
+; N/A   ; None         ; 24.100 ns  ; startmod:inst220|74193:inst|26 ; h0_4  ; clk        ;
+; N/A   ; None         ; 23.800 ns  ; 74192:inst59|26                ; s0_1  ; mode       ;
++-------+--------------+------------+--------------------------------+-------+------------+
+
+
++------------------------------------------------------------+
+; tpd                                                        ;
++-------+-------------------+-----------------+------+-------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To    ;
++-------+-------------------+-----------------+------+-------+
+; N/A   ; None              ; 24.700 ns       ; clk  ; s0_8  ;
+; N/A   ; None              ; 24.400 ns       ; clk  ; m1_8  ;
+; N/A   ; None              ; 24.000 ns       ; clk  ; s1_8  ;
+; N/A   ; None              ; 24.000 ns       ; clk  ; s1_2  ;
+; N/A   ; None              ; 23.900 ns       ; clk  ; s1_1  ;
+; N/A   ; None              ; 23.900 ns       ; clk  ; s0_2  ;
+; N/A   ; None              ; 23.800 ns       ; clk  ; s0_1  ;
+; N/A   ; None              ; 23.300 ns       ; clk  ; m1_1  ;
+; N/A   ; None              ; 23.300 ns       ; clk  ; m0_4  ;
+; N/A   ; None              ; 23.300 ns       ; clk  ; m0_2  ;
+; N/A   ; None              ; 23.300 ns       ; clk  ; m0_1  ;
+; N/A   ; None              ; 23.200 ns       ; clk  ; h0_1  ;
+; N/A   ; None              ; 23.200 ns       ; clk  ; h0_2  ;
+; N/A   ; None              ; 23.100 ns       ; clk  ; m0_8  ;
+; N/A   ; None              ; 23.000 ns       ; clk  ; m1_4  ;
+; N/A   ; None              ; 22.900 ns       ; clk  ; s1_4  ;
+; N/A   ; None              ; 22.900 ns       ; clk  ; s0_4  ;
+; N/A   ; None              ; 22.600 ns       ; clk  ; m1_2  ;
+; N/A   ; None              ; 22.500 ns       ; clk  ; h1_4  ;
+; N/A   ; None              ; 22.500 ns       ; clk  ; h1_2  ;
+; N/A   ; None              ; 22.500 ns       ; clk  ; h1_1  ;
+; N/A   ; None              ; 22.300 ns       ; clk  ; h0_8  ;
+; N/A   ; None              ; 22.300 ns       ; clk  ; h1_8  ;
+; N/A   ; None              ; 21.500 ns       ; clk  ; h0_4  ;
+; N/A   ; None              ; 18.000 ns       ; clk  ; light ;
++-------+-------------------+-----------------+------+-------+
+
+
++---------------------------------------------------------------------+
+; th                                                                  ;
++---------------+-------------+------------+-------+-------+----------+
+; Minimum Slack ; Required th ; Actual th  ; From  ; To    ; To Clock ;
++---------------+-------------+------------+-------+-------+----------+
+; N/A           ; None        ; 129.700 ns ; reset ; inst4 ; clk      ;
+; N/A           ; None        ; 129.600 ns ; mode  ; inst4 ; clk      ;
+; N/A           ; None        ; 122.000 ns ; clk   ; inst4 ; clk      ;
+; N/A           ; None        ; 117.100 ns ; reset ; inst4 ; mode     ;
+; N/A           ; None        ; 117.000 ns ; mode  ; inst4 ; mode     ;
+; N/A           ; None        ; 109.400 ns ; clk   ; inst4 ; mode     ;
+; N/A           ; None        ; 2.200 ns   ; reset ; inst4 ; reset    ;
+; N/A           ; None        ; 2.100 ns   ; mode  ; inst4 ; reset    ;
+; N/A           ; None        ; -5.500 ns  ; clk   ; inst4 ; reset    ;
++---------------+-------------+------------+-------+-------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Jul 05 12:20:57 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off clock -c clock
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Info: Found combinational loop of 2 nodes
+    Info: Node "startmod:inst220|74193:inst|28"
+    Info: Node "startmod:inst220|74193:inst|50~22"
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+    Info: Assuming node "mode" is an undefined clock
+    Info: Assuming node "in_s1_1" is an undefined clock
+    Info: Assuming node "in_h1_4" is an undefined clock
+    Info: Assuming node "in_s1_4" is an undefined clock
+    Info: Assuming node "in_s0_8" is an undefined clock
+    Info: Assuming node "in_m1_1" is an undefined clock
+    Info: Assuming node "in_h0_1" is an undefined clock
+    Info: Assuming node "in_m1_2" is an undefined clock
+    Info: Assuming node "in_s0_2" is an undefined clock
+    Info: Assuming node "in_m0_4" is an undefined clock
+    Info: Assuming node "in_s1_8" is an undefined clock
+    Info: Assuming node "in_h0_4" is an undefined clock
+    Info: Assuming node "in_h1_8" is an undefined clock
+    Info: Assuming node "in_s0_4" is an undefined clock
+    Info: Assuming node "in_m1_4" is an undefined clock
+    Info: Assuming node "in_h0_8" is an undefined clock
+    Info: Assuming node "in_s1_2" is an undefined clock
+    Info: Assuming node "in_m0_2" is an undefined clock
+    Info: Assuming node "in_m0_8" is an undefined clock
+    Info: Assuming node "in_h1_2" is an undefined clock
+    Info: Assuming node "in_h0_2" is an undefined clock
+    Info: Assuming node "in_h1_1" is an undefined clock
+    Info: Assuming node "in_m0_1" is an undefined clock
+    Info: Assuming node "in_m1_8" is an undefined clock
+    Info: Assuming node "in_s0_1" is an undefined clock
+    Info: Assuming node "timing" is an undefined clock
+    Info: Assuming node "reset" is an undefined clock
+Warning: Found 148 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "inst68~114" as buffer
+    Info: Detected gated clock "74192:inst69|72~9" as buffer
+    Info: Detected gated clock "74192:inst65|22~25" as buffer
+    Info: Detected gated clock "inst89~322" as buffer
+    Info: Detected gated clock "inst89~319" as buffer
+    Info: Detected gated clock "inst89~316" as buffer
+    Info: Detected gated clock "inst89~313" as buffer
+    Info: Detected gated clock "inst22~35" as buffer
+    Info: Detected gated clock "74192:inst58|21" as buffer
+    Info: Detected gated clock "74192:inst58|73" as buffer
+    Info: Detected ripple clock "74192:inst58|25" as buffer
+    Info: Detected gated clock "74192:inst58|21~2" as buffer
+    Info: Detected ripple clock "74192:inst58|24" as buffer
+    Info: Detected gated clock "74192:inst2|51~10" as buffer
+    Info: Detected gated clock "74192:inst3|51~10" as buffer
+    Info: Detected gated clock "74192:inst69|22~23" as buffer
+    Info: Detected gated clock "74192:inst11|21" as buffer
+    Info: Detected gated clock "74192:inst60|22~25" as buffer
+    Info: Detected gated clock "74192:inst1|51~10" as buffer
+    Info: Detected gated clock "inst158~41" as buffer
+    Info: Detected gated clock "inst157~43" as buffer
+    Info: Detected gated clock "74192:inst59|72~10" as buffer
+    Info: Detected gated clock "inst17" as buffer
+    Info: Detected gated clock "inst22" as buffer
+    Info: Detected ripple clock "74192:inst58|26" as buffer
+    Info: Detected gated clock "74192:inst58|100" as buffer
+    Info: Detected ripple clock "74192:inst58|23" as buffer
+    Info: Detected gated clock "inst89~276" as buffer
+    Info: Detected gated clock "inst89~275" as buffer
+    Info: Detected gated clock "inst89~274" as buffer
+    Info: Detected gated clock "inst89~273" as buffer
+    Info: Detected gated clock "inst89~298" as buffer
+    Info: Detected gated clock "inst89~299" as buffer
+    Info: Detected gated clock "inst89~300" as buffer
+    Info: Detected gated clock "inst89~301" as buffer
+    Info: Detected gated clock "inst68~116" as buffer
+    Info: Detected gated clock "74192:inst66|72~9" as buffer
+    Info: Detected gated clock "74192:inst70|72~22" as buffer
+    Info: Detected gated clock "inst68~108" as buffer
+    Info: Detected ripple clock "inst182" as buffer
+    Info: Detected gated clock "74192:inst66|71~32" as buffer
+    Info: Detected ripple clock "74192:inst66|25" as buffer
+    Info: Detected gated clock "74192:inst2|73" as buffer
+    Info: Detected ripple clock "74192:inst2|25" as buffer
+    Info: Detected gated clock "74192:inst65|28" as buffer
+    Info: Detected ripple clock "74192:inst66|26" as buffer
+    Info: Detected gated clock "74192:inst11|76" as buffer
+    Info: Detected ripple clock "74192:inst2|26" as buffer
+    Info: Detected gated clock "74192:inst66|71" as buffer
+    Info: Detected ripple clock "74192:inst66|24" as buffer
+    Info: Detected gated clock "74192:inst2|51" as buffer
+    Info: Detected ripple clock "74192:inst2|24" as buffer
+    Info: Detected gated clock "74192:inst66|22" as buffer
+    Info: Detected ripple clock "74192:inst66|23" as buffer
+    Info: Detected gated clock "74192:inst2|100~24" as buffer
+    Info: Detected ripple clock "74192:inst2|23" as buffer
+    Info: Detected gated clock "74192:inst66|28" as buffer
+    Info: Detected ripple clock "74192:inst69|26" as buffer
+    Info: Detected ripple clock "inst32" as buffer
+    Info: Detected ripple clock "74192:inst13|26" as buffer
+    Info: Detected gated clock "74192:inst69|71~32" as buffer
+    Info: Detected ripple clock "74192:inst69|25" as buffer
+    Info: Detected gated clock "74192:inst13|73" as buffer
+    Info: Detected ripple clock "74192:inst13|25" as buffer
+    Info: Detected gated clock "74192:inst69|71" as buffer
+    Info: Detected ripple clock "74192:inst69|24" as buffer
+    Info: Detected gated clock "74192:inst13|51~9" as buffer
+    Info: Detected ripple clock "74192:inst13|24" as buffer
+    Info: Detected gated clock "74192:inst69|22" as buffer
+    Info: Detected ripple clock "74192:inst69|23" as buffer
+    Info: Detected gated clock "74192:inst13|100" as buffer
+    Info: Detected ripple clock "74192:inst13|23" as buffer
+    Info: Detected gated clock "74192:inst70|22" as buffer
+    Info: Detected ripple clock "74192:inst70|23" as buffer
+    Info: Detected gated clock "74192:inst3|100~24" as buffer
+    Info: Detected ripple clock "74192:inst3|23" as buffer
+    Info: Detected gated clock "74192:inst70|71" as buffer
+    Info: Detected ripple clock "74192:inst70|24" as buffer
+    Info: Detected gated clock "74192:inst3|51" as buffer
+    Info: Detected ripple clock "74192:inst3|24" as buffer
+    Info: Detected gated clock "74192:inst70|74" as buffer
+    Info: Detected ripple clock "74192:inst70|25" as buffer
+    Info: Detected gated clock "74192:inst3|73" as buffer
+    Info: Detected ripple clock "74192:inst3|25" as buffer
+    Info: Detected gated clock "74192:inst69|28" as buffer
+    Info: Detected ripple clock "74192:inst70|26" as buffer
+    Info: Detected gated clock "74192:inst13|77" as buffer
+    Info: Detected ripple clock "74192:inst3|26" as buffer
+    Info: Detected gated clock "74192:inst65|71" as buffer
+    Info: Detected ripple clock "74192:inst65|24" as buffer
+    Info: Detected gated clock "74192:inst11|51~9" as buffer
+    Info: Detected ripple clock "74192:inst11|24" as buffer
+    Info: Detected gated clock "74192:inst65|22~24" as buffer
+    Info: Detected ripple clock "74192:inst65|23" as buffer
+    Info: Detected gated clock "74192:inst11|100" as buffer
+    Info: Detected ripple clock "74192:inst11|23" as buffer
+    Info: Detected gated clock "74192:inst65|71~39" as buffer
+    Info: Detected ripple clock "74192:inst65|25" as buffer
+    Info: Detected gated clock "74192:inst11|73" as buffer
+    Info: Detected ripple clock "74192:inst11|25" as buffer
+    Info: Detected gated clock "74192:inst60|28" as buffer
+    Info: Detected ripple clock "74192:inst65|26" as buffer
+    Info: Detected ripple clock "inst31" as buffer
+    Info: Detected ripple clock "74192:inst11|26" as buffer
+    Info: Detected gated clock "74192:inst60|71" as buffer
+    Info: Detected ripple clock "74192:inst60|24" as buffer
+    Info: Detected gated clock "74192:inst1|51" as buffer
+    Info: Detected ripple clock "74192:inst1|24" as buffer
+    Info: Detected gated clock "74192:inst60|22~26" as buffer
+    Info: Detected ripple clock "74192:inst60|23" as buffer
+    Info: Detected gated clock "74192:inst1|100~24" as buffer
+    Info: Detected ripple clock "74192:inst1|23" as buffer
+    Info: Detected gated clock "74192:inst60|71~39" as buffer
+    Info: Detected ripple clock "74192:inst60|25" as buffer
+    Info: Detected gated clock "74192:inst1|73" as buffer
+    Info: Detected ripple clock "74192:inst1|25" as buffer
+    Info: Detected gated clock "74192:inst59|28" as buffer
+    Info: Detected ripple clock "74192:inst60|26" as buffer
+    Info: Detected gated clock "74192:inst|76" as buffer
+    Info: Detected ripple clock "74192:inst1|26" as buffer
+    Info: Detected gated clock "74192:inst59|71" as buffer
+    Info: Detected ripple clock "74192:inst59|24" as buffer
+    Info: Detected gated clock "74192:inst|51~11" as buffer
+    Info: Detected ripple clock "74192:inst|24" as buffer
+    Info: Detected gated clock "startmod:inst220|74193:inst|22~22" as buffer
+    Info: Detected gated clock "74192:inst59|22~23" as buffer
+    Info: Detected ripple clock "74192:inst59|23" as buffer
+    Info: Detected gated clock "74192:inst|100" as buffer
+    Info: Detected ripple clock "74192:inst|23" as buffer
+    Info: Detected ripple clock "startmod:inst220|74193:inst|23" as buffer
+    Info: Detected gated clock "startmod:inst220|74193:inst|50~22" as buffer
+    Info: Detected ripple clock "startmod:inst220|74193:inst|24" as buffer
+    Info: Detected gated clock "74192:inst59|74" as buffer
+    Info: Detected ripple clock "74192:inst59|25" as buffer
+    Info: Detected gated clock "74192:inst|73" as buffer
+    Info: Detected ripple clock "74192:inst|25" as buffer
+    Info: Detected gated clock "startmod:inst220|74193:inst|6~4" as buffer
+    Info: Detected ripple clock "startmod:inst220|74193:inst|25" as buffer
+    Info: Detected gated clock "startmod:inst220|74193:inst|28" as buffer
+    Info: Detected gated clock "inst61" as buffer
+    Info: Detected ripple clock "74192:inst59|26" as buffer
+    Info: Detected gated clock "inst9" as buffer
+    Info: Detected ripple clock "74192:inst|26" as buffer
+    Info: Detected gated clock "startmod:inst220|inst3" as buffer
+    Info: Detected ripple clock "startmod:inst220|74193:inst|26" as buffer
+    Info: Detected gated clock "inst117" as buffer
+    Info: Detected gated clock "inst64" as buffer
+    Info: Detected ripple clock "74194:inst115|41" as buffer
+Info: Clock "clk" has Internal fmax of 8.37 MHz between source register "74192:inst3|23" and destination register "inst4" (period= 119.5 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+        Info: 2: + IC(0.900 ns) + CELL(1.600 ns) = 2.500 ns; Loc. = LC2_B36; Fanout = 2; COMB Node = 'inst22'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 2.400 ns ( 66.67 % )
+        Info: Total interconnect delay = 1.200 ns ( 33.33 % )
+    Info: - Smallest clock skew is -114.800 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 16.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+            Info: 2: + IC(0.000 ns) + CELL(7.500 ns) = 12.400 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+                Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+                Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+            Info: 3: + IC(2.200 ns) + CELL(1.700 ns) = 16.300 ns; Loc. = LC3_B36; Fanout = 1; COMB Node = 'inst17'
+            Info: 4: + IC(0.300 ns) + CELL(0.000 ns) = 16.600 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+            Info: Total cell delay = 14.100 ns ( 84.94 % )
+            Info: Total interconnect delay = 2.500 ns ( 15.06 % )
+        Info: - Longest clock path from clock "clk" to source register is 131.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+            Info: 2: + IC(2.800 ns) + CELL(1.400 ns) = 9.100 ns; Loc. = LC4_B3; Fanout = 1; COMB Node = 'startmod:inst220|inst3'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 9.900 ns; Loc. = LC6_B3; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|26'
+            Info: 4: + IC(0.300 ns) + CELL(1.600 ns) = 11.800 ns; Loc. = LC5_B3; Fanout = 1; COMB Node = 'startmod:inst220|74193:inst|6~4'
+            Info: 5: + IC(0.300 ns) + CELL(0.500 ns) = 12.600 ns; Loc. = LC3_B3; Fanout = 10; REG Node = 'startmod:inst220|74193:inst|25'
+            Info: 6: + IC(0.000 ns) + CELL(1.900 ns) = 14.500 ns; Loc. = LC8_B3; Fanout = 3; COMB LOOP Node = 'startmod:inst220|74193:inst|50~22'
+                Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+                Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+            Info: 7: + IC(1.500 ns) + CELL(0.500 ns) = 16.500 ns; Loc. = LC8_B15; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|24'
+            Info: 8: + IC(0.000 ns) + CELL(1.900 ns) = 18.400 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+                Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+                Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+            Info: 9: + IC(2.300 ns) + CELL(1.600 ns) = 22.300 ns; Loc. = LC6_D9; Fanout = 5; COMB Node = 'inst9'
+            Info: 10: + IC(2.800 ns) + CELL(0.500 ns) = 25.600 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+            Info: 11: + IC(0.300 ns) + CELL(1.400 ns) = 27.300 ns; Loc. = LC4_B33; Fanout = 1; COMB Node = '74192:inst|73'
+            Info: 12: + IC(1.300 ns) + CELL(0.500 ns) = 29.100 ns; Loc. = LC2_B27; Fanout = 4; REG Node = '74192:inst|25'
+            Info: 13: + IC(1.100 ns) + CELL(1.400 ns) = 31.600 ns; Loc. = LC2_B33; Fanout = 2; COMB Node = '74192:inst|51~11'
+            Info: 14: + IC(1.400 ns) + CELL(0.500 ns) = 33.500 ns; Loc. = LC8_B23; Fanout = 4; REG Node = '74192:inst|24'
+            Info: 15: + IC(0.300 ns) + CELL(1.600 ns) = 35.400 ns; Loc. = LC2_B23; Fanout = 1; COMB Node = '74192:inst|100'
+            Info: 16: + IC(1.300 ns) + CELL(0.500 ns) = 37.200 ns; Loc. = LC4_B25; Fanout = 7; REG Node = '74192:inst|23'
+            Info: 17: + IC(1.200 ns) + CELL(1.400 ns) = 39.800 ns; Loc. = LC3_B33; Fanout = 2; COMB Node = '74192:inst|76'
+            Info: 18: + IC(1.400 ns) + CELL(0.500 ns) = 41.700 ns; Loc. = LC2_B24; Fanout = 4; REG Node = '74192:inst1|26'
+            Info: 19: + IC(1.200 ns) + CELL(1.400 ns) = 44.300 ns; Loc. = LC8_B33; Fanout = 3; COMB Node = '74192:inst1|51~10'
+            Info: 20: + IC(1.300 ns) + CELL(1.600 ns) = 47.200 ns; Loc. = LC1_B31; Fanout = 1; COMB Node = '74192:inst1|51'
+            Info: 21: + IC(1.300 ns) + CELL(0.500 ns) = 49.000 ns; Loc. = LC1_B29; Fanout = 5; REG Node = '74192:inst1|24'
+            Info: 22: + IC(1.100 ns) + CELL(1.700 ns) = 51.800 ns; Loc. = LC2_B31; Fanout = 1; COMB Node = '74192:inst1|100~24'
+            Info: 23: + IC(2.000 ns) + CELL(0.500 ns) = 54.300 ns; Loc. = LC4_C35; Fanout = 6; REG Node = '74192:inst1|23'
+            Info: 24: + IC(1.900 ns) + CELL(1.600 ns) = 57.800 ns; Loc. = LC3_B31; Fanout = 1; COMB Node = '74192:inst1|73'
+            Info: 25: + IC(0.300 ns) + CELL(0.500 ns) = 58.600 ns; Loc. = LC4_B31; Fanout = 7; REG Node = '74192:inst1|25'
+            Info: 26: + IC(1.000 ns) + CELL(0.500 ns) = 60.100 ns; Loc. = LC1_B36; Fanout = 16; REG Node = 'inst31'
+            Info: 27: + IC(2.100 ns) + CELL(0.500 ns) = 62.700 ns; Loc. = LC3_C28; Fanout = 9; REG Node = '74192:inst11|26'
+            Info: 28: + IC(2.900 ns) + CELL(1.400 ns) = 67.000 ns; Loc. = LC6_A8; Fanout = 1; COMB Node = '74192:inst11|73'
+            Info: 29: + IC(0.300 ns) + CELL(0.500 ns) = 67.800 ns; Loc. = LC5_A8; Fanout = 5; REG Node = '74192:inst11|25'
+            Info: 30: + IC(0.300 ns) + CELL(1.400 ns) = 69.500 ns; Loc. = LC3_A8; Fanout = 1; COMB Node = '74192:inst11|51~9'
+            Info: 31: + IC(1.300 ns) + CELL(0.500 ns) = 71.300 ns; Loc. = LC7_A16; Fanout = 4; REG Node = '74192:inst11|24'
+            Info: 32: + IC(1.500 ns) + CELL(1.400 ns) = 74.200 ns; Loc. = LC7_A8; Fanout = 1; COMB Node = '74192:inst11|21'
+            Info: 33: + IC(0.300 ns) + CELL(1.400 ns) = 75.900 ns; Loc. = LC4_A8; Fanout = 1; COMB Node = '74192:inst11|100'
+            Info: 34: + IC(1.400 ns) + CELL(0.500 ns) = 77.800 ns; Loc. = LC1_A18; Fanout = 8; REG Node = '74192:inst11|23'
+            Info: 35: + IC(1.600 ns) + CELL(1.400 ns) = 80.800 ns; Loc. = LC2_A8; Fanout = 1; COMB Node = '74192:inst11|76'
+            Info: 36: + IC(1.100 ns) + CELL(0.500 ns) = 82.400 ns; Loc. = LC6_A1; Fanout = 4; REG Node = '74192:inst2|26'
+            Info: 37: + IC(3.000 ns) + CELL(1.400 ns) = 86.800 ns; Loc. = LC3_B32; Fanout = 3; COMB Node = '74192:inst2|51~10'
+            Info: 38: + IC(0.300 ns) + CELL(1.600 ns) = 88.700 ns; Loc. = LC5_B32; Fanout = 1; COMB Node = '74192:inst2|51'
+            Info: 39: + IC(2.100 ns) + CELL(0.500 ns) = 91.300 ns; Loc. = LC1_A23; Fanout = 5; REG Node = '74192:inst2|24'
+            Info: 40: + IC(2.000 ns) + CELL(1.600 ns) = 94.900 ns; Loc. = LC4_B32; Fanout = 1; COMB Node = '74192:inst2|100~24'
+            Info: 41: + IC(0.300 ns) + CELL(0.500 ns) = 95.700 ns; Loc. = LC1_B32; Fanout = 6; REG Node = '74192:inst2|23'
+            Info: 42: + IC(0.300 ns) + CELL(1.600 ns) = 97.600 ns; Loc. = LC2_B32; Fanout = 1; COMB Node = '74192:inst2|73'
+            Info: 43: + IC(1.900 ns) + CELL(0.500 ns) = 100.000 ns; Loc. = LC7_A34; Fanout = 7; REG Node = '74192:inst2|25'
+            Info: 44: + IC(1.900 ns) + CELL(0.500 ns) = 102.400 ns; Loc. = LC1_B30; Fanout = 14; REG Node = 'inst32'
+            Info: 45: + IC(1.300 ns) + CELL(0.500 ns) = 104.200 ns; Loc. = LC1_B22; Fanout = 7; REG Node = '74192:inst13|26'
+            Info: 46: + IC(0.300 ns) + CELL(1.400 ns) = 105.900 ns; Loc. = LC4_B22; Fanout = 1; COMB Node = '74192:inst13|73'
+            Info: 47: + IC(1.900 ns) + CELL(0.500 ns) = 108.300 ns; Loc. = LC2_B2; Fanout = 4; REG Node = '74192:inst13|25'
+            Info: 48: + IC(2.300 ns) + CELL(1.400 ns) = 112.000 ns; Loc. = LC2_B22; Fanout = 2; COMB Node = '74192:inst13|51~9'
+            Info: 49: + IC(1.200 ns) + CELL(0.500 ns) = 113.700 ns; Loc. = LC8_B20; Fanout = 5; REG Node = '74192:inst13|24'
+            Info: 50: + IC(0.300 ns) + CELL(1.600 ns) = 115.600 ns; Loc. = LC6_B20; Fanout = 1; COMB Node = '74192:inst13|100'
+            Info: 51: + IC(1.400 ns) + CELL(0.500 ns) = 117.500 ns; Loc. = LC2_B34; Fanout = 7; REG Node = '74192:inst13|23'
+            Info: 52: + IC(1.500 ns) + CELL(1.400 ns) = 120.400 ns; Loc. = LC6_B22; Fanout = 2; COMB Node = '74192:inst13|77'
+            Info: 53: + IC(1.900 ns) + CELL(0.500 ns) = 122.800 ns; Loc. = LC2_B12; Fanout = 4; REG Node = '74192:inst3|26'
+            Info: 54: + IC(1.900 ns) + CELL(1.400 ns) = 126.100 ns; Loc. = LC3_B22; Fanout = 3; COMB Node = '74192:inst3|51~10'
+            Info: 55: + IC(1.900 ns) + CELL(1.400 ns) = 129.400 ns; Loc. = LC3_B11; Fanout = 1; COMB Node = '74192:inst3|100~24'
+            Info: 56: + IC(2.000 ns) + CELL(0.000 ns) = 131.400 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+            Info: Total cell delay = 60.200 ns ( 45.81 % )
+            Info: Total interconnect delay = 71.200 ns ( 54.19 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+Info: Clock "mode" has Internal fmax of 8.73 MHz between source register "74192:inst3|23" and destination register "inst4" (period= 114.5 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+        Info: 2: + IC(0.900 ns) + CELL(1.600 ns) = 2.500 ns; Loc. = LC2_B36; Fanout = 2; COMB Node = 'inst22'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 2.400 ns ( 66.67 % )
+        Info: Total interconnect delay = 1.200 ns ( 33.33 % )
+    Info: - Smallest clock skew is -109.800 ns
+        Info: + Shortest clock path from clock "mode" to destination register is 9.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 8; CLK Node = 'mode'
+            Info: 2: + IC(2.200 ns) + CELL(1.600 ns) = 8.700 ns; Loc. = LC3_B36; Fanout = 1; COMB Node = 'inst17'
+            Info: 3: + IC(0.300 ns) + CELL(0.000 ns) = 9.000 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+            Info: Total cell delay = 6.500 ns ( 72.22 % )
+            Info: Total interconnect delay = 2.500 ns ( 27.78 % )
+        Info: - Longest clock path from clock "mode" to source register is 118.800 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 8; CLK Node = 'mode'
+            Info: 2: + IC(3.200 ns) + CELL(1.600 ns) = 9.700 ns; Loc. = LC6_D9; Fanout = 5; COMB Node = 'inst9'
+            Info: 3: + IC(2.800 ns) + CELL(0.500 ns) = 13.000 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+            Info: 4: + IC(0.300 ns) + CELL(1.400 ns) = 14.700 ns; Loc. = LC4_B33; Fanout = 1; COMB Node = '74192:inst|73'
+            Info: 5: + IC(1.300 ns) + CELL(0.500 ns) = 16.500 ns; Loc. = LC2_B27; Fanout = 4; REG Node = '74192:inst|25'
+            Info: 6: + IC(1.100 ns) + CELL(1.400 ns) = 19.000 ns; Loc. = LC2_B33; Fanout = 2; COMB Node = '74192:inst|51~11'
+            Info: 7: + IC(1.400 ns) + CELL(0.500 ns) = 20.900 ns; Loc. = LC8_B23; Fanout = 4; REG Node = '74192:inst|24'
+            Info: 8: + IC(0.300 ns) + CELL(1.600 ns) = 22.800 ns; Loc. = LC2_B23; Fanout = 1; COMB Node = '74192:inst|100'
+            Info: 9: + IC(1.300 ns) + CELL(0.500 ns) = 24.600 ns; Loc. = LC4_B25; Fanout = 7; REG Node = '74192:inst|23'
+            Info: 10: + IC(1.200 ns) + CELL(1.400 ns) = 27.200 ns; Loc. = LC3_B33; Fanout = 2; COMB Node = '74192:inst|76'
+            Info: 11: + IC(1.400 ns) + CELL(0.500 ns) = 29.100 ns; Loc. = LC2_B24; Fanout = 4; REG Node = '74192:inst1|26'
+            Info: 12: + IC(1.200 ns) + CELL(1.400 ns) = 31.700 ns; Loc. = LC8_B33; Fanout = 3; COMB Node = '74192:inst1|51~10'
+            Info: 13: + IC(1.300 ns) + CELL(1.600 ns) = 34.600 ns; Loc. = LC1_B31; Fanout = 1; COMB Node = '74192:inst1|51'
+            Info: 14: + IC(1.300 ns) + CELL(0.500 ns) = 36.400 ns; Loc. = LC1_B29; Fanout = 5; REG Node = '74192:inst1|24'
+            Info: 15: + IC(1.100 ns) + CELL(1.700 ns) = 39.200 ns; Loc. = LC2_B31; Fanout = 1; COMB Node = '74192:inst1|100~24'
+            Info: 16: + IC(2.000 ns) + CELL(0.500 ns) = 41.700 ns; Loc. = LC4_C35; Fanout = 6; REG Node = '74192:inst1|23'
+            Info: 17: + IC(1.900 ns) + CELL(1.600 ns) = 45.200 ns; Loc. = LC3_B31; Fanout = 1; COMB Node = '74192:inst1|73'
+            Info: 18: + IC(0.300 ns) + CELL(0.500 ns) = 46.000 ns; Loc. = LC4_B31; Fanout = 7; REG Node = '74192:inst1|25'
+            Info: 19: + IC(1.000 ns) + CELL(0.500 ns) = 47.500 ns; Loc. = LC1_B36; Fanout = 16; REG Node = 'inst31'
+            Info: 20: + IC(2.100 ns) + CELL(0.500 ns) = 50.100 ns; Loc. = LC3_C28; Fanout = 9; REG Node = '74192:inst11|26'
+            Info: 21: + IC(2.900 ns) + CELL(1.400 ns) = 54.400 ns; Loc. = LC6_A8; Fanout = 1; COMB Node = '74192:inst11|73'
+            Info: 22: + IC(0.300 ns) + CELL(0.500 ns) = 55.200 ns; Loc. = LC5_A8; Fanout = 5; REG Node = '74192:inst11|25'
+            Info: 23: + IC(0.300 ns) + CELL(1.400 ns) = 56.900 ns; Loc. = LC3_A8; Fanout = 1; COMB Node = '74192:inst11|51~9'
+            Info: 24: + IC(1.300 ns) + CELL(0.500 ns) = 58.700 ns; Loc. = LC7_A16; Fanout = 4; REG Node = '74192:inst11|24'
+            Info: 25: + IC(1.500 ns) + CELL(1.400 ns) = 61.600 ns; Loc. = LC7_A8; Fanout = 1; COMB Node = '74192:inst11|21'
+            Info: 26: + IC(0.300 ns) + CELL(1.400 ns) = 63.300 ns; Loc. = LC4_A8; Fanout = 1; COMB Node = '74192:inst11|100'
+            Info: 27: + IC(1.400 ns) + CELL(0.500 ns) = 65.200 ns; Loc. = LC1_A18; Fanout = 8; REG Node = '74192:inst11|23'
+            Info: 28: + IC(1.600 ns) + CELL(1.400 ns) = 68.200 ns; Loc. = LC2_A8; Fanout = 1; COMB Node = '74192:inst11|76'
+            Info: 29: + IC(1.100 ns) + CELL(0.500 ns) = 69.800 ns; Loc. = LC6_A1; Fanout = 4; REG Node = '74192:inst2|26'
+            Info: 30: + IC(3.000 ns) + CELL(1.400 ns) = 74.200 ns; Loc. = LC3_B32; Fanout = 3; COMB Node = '74192:inst2|51~10'
+            Info: 31: + IC(0.300 ns) + CELL(1.600 ns) = 76.100 ns; Loc. = LC5_B32; Fanout = 1; COMB Node = '74192:inst2|51'
+            Info: 32: + IC(2.100 ns) + CELL(0.500 ns) = 78.700 ns; Loc. = LC1_A23; Fanout = 5; REG Node = '74192:inst2|24'
+            Info: 33: + IC(2.000 ns) + CELL(1.600 ns) = 82.300 ns; Loc. = LC4_B32; Fanout = 1; COMB Node = '74192:inst2|100~24'
+            Info: 34: + IC(0.300 ns) + CELL(0.500 ns) = 83.100 ns; Loc. = LC1_B32; Fanout = 6; REG Node = '74192:inst2|23'
+            Info: 35: + IC(0.300 ns) + CELL(1.600 ns) = 85.000 ns; Loc. = LC2_B32; Fanout = 1; COMB Node = '74192:inst2|73'
+            Info: 36: + IC(1.900 ns) + CELL(0.500 ns) = 87.400 ns; Loc. = LC7_A34; Fanout = 7; REG Node = '74192:inst2|25'
+            Info: 37: + IC(1.900 ns) + CELL(0.500 ns) = 89.800 ns; Loc. = LC1_B30; Fanout = 14; REG Node = 'inst32'
+            Info: 38: + IC(1.300 ns) + CELL(0.500 ns) = 91.600 ns; Loc. = LC1_B22; Fanout = 7; REG Node = '74192:inst13|26'
+            Info: 39: + IC(0.300 ns) + CELL(1.400 ns) = 93.300 ns; Loc. = LC4_B22; Fanout = 1; COMB Node = '74192:inst13|73'
+            Info: 40: + IC(1.900 ns) + CELL(0.500 ns) = 95.700 ns; Loc. = LC2_B2; Fanout = 4; REG Node = '74192:inst13|25'
+            Info: 41: + IC(2.300 ns) + CELL(1.400 ns) = 99.400 ns; Loc. = LC2_B22; Fanout = 2; COMB Node = '74192:inst13|51~9'
+            Info: 42: + IC(1.200 ns) + CELL(0.500 ns) = 101.100 ns; Loc. = LC8_B20; Fanout = 5; REG Node = '74192:inst13|24'
+            Info: 43: + IC(0.300 ns) + CELL(1.600 ns) = 103.000 ns; Loc. = LC6_B20; Fanout = 1; COMB Node = '74192:inst13|100'
+            Info: 44: + IC(1.400 ns) + CELL(0.500 ns) = 104.900 ns; Loc. = LC2_B34; Fanout = 7; REG Node = '74192:inst13|23'
+            Info: 45: + IC(1.500 ns) + CELL(1.400 ns) = 107.800 ns; Loc. = LC6_B22; Fanout = 2; COMB Node = '74192:inst13|77'
+            Info: 46: + IC(1.900 ns) + CELL(0.500 ns) = 110.200 ns; Loc. = LC2_B12; Fanout = 4; REG Node = '74192:inst3|26'
+            Info: 47: + IC(1.900 ns) + CELL(1.400 ns) = 113.500 ns; Loc. = LC3_B22; Fanout = 3; COMB Node = '74192:inst3|51~10'
+            Info: 48: + IC(1.900 ns) + CELL(1.400 ns) = 116.800 ns; Loc. = LC3_B11; Fanout = 1; COMB Node = '74192:inst3|100~24'
+            Info: 49: + IC(2.000 ns) + CELL(0.000 ns) = 118.800 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+            Info: Total cell delay = 51.900 ns ( 43.69 % )
+            Info: Total interconnect delay = 66.900 ns ( 56.31 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+Info: No valid register-to-register data paths exist for clock "in_s1_1"
+Info: No valid register-to-register data paths exist for clock "in_h1_4"
+Info: No valid register-to-register data paths exist for clock "in_s1_4"
+Info: No valid register-to-register data paths exist for clock "in_s0_8"
+Info: No valid register-to-register data paths exist for clock "in_m1_1"
+Info: No valid register-to-register data paths exist for clock "in_h0_1"
+Info: No valid register-to-register data paths exist for clock "in_m1_2"
+Info: No valid register-to-register data paths exist for clock "in_s0_2"
+Info: No valid register-to-register data paths exist for clock "in_m0_4"
+Info: No valid register-to-register data paths exist for clock "in_s1_8"
+Info: No valid register-to-register data paths exist for clock "in_h0_4"
+Info: No valid register-to-register data paths exist for clock "in_h1_8"
+Info: No valid register-to-register data paths exist for clock "in_s0_4"
+Info: No valid register-to-register data paths exist for clock "in_m1_4"
+Info: No valid register-to-register data paths exist for clock "in_h0_8"
+Info: No valid register-to-register data paths exist for clock "in_s1_2"
+Info: No valid register-to-register data paths exist for clock "in_m0_2"
+Info: No valid register-to-register data paths exist for clock "in_m0_8"
+Info: No valid register-to-register data paths exist for clock "in_h1_2"
+Info: No valid register-to-register data paths exist for clock "in_h0_2"
+Info: No valid register-to-register data paths exist for clock "in_h1_1"
+Info: No valid register-to-register data paths exist for clock "in_m0_1"
+Info: No valid register-to-register data paths exist for clock "in_m1_8"
+Info: No valid register-to-register data paths exist for clock "in_s0_1"
+Info: No valid register-to-register data paths exist for clock "timing"
+Info: No valid register-to-register data paths exist for clock "reset"
+Warning: Circuit may not operate. Detected 87 non-operational path(s) clocked by clock "clk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "startmod:inst220|74193:inst|24" and destination pin or register "inst4" for clock "clk" (Hold time is 121.2 ns)
+    Info: + Largest clock skew is 125.600 ns
+        Info: + Longest clock path from clock "clk" to destination register is 136.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+            Info: 2: + IC(2.800 ns) + CELL(1.400 ns) = 9.100 ns; Loc. = LC4_B3; Fanout = 1; COMB Node = 'startmod:inst220|inst3'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 9.900 ns; Loc. = LC6_B3; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|26'
+            Info: 4: + IC(0.300 ns) + CELL(1.600 ns) = 11.800 ns; Loc. = LC5_B3; Fanout = 1; COMB Node = 'startmod:inst220|74193:inst|6~4'
+            Info: 5: + IC(0.300 ns) + CELL(0.500 ns) = 12.600 ns; Loc. = LC3_B3; Fanout = 10; REG Node = 'startmod:inst220|74193:inst|25'
+            Info: 6: + IC(0.000 ns) + CELL(1.900 ns) = 14.500 ns; Loc. = LC8_B3; Fanout = 3; COMB LOOP Node = 'startmod:inst220|74193:inst|50~22'
+                Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+                Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+            Info: 7: + IC(1.500 ns) + CELL(0.500 ns) = 16.500 ns; Loc. = LC8_B15; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|24'
+            Info: 8: + IC(0.000 ns) + CELL(1.900 ns) = 18.400 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+                Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+                Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+            Info: 9: + IC(2.300 ns) + CELL(1.600 ns) = 22.300 ns; Loc. = LC6_D9; Fanout = 5; COMB Node = 'inst9'
+            Info: 10: + IC(2.800 ns) + CELL(0.500 ns) = 25.600 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+            Info: 11: + IC(0.300 ns) + CELL(1.400 ns) = 27.300 ns; Loc. = LC4_B33; Fanout = 1; COMB Node = '74192:inst|73'
+            Info: 12: + IC(1.300 ns) + CELL(0.500 ns) = 29.100 ns; Loc. = LC2_B27; Fanout = 4; REG Node = '74192:inst|25'
+            Info: 13: + IC(1.100 ns) + CELL(1.400 ns) = 31.600 ns; Loc. = LC2_B33; Fanout = 2; COMB Node = '74192:inst|51~11'
+            Info: 14: + IC(1.400 ns) + CELL(0.500 ns) = 33.500 ns; Loc. = LC8_B23; Fanout = 4; REG Node = '74192:inst|24'
+            Info: 15: + IC(0.300 ns) + CELL(1.600 ns) = 35.400 ns; Loc. = LC2_B23; Fanout = 1; COMB Node = '74192:inst|100'
+            Info: 16: + IC(1.300 ns) + CELL(0.500 ns) = 37.200 ns; Loc. = LC4_B25; Fanout = 7; REG Node = '74192:inst|23'
+            Info: 17: + IC(1.200 ns) + CELL(1.400 ns) = 39.800 ns; Loc. = LC3_B33; Fanout = 2; COMB Node = '74192:inst|76'
+            Info: 18: + IC(1.400 ns) + CELL(0.500 ns) = 41.700 ns; Loc. = LC2_B24; Fanout = 4; REG Node = '74192:inst1|26'
+            Info: 19: + IC(1.200 ns) + CELL(1.400 ns) = 44.300 ns; Loc. = LC8_B33; Fanout = 3; COMB Node = '74192:inst1|51~10'
+            Info: 20: + IC(1.300 ns) + CELL(1.600 ns) = 47.200 ns; Loc. = LC1_B31; Fanout = 1; COMB Node = '74192:inst1|51'
+            Info: 21: + IC(1.300 ns) + CELL(0.500 ns) = 49.000 ns; Loc. = LC1_B29; Fanout = 5; REG Node = '74192:inst1|24'
+            Info: 22: + IC(1.100 ns) + CELL(1.700 ns) = 51.800 ns; Loc. = LC2_B31; Fanout = 1; COMB Node = '74192:inst1|100~24'
+            Info: 23: + IC(2.000 ns) + CELL(0.500 ns) = 54.300 ns; Loc. = LC4_C35; Fanout = 6; REG Node = '74192:inst1|23'
+            Info: 24: + IC(1.900 ns) + CELL(1.600 ns) = 57.800 ns; Loc. = LC3_B31; Fanout = 1; COMB Node = '74192:inst1|73'
+            Info: 25: + IC(0.300 ns) + CELL(0.500 ns) = 58.600 ns; Loc. = LC4_B31; Fanout = 7; REG Node = '74192:inst1|25'
+            Info: 26: + IC(1.000 ns) + CELL(0.500 ns) = 60.100 ns; Loc. = LC1_B36; Fanout = 16; REG Node = 'inst31'
+            Info: 27: + IC(2.100 ns) + CELL(0.500 ns) = 62.700 ns; Loc. = LC3_C28; Fanout = 9; REG Node = '74192:inst11|26'
+            Info: 28: + IC(2.900 ns) + CELL(1.400 ns) = 67.000 ns; Loc. = LC6_A8; Fanout = 1; COMB Node = '74192:inst11|73'
+            Info: 29: + IC(0.300 ns) + CELL(0.500 ns) = 67.800 ns; Loc. = LC5_A8; Fanout = 5; REG Node = '74192:inst11|25'
+            Info: 30: + IC(0.300 ns) + CELL(1.400 ns) = 69.500 ns; Loc. = LC3_A8; Fanout = 1; COMB Node = '74192:inst11|51~9'
+            Info: 31: + IC(1.300 ns) + CELL(0.500 ns) = 71.300 ns; Loc. = LC7_A16; Fanout = 4; REG Node = '74192:inst11|24'
+            Info: 32: + IC(1.500 ns) + CELL(1.400 ns) = 74.200 ns; Loc. = LC7_A8; Fanout = 1; COMB Node = '74192:inst11|21'
+            Info: 33: + IC(0.300 ns) + CELL(1.400 ns) = 75.900 ns; Loc. = LC4_A8; Fanout = 1; COMB Node = '74192:inst11|100'
+            Info: 34: + IC(1.400 ns) + CELL(0.500 ns) = 77.800 ns; Loc. = LC1_A18; Fanout = 8; REG Node = '74192:inst11|23'
+            Info: 35: + IC(1.600 ns) + CELL(1.400 ns) = 80.800 ns; Loc. = LC2_A8; Fanout = 1; COMB Node = '74192:inst11|76'
+            Info: 36: + IC(1.100 ns) + CELL(0.500 ns) = 82.400 ns; Loc. = LC6_A1; Fanout = 4; REG Node = '74192:inst2|26'
+            Info: 37: + IC(3.000 ns) + CELL(1.400 ns) = 86.800 ns; Loc. = LC3_B32; Fanout = 3; COMB Node = '74192:inst2|51~10'
+            Info: 38: + IC(0.300 ns) + CELL(1.600 ns) = 88.700 ns; Loc. = LC5_B32; Fanout = 1; COMB Node = '74192:inst2|51'
+            Info: 39: + IC(2.100 ns) + CELL(0.500 ns) = 91.300 ns; Loc. = LC1_A23; Fanout = 5; REG Node = '74192:inst2|24'
+            Info: 40: + IC(2.000 ns) + CELL(1.600 ns) = 94.900 ns; Loc. = LC4_B32; Fanout = 1; COMB Node = '74192:inst2|100~24'
+            Info: 41: + IC(0.300 ns) + CELL(0.500 ns) = 95.700 ns; Loc. = LC1_B32; Fanout = 6; REG Node = '74192:inst2|23'
+            Info: 42: + IC(0.300 ns) + CELL(1.600 ns) = 97.600 ns; Loc. = LC2_B32; Fanout = 1; COMB Node = '74192:inst2|73'
+            Info: 43: + IC(1.900 ns) + CELL(0.500 ns) = 100.000 ns; Loc. = LC7_A34; Fanout = 7; REG Node = '74192:inst2|25'
+            Info: 44: + IC(1.900 ns) + CELL(0.500 ns) = 102.400 ns; Loc. = LC1_B30; Fanout = 14; REG Node = 'inst32'
+            Info: 45: + IC(1.300 ns) + CELL(0.500 ns) = 104.200 ns; Loc. = LC1_B22; Fanout = 7; REG Node = '74192:inst13|26'
+            Info: 46: + IC(0.300 ns) + CELL(1.400 ns) = 105.900 ns; Loc. = LC4_B22; Fanout = 1; COMB Node = '74192:inst13|73'
+            Info: 47: + IC(1.900 ns) + CELL(0.500 ns) = 108.300 ns; Loc. = LC2_B2; Fanout = 4; REG Node = '74192:inst13|25'
+            Info: 48: + IC(2.300 ns) + CELL(1.400 ns) = 112.000 ns; Loc. = LC2_B22; Fanout = 2; COMB Node = '74192:inst13|51~9'
+            Info: 49: + IC(1.200 ns) + CELL(0.500 ns) = 113.700 ns; Loc. = LC8_B20; Fanout = 5; REG Node = '74192:inst13|24'
+            Info: 50: + IC(0.300 ns) + CELL(1.600 ns) = 115.600 ns; Loc. = LC6_B20; Fanout = 1; COMB Node = '74192:inst13|100'
+            Info: 51: + IC(1.400 ns) + CELL(0.500 ns) = 117.500 ns; Loc. = LC2_B34; Fanout = 7; REG Node = '74192:inst13|23'
+            Info: 52: + IC(1.500 ns) + CELL(1.400 ns) = 120.400 ns; Loc. = LC6_B22; Fanout = 2; COMB Node = '74192:inst13|77'
+            Info: 53: + IC(1.900 ns) + CELL(0.500 ns) = 122.800 ns; Loc. = LC2_B12; Fanout = 4; REG Node = '74192:inst3|26'
+            Info: 54: + IC(1.900 ns) + CELL(1.400 ns) = 126.100 ns; Loc. = LC3_B22; Fanout = 3; COMB Node = '74192:inst3|51~10'
+            Info: 55: + IC(1.900 ns) + CELL(1.400 ns) = 129.400 ns; Loc. = LC3_B11; Fanout = 1; COMB Node = '74192:inst3|100~24'
+            Info: 56: + IC(2.000 ns) + CELL(0.500 ns) = 131.900 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+            Info: 57: + IC(0.900 ns) + CELL(1.600 ns) = 134.400 ns; Loc. = LC2_B36; Fanout = 2; COMB Node = 'inst22'
+            Info: 58: + IC(0.300 ns) + CELL(1.400 ns) = 136.100 ns; Loc. = LC3_B36; Fanout = 1; COMB Node = 'inst17'
+            Info: 59: + IC(0.300 ns) + CELL(0.000 ns) = 136.400 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+            Info: Total cell delay = 63.700 ns ( 46.70 % )
+            Info: Total interconnect delay = 72.700 ns ( 53.30 % )
+        Info: - Shortest clock path from clock "clk" to source register is 10.800 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+            Info: 2: + IC(0.000 ns) + CELL(4.400 ns) = 9.300 ns; Loc. = LC8_B3; Fanout = 3; COMB LOOP Node = 'startmod:inst220|74193:inst|50~22'
+                Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+                Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+            Info: 3: + IC(1.500 ns) + CELL(0.000 ns) = 10.800 ns; Loc. = LC8_B15; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|24'
+            Info: Total cell delay = 9.300 ns ( 86.11 % )
+            Info: Total interconnect delay = 1.500 ns ( 13.89 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 5.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC8_B15; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|24'
+        Info: 2: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+            Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+            Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+        Info: 3: + IC(2.200 ns) + CELL(1.100 ns) = 5.200 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 3.000 ns ( 57.69 % )
+        Info: Total interconnect delay = 2.200 ns ( 42.31 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Warning: Circuit may not operate. Detected 77 non-operational path(s) clocked by clock "mode" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "74192:inst|26" and destination pin or register "inst4" for clock "mode" (Hold time is 106.9 ns)
+    Info: + Largest clock skew is 111.300 ns
+        Info: + Longest clock path from clock "mode" to destination register is 123.800 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 8; CLK Node = 'mode'
+            Info: 2: + IC(3.200 ns) + CELL(1.600 ns) = 9.700 ns; Loc. = LC6_D9; Fanout = 5; COMB Node = 'inst9'
+            Info: 3: + IC(2.800 ns) + CELL(0.500 ns) = 13.000 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+            Info: 4: + IC(0.300 ns) + CELL(1.400 ns) = 14.700 ns; Loc. = LC4_B33; Fanout = 1; COMB Node = '74192:inst|73'
+            Info: 5: + IC(1.300 ns) + CELL(0.500 ns) = 16.500 ns; Loc. = LC2_B27; Fanout = 4; REG Node = '74192:inst|25'
+            Info: 6: + IC(1.100 ns) + CELL(1.400 ns) = 19.000 ns; Loc. = LC2_B33; Fanout = 2; COMB Node = '74192:inst|51~11'
+            Info: 7: + IC(1.400 ns) + CELL(0.500 ns) = 20.900 ns; Loc. = LC8_B23; Fanout = 4; REG Node = '74192:inst|24'
+            Info: 8: + IC(0.300 ns) + CELL(1.600 ns) = 22.800 ns; Loc. = LC2_B23; Fanout = 1; COMB Node = '74192:inst|100'
+            Info: 9: + IC(1.300 ns) + CELL(0.500 ns) = 24.600 ns; Loc. = LC4_B25; Fanout = 7; REG Node = '74192:inst|23'
+            Info: 10: + IC(1.200 ns) + CELL(1.400 ns) = 27.200 ns; Loc. = LC3_B33; Fanout = 2; COMB Node = '74192:inst|76'
+            Info: 11: + IC(1.400 ns) + CELL(0.500 ns) = 29.100 ns; Loc. = LC2_B24; Fanout = 4; REG Node = '74192:inst1|26'
+            Info: 12: + IC(1.200 ns) + CELL(1.400 ns) = 31.700 ns; Loc. = LC8_B33; Fanout = 3; COMB Node = '74192:inst1|51~10'
+            Info: 13: + IC(1.300 ns) + CELL(1.600 ns) = 34.600 ns; Loc. = LC1_B31; Fanout = 1; COMB Node = '74192:inst1|51'
+            Info: 14: + IC(1.300 ns) + CELL(0.500 ns) = 36.400 ns; Loc. = LC1_B29; Fanout = 5; REG Node = '74192:inst1|24'
+            Info: 15: + IC(1.100 ns) + CELL(1.700 ns) = 39.200 ns; Loc. = LC2_B31; Fanout = 1; COMB Node = '74192:inst1|100~24'
+            Info: 16: + IC(2.000 ns) + CELL(0.500 ns) = 41.700 ns; Loc. = LC4_C35; Fanout = 6; REG Node = '74192:inst1|23'
+            Info: 17: + IC(1.900 ns) + CELL(1.600 ns) = 45.200 ns; Loc. = LC3_B31; Fanout = 1; COMB Node = '74192:inst1|73'
+            Info: 18: + IC(0.300 ns) + CELL(0.500 ns) = 46.000 ns; Loc. = LC4_B31; Fanout = 7; REG Node = '74192:inst1|25'
+            Info: 19: + IC(1.000 ns) + CELL(0.500 ns) = 47.500 ns; Loc. = LC1_B36; Fanout = 16; REG Node = 'inst31'
+            Info: 20: + IC(2.100 ns) + CELL(0.500 ns) = 50.100 ns; Loc. = LC3_C28; Fanout = 9; REG Node = '74192:inst11|26'
+            Info: 21: + IC(2.900 ns) + CELL(1.400 ns) = 54.400 ns; Loc. = LC6_A8; Fanout = 1; COMB Node = '74192:inst11|73'
+            Info: 22: + IC(0.300 ns) + CELL(0.500 ns) = 55.200 ns; Loc. = LC5_A8; Fanout = 5; REG Node = '74192:inst11|25'
+            Info: 23: + IC(0.300 ns) + CELL(1.400 ns) = 56.900 ns; Loc. = LC3_A8; Fanout = 1; COMB Node = '74192:inst11|51~9'
+            Info: 24: + IC(1.300 ns) + CELL(0.500 ns) = 58.700 ns; Loc. = LC7_A16; Fanout = 4; REG Node = '74192:inst11|24'
+            Info: 25: + IC(1.500 ns) + CELL(1.400 ns) = 61.600 ns; Loc. = LC7_A8; Fanout = 1; COMB Node = '74192:inst11|21'
+            Info: 26: + IC(0.300 ns) + CELL(1.400 ns) = 63.300 ns; Loc. = LC4_A8; Fanout = 1; COMB Node = '74192:inst11|100'
+            Info: 27: + IC(1.400 ns) + CELL(0.500 ns) = 65.200 ns; Loc. = LC1_A18; Fanout = 8; REG Node = '74192:inst11|23'
+            Info: 28: + IC(1.600 ns) + CELL(1.400 ns) = 68.200 ns; Loc. = LC2_A8; Fanout = 1; COMB Node = '74192:inst11|76'
+            Info: 29: + IC(1.100 ns) + CELL(0.500 ns) = 69.800 ns; Loc. = LC6_A1; Fanout = 4; REG Node = '74192:inst2|26'
+            Info: 30: + IC(3.000 ns) + CELL(1.400 ns) = 74.200 ns; Loc. = LC3_B32; Fanout = 3; COMB Node = '74192:inst2|51~10'
+            Info: 31: + IC(0.300 ns) + CELL(1.600 ns) = 76.100 ns; Loc. = LC5_B32; Fanout = 1; COMB Node = '74192:inst2|51'
+            Info: 32: + IC(2.100 ns) + CELL(0.500 ns) = 78.700 ns; Loc. = LC1_A23; Fanout = 5; REG Node = '74192:inst2|24'
+            Info: 33: + IC(2.000 ns) + CELL(1.600 ns) = 82.300 ns; Loc. = LC4_B32; Fanout = 1; COMB Node = '74192:inst2|100~24'
+            Info: 34: + IC(0.300 ns) + CELL(0.500 ns) = 83.100 ns; Loc. = LC1_B32; Fanout = 6; REG Node = '74192:inst2|23'
+            Info: 35: + IC(0.300 ns) + CELL(1.600 ns) = 85.000 ns; Loc. = LC2_B32; Fanout = 1; COMB Node = '74192:inst2|73'
+            Info: 36: + IC(1.900 ns) + CELL(0.500 ns) = 87.400 ns; Loc. = LC7_A34; Fanout = 7; REG Node = '74192:inst2|25'
+            Info: 37: + IC(1.900 ns) + CELL(0.500 ns) = 89.800 ns; Loc. = LC1_B30; Fanout = 14; REG Node = 'inst32'
+            Info: 38: + IC(1.300 ns) + CELL(0.500 ns) = 91.600 ns; Loc. = LC1_B22; Fanout = 7; REG Node = '74192:inst13|26'
+            Info: 39: + IC(0.300 ns) + CELL(1.400 ns) = 93.300 ns; Loc. = LC4_B22; Fanout = 1; COMB Node = '74192:inst13|73'
+            Info: 40: + IC(1.900 ns) + CELL(0.500 ns) = 95.700 ns; Loc. = LC2_B2; Fanout = 4; REG Node = '74192:inst13|25'
+            Info: 41: + IC(2.300 ns) + CELL(1.400 ns) = 99.400 ns; Loc. = LC2_B22; Fanout = 2; COMB Node = '74192:inst13|51~9'
+            Info: 42: + IC(1.200 ns) + CELL(0.500 ns) = 101.100 ns; Loc. = LC8_B20; Fanout = 5; REG Node = '74192:inst13|24'
+            Info: 43: + IC(0.300 ns) + CELL(1.600 ns) = 103.000 ns; Loc. = LC6_B20; Fanout = 1; COMB Node = '74192:inst13|100'
+            Info: 44: + IC(1.400 ns) + CELL(0.500 ns) = 104.900 ns; Loc. = LC2_B34; Fanout = 7; REG Node = '74192:inst13|23'
+            Info: 45: + IC(1.500 ns) + CELL(1.400 ns) = 107.800 ns; Loc. = LC6_B22; Fanout = 2; COMB Node = '74192:inst13|77'
+            Info: 46: + IC(1.900 ns) + CELL(0.500 ns) = 110.200 ns; Loc. = LC2_B12; Fanout = 4; REG Node = '74192:inst3|26'
+            Info: 47: + IC(1.900 ns) + CELL(1.400 ns) = 113.500 ns; Loc. = LC3_B22; Fanout = 3; COMB Node = '74192:inst3|51~10'
+            Info: 48: + IC(1.900 ns) + CELL(1.400 ns) = 116.800 ns; Loc. = LC3_B11; Fanout = 1; COMB Node = '74192:inst3|100~24'
+            Info: 49: + IC(2.000 ns) + CELL(0.500 ns) = 119.300 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+            Info: 50: + IC(0.900 ns) + CELL(1.600 ns) = 121.800 ns; Loc. = LC2_B36; Fanout = 2; COMB Node = 'inst22'
+            Info: 51: + IC(0.300 ns) + CELL(1.400 ns) = 123.500 ns; Loc. = LC3_B36; Fanout = 1; COMB Node = 'inst17'
+            Info: 52: + IC(0.300 ns) + CELL(0.000 ns) = 123.800 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+            Info: Total cell delay = 55.400 ns ( 44.75 % )
+            Info: Total interconnect delay = 68.400 ns ( 55.25 % )
+        Info: - Shortest clock path from clock "mode" to source register is 12.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 8; CLK Node = 'mode'
+            Info: 2: + IC(3.200 ns) + CELL(1.600 ns) = 9.700 ns; Loc. = LC6_D9; Fanout = 5; COMB Node = 'inst9'
+            Info: 3: + IC(2.800 ns) + CELL(0.000 ns) = 12.500 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+            Info: Total cell delay = 6.500 ns ( 52.00 % )
+            Info: Total interconnect delay = 6.000 ns ( 48.00 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 5.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+        Info: 2: + IC(0.300 ns) + CELL(1.400 ns) = 1.700 ns; Loc. = LC1_B33; Fanout = 1; COMB Node = 'inst22~35'
+        Info: 3: + IC(1.000 ns) + CELL(1.400 ns) = 4.100 ns; Loc. = LC2_B36; Fanout = 2; COMB Node = 'inst22'
+        Info: 4: + IC(0.300 ns) + CELL(0.800 ns) = 5.200 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 3.600 ns ( 69.23 % )
+        Info: Total interconnect delay = 1.600 ns ( 30.77 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Info: tsu for register "inst4" (data pin = "clk", clock pin = "reset") is 7.400 ns
+    Info: + Longest pin to register delay is 15.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+        Info: 2: + IC(0.000 ns) + CELL(7.500 ns) = 12.400 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+            Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+            Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+        Info: 3: + IC(2.200 ns) + CELL(1.100 ns) = 15.700 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 13.500 ns ( 85.99 % )
+        Info: Total interconnect delay = 2.200 ns ( 14.01 % )
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: - Shortest clock path from clock "reset" to destination register is 8.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_135; Fanout = 2; CLK Node = 'reset'
+        Info: 2: + IC(2.100 ns) + CELL(1.600 ns) = 8.600 ns; Loc. = LC3_B36; Fanout = 1; COMB Node = 'inst17'
+        Info: 3: + IC(0.300 ns) + CELL(0.000 ns) = 8.900 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 6.500 ns ( 73.03 % )
+        Info: Total interconnect delay = 2.400 ns ( 26.97 % )
+Info: Can't find any paths of type Clock between source node "clk" and destination node "74194:inst115|41"
+Info: Can't find any paths of type TCO between source node "clk" and destination node "light"
+Info: Longest tpd from source pin "clk" to destination pin "s0_8" is 24.700 ns
+    Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+    Info: 2: + IC(0.000 ns) + CELL(7.500 ns) = 12.400 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+        Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+        Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+    Info: 3: + IC(2.300 ns) + CELL(1.400 ns) = 16.100 ns; Loc. = LC8_D18; Fanout = 1; COMB Node = 'inst147~9'
+    Info: 4: + IC(2.300 ns) + CELL(6.300 ns) = 24.700 ns; Loc. = PIN_83; Fanout = 0; PIN Node = 's0_8'
+    Info: Total cell delay = 20.100 ns ( 81.38 % )
+    Info: Total interconnect delay = 4.600 ns ( 18.62 % )
+Info: th for register "inst4" (data pin = "reset", clock pin = "clk") is 129.700 ns
+    Info: + Longest clock path from clock "clk" to destination register is 136.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_131; Fanout = 14; CLK Node = 'clk'
+        Info: 2: + IC(2.800 ns) + CELL(1.400 ns) = 9.100 ns; Loc. = LC4_B3; Fanout = 1; COMB Node = 'startmod:inst220|inst3'
+        Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 9.900 ns; Loc. = LC6_B3; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|26'
+        Info: 4: + IC(0.300 ns) + CELL(1.600 ns) = 11.800 ns; Loc. = LC5_B3; Fanout = 1; COMB Node = 'startmod:inst220|74193:inst|6~4'
+        Info: 5: + IC(0.300 ns) + CELL(0.500 ns) = 12.600 ns; Loc. = LC3_B3; Fanout = 10; REG Node = 'startmod:inst220|74193:inst|25'
+        Info: 6: + IC(0.000 ns) + CELL(1.900 ns) = 14.500 ns; Loc. = LC8_B3; Fanout = 3; COMB LOOP Node = 'startmod:inst220|74193:inst|50~22'
+            Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+            Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+        Info: 7: + IC(1.500 ns) + CELL(0.500 ns) = 16.500 ns; Loc. = LC8_B15; Fanout = 11; REG Node = 'startmod:inst220|74193:inst|24'
+        Info: 8: + IC(0.000 ns) + CELL(1.900 ns) = 18.400 ns; Loc. = LC2_B15; Fanout = 35; COMB LOOP Node = 'startmod:inst220|74193:inst|28'
+            Info: Loc. = LC2_B15; Node "startmod:inst220|74193:inst|28"
+            Info: Loc. = LC8_B3; Node "startmod:inst220|74193:inst|50~22"
+        Info: 9: + IC(2.300 ns) + CELL(1.600 ns) = 22.300 ns; Loc. = LC6_D9; Fanout = 5; COMB Node = 'inst9'
+        Info: 10: + IC(2.800 ns) + CELL(0.500 ns) = 25.600 ns; Loc. = LC5_B33; Fanout = 8; REG Node = '74192:inst|26'
+        Info: 11: + IC(0.300 ns) + CELL(1.400 ns) = 27.300 ns; Loc. = LC4_B33; Fanout = 1; COMB Node = '74192:inst|73'
+        Info: 12: + IC(1.300 ns) + CELL(0.500 ns) = 29.100 ns; Loc. = LC2_B27; Fanout = 4; REG Node = '74192:inst|25'
+        Info: 13: + IC(1.100 ns) + CELL(1.400 ns) = 31.600 ns; Loc. = LC2_B33; Fanout = 2; COMB Node = '74192:inst|51~11'
+        Info: 14: + IC(1.400 ns) + CELL(0.500 ns) = 33.500 ns; Loc. = LC8_B23; Fanout = 4; REG Node = '74192:inst|24'
+        Info: 15: + IC(0.300 ns) + CELL(1.600 ns) = 35.400 ns; Loc. = LC2_B23; Fanout = 1; COMB Node = '74192:inst|100'
+        Info: 16: + IC(1.300 ns) + CELL(0.500 ns) = 37.200 ns; Loc. = LC4_B25; Fanout = 7; REG Node = '74192:inst|23'
+        Info: 17: + IC(1.200 ns) + CELL(1.400 ns) = 39.800 ns; Loc. = LC3_B33; Fanout = 2; COMB Node = '74192:inst|76'
+        Info: 18: + IC(1.400 ns) + CELL(0.500 ns) = 41.700 ns; Loc. = LC2_B24; Fanout = 4; REG Node = '74192:inst1|26'
+        Info: 19: + IC(1.200 ns) + CELL(1.400 ns) = 44.300 ns; Loc. = LC8_B33; Fanout = 3; COMB Node = '74192:inst1|51~10'
+        Info: 20: + IC(1.300 ns) + CELL(1.600 ns) = 47.200 ns; Loc. = LC1_B31; Fanout = 1; COMB Node = '74192:inst1|51'
+        Info: 21: + IC(1.300 ns) + CELL(0.500 ns) = 49.000 ns; Loc. = LC1_B29; Fanout = 5; REG Node = '74192:inst1|24'
+        Info: 22: + IC(1.100 ns) + CELL(1.700 ns) = 51.800 ns; Loc. = LC2_B31; Fanout = 1; COMB Node = '74192:inst1|100~24'
+        Info: 23: + IC(2.000 ns) + CELL(0.500 ns) = 54.300 ns; Loc. = LC4_C35; Fanout = 6; REG Node = '74192:inst1|23'
+        Info: 24: + IC(1.900 ns) + CELL(1.600 ns) = 57.800 ns; Loc. = LC3_B31; Fanout = 1; COMB Node = '74192:inst1|73'
+        Info: 25: + IC(0.300 ns) + CELL(0.500 ns) = 58.600 ns; Loc. = LC4_B31; Fanout = 7; REG Node = '74192:inst1|25'
+        Info: 26: + IC(1.000 ns) + CELL(0.500 ns) = 60.100 ns; Loc. = LC1_B36; Fanout = 16; REG Node = 'inst31'
+        Info: 27: + IC(2.100 ns) + CELL(0.500 ns) = 62.700 ns; Loc. = LC3_C28; Fanout = 9; REG Node = '74192:inst11|26'
+        Info: 28: + IC(2.900 ns) + CELL(1.400 ns) = 67.000 ns; Loc. = LC6_A8; Fanout = 1; COMB Node = '74192:inst11|73'
+        Info: 29: + IC(0.300 ns) + CELL(0.500 ns) = 67.800 ns; Loc. = LC5_A8; Fanout = 5; REG Node = '74192:inst11|25'
+        Info: 30: + IC(0.300 ns) + CELL(1.400 ns) = 69.500 ns; Loc. = LC3_A8; Fanout = 1; COMB Node = '74192:inst11|51~9'
+        Info: 31: + IC(1.300 ns) + CELL(0.500 ns) = 71.300 ns; Loc. = LC7_A16; Fanout = 4; REG Node = '74192:inst11|24'
+        Info: 32: + IC(1.500 ns) + CELL(1.400 ns) = 74.200 ns; Loc. = LC7_A8; Fanout = 1; COMB Node = '74192:inst11|21'
+        Info: 33: + IC(0.300 ns) + CELL(1.400 ns) = 75.900 ns; Loc. = LC4_A8; Fanout = 1; COMB Node = '74192:inst11|100'
+        Info: 34: + IC(1.400 ns) + CELL(0.500 ns) = 77.800 ns; Loc. = LC1_A18; Fanout = 8; REG Node = '74192:inst11|23'
+        Info: 35: + IC(1.600 ns) + CELL(1.400 ns) = 80.800 ns; Loc. = LC2_A8; Fanout = 1; COMB Node = '74192:inst11|76'
+        Info: 36: + IC(1.100 ns) + CELL(0.500 ns) = 82.400 ns; Loc. = LC6_A1; Fanout = 4; REG Node = '74192:inst2|26'
+        Info: 37: + IC(3.000 ns) + CELL(1.400 ns) = 86.800 ns; Loc. = LC3_B32; Fanout = 3; COMB Node = '74192:inst2|51~10'
+        Info: 38: + IC(0.300 ns) + CELL(1.600 ns) = 88.700 ns; Loc. = LC5_B32; Fanout = 1; COMB Node = '74192:inst2|51'
+        Info: 39: + IC(2.100 ns) + CELL(0.500 ns) = 91.300 ns; Loc. = LC1_A23; Fanout = 5; REG Node = '74192:inst2|24'
+        Info: 40: + IC(2.000 ns) + CELL(1.600 ns) = 94.900 ns; Loc. = LC4_B32; Fanout = 1; COMB Node = '74192:inst2|100~24'
+        Info: 41: + IC(0.300 ns) + CELL(0.500 ns) = 95.700 ns; Loc. = LC1_B32; Fanout = 6; REG Node = '74192:inst2|23'
+        Info: 42: + IC(0.300 ns) + CELL(1.600 ns) = 97.600 ns; Loc. = LC2_B32; Fanout = 1; COMB Node = '74192:inst2|73'
+        Info: 43: + IC(1.900 ns) + CELL(0.500 ns) = 100.000 ns; Loc. = LC7_A34; Fanout = 7; REG Node = '74192:inst2|25'
+        Info: 44: + IC(1.900 ns) + CELL(0.500 ns) = 102.400 ns; Loc. = LC1_B30; Fanout = 14; REG Node = 'inst32'
+        Info: 45: + IC(1.300 ns) + CELL(0.500 ns) = 104.200 ns; Loc. = LC1_B22; Fanout = 7; REG Node = '74192:inst13|26'
+        Info: 46: + IC(0.300 ns) + CELL(1.400 ns) = 105.900 ns; Loc. = LC4_B22; Fanout = 1; COMB Node = '74192:inst13|73'
+        Info: 47: + IC(1.900 ns) + CELL(0.500 ns) = 108.300 ns; Loc. = LC2_B2; Fanout = 4; REG Node = '74192:inst13|25'
+        Info: 48: + IC(2.300 ns) + CELL(1.400 ns) = 112.000 ns; Loc. = LC2_B22; Fanout = 2; COMB Node = '74192:inst13|51~9'
+        Info: 49: + IC(1.200 ns) + CELL(0.500 ns) = 113.700 ns; Loc. = LC8_B20; Fanout = 5; REG Node = '74192:inst13|24'
+        Info: 50: + IC(0.300 ns) + CELL(1.600 ns) = 115.600 ns; Loc. = LC6_B20; Fanout = 1; COMB Node = '74192:inst13|100'
+        Info: 51: + IC(1.400 ns) + CELL(0.500 ns) = 117.500 ns; Loc. = LC2_B34; Fanout = 7; REG Node = '74192:inst13|23'
+        Info: 52: + IC(1.500 ns) + CELL(1.400 ns) = 120.400 ns; Loc. = LC6_B22; Fanout = 2; COMB Node = '74192:inst13|77'
+        Info: 53: + IC(1.900 ns) + CELL(0.500 ns) = 122.800 ns; Loc. = LC2_B12; Fanout = 4; REG Node = '74192:inst3|26'
+        Info: 54: + IC(1.900 ns) + CELL(1.400 ns) = 126.100 ns; Loc. = LC3_B22; Fanout = 3; COMB Node = '74192:inst3|51~10'
+        Info: 55: + IC(1.900 ns) + CELL(1.400 ns) = 129.400 ns; Loc. = LC3_B11; Fanout = 1; COMB Node = '74192:inst3|100~24'
+        Info: 56: + IC(2.000 ns) + CELL(0.500 ns) = 131.900 ns; Loc. = LC1_B35; Fanout = 6; REG Node = '74192:inst3|23'
+        Info: 57: + IC(0.900 ns) + CELL(1.600 ns) = 134.400 ns; Loc. = LC2_B36; Fanout = 2; COMB Node = 'inst22'
+        Info: 58: + IC(0.300 ns) + CELL(1.400 ns) = 136.100 ns; Loc. = LC3_B36; Fanout = 1; COMB Node = 'inst17'
+        Info: 59: + IC(0.300 ns) + CELL(0.000 ns) = 136.400 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 63.700 ns ( 46.70 % )
+        Info: Total interconnect delay = 72.700 ns ( 53.30 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+    Info: - Shortest pin to register delay is 8.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_135; Fanout = 2; CLK Node = 'reset'
+        Info: 2: + IC(2.100 ns) + CELL(1.000 ns) = 8.000 ns; Loc. = LC5_B36; Fanout = 35; REG Node = 'inst4'
+        Info: Total cell delay = 5.900 ns ( 73.75 % )
+        Info: Total interconnect delay = 2.100 ns ( 26.25 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Processing ended: Wed Jul 05 12:20:58 2023
+    Info: Elapsed time: 00:00:01
+
+

@@ -1,0 +1,269 @@
+Analysis & Synthesis report for clock
+Thu Jul 06 00:01:18 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Logic Cells Representing Combinational Loops
+  8. General Register Statistics
+  9. Inverted Register Statistics
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Jul 06 00:01:18 2023         ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name               ; clock                                         ;
+; Top-level Entity Name       ; clock                                         ;
+; Family                      ; ACEX1K                                        ;
+; Total logic elements        ; 289                                           ;
+; Total pins                  ; 57                                            ;
+; Total memory bits           ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                              ;
++------------------------------------------------------------+---------------+---------------+
+; Option                                                     ; Setting       ; Default Value ;
++------------------------------------------------------------+---------------+---------------+
+; Device                                                     ; EP1K30TC144-3 ;               ;
+; Top-level entity name                                      ; clock         ; clock         ;
+; Family name                                                ; ACEX1K        ; Stratix       ;
+; Use smart compilation                                      ; Off           ; Off           ;
+; Create Debugging Nodes for IP Cores                        ; Off           ; Off           ;
+; Preserve fewer node names                                  ; On            ; On            ;
+; Disable OpenCore Plus hardware evaluation                  ; Off           ; Off           ;
+; Verilog Version                                            ; Verilog_2001  ; Verilog_2001  ;
+; VHDL Version                                               ; VHDL93        ; VHDL93        ;
+; State Machine Processing                                   ; Auto          ; Auto          ;
+; Extract Verilog State Machines                             ; On            ; On            ;
+; Extract VHDL State Machines                                ; On            ; On            ;
+; Add Pass-Through Logic to Inferred RAMs                    ; On            ; On            ;
+; NOT Gate Push-Back                                         ; On            ; On            ;
+; Power-Up Don't Care                                        ; On            ; On            ;
+; Remove Redundant Logic Cells                               ; Off           ; Off           ;
+; Remove Duplicate Registers                                 ; On            ; On            ;
+; Ignore CARRY Buffers                                       ; Off           ; Off           ;
+; Ignore CASCADE Buffers                                     ; Off           ; Off           ;
+; Ignore GLOBAL Buffers                                      ; Off           ; Off           ;
+; Ignore ROW GLOBAL Buffers                                  ; Off           ; Off           ;
+; Ignore LCELL Buffers                                       ; Off           ; Off           ;
+; Ignore SOFT Buffers                                        ; On            ; On            ;
+; Limit AHDL Integers to 32 Bits                             ; Off           ; Off           ;
+; Auto Implement in ROM                                      ; Off           ; Off           ;
+; Optimization Technique -- FLEX 10K/10KE/10KA/ACEX 1K       ; Area          ; Area          ;
+; Carry Chain Length -- FLEX 10K                             ; 32            ; 32            ;
+; Cascade Chain Length                                       ; 2             ; 2             ;
+; Auto Carry Chains                                          ; On            ; On            ;
+; Auto Open-Drain Pins                                       ; On            ; On            ;
+; Remove Duplicate Logic                                     ; On            ; On            ;
+; Auto ROM Replacement                                       ; On            ; On            ;
+; Auto RAM Replacement                                       ; On            ; On            ;
+; Auto Clock Enable Replacement                              ; On            ; On            ;
+; Auto Resource Sharing                                      ; Off           ; Off           ;
+; Allow Any RAM Size For Recognition                         ; Off           ; Off           ;
+; Allow Any ROM Size For Recognition                         ; Off           ; Off           ;
+; Ignore translate_off and translate_on Synthesis Directives ; Off           ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report         ; On            ; On            ;
+; HDL message level                                          ; Level2        ; Level2        ;
++------------------------------------------------------------+---------------+---------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+; clock.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/Personal/CS/计算机硬件/计算机硬件大作业/clock_test/clock.bdf    ;
+; startmod.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/Personal/CS/计算机硬件/计算机硬件大作业/clock_test/startmod.bdf ;
+; 74194.bdf                        ; yes             ; Megafunction                       ; c:/altera/quartus60/libraries/others/maxplus2/74194.bdf            ;
+; 74192.bdf                        ; yes             ; Megafunction                       ; c:/altera/quartus60/libraries/others/maxplus2/74192.bdf            ;
+; 74193.bdf                        ; yes             ; Megafunction                       ; c:/altera/quartus60/libraries/others/maxplus2/74193.bdf            ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++---------------------------------+-----------+
+; Resource                        ; Usage     ;
++---------------------------------+-----------+
+; Total logic elements            ; 289       ;
+; Total combinational functions   ; 288       ;
+;     -- Total 4-input functions  ; 121       ;
+;     -- Total 3-input functions  ; 72        ;
+;     -- Total 2-input functions  ; 37        ;
+;     -- Total 1-input functions  ; 56        ;
+;     -- Total 0-input functions  ; 2         ;
+; Combinational cells for routing ; 0         ;
+; Total registers                 ; 62        ;
+; I/O pins                        ; 57        ;
+; Maximum fan-out node            ; in        ;
+; Maximum fan-out                 ; 48        ;
+; Total fan-out                   ; 1031      ;
+; Average fan-out                 ; 2.98      ;
++---------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                    ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+
+; |clock                     ; 289 (66)    ; 62           ; 0           ; 57   ; 227 (62)     ; 1 (1)             ; 61 (3)           ; 0 (0)           ; 0 (0)      ; |clock                             ;
+;    |74192:inst11|          ; 17 (17)     ; 4            ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst11                ;
+;    |74192:inst13|          ; 16 (16)     ; 4            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst13                ;
+;    |74192:inst1|           ; 16 (16)     ; 4            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst1                 ;
+;    |74192:inst2|           ; 16 (16)     ; 4            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst2                 ;
+;    |74192:inst3|           ; 16 (16)     ; 4            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst3                 ;
+;    |74192:inst58|          ; 9 (9)       ; 4            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst58                ;
+;    |74192:inst59|          ; 17 (17)     ; 4            ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst59                ;
+;    |74192:inst60|          ; 18 (18)     ; 4            ; 0           ; 0    ; 14 (14)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst60                ;
+;    |74192:inst65|          ; 17 (17)     ; 4            ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst65                ;
+;    |74192:inst66|          ; 19 (19)     ; 4            ; 0           ; 0    ; 15 (15)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst66                ;
+;    |74192:inst69|          ; 18 (18)     ; 4            ; 0           ; 0    ; 14 (14)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst69                ;
+;    |74192:inst70|          ; 17 (17)     ; 4            ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst70                ;
+;    |74192:inst|            ; 16 (16)     ; 4            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|74192:inst                  ;
+;    |74194:inst115|         ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |clock|74194:inst115               ;
+;    |74194:inst154|         ; 1 (1)       ; 1            ; 0           ; 0    ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |clock|74194:inst154               ;
+;    |startmod:inst220|      ; 9 (1)       ; 4            ; 0           ; 0    ; 5 (1)        ; 0 (0)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |clock|startmod:inst220            ;
+;       |74193:inst|         ; 8 (8)       ; 4            ; 0           ; 0    ; 4 (4)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |clock|startmod:inst220|74193:inst ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; startmod:inst220|74193:inst|28~0                       ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 62    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 62    ;
+; Number of registers using Asynchronous Load  ; 48    ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; startmod:inst220|74193:inst|23         ; 8       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Jul 06 00:01:17 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off clock -c clock
+Info: Found 1 design units, including 1 entities, in source file clock.bdf
+    Info: Found entity 1: clock
+Info: Found 1 design units, including 1 entities, in source file startmod.bdf
+    Info: Found entity 1: startmod
+Info: Elaborating entity "clock" for the top level hierarchy
+Warning: Port "SLSI" of type 74194 and instance "inst115" is missing source signal
+Warning: Port "SRSI" of type 74194 and instance "inst115" is missing source signal
+Warning: Port "B" of type 74194 and instance "inst115" is missing source signal
+Warning: Port "C" of type 74194 and instance "inst115" is missing source signal
+Warning: Port "SLSI" of type 74194 and instance "inst154" is missing source signal
+Warning: Port "SRSI" of type 74194 and instance "inst154" is missing source signal
+Warning: Port "B" of type 74194 and instance "inst154" is missing source signal
+Warning: Port "C" of type 74194 and instance "inst154" is missing source signal
+Warning: Port "D" of type 74194 and instance "inst154" is missing source signal
+Warning: Port "UP" of type 74192 and instance "inst59" is missing source signal
+Warning: Port "UP" of type 74192 and instance "inst65" is missing source signal
+Warning: Port "UP" of type 74192 and instance "inst66" is missing source signal
+Warning: Port "UP" of type 74192 and instance "inst60" is missing source signal
+Warning: Port "UP" of type 74192 and instance "inst69" is missing source signal
+Warning: Port "UP" of type 74192 and instance "inst70" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst1" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst11" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst2" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst13" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst3" is missing source signal
+Warning: Port "D" of type 74192 and instance "inst58" is missing source signal
+Warning: Port "C" of type 74192 and instance "inst58" is missing source signal
+Warning: Port "A" of type 74192 and instance "inst58" is missing source signal
+Warning: Port "B" of type 74192 and instance "inst58" is missing source signal
+Warning: Port "DN" of type 74192 and instance "inst58" is missing source signal
+Warning: Port "LDN" of type 74192 and instance "inst58" is missing source signal
+Warning: Port "D" of type 74194 and instance "inst115" is missing source signal
+Warning: Pin "pin_name" is missing source
+Info: Found 1 design units, including 1 entities, in source file c:/altera/quartus60/libraries/others/maxplus2/74194.bdf
+    Info: Found entity 1: 74194
+Info: Elaborating entity "74194" for hierarchy "74194:inst115"
+Info: Elaborated megafunction instantiation "74194:inst115"
+Info: Found 1 design units, including 1 entities, in source file c:/altera/quartus60/libraries/others/maxplus2/74192.bdf
+    Info: Found entity 1: 74192
+Info: Elaborating entity "74192" for hierarchy "74192:inst59"
+Info: Elaborated megafunction instantiation "74192:inst59"
+Info: Elaborating entity "startmod" for hierarchy "startmod:inst220"
+Warning: Port "CLR" of type 74193 and instance "inst" is missing source signal
+Info: Found 1 design units, including 1 entities, in source file c:/altera/quartus60/libraries/others/maxplus2/74193.bdf
+    Info: Found entity 1: 74193
+Info: Elaborating entity "74193" for hierarchy "startmod:inst220|74193:inst"
+Info: Elaborated megafunction instantiation "startmod:inst220|74193:inst"
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "pin_name" stuck at GND
+Info: Registers with preset signals will power-up high
+Info: Implemented 346 device resources after synthesis - the final resource count might be different
+    Info: Implemented 31 input pins
+    Info: Implemented 26 output pins
+    Info: Implemented 289 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Processing ended: Thu Jul 06 00:01:18 2023
+    Info: Elapsed time: 00:00:01
+
+

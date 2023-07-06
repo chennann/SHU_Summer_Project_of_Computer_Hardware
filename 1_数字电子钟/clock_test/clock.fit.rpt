@@ -1,0 +1,109 @@
+Fitter report for clock
+Thu Jul 06 00:01:18 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Fitter Device Options
+  5. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------+
+; Fitter Summary                                                        ;
++-----------------------+-----------------------------------------------+
+; Fitter Status         ; Failed - Thu Jul 06 00:01:18 2023             ;
+; Quartus II Version    ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name         ; clock                                         ;
+; Top-level Entity Name ; clock                                         ;
+; Family                ; ACEX1K                                        ;
+; Device                ; EP1K30TC144-3                                 ;
+; Timing Models         ; Final                                         ;
+; Total logic elements  ; 289                                           ;
+; Total pins            ; 57                                            ;
+; Total memory bits     ; 0                                             ;
+; Total PLLs            ; 0                                             ;
++-----------------------+-----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                      ;
++------------------------------------------------------------+--------------------+--------------------+
+; Option                                                     ; Setting            ; Default Value      ;
++------------------------------------------------------------+--------------------+--------------------+
+; Device                                                     ; EP1K30TC144-3      ;                    ;
+; Fitter Effort                                              ; Standard Fit       ; Auto Fit           ;
+; Use smart compilation                                      ; Off                ; Off                ;
+; Router Timing Optimization Level                           ; Normal             ; Normal             ;
+; Placement Effort Multiplier                                ; 1.0                ; 1.0                ;
+; Router Effort Multiplier                                   ; 1.0                ; 1.0                ;
+; Optimize Timing                                            ; Normal compilation ; Normal compilation ;
+; Optimize IOC Register Placement for Timing                 ; On                 ; On                 ;
+; Limit to One Fitting Attempt                               ; Off                ; Off                ;
+; Final Placement Optimizations                              ; Automatically      ; Automatically      ;
+; Fitter Aggressive Routability Optimizations                ; Automatically      ; Automatically      ;
+; Fitter Initial Placement Seed                              ; 1                  ; 1                  ;
+; Slow Slew Rate                                             ; Off                ; Off                ;
+; PCI I/O                                                    ; Off                ; Off                ;
+; Auto Global Memory Control Signals                         ; Off                ; Off                ;
+; Logic Cell Insertion - Individual Logic Cells              ; On                 ; On                 ;
+; Logic Cell Insertion - I/Os Fed By Carry or Cascade Chains ; On                 ; On                 ;
+; Auto Global Clock                                          ; On                 ; On                 ;
+; Auto Global Output Enable                                  ; On                 ; On                 ;
+; Auto Global Register Control Signals                       ; On                 ; On                 ;
++------------------------------------------------------------+--------------------+--------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Jul 06 00:01:18 2023
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off clock -c clock
+Warning: FLEXlm software error: Invalid (inconsistent) license key  The license-key and data for the feature do not match.  This usually happens when a license file has been altered Feature:       quartus License path:  D:\SW\QuartusII6.0\QuartusII6.0\disk2\crack6.0\license.DAT FLEXlm error:  -8,523 For further information, refer to the FLEXlm End User Manual, available at "www.macrovision.com".
+Error: Current license file does not support the EP1K30TC144-3 device
+Error: Quartus II Fitter was unsuccessful. 1 error, 1 warning
+    Error: Processing ended: Thu Jul 06 00:01:18 2023
+    Error: Elapsed time: 00:00:00
+
+

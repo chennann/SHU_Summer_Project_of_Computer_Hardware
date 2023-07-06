@@ -1,0 +1,106 @@
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+2
+24
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+startmod
+# storage
+db|clock.(3).cnf
+db|clock.(3).cnf
+# case_insensitive
+# source_file
+startmod.bdf
+d8bd597ee685586238f670263fdc9999
+24
+# hierarchies {
+startmod:inst220
+}
+# end
+# entity
+clock
+# storage
+db|clock.(0).cnf
+db|clock.(0).cnf
+# case_insensitive
+# source_file
+clock.bdf
+7544aed4e19717ab654d85addfa6fba1
+24
+# hierarchies {
+|
+}
+# end
+# entity
+74194
+# storage
+db|clock.(1).cnf
+db|clock.(1).cnf
+# case_insensitive
+# source_file
+c:|altera|quartus60|libraries|others|maxplus2|74194.bdf
+efddb3c18ee8b2edae5334dcb8570fe
+24
+# hierarchies {
+74194:inst115
+74194:inst154
+}
+# end
+# entity
+74192
+# storage
+db|clock.(2).cnf
+db|clock.(2).cnf
+# case_insensitive
+# source_file
+c:|altera|quartus60|libraries|others|maxplus2|74192.bdf
+44442b5ff1e46295c460b9eb5af96d25
+24
+# hierarchies {
+74192:inst59
+74192:inst60
+74192:inst65
+74192:inst66
+74192:inst69
+74192:inst70
+74192:inst3
+74192:inst1
+74192:inst
+74192:inst13
+74192:inst2
+74192:inst11
+74192:inst58
+}
+# end
+# entity
+74193
+# storage
+db|clock.(4).cnf
+db|clock.(4).cnf
+# case_insensitive
+# source_file
+c:|altera|quartus60|libraries|others|maxplus2|74193.bdf
+ac159334e53df6c28945e33378b5a8f
+24
+# hierarchies {
+startmod:inst220|74193:inst
+}
+# end
+# complete
+
