@@ -1,0 +1,643 @@
+Analysis & Synthesis report for taxi
+Tue Jun 27 19:54:27 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. User-Specified and Inferred Latches
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: BCDaccumulator:inst7|BCDadder:inst9|74283:inst
+ 10. Parameter Settings for User Entity Instance: BCDaccumulator:inst7|BCDadder:inst9|74283:inst1
+ 11. Parameter Settings for User Entity Instance: 7485:inst19
+ 12. Parameter Settings for User Entity Instance: 7485:inst17
+ 13. Parameter Settings for User Entity Instance: BCDaccumulator:inst2|BCDadder:inst9|74283:inst
+ 14. Parameter Settings for User Entity Instance: BCDaccumulator:inst2|BCDadder:inst9|74283:inst1
+ 15. Parameter Settings for User Entity Instance: BCDaccumulator:inst9|BCDadder:inst9|74283:inst
+ 16. Parameter Settings for User Entity Instance: BCDaccumulator:inst9|BCDadder:inst9|74283:inst1
+ 17. Parameter Settings for User Entity Instance: BCDaccumulator:inst11|BCDadder:inst9|74283:inst
+ 18. Parameter Settings for User Entity Instance: BCDaccumulator:inst11|BCDadder:inst9|74283:inst1
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Jun 27 19:54:27 2023         ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name               ; taxi                                          ;
+; Top-level Entity Name       ; taxi                                          ;
+; Family                      ; Stratix                                       ;
+; Total logic elements        ; 155                                           ;
+; Total pins                  ; 52                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 0                                             ;
+; DSP block 9-bit elements    ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
+; Total DLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                              ; taxi               ; taxi               ;
+; Family name                                                        ; Stratix            ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Stratix/Stratix GX                       ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto DSP Block Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+
+; BCDadder.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/25740/Downloads/taxi_06271453/taxi/BCDadder.bdf       ;
+; taxi.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/25740/Downloads/taxi_06271453/taxi/taxi.bdf           ;
+; BCDaccumulator.bdf               ; yes             ; User Block Diagram/Schematic File  ; C:/Users/25740/Downloads/taxi_06271453/taxi/BCDaccumulator.bdf ;
+; Counter_Light.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/Users/25740/Downloads/taxi_06271453/taxi/Counter_Light.bdf  ;
+; 7404.bdf                         ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/7404.bdf                        ;
+; 74283.tdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/74283.tdf                       ;
+; aglobal.inc                      ; yes             ; Other                              ; f:/q/libraries/megafunctions/aglobal.inc                       ;
+; f74283.bdf                       ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/f74283.bdf                      ;
+; 7408.bdf                         ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/7408.bdf                        ;
+; 74157.bdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/74157.bdf                       ;
+; 74175.bdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/74175.bdf                       ;
+; 7485.tdf                         ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/7485.tdf                        ;
+; f7485.bdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/f7485.bdf                       ;
+; 74160.bdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/74160.bdf                       ;
+; 7432.bdf                         ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/7432.bdf                        ;
+; 74373.bdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/74373.bdf                       ;
+; 74139.bdf                        ; yes             ; Megafunction                       ; f:/q/libraries/others/maxplus2/74139.bdf                       ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Total logic elements                        ; 155      ;
+;     -- Combinational with no register       ; 111      ;
+;     -- Register only                        ; 12       ;
+;     -- Combinational with a register        ; 32       ;
+;                                             ;          ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 34       ;
+;     -- 3 input functions                    ; 76       ;
+;     -- 2 input functions                    ; 30       ;
+;     -- 1 input functions                    ; 3        ;
+;     -- 0 input functions                    ; 0        ;
+;         -- Combinational cells for routing  ; 0        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 151      ;
+;     -- arithmetic mode                      ; 4        ;
+;     -- qfbk mode                            ; 0        ;
+;     -- register cascade mode                ; 0        ;
+;     -- synchronous clear/load mode          ; 0        ;
+;     -- asynchronous clear/load mode         ; 24       ;
+;                                             ;          ;
+; Total registers                             ; 44       ;
+; Total logic cells in carry chains           ; 6        ;
+; I/O pins                                    ; 52       ;
+; Maximum fan-out node                        ; inst4~20 ;
+; Maximum fan-out                             ; 24       ;
+; Total fan-out                               ; 544      ;
+; Average fan-out                             ; 2.63     ;
++---------------------------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                           ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; M512s ; M4Ks ; M-RAMs ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                               ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+
+; |taxi                      ; 155 (1)     ; 44           ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 52   ; 0            ; 111 (1)      ; 12 (0)            ; 32 (0)           ; 6 (0)           ; 0 (0)      ; |taxi                                                             ;
+;    |74139:inst23|          ; 4 (4)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|74139:inst23                                                ;
+;    |74160:inst73|          ; 5 (5)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |taxi|74160:inst73                                                ;
+;    |74160:inst74|          ; 5 (5)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |taxi|74160:inst74                                                ;
+;    |74160:inst75|          ; 5 (5)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |taxi|74160:inst75                                                ;
+;    |74175:inst31|          ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 4 (4)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|74175:inst31                                                ;
+;    |7432:inst|             ; 1 (1)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|7432:inst                                                   ;
+;    |74373:inst24|          ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|74373:inst24                                                ;
+;    |74373:inst25|          ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|74373:inst25                                                ;
+;    |74373:inst27|          ; 8 (8)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|74373:inst27                                                ;
+;    |7485:inst17|           ; 5 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|7485:inst17                                                 ;
+;       |f7485:sub|          ; 5 (5)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|7485:inst17|f7485:sub                                       ;
+;    |7485:inst19|           ; 7 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|7485:inst19                                                 ;
+;       |f7485:sub|          ; 7 (7)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|7485:inst19|f7485:sub                                       ;
+;    |BCDaccumulator:inst11| ; 25 (1)      ; 5            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 20 (0)       ; 1 (1)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11                                       ;
+;       |74157:inst35|       ; 10 (10)     ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|74157:inst35                          ;
+;       |74175:inst36|       ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|74175:inst36                          ;
+;       |BCDadder:inst9|     ; 10 (2)      ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 10 (2)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9                        ;
+;          |74283:inst1|     ; 2 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1            ;
+;             |f74283:sub|   ; 2 (2)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub ;
+;          |74283:inst|      ; 6 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst             ;
+;             |f74283:sub|   ; 6 (6)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub  ;
+;    |BCDaccumulator:inst2|  ; 18 (1)      ; 5            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 5 (1)            ; 3 (1)           ; 0 (0)      ; |taxi|BCDaccumulator:inst2                                        ;
+;       |74157:inst35|       ; 4 (4)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst2|74157:inst35                           ;
+;       |74175:inst36|       ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 2 (2)           ; 0 (0)      ; |taxi|BCDaccumulator:inst2|74175:inst36                           ;
+;       |BCDadder:inst9|     ; 9 (2)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 9 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst2|BCDadder:inst9                         ;
+;          |74283:inst|      ; 7 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst              ;
+;             |f74283:sub|   ; 7 (7)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub   ;
+;    |BCDaccumulator:inst7|  ; 18 (1)      ; 5            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 5 (1)            ; 3 (1)           ; 0 (0)      ; |taxi|BCDaccumulator:inst7                                        ;
+;       |74157:inst35|       ; 4 (4)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst7|74157:inst35                           ;
+;       |74175:inst36|       ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 2 (2)           ; 0 (0)      ; |taxi|BCDaccumulator:inst7|74175:inst36                           ;
+;       |BCDadder:inst9|     ; 9 (2)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 9 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst7|BCDadder:inst9                         ;
+;          |74283:inst|      ; 7 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst              ;
+;             |f74283:sub|   ; 7 (7)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub   ;
+;    |BCDaccumulator:inst9|  ; 25 (1)      ; 5            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 20 (0)       ; 1 (1)             ; 4 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9                                        ;
+;       |74157:inst35|       ; 10 (10)     ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|74157:inst35                           ;
+;       |74175:inst36|       ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|74175:inst36                           ;
+;       |BCDadder:inst9|     ; 10 (2)      ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 10 (2)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|BCDadder:inst9                         ;
+;          |74283:inst1|     ; 2 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1             ;
+;             |f74283:sub|   ; 2 (2)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub  ;
+;          |74283:inst|      ; 6 (0)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst              ;
+;             |f74283:sub|   ; 6 (6)       ; 0            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub   ;
+;    |Counter_Light:inst1|   ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 3 (3)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |taxi|Counter_Light:inst1                                         ;
+;    |Counter_Light:inst3|   ; 4 (4)       ; 4            ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 3 (3)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |taxi|Counter_Light:inst3                                         ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; 74373:inst27|14                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|15                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|12                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|13                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|18                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|19                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|16                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst27|17                                     ; 74139:inst23|36     ; yes                    ;
+; 74373:inst24|12                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|13                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|14                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|15                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|16                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|17                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|18                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst24|19                                     ; 74139:inst23|33     ; yes                    ;
+; 74373:inst25|16                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|17                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|19                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|18                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|12                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|14                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|15                                     ; 74139:inst23|35     ; yes                    ;
+; 74373:inst25|13                                     ; 74139:inst23|35     ; yes                    ;
+; Number of user-specified and inferred latches = 24  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 44    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 24    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst7|BCDadder:inst9|74283:inst ;
++------------------------+---------+----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                     ;
++------------------------+---------+----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                           ;
++------------------------+---------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst7|BCDadder:inst9|74283:inst1 ;
++------------------------+---------+-----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                      ;
++------------------------+---------+-----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                            ;
++------------------------+---------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst19 ;
++------------------------+---------+-----------------------+
+; Parameter Name         ; Value   ; Type                  ;
++------------------------+---------+-----------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE        ;
++------------------------+---------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: 7485:inst17 ;
++------------------------+---------+-----------------------+
+; Parameter Name         ; Value   ; Type                  ;
++------------------------+---------+-----------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped               ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY            ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY          ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE          ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE        ;
++------------------------+---------+-----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst2|BCDadder:inst9|74283:inst ;
++------------------------+---------+----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                     ;
++------------------------+---------+----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                           ;
++------------------------+---------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst2|BCDadder:inst9|74283:inst1 ;
++------------------------+---------+-----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                      ;
++------------------------+---------+-----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                            ;
++------------------------+---------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst9|BCDadder:inst9|74283:inst ;
++------------------------+---------+----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                     ;
++------------------------+---------+----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                           ;
++------------------------+---------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst9|BCDadder:inst9|74283:inst1 ;
++------------------------+---------+-----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                      ;
++------------------------+---------+-----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                            ;
++------------------------+---------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst11|BCDadder:inst9|74283:inst ;
++------------------------+---------+-----------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                      ;
++------------------------+---------+-----------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                   ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                            ;
++------------------------+---------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCDaccumulator:inst11|BCDadder:inst9|74283:inst1 ;
++------------------------+---------+------------------------------------------------------------+
+; Parameter Name         ; Value   ; Type                                                       ;
++------------------------+---------+------------------------------------------------------------+
+; DEVICE_FAMILY          ; Stratix ; Untyped                                                    ;
+; AUTO_CARRY_CHAINS      ; ON      ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF     ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS    ; ON      ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF     ; IGNORE_CASCADE                                             ;
++------------------------+---------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Jun 27 19:54:27 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off taxi -c taxi
+Info: Found 1 design units, including 1 entities, in source file BCDadder.bdf
+    Info: Found entity 1: BCDadder
+Info: Found 1 design units, including 1 entities, in source file taxi.bdf
+    Info: Found entity 1: taxi
+Info: Found 1 design units, including 1 entities, in source file BCDaccumulator.bdf
+    Info: Found entity 1: BCDaccumulator
+Info: Found 1 design units, including 1 entities, in source file Counter_Light.bdf
+    Info: Found entity 1: Counter_Light
+Info: Elaborating entity "taxi" for the top level hierarchy
+Warning: Port "ENT" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "LDN" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "ENP" of type 74160 and instance "inst73" is missing source signal
+Warning: Port "ENT" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "LDN" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "ENP" of type 74160 and instance "inst74" is missing source signal
+Warning: Port "A2" of type 74139 and instance "inst23" is missing source signal
+Warning: Port "B2" of type 74139 and instance "inst23" is missing source signal
+Warning: Port "G2N" of type 74139 and instance "inst23" is missing source signal
+Warning: Port "CLRN" of type 74175 and instance "inst31" is missing source signal
+Warning: Port "ENT" of type 74160 and instance "inst75" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst75" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst75" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst75" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst75" is missing source signal
+Warning: Port "LDN" of type 74160 and instance "inst75" is missing source signal
+Warning: Port "ENP" of type 74160 and instance "inst75" is missing source signal
+Info: Elaborating entity "BCDaccumulator" for hierarchy "BCDaccumulator:inst7"
+Warning: Port "CLRN" of type 74175 and instance "inst36" is missing source signal
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/7404.bdf
+    Info: Found entity 1: 7404
+Info: Elaborating entity "7404" for hierarchy "BCDaccumulator:inst7|7404:inst2"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|7404:inst2"
+Info: Elaborating entity "BCDadder" for hierarchy "BCDaccumulator:inst7|BCDadder:inst9"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/74283.tdf
+    Info: Found entity 1: 74283
+Info: Elaborating entity "74283" for hierarchy "BCDaccumulator:inst7|BCDadder:inst9|74283:inst"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|BCDadder:inst9|74283:inst"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/f74283.bdf
+    Info: Found entity 1: f74283
+Info: Elaborating entity "f74283" for hierarchy "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub", which is child of megafunction instantiation "BCDaccumulator:inst7|BCDadder:inst9|74283:inst"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/7408.bdf
+    Info: Found entity 1: 7408
+Info: Elaborating entity "7408" for hierarchy "BCDaccumulator:inst7|BCDadder:inst9|7408:inst3"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|BCDadder:inst9|7408:inst3"
+Info: Elaborating entity "74283" for hierarchy "BCDaccumulator:inst7|BCDadder:inst9|74283:inst1"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|BCDadder:inst9|74283:inst1"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/74157.bdf
+    Info: Found entity 1: 74157
+Info: Elaborating entity "74157" for hierarchy "BCDaccumulator:inst7|74157:inst35"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|74157:inst35"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/74175.bdf
+    Info: Found entity 1: 74175
+Info: Elaborating entity "74175" for hierarchy "BCDaccumulator:inst7|74175:inst36"
+Info: Elaborated megafunction instantiation "BCDaccumulator:inst7|74175:inst36"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/7485.tdf
+    Info: Found entity 1: 7485
+Info: Elaborating entity "7485" for hierarchy "7485:inst19"
+Info: Elaborated megafunction instantiation "7485:inst19"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/f7485.bdf
+    Info: Found entity 1: f7485
+Info: Elaborating entity "f7485" for hierarchy "7485:inst19|f7485:sub"
+Info: Elaborated megafunction instantiation "7485:inst19|f7485:sub", which is child of megafunction instantiation "7485:inst19"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/74160.bdf
+    Info: Found entity 1: 74160
+Info: Elaborating entity "74160" for hierarchy "74160:inst74"
+Info: Elaborated megafunction instantiation "74160:inst74"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/7432.bdf
+    Info: Found entity 1: 7432
+Info: Elaborating entity "7432" for hierarchy "7432:inst"
+Info: Elaborated megafunction instantiation "7432:inst"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/74373.bdf
+    Info: Found entity 1: 74373
+Info: Elaborating entity "74373" for hierarchy "74373:inst27"
+Info: Elaborated megafunction instantiation "74373:inst27"
+Info: Found 1 design units, including 1 entities, in source file f:/q/libraries/others/maxplus2/74139.bdf
+    Info: Found entity 1: 74139
+Info: Elaborating entity "74139" for hierarchy "74139:inst23"
+Info: Elaborated megafunction instantiation "74139:inst23"
+Info: Elaborating entity "7485" for hierarchy "7485:inst17"
+Info: Elaborated megafunction instantiation "7485:inst17"
+Info: Elaborating entity "Counter_Light" for hierarchy "Counter_Light:inst1"
+Info: Ignored 40 buffer(s)
+    Info: Ignored 2 CASCADE buffer(s)
+    Info: Ignored 38 SOFT buffer(s)
+Warning: Converted TRI buffer or tri-state bus to logic, or removed OPNDRN
+    Warning: Converting TRI node "74373:inst24|74" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|73" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|72" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|71" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|70" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|69" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|68" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst24|67" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|74" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|73" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|72" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|71" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|70" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|69" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|68" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst25|67" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|74" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|73" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|72" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|71" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|70" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|69" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|68" that feeds logic to a wire
+    Warning: Converting TRI node "74373:inst27|67" that feeds logic to a wire
+Info: Ignored 33 buffer(s)
+    Info: Ignored 33 SOFT buffer(s)
+Info: Converted 4 single input CARRY primitives to CARRY_SUM primitives
+Warning: Ignored 23 CARRY_SUM primitives
+    Warning: Ignored 4 CARRY_SUM primitives -- cannot place fan-in logic in single logic cell
+        Warning: Can't place logic feeding CARRY_SUM primitive "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|91~7" in single logic cell
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|90~3" of type CARRY_SUM
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|90~0" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|91~7" in single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|90~0" of type CARRY_SUM
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|90~2" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|91~7" in single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|90~0" of type CARRY_SUM
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|90~2" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|91~7" in single logic cell
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|90~3" of type CARRY_SUM
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|90~0" of type CARRY_SUM
+    Warning: Ignored 19 CARRY_SUM primitive(s) -- cannot place fan-out logic in single logic cell
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|88~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|89~3" of type CARRY_SUM
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|78" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|89~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|80" of type LUT
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|90~3" of type CARRY_SUM
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|89~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|106~41" of type LUT
+            Warning: Node "BCDaccumulator:inst9|74175:inst36|14" of type DFFE
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|89~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|106~41" of type LUT
+            Warning: Node "BCDaccumulator:inst11|74175:inst36|14" of type DFFE
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|89~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|80" of type LUT
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|90~3" of type CARRY_SUM
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|108~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|104~41" of type LUT
+            Warning: Node "BCDaccumulator:inst7|74175:inst36|16" of type DFFE
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|90~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|107~41" of type LUT
+            Warning: Node "BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|82" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|90~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|107~41" of type LUT
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|82" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|88~3" into a single logic cell
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|105~41" of type LUT
+            Warning: Node "BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|78" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|90~2" into a single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|102" of type LUT
+            Warning: Node "BCDaccumulator:inst9|74175:inst36|13" of type DFFE
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|90~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|90~3" of type LUT
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|90~4" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|89~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|80" of type LUT
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|99" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|88~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|78" of type LUT
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|96" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|108~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|94" of type LUT
+            Warning: Node "BCDaccumulator:inst9|74175:inst36|16" of type DFFE
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|90~2" into a single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|102" of type LUT
+            Warning: Node "BCDaccumulator:inst11|74175:inst36|13" of type DFFE
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|90~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|90~3" of type LUT
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|90~4" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|89~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|80" of type LUT
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|99" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|88~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|78" of type LUT
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|96" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|108~0" into a single logic cell
+            Warning: Node "BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|94" of type LUT
+            Warning: Node "BCDaccumulator:inst11|74175:inst36|16" of type DFFE
+Info: Implemented 207 device resources after synthesis - the final resource count might be different
+    Info: Implemented 15 input pins
+    Info: Implemented 37 output pins
+    Info: Implemented 155 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 123 warnings
+    Info: Processing ended: Tue Jun 27 19:54:27 2023
+    Info: Elapsed time: 00:00:00
+
+

@@ -1,0 +1,96 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.329 ns
+From           : INPUT5
+To             : 74373:inst24|17
+From Clock     : --
+To Clock       : SETTING_SA
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.750 ns
+From           : Counter_Light:inst3|inst9
+To             : DIST15
+From Clock     : CLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 6.270 ns
+From           : START
+To             : T
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 1.180 ns
+From           : INPUT0
+To             : 74373:inst25|12
+From Clock     : --
+To Clock       : START
+Failed Paths   : 0
+
+Type           : Clock Setup: 'START'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 71.33 MHz ( period = 14.020 ns )
+From           : 74373:inst27|19
+To             : BCDaccumulator:inst7|74175:inst36|13
+From Clock     : START
+To Clock       : START
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 83.32 MHz ( period = 12.002 ns )
+From           : 74160:inst74|9
+To             : BCDaccumulator:inst7|74175:inst36|13
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'PAUSE'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 83.32 MHz ( period = 12.002 ns )
+From           : 74160:inst74|9
+To             : BCDaccumulator:inst7|74175:inst36|13
+From Clock     : PAUSE
+To Clock       : PAUSE
+Failed Paths   : 0
+
+Type           : Clock Hold: 'START'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74373:inst25|12
+To             : BCDaccumulator:inst2|74175:inst36|16
+From Clock     : START
+To Clock       : START
+Failed Paths   : 1
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 1
+
+--------------------------------------------------------------------------------------
+

@@ -1,0 +1,647 @@
+Simulator report for taxi
+Tue Jul 04 18:42:57 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 20.0 us      ;
+; Simulation Netlist Size     ; 410 nodes    ;
+; Simulation Coverage         ;      68.22 % ;
+; Total Number of Transitions ; 74583        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix      ;
++-----------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                             ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Option                                                                                     ; Setting                           ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                        ; Timing        ;
+; Start time                                                                                 ; 0 ns                              ; 0 ns          ;
+; Vector input source                                                                        ; E:\projects\program\taxi\taxi.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                ; On            ;
+; Check outputs                                                                              ; Off                               ; Off           ;
+; Report simulation coverage                                                                 ; On                                ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                ; On            ;
+; Detect setup and hold time violations                                                      ; Off                               ; Off           ;
+; Detect glitches                                                                            ; Off                               ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                               ; Off           ;
+; Generate Signal Activity File                                                              ; Off                               ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                               ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                        ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                               ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                                ;               ;
+; Glitch Filtering                                                                           ; Off                               ; Off           ;
++--------------------------------------------------------------------------------------------+-----------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      68.22 % ;
+; Total nodes checked                                 ; 410          ;
+; Total output ports checked                          ; 409          ;
+; Total output ports with complete 1/0-value coverage ; 279          ;
+; Total output ports with no 1/0-value coverage       ; 79           ;
+; Total output ports with no 1-value coverage         ; 115          ;
+; Total output ports with no 0-value coverage         ; 94           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                      ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+; Node Name                                                             ; Output Port Name                                                      ; Output Port Type ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+; |taxi|PRICE0                                                          ; |taxi|PRICE0                                                          ; pin_out          ;
+; |taxi|inst34                                                          ; |taxi|inst34                                                          ; out0             ;
+; |taxi|inst8                                                           ; |taxi|inst8                                                           ; out              ;
+; |taxi|inst36                                                          ; |taxi|inst36                                                          ; out0             ;
+; |taxi|CLK                                                             ; |taxi|CLK                                                             ; out              ;
+; |taxi|PAUSE                                                           ; |taxi|PAUSE                                                           ; out              ;
+; |taxi|START                                                           ; |taxi|START                                                           ; out              ;
+; |taxi|INPUT0                                                          ; |taxi|INPUT0                                                          ; out              ;
+; |taxi|INPUT2                                                          ; |taxi|INPUT2                                                          ; out              ;
+; |taxi|INPUT6                                                          ; |taxi|INPUT6                                                          ; out              ;
+; |taxi|INPUT1                                                          ; |taxi|INPUT1                                                          ; out              ;
+; |taxi|SETTING_SA                                                      ; |taxi|SETTING_SA                                                      ; out              ;
+; |taxi|SETTING_SB                                                      ; |taxi|SETTING_SB                                                      ; out              ;
+; |taxi|SETTING_EN                                                      ; |taxi|SETTING_EN                                                      ; out              ;
+; |taxi|INPUT7                                                          ; |taxi|INPUT7                                                          ; out              ;
+; |taxi|inst16                                                          ; |taxi|inst16                                                          ; out              ;
+; |taxi|CLR                                                             ; |taxi|CLR                                                             ; out              ;
+; |taxi|PRICE1                                                          ; |taxi|PRICE1                                                          ; pin_out          ;
+; |taxi|PRICE2                                                          ; |taxi|PRICE2                                                          ; pin_out          ;
+; |taxi|PRICE3                                                          ; |taxi|PRICE3                                                          ; pin_out          ;
+; |taxi|PRICE4                                                          ; |taxi|PRICE4                                                          ; pin_out          ;
+; |taxi|PRICE5                                                          ; |taxi|PRICE5                                                          ; pin_out          ;
+; |taxi|PRICE6                                                          ; |taxi|PRICE6                                                          ; pin_out          ;
+; |taxi|PRICE7                                                          ; |taxi|PRICE7                                                          ; pin_out          ;
+; |taxi|PRICE8                                                          ; |taxi|PRICE8                                                          ; pin_out          ;
+; |taxi|PRICE9                                                          ; |taxi|PRICE9                                                          ; pin_out          ;
+; |taxi|PRICE10                                                         ; |taxi|PRICE10                                                         ; pin_out          ;
+; |taxi|PRICE11                                                         ; |taxi|PRICE11                                                         ; pin_out          ;
+; |taxi|DIST0                                                           ; |taxi|DIST0                                                           ; pin_out          ;
+; |taxi|DIST1                                                           ; |taxi|DIST1                                                           ; pin_out          ;
+; |taxi|DIST2                                                           ; |taxi|DIST2                                                           ; pin_out          ;
+; |taxi|DIST3                                                           ; |taxi|DIST3                                                           ; pin_out          ;
+; |taxi|DIST4                                                           ; |taxi|DIST4                                                           ; pin_out          ;
+; |taxi|DIST5                                                           ; |taxi|DIST5                                                           ; pin_out          ;
+; |taxi|DIST6                                                           ; |taxi|DIST6                                                           ; pin_out          ;
+; |taxi|DIST7                                                           ; |taxi|DIST7                                                           ; pin_out          ;
+; |taxi|DIST8                                                           ; |taxi|DIST8                                                           ; pin_out          ;
+; |taxi|DIST9                                                           ; |taxi|DIST9                                                           ; pin_out          ;
+; |taxi|74373:inst25|74                                                 ; |taxi|74373:inst25|74                                                 ; out              ;
+; |taxi|74373:inst25|19                                                 ; |taxi|74373:inst25|19                                                 ; out              ;
+; |taxi|74373:inst25|69                                                 ; |taxi|74373:inst25|69                                                 ; out              ;
+; |taxi|74373:inst25|14                                                 ; |taxi|74373:inst25|14                                                 ; out              ;
+; |taxi|74373:inst25|68                                                 ; |taxi|74373:inst25|68                                                 ; out              ;
+; |taxi|74373:inst25|13                                                 ; |taxi|74373:inst25|13                                                 ; out              ;
+; |taxi|74373:inst25|67                                                 ; |taxi|74373:inst25|67                                                 ; out              ;
+; |taxi|74373:inst25|12                                                 ; |taxi|74373:inst25|12                                                 ; out              ;
+; |taxi|BCDaccumulator:inst2|74175:inst36|15                            ; |taxi|BCDaccumulator:inst2|74175:inst36|15                            ; out              ;
+; |taxi|BCDaccumulator:inst2|74175:inst36|14                            ; |taxi|BCDaccumulator:inst2|74175:inst36|14                            ; out              ;
+; |taxi|BCDaccumulator:inst2|74175:inst36|13                            ; |taxi|BCDaccumulator:inst2|74175:inst36|13                            ; out              ;
+; |taxi|BCDaccumulator:inst2|74157:inst35|20                            ; |taxi|BCDaccumulator:inst2|74157:inst35|20                            ; out0             ;
+; |taxi|BCDaccumulator:inst2|74157:inst35|18                            ; |taxi|BCDaccumulator:inst2|74157:inst35|18                            ; out0             ;
+; |taxi|BCDaccumulator:inst2|74157:inst35|16                            ; |taxi|BCDaccumulator:inst2|74157:inst35|16                            ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|inst4                       ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|inst4                       ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|inst5                       ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|inst5                       ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|106  ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|106  ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|98   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|98   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|97   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|97   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|100  ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|100  ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|99   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|99   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|83   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|83   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|80   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|80   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|81   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|81   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|78   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub|78   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|7408:inst3|4                ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|7408:inst3|4                ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|76    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|76    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|107   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|107   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|106   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|106   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|98    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|98    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|105   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|105   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|97    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|97    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|100   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|100   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|99    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|99    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|102   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|102   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|82    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|82    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|83    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|83    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|80    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|80    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|81    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|81    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|78    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|78    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|79    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|79    ; out0             ;
+; |taxi|74373:inst14|69                                                 ; |taxi|74373:inst14|69                                                 ; out              ;
+; |taxi|74373:inst14|14                                                 ; |taxi|74373:inst14|14                                                 ; out              ;
+; |taxi|74373:inst14|67                                                 ; |taxi|74373:inst14|67                                                 ; out              ;
+; |taxi|74373:inst14|12                                                 ; |taxi|74373:inst14|12                                                 ; out              ;
+; |taxi|7485:inst17|f7485:sub|109                                       ; |taxi|7485:inst17|f7485:sub|109                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|110                                       ; |taxi|7485:inst17|f7485:sub|110                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|90                                        ; |taxi|7485:inst17|f7485:sub|90                                        ; out0             ;
+; |taxi|7485:inst17|f7485:sub|89                                        ; |taxi|7485:inst17|f7485:sub|89                                        ; out0             ;
+; |taxi|7485:inst17|f7485:sub|111                                       ; |taxi|7485:inst17|f7485:sub|111                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|91                                        ; |taxi|7485:inst17|f7485:sub|91                                        ; out0             ;
+; |taxi|7485:inst17|f7485:sub|92                                        ; |taxi|7485:inst17|f7485:sub|92                                        ; out0             ;
+; |taxi|7485:inst17|f7485:sub|85                                        ; |taxi|7485:inst17|f7485:sub|85                                        ; out0             ;
+; |taxi|7485:inst17|f7485:sub|88                                        ; |taxi|7485:inst17|f7485:sub|88                                        ; out0             ;
+; |taxi|7485:inst17|f7485:sub|113                                       ; |taxi|7485:inst17|f7485:sub|113                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|106                                       ; |taxi|7485:inst17|f7485:sub|106                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|112                                       ; |taxi|7485:inst17|f7485:sub|112                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|104                                       ; |taxi|7485:inst17|f7485:sub|104                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|103                                       ; |taxi|7485:inst17|f7485:sub|103                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|107                                       ; |taxi|7485:inst17|f7485:sub|107                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|114                                       ; |taxi|7485:inst17|f7485:sub|114                                       ; out0             ;
+; |taxi|7485:inst17|f7485:sub|105                                       ; |taxi|7485:inst17|f7485:sub|105                                       ; out0             ;
+; |taxi|74373:inst27|74                                                 ; |taxi|74373:inst27|74                                                 ; out              ;
+; |taxi|74373:inst27|19                                                 ; |taxi|74373:inst27|19                                                 ; out              ;
+; |taxi|74373:inst27|73                                                 ; |taxi|74373:inst27|73                                                 ; out              ;
+; |taxi|74373:inst27|18                                                 ; |taxi|74373:inst27|18                                                 ; out              ;
+; |taxi|74373:inst27|69                                                 ; |taxi|74373:inst27|69                                                 ; out              ;
+; |taxi|74373:inst27|14                                                 ; |taxi|74373:inst27|14                                                 ; out              ;
+; |taxi|74373:inst27|68                                                 ; |taxi|74373:inst27|68                                                 ; out              ;
+; |taxi|74373:inst27|13                                                 ; |taxi|74373:inst27|13                                                 ; out              ;
+; |taxi|74160:inst73|45                                                 ; |taxi|74160:inst73|45                                                 ; out0             ;
+; |taxi|74160:inst73|6                                                  ; |taxi|74160:inst73|6                                                  ; out              ;
+; |taxi|74160:inst73|9                                                  ; |taxi|74160:inst73|9                                                  ; out              ;
+; |taxi|74160:inst73|13                                                 ; |taxi|74160:inst73|13                                                 ; out0             ;
+; |taxi|74160:inst73|49                                                 ; |taxi|74160:inst73|49                                                 ; out0             ;
+; |taxi|74160:inst73|46                                                 ; |taxi|74160:inst73|46                                                 ; out0             ;
+; |taxi|74160:inst73|8                                                  ; |taxi|74160:inst73|8                                                  ; out              ;
+; |taxi|74160:inst73|12                                                 ; |taxi|74160:inst73|12                                                 ; out0             ;
+; |taxi|74160:inst73|28                                                 ; |taxi|74160:inst73|28                                                 ; out0             ;
+; |taxi|74160:inst73|7                                                  ; |taxi|74160:inst73|7                                                  ; out              ;
+; |taxi|74160:inst73|11                                                 ; |taxi|74160:inst73|11                                                 ; out0             ;
+; |taxi|74160:inst73|50                                                 ; |taxi|74160:inst73|50                                                 ; out0             ;
+; |taxi|7432:inst|4                                                     ; |taxi|7432:inst|4                                                     ; out0             ;
+; |taxi|74160:inst75|6                                                  ; |taxi|74160:inst75|6                                                  ; out              ;
+; |taxi|74160:inst75|28                                                 ; |taxi|74160:inst75|28                                                 ; out0             ;
+; |taxi|74160:inst75|7                                                  ; |taxi|74160:inst75|7                                                  ; out              ;
+; |taxi|74160:inst75|11                                                 ; |taxi|74160:inst75|11                                                 ; out0             ;
+; |taxi|74160:inst75|50                                                 ; |taxi|74160:inst75|50                                                 ; out0             ;
+; |taxi|BCDaccumulator:inst9|74175:inst36|16                            ; |taxi|BCDaccumulator:inst9|74175:inst36|16                            ; out              ;
+; |taxi|BCDaccumulator:inst9|74175:inst36|15                            ; |taxi|BCDaccumulator:inst9|74175:inst36|15                            ; out              ;
+; |taxi|BCDaccumulator:inst9|74175:inst36|14                            ; |taxi|BCDaccumulator:inst9|74175:inst36|14                            ; out              ;
+; |taxi|BCDaccumulator:inst9|74175:inst36|13                            ; |taxi|BCDaccumulator:inst9|74175:inst36|13                            ; out              ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|25                            ; |taxi|BCDaccumulator:inst9|74157:inst35|25                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|20                            ; |taxi|BCDaccumulator:inst9|74157:inst35|20                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|24                            ; |taxi|BCDaccumulator:inst9|74157:inst35|24                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|18                            ; |taxi|BCDaccumulator:inst9|74157:inst35|18                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|19                            ; |taxi|BCDaccumulator:inst9|74157:inst35|19                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|23                            ; |taxi|BCDaccumulator:inst9|74157:inst35|23                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|16                            ; |taxi|BCDaccumulator:inst9|74157:inst35|16                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|22                            ; |taxi|BCDaccumulator:inst9|74157:inst35|22                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|14                            ; |taxi|BCDaccumulator:inst9|74157:inst35|14                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|inst4                       ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|inst4                       ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|inst5                       ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|inst5                       ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|106  ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|106  ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|97   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|97   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|100  ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|100  ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|99   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|99   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|83   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|83   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|80   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|80   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|81   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|81   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|78   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|78   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|7408:inst3|4                ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|7408:inst3|4                ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|76    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|76    ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|94    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|94    ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|96    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|96    ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|99    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|99    ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|82    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|82    ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|80    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|80    ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|78    ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|78    ; out0             ;
+; |taxi|74139:inst23|34                                                 ; |taxi|74139:inst23|34                                                 ; out0             ;
+; |taxi|74139:inst23|35                                                 ; |taxi|74139:inst23|35                                                 ; out0             ;
+; |taxi|74139:inst23|36                                                 ; |taxi|74139:inst23|36                                                 ; out0             ;
+; |taxi|BCDaccumulator:inst11|74175:inst36|16                           ; |taxi|BCDaccumulator:inst11|74175:inst36|16                           ; out              ;
+; |taxi|BCDaccumulator:inst11|74175:inst36|15                           ; |taxi|BCDaccumulator:inst11|74175:inst36|15                           ; out              ;
+; |taxi|BCDaccumulator:inst11|74175:inst36|14                           ; |taxi|BCDaccumulator:inst11|74175:inst36|14                           ; out              ;
+; |taxi|BCDaccumulator:inst11|74175:inst36|13                           ; |taxi|BCDaccumulator:inst11|74175:inst36|13                           ; out              ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|25                           ; |taxi|BCDaccumulator:inst11|74157:inst35|25                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|20                           ; |taxi|BCDaccumulator:inst11|74157:inst35|20                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|24                           ; |taxi|BCDaccumulator:inst11|74157:inst35|24                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|18                           ; |taxi|BCDaccumulator:inst11|74157:inst35|18                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|23                           ; |taxi|BCDaccumulator:inst11|74157:inst35|23                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|16                           ; |taxi|BCDaccumulator:inst11|74157:inst35|16                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|22                           ; |taxi|BCDaccumulator:inst11|74157:inst35|22                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|14                           ; |taxi|BCDaccumulator:inst11|74157:inst35|14                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|15                           ; |taxi|BCDaccumulator:inst11|74157:inst35|15                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|inst4                      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|inst4                      ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|inst5                      ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|inst5                      ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|106 ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|106 ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|97  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|97  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|99  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|99  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|83  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|83  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|80  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|80  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|81  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|81  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|78  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|78  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|7408:inst3|4               ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|7408:inst3|4               ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|76   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|76   ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|94   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|94   ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|96   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|96   ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|99   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|99   ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|82   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|82   ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|80   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|80   ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|78   ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|78   ; out0             ;
+; |taxi|BCDaccumulator:inst31|74175:inst36|16                           ; |taxi|BCDaccumulator:inst31|74175:inst36|16                           ; out              ;
+; |taxi|BCDaccumulator:inst31|74175:inst36|15                           ; |taxi|BCDaccumulator:inst31|74175:inst36|15                           ; out              ;
+; |taxi|BCDaccumulator:inst31|74157:inst35|16                           ; |taxi|BCDaccumulator:inst31|74157:inst35|16                           ; out0             ;
+; |taxi|BCDaccumulator:inst31|74157:inst35|14                           ; |taxi|BCDaccumulator:inst31|74157:inst35|14                           ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|inst5                      ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|inst5                      ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|80  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|80  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|81  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|81  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|78  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|78  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|76   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|76   ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|94   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|94   ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|96   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|96   ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|80   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|80   ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|78   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|78   ; out0             ;
+; |taxi|LightConverter:inst28|7408:inst7|4                              ; |taxi|LightConverter:inst28|7408:inst7|4                              ; out0             ;
+; |taxi|LightConverter:inst28|7432:inst9|4                              ; |taxi|LightConverter:inst28|7432:inst9|4                              ; out0             ;
+; |taxi|74160:inst74|45                                                 ; |taxi|74160:inst74|45                                                 ; out0             ;
+; |taxi|74160:inst74|6                                                  ; |taxi|74160:inst74|6                                                  ; out              ;
+; |taxi|74160:inst74|9                                                  ; |taxi|74160:inst74|9                                                  ; out              ;
+; |taxi|74160:inst74|13                                                 ; |taxi|74160:inst74|13                                                 ; out0             ;
+; |taxi|74160:inst74|49                                                 ; |taxi|74160:inst74|49                                                 ; out0             ;
+; |taxi|74160:inst74|46                                                 ; |taxi|74160:inst74|46                                                 ; out0             ;
+; |taxi|74160:inst74|8                                                  ; |taxi|74160:inst74|8                                                  ; out              ;
+; |taxi|74160:inst74|12                                                 ; |taxi|74160:inst74|12                                                 ; out0             ;
+; |taxi|74160:inst74|28                                                 ; |taxi|74160:inst74|28                                                 ; out0             ;
+; |taxi|74160:inst74|7                                                  ; |taxi|74160:inst74|7                                                  ; out              ;
+; |taxi|74160:inst74|11                                                 ; |taxi|74160:inst74|11                                                 ; out0             ;
+; |taxi|74160:inst74|50                                                 ; |taxi|74160:inst74|50                                                 ; out0             ;
+; |taxi|7485:inst19|f7485:sub|109                                       ; |taxi|7485:inst19|f7485:sub|109                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|110                                       ; |taxi|7485:inst19|f7485:sub|110                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|90                                        ; |taxi|7485:inst19|f7485:sub|90                                        ; out0             ;
+; |taxi|7485:inst19|f7485:sub|89                                        ; |taxi|7485:inst19|f7485:sub|89                                        ; out0             ;
+; |taxi|7485:inst19|f7485:sub|111                                       ; |taxi|7485:inst19|f7485:sub|111                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|91                                        ; |taxi|7485:inst19|f7485:sub|91                                        ; out0             ;
+; |taxi|7485:inst19|f7485:sub|92                                        ; |taxi|7485:inst19|f7485:sub|92                                        ; out0             ;
+; |taxi|7485:inst19|f7485:sub|88                                        ; |taxi|7485:inst19|f7485:sub|88                                        ; out0             ;
+; |taxi|7485:inst19|f7485:sub|113                                       ; |taxi|7485:inst19|f7485:sub|113                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|106                                       ; |taxi|7485:inst19|f7485:sub|106                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|112                                       ; |taxi|7485:inst19|f7485:sub|112                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|104                                       ; |taxi|7485:inst19|f7485:sub|104                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|103                                       ; |taxi|7485:inst19|f7485:sub|103                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|107                                       ; |taxi|7485:inst19|f7485:sub|107                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|114                                       ; |taxi|7485:inst19|f7485:sub|114                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|86                                        ; |taxi|7485:inst19|f7485:sub|86                                        ; out0             ;
+; |taxi|7485:inst19|f7485:sub|101                                       ; |taxi|7485:inst19|f7485:sub|101                                       ; out0             ;
+; |taxi|BCDaccumulator:inst7|74175:inst36|16                            ; |taxi|BCDaccumulator:inst7|74175:inst36|16                            ; out              ;
+; |taxi|BCDaccumulator:inst7|74175:inst36|15                            ; |taxi|BCDaccumulator:inst7|74175:inst36|15                            ; out              ;
+; |taxi|BCDaccumulator:inst7|74175:inst36|14                            ; |taxi|BCDaccumulator:inst7|74175:inst36|14                            ; out              ;
+; |taxi|BCDaccumulator:inst7|74175:inst36|13                            ; |taxi|BCDaccumulator:inst7|74175:inst36|13                            ; out              ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|25                            ; |taxi|BCDaccumulator:inst7|74157:inst35|25                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|20                            ; |taxi|BCDaccumulator:inst7|74157:inst35|20                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|24                            ; |taxi|BCDaccumulator:inst7|74157:inst35|24                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|18                            ; |taxi|BCDaccumulator:inst7|74157:inst35|18                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|23                            ; |taxi|BCDaccumulator:inst7|74157:inst35|23                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|16                            ; |taxi|BCDaccumulator:inst7|74157:inst35|16                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|22                            ; |taxi|BCDaccumulator:inst7|74157:inst35|22                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|14                            ; |taxi|BCDaccumulator:inst7|74157:inst35|14                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|15                            ; |taxi|BCDaccumulator:inst7|74157:inst35|15                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|inst4                       ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|inst4                       ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|inst5                       ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|inst5                       ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|106  ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|106  ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|98   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|98   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|97   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|97   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|100  ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|100  ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|99   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|99   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|83   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|83   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|80   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|80   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|81   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|81   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|78   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub|78   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|7408:inst3|4                ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|7408:inst3|4                ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|76    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|76    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|77    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|77    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|107   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|107   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|101   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|101   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|106   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|106   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|105   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|105   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|104   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|104   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|94    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|94    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|96    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|96    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|99    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|99    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|103   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|103   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|82    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|82    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|83    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|83    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|80    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|80    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|81    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|81    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|78    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|78    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|79    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|79    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|98~3  ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|98~3  ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|95~3  ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|95~3  ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|101~3 ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|101~3 ; out0             ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                         ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+; Node Name                                                             ; Output Port Name                                                      ; Output Port Type ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+; |taxi|INPUT5                                                          ; |taxi|INPUT5                                                          ; out              ;
+; |taxi|INPUT3                                                          ; |taxi|INPUT3                                                          ; out              ;
+; |taxi|INPUT4                                                          ; |taxi|INPUT4                                                          ; out              ;
+; |taxi|inst21                                                          ; |taxi|inst21                                                          ; out              ;
+; |taxi|DIST11                                                          ; |taxi|DIST11                                                          ; pin_out          ;
+; |taxi|DIST12                                                          ; |taxi|DIST12                                                          ; pin_out          ;
+; |taxi|DIST13                                                          ; |taxi|DIST13                                                          ; pin_out          ;
+; |taxi|DIST14                                                          ; |taxi|DIST14                                                          ; pin_out          ;
+; |taxi|DIST15                                                          ; |taxi|DIST15                                                          ; pin_out          ;
+; |taxi|74373:inst25|73                                                 ; |taxi|74373:inst25|73                                                 ; out              ;
+; |taxi|74373:inst25|18                                                 ; |taxi|74373:inst25|18                                                 ; out              ;
+; |taxi|74373:inst25|72                                                 ; |taxi|74373:inst25|72                                                 ; out              ;
+; |taxi|74373:inst25|17                                                 ; |taxi|74373:inst25|17                                                 ; out              ;
+; |taxi|74373:inst25|71                                                 ; |taxi|74373:inst25|71                                                 ; out              ;
+; |taxi|74373:inst25|16                                                 ; |taxi|74373:inst25|16                                                 ; out              ;
+; |taxi|74373:inst25|70                                                 ; |taxi|74373:inst25|70                                                 ; out              ;
+; |taxi|74373:inst25|15                                                 ; |taxi|74373:inst25|15                                                 ; out              ;
+; |taxi|BCDaccumulator:inst2|74175:inst36|16                            ; |taxi|BCDaccumulator:inst2|74175:inst36|16                            ; out              ;
+; |taxi|BCDaccumulator:inst2|74157:inst35|14                            ; |taxi|BCDaccumulator:inst2|74157:inst35|14                            ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|101   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|101   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|95    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|95    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|93    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|93    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|96    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|96    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|103   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|103   ; out0             ;
+; |taxi|74373:inst14|70                                                 ; |taxi|74373:inst14|70                                                 ; out              ;
+; |taxi|74373:inst14|15                                                 ; |taxi|74373:inst14|15                                                 ; out              ;
+; |taxi|74373:inst14|68                                                 ; |taxi|74373:inst14|68                                                 ; out              ;
+; |taxi|74373:inst14|13                                                 ; |taxi|74373:inst14|13                                                 ; out              ;
+; |taxi|7485:inst17|f7485:sub|129                                       ; |taxi|7485:inst17|f7485:sub|129                                       ; out0             ;
+; |taxi|74373:inst27|72                                                 ; |taxi|74373:inst27|72                                                 ; out              ;
+; |taxi|74373:inst27|17                                                 ; |taxi|74373:inst27|17                                                 ; out              ;
+; |taxi|74373:inst27|71                                                 ; |taxi|74373:inst27|71                                                 ; out              ;
+; |taxi|74373:inst27|16                                                 ; |taxi|74373:inst27|16                                                 ; out              ;
+; |taxi|74373:inst27|70                                                 ; |taxi|74373:inst27|70                                                 ; out              ;
+; |taxi|74373:inst27|15                                                 ; |taxi|74373:inst27|15                                                 ; out              ;
+; |taxi|74373:inst27|67                                                 ; |taxi|74373:inst27|67                                                 ; out              ;
+; |taxi|74373:inst27|12                                                 ; |taxi|74373:inst27|12                                                 ; out              ;
+; |taxi|74160:inst75|45                                                 ; |taxi|74160:inst75|45                                                 ; out0             ;
+; |taxi|74160:inst75|9                                                  ; |taxi|74160:inst75|9                                                  ; out              ;
+; |taxi|74160:inst75|13                                                 ; |taxi|74160:inst75|13                                                 ; out0             ;
+; |taxi|74160:inst75|49                                                 ; |taxi|74160:inst75|49                                                 ; out0             ;
+; |taxi|74160:inst75|46                                                 ; |taxi|74160:inst75|46                                                 ; out0             ;
+; |taxi|74160:inst76|9                                                  ; |taxi|74160:inst76|9                                                  ; out              ;
+; |taxi|74160:inst76|13                                                 ; |taxi|74160:inst76|13                                                 ; out0             ;
+; |taxi|74160:inst76|49                                                 ; |taxi|74160:inst76|49                                                 ; out0             ;
+; |taxi|74160:inst76|46                                                 ; |taxi|74160:inst76|46                                                 ; out0             ;
+; |taxi|74160:inst76|8                                                  ; |taxi|74160:inst76|8                                                  ; out              ;
+; |taxi|74160:inst76|12                                                 ; |taxi|74160:inst76|12                                                 ; out0             ;
+; |taxi|74160:inst76|28                                                 ; |taxi|74160:inst76|28                                                 ; out0             ;
+; |taxi|74160:inst76|7                                                  ; |taxi|74160:inst76|7                                                  ; out              ;
+; |taxi|74160:inst76|11                                                 ; |taxi|74160:inst76|11                                                 ; out0             ;
+; |taxi|74160:inst76|50                                                 ; |taxi|74160:inst76|50                                                 ; out0             ;
+; |taxi|LightConverter:inst29|7408:inst11|4                             ; |taxi|LightConverter:inst29|7408:inst11|4                             ; out0             ;
+; |taxi|LightConverter:inst29|7408:inst7|4                              ; |taxi|LightConverter:inst29|7408:inst7|4                              ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst|4                               ; |taxi|LightConverter:inst29|7432:inst|4                               ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst8|4                              ; |taxi|LightConverter:inst29|7432:inst8|4                              ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst9|4                              ; |taxi|LightConverter:inst29|7432:inst9|4                              ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst10|4                             ; |taxi|LightConverter:inst29|7432:inst10|4                             ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|21                            ; |taxi|BCDaccumulator:inst9|74157:inst35|21                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|17                            ; |taxi|BCDaccumulator:inst9|74157:inst35|17                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|15                            ; |taxi|BCDaccumulator:inst9|74157:inst35|15                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|98   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|98   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|102   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|102   ; out0             ;
+; |taxi|74139:inst23|33                                                 ; |taxi|74139:inst23|33                                                 ; out0             ;
+; |taxi|74373:inst24|74                                                 ; |taxi|74373:inst24|74                                                 ; out              ;
+; |taxi|74373:inst24|19                                                 ; |taxi|74373:inst24|19                                                 ; out              ;
+; |taxi|74373:inst24|73                                                 ; |taxi|74373:inst24|73                                                 ; out              ;
+; |taxi|74373:inst24|18                                                 ; |taxi|74373:inst24|18                                                 ; out              ;
+; |taxi|74373:inst24|72                                                 ; |taxi|74373:inst24|72                                                 ; out              ;
+; |taxi|74373:inst24|17                                                 ; |taxi|74373:inst24|17                                                 ; out              ;
+; |taxi|74373:inst24|71                                                 ; |taxi|74373:inst24|71                                                 ; out              ;
+; |taxi|74373:inst24|16                                                 ; |taxi|74373:inst24|16                                                 ; out              ;
+; |taxi|74373:inst24|70                                                 ; |taxi|74373:inst24|70                                                 ; out              ;
+; |taxi|74373:inst24|15                                                 ; |taxi|74373:inst24|15                                                 ; out              ;
+; |taxi|74373:inst24|69                                                 ; |taxi|74373:inst24|69                                                 ; out              ;
+; |taxi|74373:inst24|14                                                 ; |taxi|74373:inst24|14                                                 ; out              ;
+; |taxi|74373:inst24|68                                                 ; |taxi|74373:inst24|68                                                 ; out              ;
+; |taxi|74373:inst24|13                                                 ; |taxi|74373:inst24|13                                                 ; out              ;
+; |taxi|74373:inst24|67                                                 ; |taxi|74373:inst24|67                                                 ; out              ;
+; |taxi|74373:inst24|12                                                 ; |taxi|74373:inst24|12                                                 ; out              ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|21                           ; |taxi|BCDaccumulator:inst11|74157:inst35|21                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|19                           ; |taxi|BCDaccumulator:inst11|74157:inst35|19                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|17                           ; |taxi|BCDaccumulator:inst11|74157:inst35|17                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|98  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|98  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|100 ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|100 ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|102  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|102  ; out0             ;
+; |taxi|BCDaccumulator:inst31|74175:inst36|13                           ; |taxi|BCDaccumulator:inst31|74175:inst36|13                           ; out              ;
+; |taxi|BCDaccumulator:inst31|74157:inst35|20                           ; |taxi|BCDaccumulator:inst31|74157:inst35|20                           ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|inst4                      ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|inst4                      ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|106 ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|106 ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|98  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|98  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|97  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|97  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|100 ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|100 ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|99  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|99  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|83  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|83  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|7408:inst3|4               ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|7408:inst3|4               ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|99   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|99   ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|102  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|102  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|82   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|82   ; out0             ;
+; |taxi|7485:inst19|f7485:sub|129                                       ; |taxi|7485:inst19|f7485:sub|129                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|105                                       ; |taxi|7485:inst19|f7485:sub|105                                       ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|21                            ; |taxi|BCDaccumulator:inst7|74157:inst35|21                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|19                            ; |taxi|BCDaccumulator:inst7|74157:inst35|19                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|74157:inst35|17                            ; |taxi|BCDaccumulator:inst7|74157:inst35|17                            ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|98    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|98    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|95    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|95    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|92    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|92    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|93    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|93    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|97    ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|97    ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|100   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|100   ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|102   ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|102   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|101~3 ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|101~3 ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|98~3  ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|98~3  ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|95~3  ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|95~3  ; out0             ;
+; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|92~3  ; |taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub|92~3  ; out0             ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                         ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+; Node Name                                                             ; Output Port Name                                                      ; Output Port Type ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+; |taxi|inst39                                                          ; |taxi|inst39                                                          ; out0             ;
+; |taxi|INPUT5                                                          ; |taxi|INPUT5                                                          ; out              ;
+; |taxi|INPUT3                                                          ; |taxi|INPUT3                                                          ; out              ;
+; |taxi|inst21                                                          ; |taxi|inst21                                                          ; out              ;
+; |taxi|PRICE12                                                         ; |taxi|PRICE12                                                         ; pin_out          ;
+; |taxi|DIST10                                                          ; |taxi|DIST10                                                          ; pin_out          ;
+; |taxi|DIST11                                                          ; |taxi|DIST11                                                          ; pin_out          ;
+; |taxi|DIST12                                                          ; |taxi|DIST12                                                          ; pin_out          ;
+; |taxi|PRICE13                                                         ; |taxi|PRICE13                                                         ; pin_out          ;
+; |taxi|PRICE14                                                         ; |taxi|PRICE14                                                         ; pin_out          ;
+; |taxi|PRICE15                                                         ; |taxi|PRICE15                                                         ; pin_out          ;
+; |taxi|DIST13                                                          ; |taxi|DIST13                                                          ; pin_out          ;
+; |taxi|DIST14                                                          ; |taxi|DIST14                                                          ; pin_out          ;
+; |taxi|DIST15                                                          ; |taxi|DIST15                                                          ; pin_out          ;
+; |taxi|BCDaccumulator:inst2|74175:inst36|16                            ; |taxi|BCDaccumulator:inst2|74175:inst36|16                            ; out              ;
+; |taxi|BCDaccumulator:inst2|74157:inst35|14                            ; |taxi|BCDaccumulator:inst2|74157:inst35|14                            ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|101   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|101   ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|95    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|95    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|93    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|93    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|96    ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|96    ; out0             ;
+; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|103   ; |taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub|103   ; out0             ;
+; |taxi|7485:inst17|f7485:sub|129                                       ; |taxi|7485:inst17|f7485:sub|129                                       ; out0             ;
+; |taxi|74160:inst75|45                                                 ; |taxi|74160:inst75|45                                                 ; out0             ;
+; |taxi|74160:inst75|9                                                  ; |taxi|74160:inst75|9                                                  ; out              ;
+; |taxi|74160:inst75|13                                                 ; |taxi|74160:inst75|13                                                 ; out0             ;
+; |taxi|74160:inst75|49                                                 ; |taxi|74160:inst75|49                                                 ; out0             ;
+; |taxi|74160:inst75|46                                                 ; |taxi|74160:inst75|46                                                 ; out0             ;
+; |taxi|74160:inst75|8                                                  ; |taxi|74160:inst75|8                                                  ; out              ;
+; |taxi|74160:inst75|12                                                 ; |taxi|74160:inst75|12                                                 ; out0             ;
+; |taxi|74160:inst76|9                                                  ; |taxi|74160:inst76|9                                                  ; out              ;
+; |taxi|74160:inst76|13                                                 ; |taxi|74160:inst76|13                                                 ; out0             ;
+; |taxi|74160:inst76|49                                                 ; |taxi|74160:inst76|49                                                 ; out0             ;
+; |taxi|74160:inst76|46                                                 ; |taxi|74160:inst76|46                                                 ; out0             ;
+; |taxi|74160:inst76|8                                                  ; |taxi|74160:inst76|8                                                  ; out              ;
+; |taxi|74160:inst76|12                                                 ; |taxi|74160:inst76|12                                                 ; out0             ;
+; |taxi|74160:inst76|28                                                 ; |taxi|74160:inst76|28                                                 ; out0             ;
+; |taxi|74160:inst76|7                                                  ; |taxi|74160:inst76|7                                                  ; out              ;
+; |taxi|74160:inst76|11                                                 ; |taxi|74160:inst76|11                                                 ; out0             ;
+; |taxi|74160:inst76|50                                                 ; |taxi|74160:inst76|50                                                 ; out0             ;
+; |taxi|LightConverter:inst29|7408:inst11|4                             ; |taxi|LightConverter:inst29|7408:inst11|4                             ; out0             ;
+; |taxi|LightConverter:inst29|7408:inst7|4                              ; |taxi|LightConverter:inst29|7408:inst7|4                              ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst|4                               ; |taxi|LightConverter:inst29|7432:inst|4                               ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst8|4                              ; |taxi|LightConverter:inst29|7432:inst8|4                              ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst9|4                              ; |taxi|LightConverter:inst29|7432:inst9|4                              ; out0             ;
+; |taxi|LightConverter:inst29|7432:inst10|4                             ; |taxi|LightConverter:inst29|7432:inst10|4                             ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|21                            ; |taxi|BCDaccumulator:inst9|74157:inst35|21                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|17                            ; |taxi|BCDaccumulator:inst9|74157:inst35|17                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|74157:inst35|15                            ; |taxi|BCDaccumulator:inst9|74157:inst35|15                            ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|98   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub|98   ; out0             ;
+; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|102   ; |taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub|102   ; out0             ;
+; |taxi|7432:inst18|4                                                   ; |taxi|7432:inst18|4                                                   ; out0             ;
+; |taxi|74373:inst24|74                                                 ; |taxi|74373:inst24|74                                                 ; out              ;
+; |taxi|74373:inst24|19                                                 ; |taxi|74373:inst24|19                                                 ; out              ;
+; |taxi|74373:inst24|73                                                 ; |taxi|74373:inst24|73                                                 ; out              ;
+; |taxi|74373:inst24|18                                                 ; |taxi|74373:inst24|18                                                 ; out              ;
+; |taxi|74373:inst24|72                                                 ; |taxi|74373:inst24|72                                                 ; out              ;
+; |taxi|74373:inst24|17                                                 ; |taxi|74373:inst24|17                                                 ; out              ;
+; |taxi|74373:inst24|71                                                 ; |taxi|74373:inst24|71                                                 ; out              ;
+; |taxi|74373:inst24|16                                                 ; |taxi|74373:inst24|16                                                 ; out              ;
+; |taxi|74373:inst24|70                                                 ; |taxi|74373:inst24|70                                                 ; out              ;
+; |taxi|74373:inst24|15                                                 ; |taxi|74373:inst24|15                                                 ; out              ;
+; |taxi|74373:inst24|69                                                 ; |taxi|74373:inst24|69                                                 ; out              ;
+; |taxi|74373:inst24|14                                                 ; |taxi|74373:inst24|14                                                 ; out              ;
+; |taxi|74373:inst24|68                                                 ; |taxi|74373:inst24|68                                                 ; out              ;
+; |taxi|74373:inst24|13                                                 ; |taxi|74373:inst24|13                                                 ; out              ;
+; |taxi|74373:inst24|67                                                 ; |taxi|74373:inst24|67                                                 ; out              ;
+; |taxi|74373:inst24|12                                                 ; |taxi|74373:inst24|12                                                 ; out              ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|21                           ; |taxi|BCDaccumulator:inst11|74157:inst35|21                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|19                           ; |taxi|BCDaccumulator:inst11|74157:inst35|19                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|74157:inst35|17                           ; |taxi|BCDaccumulator:inst11|74157:inst35|17                           ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|98  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|98  ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|100 ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub|100 ; out0             ;
+; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|102  ; |taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub|102  ; out0             ;
+; |taxi|BCDaccumulator:inst31|74175:inst36|14                           ; |taxi|BCDaccumulator:inst31|74175:inst36|14                           ; out              ;
+; |taxi|BCDaccumulator:inst31|74175:inst36|13                           ; |taxi|BCDaccumulator:inst31|74175:inst36|13                           ; out              ;
+; |taxi|BCDaccumulator:inst31|74157:inst35|20                           ; |taxi|BCDaccumulator:inst31|74157:inst35|20                           ; out0             ;
+; |taxi|BCDaccumulator:inst31|74157:inst35|18                           ; |taxi|BCDaccumulator:inst31|74157:inst35|18                           ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|inst4                      ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|inst4                      ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|106 ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|106 ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|98  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|98  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|97  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|97  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|100 ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|100 ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|99  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|99  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|83  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub|83  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|7408:inst3|4               ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|7408:inst3|4               ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|99   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|99   ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|102  ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|102  ; out0             ;
+; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|82   ; |taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub|82   ; out0             ;
+; |taxi|LightConverter:inst28|7408:inst11|4                             ; |taxi|LightConverter:inst28|7408:inst11|4                             ; out0             ;
+; |taxi|LightConverter:inst28|7432:inst|4                               ; |taxi|LightConverter:inst28|7432:inst|4                               ; out0             ;
+; |taxi|LightConverter:inst28|7432:inst8|4                              ; |taxi|LightConverter:inst28|7432:inst8|4                              ; out0             ;
+; |taxi|LightConverter:inst28|7432:inst10|4                             ; |taxi|LightConverter:inst28|7432:inst10|4                             ; out0             ;
+; |taxi|7485:inst19|f7485:sub|129                                       ; |taxi|7485:inst19|f7485:sub|129                                       ; out0             ;
+; |taxi|7485:inst19|f7485:sub|105                                       ; |taxi|7485:inst19|f7485:sub|105                                       ; out0             ;
++-----------------------------------------------------------------------+-----------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Tue Jul 04 18:42:57 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off taxi -c taxi
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of taxi.vwf called taxi.sim_ori.vwf is created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      68.22 %
+Info: Number of transitions in simulation is 74583
+Info: Vector file taxi.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Tue Jul 04 18:42:57 2023
+    Info: Elapsed time: 00:00:00
+
+

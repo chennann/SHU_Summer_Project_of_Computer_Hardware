@@ -1,0 +1,1474 @@
+|taxi
+PRICE0 <= BCDaccumulator:inst7.SUM1
+CLK => inst36.IN0
+PAUSE => 7404:inst10.2
+START => inst36.IN2
+START => 7432:inst18.3
+START => 7432:inst.3
+INPUT0 => 74373:inst24.D1
+INPUT0 => 74373:inst27.D1
+INPUT0 => 74373:inst14.D1
+INPUT0 => 74373:inst25.D1
+INPUT2 => 74373:inst24.D3
+INPUT2 => 74373:inst27.D3
+INPUT2 => 74373:inst14.D3
+INPUT2 => 74373:inst25.D3
+INPUT5 => 74373:inst24.D6
+INPUT5 => 74373:inst27.D6
+INPUT5 => 74373:inst25.D6
+INPUT6 => 74373:inst24.D7
+INPUT6 => 74373:inst27.D7
+INPUT6 => 74373:inst25.D7
+INPUT1 => 74373:inst24.D2
+INPUT1 => 74373:inst27.D2
+INPUT1 => 74373:inst14.D2
+INPUT1 => 74373:inst25.D2
+SETTING_SA => 74139:inst23.A1
+SETTING_SB => 74139:inst23.B1
+SETTING_EN => 7404:inst12.2
+INPUT3 => 74373:inst24.D4
+INPUT3 => 74373:inst27.D4
+INPUT3 => 74373:inst14.D4
+INPUT3 => 74373:inst25.D4
+INPUT4 => 74373:inst24.D5
+INPUT4 => 74373:inst27.D5
+INPUT4 => 74373:inst25.D5
+INPUT7 => 74373:inst24.D8
+INPUT7 => 74373:inst27.D8
+INPUT7 => 74373:inst25.D8
+CLR => 7404:inst15.2
+PRICE1 <= BCDaccumulator:inst7.SUM2
+PRICE2 <= BCDaccumulator:inst7.SUM3
+PRICE3 <= BCDaccumulator:inst7.SUM4
+PRICE4 <= BCDaccumulator:inst9.SUM1
+PRICE5 <= BCDaccumulator:inst9.SUM2
+PRICE6 <= BCDaccumulator:inst9.SUM3
+PRICE7 <= BCDaccumulator:inst9.SUM4
+PRICE8 <= BCDaccumulator:inst11.SUM1
+PRICE9 <= BCDaccumulator:inst11.SUM2
+PRICE10 <= BCDaccumulator:inst11.SUM3
+PRICE11 <= BCDaccumulator:inst11.SUM4
+PRICE12 <= LightConverter:inst28.Y1
+DIST0 <= 74160:inst73.QA
+DIST1 <= 74160:inst73.QB
+DIST2 <= 74160:inst73.QC
+DIST3 <= 74160:inst73.QD
+DIST4 <= 74160:inst74.QA
+DIST5 <= 74160:inst74.QB
+DIST6 <= 74160:inst74.QC
+DIST7 <= 74160:inst74.QD
+DIST8 <= 74160:inst75.QA
+DIST9 <= 74160:inst75.QB
+DIST10 <= 74160:inst75.QC
+DIST11 <= 74160:inst75.QD
+DIST12 <= LightConverter:inst29.Y1
+PRICE13 <= LightConverter:inst28.Y2
+PRICE14 <= LightConverter:inst28.Y3
+PRICE15 <= LightConverter:inst28.Y4
+DIST13 <= LightConverter:inst29.Y2
+DIST14 <= LightConverter:inst29.Y3
+DIST15 <= LightConverter:inst29.Y4
+
+
+|taxi|BCDaccumulator:inst7
+COUT <= BCDadder:inst9.COUT
+CIN => BCDadder:inst9.CIN
+NUM1 => BCDadder:inst9.A1
+NUM2 => BCDadder:inst9.A2
+NUM3 => BCDadder:inst9.A3
+NUM4 => BCDadder:inst9.A4
+CLK => 74175:inst36.CLK
+INIT1 => 74157:inst35.B1
+AEN => 74157:inst35.SEL
+INIT2 => 74157:inst35.B2
+INIT3 => 74157:inst35.B3
+INIT4 => 74157:inst35.B4
+SUM1 <= 74157:inst35.Y1
+SUM2 <= 74157:inst35.Y2
+SUM3 <= 74157:inst35.Y3
+SUM4 <= 74157:inst35.Y4
+
+
+|taxi|BCDaccumulator:inst7|BCDadder:inst9
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 74283:inst.CIN
+A1 => 74283:inst.A1
+A2 => 74283:inst.A2
+B2 => 74283:inst.B2
+A3 => 74283:inst.A3
+A4 => 74283:inst.A4
+B4 => 74283:inst.B4
+B1 => 74283:inst.B1
+B3 => 74283:inst.B3
+SUM4 <= 74283:inst1.SUM4
+SUM3 <= 74283:inst1.SUM3
+SUM2 <= 74283:inst1.SUM2
+SUM1 <= 74283:inst1.SUM1
+
+
+|taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst7|BCDadder:inst9|7408:inst3
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst7|BCDadder:inst9|74283:inst1|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst7|74157:inst35
+Y4 <= 25.DB_MAX_OUTPUT_PORT_TYPE
+A4 => 20.IN0
+GN => 12.IN0
+GN => 13.IN0
+SEL => 12.IN1
+SEL => 1.IN0
+B4 => 21.IN0
+Y3 <= 24.DB_MAX_OUTPUT_PORT_TYPE
+A3 => 18.IN0
+B3 => 19.IN0
+Y2 <= 23.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 16.IN0
+B2 => 17.IN0
+Y1 <= 22.DB_MAX_OUTPUT_PORT_TYPE
+A1 => 14.IN0
+B1 => 15.IN0
+
+
+|taxi|BCDaccumulator:inst7|74175:inst36
+1Q <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 16.ACLR
+CLRN => 15.ACLR
+CLRN => 14.ACLR
+CLRN => 13.ACLR
+CLK => 16.CLK
+CLK => 15.CLK
+CLK => 14.CLK
+CLK => 13.CLK
+1D => 16.DATAIN
+1QN <= 1.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 15.DB_MAX_OUTPUT_PORT_TYPE
+2D => 15.DATAIN
+2QN <= 2.DB_MAX_OUTPUT_PORT_TYPE
+3Q <= 14.DB_MAX_OUTPUT_PORT_TYPE
+3D => 14.DATAIN
+3QN <= 3.DB_MAX_OUTPUT_PORT_TYPE
+4Q <= 13.DB_MAX_OUTPUT_PORT_TYPE
+4D => 13.DATAIN
+4QN <= 4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|7485:inst19
+a[0] => f7485:sub.a[0]
+a[1] => f7485:sub.a[1]
+a[2] => f7485:sub.a[2]
+a[3] => f7485:sub.a[3]
+b[0] => f7485:sub.b[0]
+b[1] => f7485:sub.b[1]
+b[2] => f7485:sub.b[2]
+b[3] => f7485:sub.b[3]
+agbi => f7485:sub.agbi
+albi => f7485:sub.albi
+aebi => f7485:sub.aebi
+agbo <= f7485:sub.agbo
+albo <= f7485:sub.albo
+aebo <= f7485:sub.aebo
+
+
+|taxi|7485:inst19|f7485:sub
+ALBO <= 87.DB_MAX_OUTPUT_PORT_TYPE
+AGBI => 96.IN0
+A0 => 90.IN0
+A0 => 104.IN0
+A0 => 103.IN1
+B0 => 90.IN1
+B0 => 97.IN0
+A1 => 89.IN0
+A1 => 112.IN0
+A1 => 104.IN1
+B1 => 89.IN1
+B1 => 95.IN0
+A2 => 91.IN0
+A2 => 129.IN0
+A2 => 105.IN1
+B2 => 91.IN1
+B2 => 100.IN0
+A3 => 92.IN0
+A3 => 114.IN0
+A3 => 129.IN1
+B3 => 92.IN1
+B3 => 99.IN0
+AEBI => 93.IN0
+AEBI => 108.IN0
+AEBO <= 108.DB_MAX_OUTPUT_PORT_TYPE
+AGBO <= 86.DB_MAX_OUTPUT_PORT_TYPE
+ALBI => 134.IN0
+
+
+|taxi|74160:inst74
+RCO <= 45.DB_MAX_OUTPUT_PORT_TYPE
+ENT => 45.IN0
+ENT => 47.IN0
+ENT => 65.IN0
+CLRN => 6.ACLR
+CLRN => 9.ACLR
+CLRN => 8.ACLR
+CLRN => 7.ACLR
+CLK => 6.CLK
+CLK => 9.CLK
+CLK => 8.CLK
+CLK => 7.CLK
+LDN => 32.IN0
+LDN => 47.IN2
+LDN => 33.IN0
+LDN => 49.IN1
+LDN => 27.IN0
+LDN => 30.IN0
+ENP => 47.IN1
+ENP => 65.IN1
+A => 31.IN0
+D => 24.IN0
+C => 26.IN0
+B => 29.IN0
+QD <= 9.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 8.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 7.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|7404:inst10
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+
+
+|taxi|LightConverter:inst28
+Y1 <= 7432:inst10.1
+A => 7432:inst9.2
+A => 7408:inst7.2
+B => 7432:inst9.3
+B => 7432:inst8.2
+B => 7408:inst7.3
+C => 7432:inst10.3
+C => 7432:inst8.3
+C => 7432:inst.3
+C => Y4.DATAIN
+C => 7408:inst11.3
+Y2 <= 7432:inst8.1
+Y3 <= 7432:inst.1
+Y4 <= C.DB_MAX_OUTPUT_PORT_TYPE
+Y5 <= 7408:inst11.1
+
+
+|taxi|LightConverter:inst28|7432:inst10
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst28|7432:inst9
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst28|7432:inst8
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst28|7432:inst
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst28|7408:inst7
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst28|7408:inst11
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|BCDaccumulator:inst31
+COUT <= BCDadder:inst9.COUT
+CIN => BCDadder:inst9.CIN
+NUM1 => BCDadder:inst9.A1
+NUM2 => BCDadder:inst9.A2
+NUM3 => BCDadder:inst9.A3
+NUM4 => BCDadder:inst9.A4
+CLK => 74175:inst36.CLK
+INIT1 => 74157:inst35.B1
+AEN => 74157:inst35.SEL
+INIT2 => 74157:inst35.B2
+INIT3 => 74157:inst35.B3
+INIT4 => 74157:inst35.B4
+SUM1 <= 74157:inst35.Y1
+SUM2 <= 74157:inst35.Y2
+SUM3 <= 74157:inst35.Y3
+SUM4 <= 74157:inst35.Y4
+
+
+|taxi|BCDaccumulator:inst31|BCDadder:inst9
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 74283:inst.CIN
+A1 => 74283:inst.A1
+A2 => 74283:inst.A2
+B2 => 74283:inst.B2
+A3 => 74283:inst.A3
+A4 => 74283:inst.A4
+B4 => 74283:inst.B4
+B1 => 74283:inst.B1
+B3 => 74283:inst.B3
+SUM4 <= 74283:inst1.SUM4
+SUM3 <= 74283:inst1.SUM3
+SUM2 <= 74283:inst1.SUM2
+SUM1 <= 74283:inst1.SUM1
+
+
+|taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst31|BCDadder:inst9|7408:inst3
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst31|BCDadder:inst9|74283:inst1|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst31|74157:inst35
+Y4 <= 25.DB_MAX_OUTPUT_PORT_TYPE
+A4 => 20.IN0
+GN => 12.IN0
+GN => 13.IN0
+SEL => 12.IN1
+SEL => 1.IN0
+B4 => 21.IN0
+Y3 <= 24.DB_MAX_OUTPUT_PORT_TYPE
+A3 => 18.IN0
+B3 => 19.IN0
+Y2 <= 23.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 16.IN0
+B2 => 17.IN0
+Y1 <= 22.DB_MAX_OUTPUT_PORT_TYPE
+A1 => 14.IN0
+B1 => 15.IN0
+
+
+|taxi|BCDaccumulator:inst31|74175:inst36
+1Q <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 16.ACLR
+CLRN => 15.ACLR
+CLRN => 14.ACLR
+CLRN => 13.ACLR
+CLK => 16.CLK
+CLK => 15.CLK
+CLK => 14.CLK
+CLK => 13.CLK
+1D => 16.DATAIN
+1QN <= 1.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 15.DB_MAX_OUTPUT_PORT_TYPE
+2D => 15.DATAIN
+2QN <= 2.DB_MAX_OUTPUT_PORT_TYPE
+3Q <= 14.DB_MAX_OUTPUT_PORT_TYPE
+3D => 14.DATAIN
+3QN <= 3.DB_MAX_OUTPUT_PORT_TYPE
+4Q <= 13.DB_MAX_OUTPUT_PORT_TYPE
+4D => 13.DATAIN
+4QN <= 4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst11
+COUT <= BCDadder:inst9.COUT
+CIN => BCDadder:inst9.CIN
+NUM1 => BCDadder:inst9.A1
+NUM2 => BCDadder:inst9.A2
+NUM3 => BCDadder:inst9.A3
+NUM4 => BCDadder:inst9.A4
+CLK => 74175:inst36.CLK
+INIT1 => 74157:inst35.B1
+AEN => 74157:inst35.SEL
+INIT2 => 74157:inst35.B2
+INIT3 => 74157:inst35.B3
+INIT4 => 74157:inst35.B4
+SUM1 <= 74157:inst35.Y1
+SUM2 <= 74157:inst35.Y2
+SUM3 <= 74157:inst35.Y3
+SUM4 <= 74157:inst35.Y4
+
+
+|taxi|BCDaccumulator:inst11|BCDadder:inst9
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 74283:inst.CIN
+A1 => 74283:inst.A1
+A2 => 74283:inst.A2
+B2 => 74283:inst.B2
+A3 => 74283:inst.A3
+A4 => 74283:inst.A4
+B4 => 74283:inst.B4
+B1 => 74283:inst.B1
+B3 => 74283:inst.B3
+SUM4 <= 74283:inst1.SUM4
+SUM3 <= 74283:inst1.SUM3
+SUM2 <= 74283:inst1.SUM2
+SUM1 <= 74283:inst1.SUM1
+
+
+|taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst11|BCDadder:inst9|7408:inst3
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst11|BCDadder:inst9|74283:inst1|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst11|74157:inst35
+Y4 <= 25.DB_MAX_OUTPUT_PORT_TYPE
+A4 => 20.IN0
+GN => 12.IN0
+GN => 13.IN0
+SEL => 12.IN1
+SEL => 1.IN0
+B4 => 21.IN0
+Y3 <= 24.DB_MAX_OUTPUT_PORT_TYPE
+A3 => 18.IN0
+B3 => 19.IN0
+Y2 <= 23.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 16.IN0
+B2 => 17.IN0
+Y1 <= 22.DB_MAX_OUTPUT_PORT_TYPE
+A1 => 14.IN0
+B1 => 15.IN0
+
+
+|taxi|BCDaccumulator:inst11|74175:inst36
+1Q <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 16.ACLR
+CLRN => 15.ACLR
+CLRN => 14.ACLR
+CLRN => 13.ACLR
+CLK => 16.CLK
+CLK => 15.CLK
+CLK => 14.CLK
+CLK => 13.CLK
+1D => 16.DATAIN
+1QN <= 1.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 15.DB_MAX_OUTPUT_PORT_TYPE
+2D => 15.DATAIN
+2QN <= 2.DB_MAX_OUTPUT_PORT_TYPE
+3Q <= 14.DB_MAX_OUTPUT_PORT_TYPE
+3D => 14.DATAIN
+3QN <= 3.DB_MAX_OUTPUT_PORT_TYPE
+4Q <= 13.DB_MAX_OUTPUT_PORT_TYPE
+4D => 13.DATAIN
+4QN <= 4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|74373:inst24
+Q8 <= 74.DB_MAX_OUTPUT_PORT_TYPE
+D8 => 19.DATAIN
+G => 19.LATCH_ENABLE
+G => 18.LATCH_ENABLE
+G => 17.LATCH_ENABLE
+G => 16.LATCH_ENABLE
+G => 15.LATCH_ENABLE
+G => 14.LATCH_ENABLE
+G => 13.LATCH_ENABLE
+G => 12.LATCH_ENABLE
+OEN => 1.IN0
+Q7 <= 73.DB_MAX_OUTPUT_PORT_TYPE
+D7 => 18.DATAIN
+Q6 <= 72.DB_MAX_OUTPUT_PORT_TYPE
+D6 => 17.DATAIN
+Q5 <= 71.DB_MAX_OUTPUT_PORT_TYPE
+D5 => 16.DATAIN
+Q4 <= 70.DB_MAX_OUTPUT_PORT_TYPE
+D4 => 15.DATAIN
+Q3 <= 69.DB_MAX_OUTPUT_PORT_TYPE
+D3 => 14.DATAIN
+Q2 <= 68.DB_MAX_OUTPUT_PORT_TYPE
+D2 => 13.DATAIN
+Q1 <= 67.DB_MAX_OUTPUT_PORT_TYPE
+D1 => 12.DATAIN
+
+
+|taxi|74139:inst23
+Y10N <= 33.DB_MAX_OUTPUT_PORT_TYPE
+G1N => 7.IN0
+B1 => 11.IN0
+A1 => 8.IN0
+Y11N <= 34.DB_MAX_OUTPUT_PORT_TYPE
+Y12N <= 35.DB_MAX_OUTPUT_PORT_TYPE
+Y13N <= 36.DB_MAX_OUTPUT_PORT_TYPE
+Y20N <= 37.DB_MAX_OUTPUT_PORT_TYPE
+G2N => 12.IN0
+B2 => 16.IN0
+A2 => 13.IN0
+Y21N <= 38.DB_MAX_OUTPUT_PORT_TYPE
+Y22N <= 39.DB_MAX_OUTPUT_PORT_TYPE
+Y23N <= 40.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|7432:inst18
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|7404:inst12
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+
+
+|taxi|BCDaccumulator:inst9
+COUT <= BCDadder:inst9.COUT
+CIN => BCDadder:inst9.CIN
+NUM1 => BCDadder:inst9.A1
+NUM2 => BCDadder:inst9.A2
+NUM3 => BCDadder:inst9.A3
+NUM4 => BCDadder:inst9.A4
+CLK => 74175:inst36.CLK
+INIT1 => 74157:inst35.B1
+AEN => 74157:inst35.SEL
+INIT2 => 74157:inst35.B2
+INIT3 => 74157:inst35.B3
+INIT4 => 74157:inst35.B4
+SUM1 <= 74157:inst35.Y1
+SUM2 <= 74157:inst35.Y2
+SUM3 <= 74157:inst35.Y3
+SUM4 <= 74157:inst35.Y4
+
+
+|taxi|BCDaccumulator:inst9|BCDadder:inst9
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 74283:inst.CIN
+A1 => 74283:inst.A1
+A2 => 74283:inst.A2
+B2 => 74283:inst.B2
+A3 => 74283:inst.A3
+A4 => 74283:inst.A4
+B4 => 74283:inst.B4
+B1 => 74283:inst.B1
+B3 => 74283:inst.B3
+SUM4 <= 74283:inst1.SUM4
+SUM3 <= 74283:inst1.SUM3
+SUM2 <= 74283:inst1.SUM2
+SUM1 <= 74283:inst1.SUM1
+
+
+|taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst9|BCDadder:inst9|7408:inst3
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst9|BCDadder:inst9|74283:inst1|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst9|74157:inst35
+Y4 <= 25.DB_MAX_OUTPUT_PORT_TYPE
+A4 => 20.IN0
+GN => 12.IN0
+GN => 13.IN0
+SEL => 12.IN1
+SEL => 1.IN0
+B4 => 21.IN0
+Y3 <= 24.DB_MAX_OUTPUT_PORT_TYPE
+A3 => 18.IN0
+B3 => 19.IN0
+Y2 <= 23.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 16.IN0
+B2 => 17.IN0
+Y1 <= 22.DB_MAX_OUTPUT_PORT_TYPE
+A1 => 14.IN0
+B1 => 15.IN0
+
+
+|taxi|BCDaccumulator:inst9|74175:inst36
+1Q <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 16.ACLR
+CLRN => 15.ACLR
+CLRN => 14.ACLR
+CLRN => 13.ACLR
+CLK => 16.CLK
+CLK => 15.CLK
+CLK => 14.CLK
+CLK => 13.CLK
+1D => 16.DATAIN
+1QN <= 1.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 15.DB_MAX_OUTPUT_PORT_TYPE
+2D => 15.DATAIN
+2QN <= 2.DB_MAX_OUTPUT_PORT_TYPE
+3Q <= 14.DB_MAX_OUTPUT_PORT_TYPE
+3D => 14.DATAIN
+3QN <= 3.DB_MAX_OUTPUT_PORT_TYPE
+4Q <= 13.DB_MAX_OUTPUT_PORT_TYPE
+4D => 13.DATAIN
+4QN <= 4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|LightConverter:inst29
+Y1 <= 7432:inst10.1
+A => 7432:inst9.2
+A => 7408:inst7.2
+B => 7432:inst9.3
+B => 7432:inst8.2
+B => 7408:inst7.3
+C => 7432:inst10.3
+C => 7432:inst8.3
+C => 7432:inst.3
+C => Y4.DATAIN
+C => 7408:inst11.3
+Y2 <= 7432:inst8.1
+Y3 <= 7432:inst.1
+Y4 <= C.DB_MAX_OUTPUT_PORT_TYPE
+Y5 <= 7408:inst11.1
+
+
+|taxi|LightConverter:inst29|7432:inst10
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst29|7432:inst9
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst29|7432:inst8
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst29|7432:inst
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst29|7408:inst7
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|LightConverter:inst29|7408:inst11
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|74160:inst76
+RCO <= 45.DB_MAX_OUTPUT_PORT_TYPE
+ENT => 45.IN0
+ENT => 47.IN0
+ENT => 65.IN0
+CLRN => 6.ACLR
+CLRN => 9.ACLR
+CLRN => 8.ACLR
+CLRN => 7.ACLR
+CLK => 6.CLK
+CLK => 9.CLK
+CLK => 8.CLK
+CLK => 7.CLK
+LDN => 32.IN0
+LDN => 47.IN2
+LDN => 33.IN0
+LDN => 49.IN1
+LDN => 27.IN0
+LDN => 30.IN0
+ENP => 47.IN1
+ENP => 65.IN1
+A => 31.IN0
+D => 24.IN0
+C => 26.IN0
+B => 29.IN0
+QD <= 9.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 8.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 7.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|74160:inst75
+RCO <= 45.DB_MAX_OUTPUT_PORT_TYPE
+ENT => 45.IN0
+ENT => 47.IN0
+ENT => 65.IN0
+CLRN => 6.ACLR
+CLRN => 9.ACLR
+CLRN => 8.ACLR
+CLRN => 7.ACLR
+CLK => 6.CLK
+CLK => 9.CLK
+CLK => 8.CLK
+CLK => 7.CLK
+LDN => 32.IN0
+LDN => 47.IN2
+LDN => 33.IN0
+LDN => 49.IN1
+LDN => 27.IN0
+LDN => 30.IN0
+ENP => 47.IN1
+ENP => 65.IN1
+A => 31.IN0
+D => 24.IN0
+C => 26.IN0
+B => 29.IN0
+QD <= 9.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 8.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 7.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|7432:inst
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|7404:inst15
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+
+
+|taxi|74160:inst73
+RCO <= 45.DB_MAX_OUTPUT_PORT_TYPE
+ENT => 45.IN0
+ENT => 47.IN0
+ENT => 65.IN0
+CLRN => 6.ACLR
+CLRN => 9.ACLR
+CLRN => 8.ACLR
+CLRN => 7.ACLR
+CLK => 6.CLK
+CLK => 9.CLK
+CLK => 8.CLK
+CLK => 7.CLK
+LDN => 32.IN0
+LDN => 47.IN2
+LDN => 33.IN0
+LDN => 49.IN1
+LDN => 27.IN0
+LDN => 30.IN0
+ENP => 47.IN1
+ENP => 65.IN1
+A => 31.IN0
+D => 24.IN0
+C => 26.IN0
+B => 29.IN0
+QD <= 9.DB_MAX_OUTPUT_PORT_TYPE
+QC <= 8.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 7.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|74373:inst27
+Q8 <= 74.DB_MAX_OUTPUT_PORT_TYPE
+D8 => 19.DATAIN
+G => 19.LATCH_ENABLE
+G => 18.LATCH_ENABLE
+G => 17.LATCH_ENABLE
+G => 16.LATCH_ENABLE
+G => 15.LATCH_ENABLE
+G => 14.LATCH_ENABLE
+G => 13.LATCH_ENABLE
+G => 12.LATCH_ENABLE
+OEN => 1.IN0
+Q7 <= 73.DB_MAX_OUTPUT_PORT_TYPE
+D7 => 18.DATAIN
+Q6 <= 72.DB_MAX_OUTPUT_PORT_TYPE
+D6 => 17.DATAIN
+Q5 <= 71.DB_MAX_OUTPUT_PORT_TYPE
+D5 => 16.DATAIN
+Q4 <= 70.DB_MAX_OUTPUT_PORT_TYPE
+D4 => 15.DATAIN
+Q3 <= 69.DB_MAX_OUTPUT_PORT_TYPE
+D3 => 14.DATAIN
+Q2 <= 68.DB_MAX_OUTPUT_PORT_TYPE
+D2 => 13.DATAIN
+Q1 <= 67.DB_MAX_OUTPUT_PORT_TYPE
+D1 => 12.DATAIN
+
+
+|taxi|7485:inst17
+a[0] => f7485:sub.a[0]
+a[1] => f7485:sub.a[1]
+a[2] => f7485:sub.a[2]
+a[3] => f7485:sub.a[3]
+b[0] => f7485:sub.b[0]
+b[1] => f7485:sub.b[1]
+b[2] => f7485:sub.b[2]
+b[3] => f7485:sub.b[3]
+agbi => f7485:sub.agbi
+albi => f7485:sub.albi
+aebi => f7485:sub.aebi
+agbo <= f7485:sub.agbo
+albo <= f7485:sub.albo
+aebo <= f7485:sub.aebo
+
+
+|taxi|7485:inst17|f7485:sub
+ALBO <= 87.DB_MAX_OUTPUT_PORT_TYPE
+AGBI => 96.IN0
+A0 => 90.IN0
+A0 => 104.IN0
+A0 => 103.IN1
+B0 => 90.IN1
+B0 => 97.IN0
+A1 => 89.IN0
+A1 => 112.IN0
+A1 => 104.IN1
+B1 => 89.IN1
+B1 => 95.IN0
+A2 => 91.IN0
+A2 => 129.IN0
+A2 => 105.IN1
+B2 => 91.IN1
+B2 => 100.IN0
+A3 => 92.IN0
+A3 => 114.IN0
+A3 => 129.IN1
+B3 => 92.IN1
+B3 => 99.IN0
+AEBI => 93.IN0
+AEBI => 108.IN0
+AEBO <= 108.DB_MAX_OUTPUT_PORT_TYPE
+AGBO <= 86.DB_MAX_OUTPUT_PORT_TYPE
+ALBI => 134.IN0
+
+
+|taxi|74373:inst14
+Q8 <= 74.DB_MAX_OUTPUT_PORT_TYPE
+D8 => 19.DATAIN
+G => 19.LATCH_ENABLE
+G => 18.LATCH_ENABLE
+G => 17.LATCH_ENABLE
+G => 16.LATCH_ENABLE
+G => 15.LATCH_ENABLE
+G => 14.LATCH_ENABLE
+G => 13.LATCH_ENABLE
+G => 12.LATCH_ENABLE
+OEN => 1.IN0
+Q7 <= 73.DB_MAX_OUTPUT_PORT_TYPE
+D7 => 18.DATAIN
+Q6 <= 72.DB_MAX_OUTPUT_PORT_TYPE
+D6 => 17.DATAIN
+Q5 <= 71.DB_MAX_OUTPUT_PORT_TYPE
+D5 => 16.DATAIN
+Q4 <= 70.DB_MAX_OUTPUT_PORT_TYPE
+D4 => 15.DATAIN
+Q3 <= 69.DB_MAX_OUTPUT_PORT_TYPE
+D3 => 14.DATAIN
+Q2 <= 68.DB_MAX_OUTPUT_PORT_TYPE
+D2 => 13.DATAIN
+Q1 <= 67.DB_MAX_OUTPUT_PORT_TYPE
+D1 => 12.DATAIN
+
+
+|taxi|BCDaccumulator:inst2
+COUT <= BCDadder:inst9.COUT
+CIN => BCDadder:inst9.CIN
+NUM1 => BCDadder:inst9.A1
+NUM2 => BCDadder:inst9.A2
+NUM3 => BCDadder:inst9.A3
+NUM4 => BCDadder:inst9.A4
+CLK => 74175:inst36.CLK
+INIT1 => 74157:inst35.B1
+AEN => 74157:inst35.SEL
+INIT2 => 74157:inst35.B2
+INIT3 => 74157:inst35.B3
+INIT4 => 74157:inst35.B4
+SUM1 <= 74157:inst35.Y1
+SUM2 <= 74157:inst35.Y2
+SUM3 <= 74157:inst35.Y3
+SUM4 <= 74157:inst35.Y4
+
+
+|taxi|BCDaccumulator:inst2|BCDadder:inst9
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 74283:inst.CIN
+A1 => 74283:inst.A1
+A2 => 74283:inst.A2
+B2 => 74283:inst.B2
+A3 => 74283:inst.A3
+A4 => 74283:inst.A4
+B4 => 74283:inst.B4
+B1 => 74283:inst.B1
+B3 => 74283:inst.B3
+SUM4 <= 74283:inst1.SUM4
+SUM3 <= 74283:inst1.SUM3
+SUM2 <= 74283:inst1.SUM2
+SUM1 <= 74283:inst1.SUM1
+
+
+|taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst2|BCDadder:inst9|7408:inst3
+1 <= 4.DB_MAX_OUTPUT_PORT_TYPE
+2 => 4.IN0
+3 => 4.IN1
+
+
+|taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1
+a[1] => f74283:sub.a[1]
+a[2] => f74283:sub.a[2]
+a[3] => f74283:sub.a[3]
+a[4] => f74283:sub.a[4]
+b[1] => f74283:sub.b[1]
+b[2] => f74283:sub.b[2]
+b[3] => f74283:sub.b[3]
+b[4] => f74283:sub.b[4]
+cin => f74283:sub.cin
+cout <= f74283:sub.cout
+sum[1] <= f74283:sub.sum[1]
+sum[2] <= f74283:sub.sum[2]
+sum[3] <= f74283:sub.sum[3]
+sum[4] <= f74283:sub.sum[4]
+
+
+|taxi|BCDaccumulator:inst2|BCDadder:inst9|74283:inst1|f74283:sub
+SUM1 <= 76.DB_MAX_OUTPUT_PORT_TYPE
+CIN => 108.DATAIN
+A1 => 77.IN1
+A1 => 92.IN1
+A1 => 93.IN1
+B1 => 76.IN1
+B1 => 93.IN0
+B1 => 94.IN1
+COUT <= 91.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 95.IN1
+A2 => 97.IN1
+A2 => 79.IN1
+B2 => 97.IN0
+B2 => 96.IN1
+B2 => 78.IN1
+A3 => 98.IN1
+A3 => 100.IN1
+A3 => 81.IN1
+B3 => 100.IN0
+B3 => 99.IN1
+B3 => 80.IN1
+A4 => 101.IN1
+A4 => 103.IN1
+A4 => 83.IN1
+B4 => 103.IN0
+B4 => 102.IN1
+B4 => 82.IN1
+SUM4 <= 82.DB_MAX_OUTPUT_PORT_TYPE
+SUM3 <= 80.DB_MAX_OUTPUT_PORT_TYPE
+SUM2 <= 78.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|BCDaccumulator:inst2|74157:inst35
+Y4 <= 25.DB_MAX_OUTPUT_PORT_TYPE
+A4 => 20.IN0
+GN => 12.IN0
+GN => 13.IN0
+SEL => 12.IN1
+SEL => 1.IN0
+B4 => 21.IN0
+Y3 <= 24.DB_MAX_OUTPUT_PORT_TYPE
+A3 => 18.IN0
+B3 => 19.IN0
+Y2 <= 23.DB_MAX_OUTPUT_PORT_TYPE
+A2 => 16.IN0
+B2 => 17.IN0
+Y1 <= 22.DB_MAX_OUTPUT_PORT_TYPE
+A1 => 14.IN0
+B1 => 15.IN0
+
+
+|taxi|BCDaccumulator:inst2|74175:inst36
+1Q <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 16.ACLR
+CLRN => 15.ACLR
+CLRN => 14.ACLR
+CLRN => 13.ACLR
+CLK => 16.CLK
+CLK => 15.CLK
+CLK => 14.CLK
+CLK => 13.CLK
+1D => 16.DATAIN
+1QN <= 1.DB_MAX_OUTPUT_PORT_TYPE
+2Q <= 15.DB_MAX_OUTPUT_PORT_TYPE
+2D => 15.DATAIN
+2QN <= 2.DB_MAX_OUTPUT_PORT_TYPE
+3Q <= 14.DB_MAX_OUTPUT_PORT_TYPE
+3D => 14.DATAIN
+3QN <= 3.DB_MAX_OUTPUT_PORT_TYPE
+4Q <= 13.DB_MAX_OUTPUT_PORT_TYPE
+4D => 13.DATAIN
+4QN <= 4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|taxi|74373:inst25
+Q8 <= 74.DB_MAX_OUTPUT_PORT_TYPE
+D8 => 19.DATAIN
+G => 19.LATCH_ENABLE
+G => 18.LATCH_ENABLE
+G => 17.LATCH_ENABLE
+G => 16.LATCH_ENABLE
+G => 15.LATCH_ENABLE
+G => 14.LATCH_ENABLE
+G => 13.LATCH_ENABLE
+G => 12.LATCH_ENABLE
+OEN => 1.IN0
+Q7 <= 73.DB_MAX_OUTPUT_PORT_TYPE
+D7 => 18.DATAIN
+Q6 <= 72.DB_MAX_OUTPUT_PORT_TYPE
+D6 => 17.DATAIN
+Q5 <= 71.DB_MAX_OUTPUT_PORT_TYPE
+D5 => 16.DATAIN
+Q4 <= 70.DB_MAX_OUTPUT_PORT_TYPE
+D4 => 15.DATAIN
+Q3 <= 69.DB_MAX_OUTPUT_PORT_TYPE
+D3 => 14.DATAIN
+Q2 <= 68.DB_MAX_OUTPUT_PORT_TYPE
+D2 => 13.DATAIN
+Q1 <= 67.DB_MAX_OUTPUT_PORT_TYPE
+D1 => 12.DATAIN
+
+
