@@ -34,20 +34,6 @@ startmod:inst220
 }
 # end
 # entity
-clock
-# storage
-db|clock.(0).cnf
-db|clock.(0).cnf
-# case_insensitive
-# source_file
-clock.bdf
-7544aed4e19717ab654d85addfa6fba1
-24
-# hierarchies {
-|
-}
-# end
-# entity
 74194
 # storage
 db|clock.(1).cnf
@@ -100,6 +86,20 @@ ac159334e53df6c28945e33378b5a8f
 24
 # hierarchies {
 startmod:inst220|74193:inst
+}
+# end
+# entity
+clock
+# storage
+db|clock.(0).cnf
+db|clock.(0).cnf
+# case_insensitive
+# source_file
+clock.bdf
+5bf2382a8b8b7bdd549f46fb6f18cee1
+24
+# hierarchies {
+|
 }
 # end
 # complete

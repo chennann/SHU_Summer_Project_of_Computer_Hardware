@@ -94,9 +94,9 @@ VCC_INT                      : 50        : power  :                   : 2.5V    
 h0_2                         : 51        : output : LVTTL/LVCMOS      :         :           : Y              
 GND_INT                      : 52        : gnd    :                   :         :           :                
 VCC_CKLK                     : 53        : power  :                   : 2.5V    :           :                
-GND+                         : 54        :        :                   :         :           :                
-GND+                         : 55        :        :                   :         :           :                
-GND+                         : 56        :        :                   :         :           :                
+timeset                      : 54        : input  : LVTTL/LVCMOS      :         :           : N              
+alarm                        : 55        : input  : LVTTL/LVCMOS      :         :           : N              
+timeset_countdown            : 56        : input  : LVTTL/LVCMOS      :         :           : N              
 GND_CKLK                     : 57        : gnd    :                   :         :           :                
 GND_INT                      : 58        : gnd    :                   :         :           :                
 h0_4                         : 59        : output : LVTTL/LVCMOS      :         :           : Y              
@@ -165,20 +165,20 @@ GND*                         : 121       :        :                   :         
 GND*                         : 122       :        :                   :         :           :                
 GND_INT                      : 123       : gnd    :                   :         :           :                
 GND+                         : 124       :        :                   :         :           :                
-GND+                         : 125       :        :                   :         :           :                
-GND+                         : 126       :        :                   :         :           :                
+countdown                    : 125       : input  : LVTTL/LVCMOS      :         :           : N              
+start                        : 126       : input  : LVTTL/LVCMOS      :         :           : N              
 VCC_INT                      : 127       : power  :                   : 2.5V    :           :                
 GND*                         : 128       :        :                   :         :           :                
 GND_INT                      : 129       : gnd    :                   :         :           :                
-in                           : 130       : input  : LVTTL/LVCMOS      :         :           : Y              
+GND*                         : 130       :        :                   :         :           :                
 clk                          : 131       : input  : LVTTL/LVCMOS      :         :           : Y              
-init                         : 132       : input  : LVTTL/LVCMOS      :         :           : Y              
-in_countdown                 : 133       : input  : LVTTL/LVCMOS      :         :           : Y              
+GND*                         : 132       :        :                   :         :           :                
+GND*                         : 133       :        :                   :         :           :                
 VCC_IO                       : 134       : power  :                   : 3.3V    :           :                
 reset                        : 135       : input  : LVTTL/LVCMOS      :         :           : Y              
-mode                         : 136       : input  : LVTTL/LVCMOS      :         :           : Y              
+GND*                         : 136       :        :                   :         :           :                
 GND*                         : 137       :        :                   :         :           :                
-timing                       : 138       : input  : LVTTL/LVCMOS      :         :           : Y              
+GND*                         : 138       :        :                   :         :           :                
 GND_INT                      : 139       : gnd    :                   :         :           :                
 GND*                         : 140       :        :                   :         :           :                
 GND*                         : 141       :        :                   :         :           :                

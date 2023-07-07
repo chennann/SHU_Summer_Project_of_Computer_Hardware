@@ -1,5 +1,5 @@
 Assembler report for clock
-Wed Jul 05 12:20:56 2023
+Fri Jul 07 11:38:58 2023
 Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
 
 
@@ -9,10 +9,7 @@ Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
   1. Legal Notice
   2. Assembler Summary
   3. Assembler Settings
-  4. Assembler Generated Files
-  5. Assembler Device Options: D:/Personal/dc/clock_test/clock.sof
-  6. Assembler Device Options: D:/Personal/dc/clock_test/clock.pof
-  7. Assembler Messages
+  4. Assembler Messages
 
 
 
@@ -38,7 +35,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Jul 05 12:20:56 2023 ;
+; Assembler Status      ; Successful - Fri Jul 07 11:38:58 2023 ;
 ; Revision Name         ; clock                                 ;
 ; Top-level Entity Name ; clock                                 ;
 ; Family                ; ACEX1K                                ;
@@ -79,49 +76,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+----------+---------------+
 
 
-+-------------------------------------+
-; Assembler Generated Files           ;
-+-------------------------------------+
-; File Name                           ;
-+-------------------------------------+
-; D:/Personal/dc/clock_test/clock.sof ;
-; D:/Personal/dc/clock_test/clock.pof ;
-+-------------------------------------+
-
-
-+---------------------------------------------------------------+
-; Assembler Device Options: D:/Personal/dc/clock_test/clock.sof ;
-+----------------+----------------------------------------------+
-; Option         ; Setting                                      ;
-+----------------+----------------------------------------------+
-; Device         ; EP1K30TC144-3                                ;
-; JTAG usercode  ; 0x0000007F                                   ;
-; Checksum       ; 0x0003BE9C                                   ;
-+----------------+----------------------------------------------+
-
-
-+---------------------------------------------------------------+
-; Assembler Device Options: D:/Personal/dc/clock_test/clock.pof ;
-+----------------+----------------------------------------------+
-; Option         ; Setting                                      ;
-+----------------+----------------------------------------------+
-; Device         ; EPC2                                         ;
-; JTAG usercode  ; 0x00000000                                   ;
-; Checksum       ; 0x025AFBA0                                   ;
-+----------------+----------------------------------------------+
-
-
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Jul 05 12:20:56 2023
+    Info: Processing started: Fri Jul 07 11:38:57 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off clock -c clock
-Info: Assembler is generating device programming files
-Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Processing ended: Wed Jul 05 12:20:56 2023
-    Info: Elapsed time: 00:00:00
+Warning: Can't generate programming files because you are currently using the Quartus II software in Evaluation Mode
+Info: Quartus II Assembler was successful. 0 errors, 1 warning
+    Info: Processing ended: Fri Jul 07 11:38:58 2023
+    Info: Elapsed time: 00:00:01
 
 

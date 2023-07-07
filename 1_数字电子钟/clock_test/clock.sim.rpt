@@ -1,5 +1,5 @@
 Simulator report for clock
-Wed Jul 05 10:41:51 2023
+Fri Jul 07 12:11:19 2023
 Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
 
 
@@ -46,38 +46,38 @@ applicable agreement for further details.
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 100.0 us     ;
 ; Simulation Netlist Size     ; 516 nodes    ;
-; Simulation Coverage         ;      58.56 % ;
-; Total Number of Transitions ; 49762        ;
+; Simulation Coverage         ;      53.50 % ;
+; Total Number of Transitions ; 48325        ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; ACEX1K       ;
 +-----------------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                                               ;
-+--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
-; Option                                                                                     ; Setting                             ; Default Value ;
-+--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
-; Simulation mode                                                                            ; Functional                          ; Timing        ;
-; Start time                                                                                 ; 0 ns                                ; 0 ns          ;
-; Vector input source                                                                        ; D:\Personal\dc\clock_test\clock.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On                                  ; On            ;
-; Check outputs                                                                              ; Off                                 ; Off           ;
-; Report simulation coverage                                                                 ; On                                  ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On                                  ; On            ;
-; Display missing 1-value coverage report                                                    ; On                                  ; On            ;
-; Display missing 0-value coverage report                                                    ; On                                  ; On            ;
-; Detect setup and hold time violations                                                      ; Off                                 ; Off           ;
-; Detect glitches                                                                            ; Off                                 ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off                                 ; Off           ;
-; Generate Signal Activity File                                                              ; Off                                 ; Off           ;
-; Group bus channels in simulation results                                                   ; Off                                 ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On                                  ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                          ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                 ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                                  ;               ;
-; Glitch Filtering                                                                           ; Off                                 ; Off           ;
-+--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                            ;
++--------------------------------------------------------------------------------------------+----------------------------------+---------------+
+; Option                                                                                     ; Setting                          ; Default Value ;
++--------------------------------------------------------------------------------------------+----------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                       ; Timing        ;
+; Start time                                                                                 ; 0 ns                             ; 0 ns          ;
+; Vector input source                                                                        ; D:\Personal\clock_test\clock.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                               ; On            ;
+; Check outputs                                                                              ; Off                              ; Off           ;
+; Report simulation coverage                                                                 ; On                               ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                               ; On            ;
+; Display missing 1-value coverage report                                                    ; On                               ; On            ;
+; Display missing 0-value coverage report                                                    ; On                               ; On            ;
+; Detect setup and hold time violations                                                      ; Off                              ; Off           ;
+; Detect glitches                                                                            ; Off                              ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                              ; Off           ;
+; Generate Signal Activity File                                                              ; Off                              ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                              ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                               ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                       ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                              ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On                               ;               ;
+; Glitch Filtering                                                                           ; Off                              ; Off           ;
++--------------------------------------------------------------------------------------------+----------------------------------+---------------+
 
 
 +----------------------+
@@ -92,13 +92,13 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      58.56 % ;
+; Total coverage as a percentage                      ;      53.50 % ;
 ; Total nodes checked                                 ; 516          ;
 ; Total output ports checked                          ; 514          ;
-; Total output ports with complete 1/0-value coverage ; 301          ;
-; Total output ports with no 1/0-value coverage       ; 209          ;
-; Total output ports with no 1-value coverage         ; 210          ;
-; Total output ports with no 0-value coverage         ; 212          ;
+; Total output ports with complete 1/0-value coverage ; 275          ;
+; Total output ports with no 1/0-value coverage       ; 235          ;
+; Total output ports with no 1-value coverage         ; 236          ;
+; Total output ports with no 0-value coverage         ; 238          ;
 +-----------------------------------------------------+--------------+
 
 
@@ -114,14 +114,15 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |clock|inst182                        ; |clock|inst182                        ; out              ;
 ; |clock|inst68                         ; |clock|inst68                         ; out0             ;
 ; |clock|inst166                        ; |clock|inst166                        ; out0             ;
-; |clock|in_countdown                   ; |clock|in_countdown                   ; out              ;
+; |clock|timeset_countdown              ; |clock|timeset_countdown              ; out              ;
 ; |clock|inst123                        ; |clock|inst123                        ; out0             ;
 ; |clock|inst177                        ; |clock|inst177                        ; out0             ;
 ; |clock|inst226                        ; |clock|inst226                        ; out0             ;
 ; |clock|clk                            ; |clock|clk                            ; out              ;
-; |clock|mode                           ; |clock|mode                           ; out              ;
+; |clock|countdown                      ; |clock|countdown                      ; out              ;
 ; |clock|inst61                         ; |clock|inst61                         ; out0             ;
 ; |clock|inst162                        ; |clock|inst162                        ; out0             ;
+; |clock|inst130                        ; |clock|inst130                        ; out0             ;
 ; |clock|inst159                        ; |clock|inst159                        ; out0             ;
 ; |clock|inst158                        ; |clock|inst158                        ; out0             ;
 ; |clock|inst164                        ; |clock|inst164                        ; out0             ;
@@ -134,19 +135,15 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |clock|inst161                        ; |clock|inst161                        ; out0             ;
 ; |clock|inst175                        ; |clock|inst175                        ; out0             ;
 ; |clock|inst176                        ; |clock|inst176                        ; out0             ;
-; |clock|in                             ; |clock|in                             ; out              ;
 ; |clock|inst23                         ; |clock|inst23                         ; out0             ;
 ; |clock|inst4                          ; |clock|inst4                          ; out              ;
 ; |clock|inst20                         ; |clock|inst20                         ; out0             ;
 ; |clock|inst31                         ; |clock|inst31                         ; out              ;
-; |clock|inst29                         ; |clock|inst29                         ; out0             ;
-; |clock|inst25                         ; |clock|inst25                         ; out0             ;
 ; |clock|inst9                          ; |clock|inst9                          ; out0             ;
 ; |clock|inst14                         ; |clock|inst14                         ; out0             ;
 ; |clock|inst17                         ; |clock|inst17                         ; out0             ;
 ; |clock|inst19                         ; |clock|inst19                         ; out0             ;
 ; |clock|inst18                         ; |clock|inst18                         ; out0             ;
-; |clock|reset                          ; |clock|reset                          ; out              ;
 ; |clock|inst67                         ; |clock|inst67                         ; out0             ;
 ; |clock|inst94                         ; |clock|inst94                         ; out0             ;
 ; |clock|inst95                         ; |clock|inst95                         ; out0             ;
@@ -248,70 +245,44 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |clock|74192:inst58|73                ; |clock|74192:inst58|73                ; out0             ;
 ; |clock|74192:inst58|77                ; |clock|74192:inst58|77                ; out0             ;
 ; |clock|74192:inst11|94                ; |clock|74192:inst11|94                ; out0             ;
-; |clock|74192:inst11|14                ; |clock|74192:inst11|14                ; out0             ;
 ; |clock|74192:inst11|92                ; |clock|74192:inst11|92                ; out0             ;
-; |clock|74192:inst11|16                ; |clock|74192:inst11|16                ; out0             ;
 ; |clock|74192:inst11|95                ; |clock|74192:inst11|95                ; out0             ;
-; |clock|74192:inst11|13                ; |clock|74192:inst11|13                ; out0             ;
 ; |clock|74192:inst11|93                ; |clock|74192:inst11|93                ; out0             ;
-; |clock|74192:inst11|15                ; |clock|74192:inst11|15                ; out0             ;
 ; |clock|74192:inst2|94                 ; |clock|74192:inst2|94                 ; out0             ;
-; |clock|74192:inst2|14                 ; |clock|74192:inst2|14                 ; out0             ;
 ; |clock|74192:inst2|92                 ; |clock|74192:inst2|92                 ; out0             ;
-; |clock|74192:inst2|16                 ; |clock|74192:inst2|16                 ; out0             ;
 ; |clock|74192:inst2|95                 ; |clock|74192:inst2|95                 ; out0             ;
-; |clock|74192:inst2|13                 ; |clock|74192:inst2|13                 ; out0             ;
 ; |clock|74192:inst2|93                 ; |clock|74192:inst2|93                 ; out0             ;
-; |clock|74192:inst2|15                 ; |clock|74192:inst2|15                 ; out0             ;
 ; |clock|74192:inst13|94                ; |clock|74192:inst13|94                ; out0             ;
-; |clock|74192:inst13|14                ; |clock|74192:inst13|14                ; out0             ;
 ; |clock|74192:inst13|92                ; |clock|74192:inst13|92                ; out0             ;
-; |clock|74192:inst13|16                ; |clock|74192:inst13|16                ; out0             ;
 ; |clock|74192:inst13|95                ; |clock|74192:inst13|95                ; out0             ;
-; |clock|74192:inst13|13                ; |clock|74192:inst13|13                ; out0             ;
 ; |clock|74192:inst13|93                ; |clock|74192:inst13|93                ; out0             ;
-; |clock|74192:inst13|15                ; |clock|74192:inst13|15                ; out0             ;
 ; |clock|74192:inst|25                  ; |clock|74192:inst|25                  ; out              ;
 ; |clock|74192:inst|94                  ; |clock|74192:inst|94                  ; out0             ;
-; |clock|74192:inst|14                  ; |clock|74192:inst|14                  ; out0             ;
 ; |clock|74192:inst|23                  ; |clock|74192:inst|23                  ; out              ;
 ; |clock|74192:inst|92                  ; |clock|74192:inst|92                  ; out0             ;
-; |clock|74192:inst|16                  ; |clock|74192:inst|16                  ; out0             ;
 ; |clock|74192:inst|100                 ; |clock|74192:inst|100                 ; out0             ;
 ; |clock|74192:inst|21                  ; |clock|74192:inst|21                  ; out0             ;
 ; |clock|74192:inst|26                  ; |clock|74192:inst|26                  ; out              ;
-; |clock|74192:inst|52                  ; |clock|74192:inst|52                  ; out0             ;
 ; |clock|74192:inst|95                  ; |clock|74192:inst|95                  ; out0             ;
-; |clock|74192:inst|13                  ; |clock|74192:inst|13                  ; out0             ;
 ; |clock|74192:inst|24                  ; |clock|74192:inst|24                  ; out              ;
 ; |clock|74192:inst|93                  ; |clock|74192:inst|93                  ; out0             ;
-; |clock|74192:inst|15                  ; |clock|74192:inst|15                  ; out0             ;
 ; |clock|74192:inst|51                  ; |clock|74192:inst|51                  ; out0             ;
 ; |clock|74192:inst|76                  ; |clock|74192:inst|76                  ; out0             ;
 ; |clock|74192:inst|73                  ; |clock|74192:inst|73                  ; out0             ;
 ; |clock|74192:inst|77                  ; |clock|74192:inst|77                  ; out0             ;
 ; |clock|74192:inst1|25                 ; |clock|74192:inst1|25                 ; out              ;
 ; |clock|74192:inst1|94                 ; |clock|74192:inst1|94                 ; out0             ;
-; |clock|74192:inst1|14                 ; |clock|74192:inst1|14                 ; out0             ;
 ; |clock|74192:inst1|92                 ; |clock|74192:inst1|92                 ; out0             ;
-; |clock|74192:inst1|16                 ; |clock|74192:inst1|16                 ; out0             ;
 ; |clock|74192:inst1|26                 ; |clock|74192:inst1|26                 ; out              ;
-; |clock|74192:inst1|52                 ; |clock|74192:inst1|52                 ; out0             ;
 ; |clock|74192:inst1|95                 ; |clock|74192:inst1|95                 ; out0             ;
-; |clock|74192:inst1|13                 ; |clock|74192:inst1|13                 ; out0             ;
 ; |clock|74192:inst1|24                 ; |clock|74192:inst1|24                 ; out              ;
 ; |clock|74192:inst1|93                 ; |clock|74192:inst1|93                 ; out0             ;
-; |clock|74192:inst1|15                 ; |clock|74192:inst1|15                 ; out0             ;
 ; |clock|74192:inst1|51                 ; |clock|74192:inst1|51                 ; out0             ;
 ; |clock|74192:inst1|73                 ; |clock|74192:inst1|73                 ; out0             ;
 ; |clock|74192:inst3|94                 ; |clock|74192:inst3|94                 ; out0             ;
-; |clock|74192:inst3|14                 ; |clock|74192:inst3|14                 ; out0             ;
 ; |clock|74192:inst3|92                 ; |clock|74192:inst3|92                 ; out0             ;
-; |clock|74192:inst3|16                 ; |clock|74192:inst3|16                 ; out0             ;
 ; |clock|74192:inst3|95                 ; |clock|74192:inst3|95                 ; out0             ;
-; |clock|74192:inst3|13                 ; |clock|74192:inst3|13                 ; out0             ;
 ; |clock|74192:inst3|93                 ; |clock|74192:inst3|93                 ; out0             ;
-; |clock|74192:inst3|15                 ; |clock|74192:inst3|15                 ; out0             ;
 ; |clock|74192:inst70|94                ; |clock|74192:inst70|94                ; out0             ;
 ; |clock|74192:inst70|14                ; |clock|74192:inst70|14                ; out0             ;
 ; |clock|74192:inst70|72                ; |clock|74192:inst70|72                ; out0             ;
@@ -367,8 +338,10 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |clock|74192:inst65|15                ; |clock|74192:inst65|15                ; out0             ;
 ; |clock|74192:inst65|22                ; |clock|74192:inst65|22                ; out0             ;
 ; |clock|74192:inst60|28                ; |clock|74192:inst60|28                ; out0             ;
+; |clock|74192:inst60|25                ; |clock|74192:inst60|25                ; out              ;
 ; |clock|74192:inst60|94                ; |clock|74192:inst60|94                ; out0             ;
 ; |clock|74192:inst60|14                ; |clock|74192:inst60|14                ; out0             ;
+; |clock|74192:inst60|74                ; |clock|74192:inst60|74                ; out0             ;
 ; |clock|74192:inst60|72                ; |clock|74192:inst60|72                ; out0             ;
 ; |clock|74192:inst60|23                ; |clock|74192:inst60|23                ; out              ;
 ; |clock|74192:inst60|92                ; |clock|74192:inst60|92                ; out0             ;
@@ -381,6 +354,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |clock|74192:inst60|54                ; |clock|74192:inst60|54                ; out0             ;
 ; |clock|74192:inst60|93                ; |clock|74192:inst60|93                ; out0             ;
 ; |clock|74192:inst60|15                ; |clock|74192:inst60|15                ; out0             ;
+; |clock|74192:inst60|71                ; |clock|74192:inst60|71                ; out0             ;
 ; |clock|74192:inst60|22                ; |clock|74192:inst60|22                ; out0             ;
 ; |clock|startmod:inst220|inst3         ; |clock|startmod:inst220|inst3         ; out0             ;
 ; |clock|startmod:inst220|74193:inst|25 ; |clock|startmod:inst220|74193:inst|25 ; out              ;
@@ -427,7 +401,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |clock|in_s0_2                        ; |clock|in_s0_2                        ; out              ;
 ; |clock|inst131                        ; |clock|inst131                        ; out0             ;
 ; |clock|in_s1_8                        ; |clock|in_s1_8                        ; out              ;
-; |clock|inst130                        ; |clock|inst130                        ; out0             ;
 ; |clock|in_s1_4                        ; |clock|in_s1_4                        ; out              ;
 ; |clock|inst136                        ; |clock|inst136                        ; out0             ;
 ; |clock|in_m0_8                        ; |clock|in_m0_8                        ; out              ;
@@ -467,14 +440,17 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |clock|inst87                         ; |clock|inst87                         ; out0             ;
 ; |clock|inst110                        ; |clock|inst110                        ; out0             ;
 ; |clock|inst56                         ; |clock|inst56                         ; out0             ;
+; |clock|timeset                        ; |clock|timeset                        ; out              ;
 ; |clock|inst55                         ; |clock|inst55                         ; out0             ;
 ; |clock|inst53                         ; |clock|inst53                         ; out0             ;
 ; |clock|inst54                         ; |clock|inst54                         ; out0             ;
 ; |clock|inst34                         ; |clock|inst34                         ; out0             ;
 ; |clock|inst33                         ; |clock|inst33                         ; out0             ;
+; |clock|inst29                         ; |clock|inst29                         ; out0             ;
 ; |clock|inst30                         ; |clock|inst30                         ; out0             ;
 ; |clock|inst28                         ; |clock|inst28                         ; out0             ;
 ; |clock|inst27                         ; |clock|inst27                         ; out0             ;
+; |clock|inst25                         ; |clock|inst25                         ; out0             ;
 ; |clock|inst26                         ; |clock|inst26                         ; out0             ;
 ; |clock|inst51                         ; |clock|inst51                         ; out0             ;
 ; |clock|inst50                         ; |clock|inst50                         ; out0             ;
@@ -491,6 +467,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |clock|inst36                         ; |clock|inst36                         ; out0             ;
 ; |clock|inst37                         ; |clock|inst37                         ; out0             ;
 ; |clock|inst12                         ; |clock|inst12                         ; out0             ;
+; |clock|reset                          ; |clock|reset                          ; out              ;
 ; |clock|inst111                        ; |clock|inst111                        ; out0             ;
 ; |clock|inst112                        ; |clock|inst112                        ; out0             ;
 ; |clock|inst113                        ; |clock|inst113                        ; out0             ;
@@ -528,65 +505,91 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |clock|inst22                         ; |clock|inst22                         ; out0             ;
 ; |clock|74192:inst11|25                ; |clock|74192:inst11|25                ; out              ;
 ; |clock|74192:inst11|53                ; |clock|74192:inst11|53                ; out0             ;
+; |clock|74192:inst11|14                ; |clock|74192:inst11|14                ; out0             ;
 ; |clock|74192:inst11|23                ; |clock|74192:inst11|23                ; out              ;
 ; |clock|74192:inst11|55                ; |clock|74192:inst11|55                ; out0             ;
+; |clock|74192:inst11|16                ; |clock|74192:inst11|16                ; out0             ;
 ; |clock|74192:inst11|100               ; |clock|74192:inst11|100               ; out0             ;
 ; |clock|74192:inst11|21                ; |clock|74192:inst11|21                ; out0             ;
 ; |clock|74192:inst11|26                ; |clock|74192:inst11|26                ; out              ;
 ; |clock|74192:inst11|52                ; |clock|74192:inst11|52                ; out0             ;
+; |clock|74192:inst11|13                ; |clock|74192:inst11|13                ; out0             ;
 ; |clock|74192:inst11|24                ; |clock|74192:inst11|24                ; out              ;
 ; |clock|74192:inst11|54                ; |clock|74192:inst11|54                ; out0             ;
+; |clock|74192:inst11|15                ; |clock|74192:inst11|15                ; out0             ;
 ; |clock|74192:inst11|51                ; |clock|74192:inst11|51                ; out0             ;
 ; |clock|74192:inst11|76                ; |clock|74192:inst11|76                ; out0             ;
 ; |clock|74192:inst11|73                ; |clock|74192:inst11|73                ; out0             ;
 ; |clock|74192:inst11|77                ; |clock|74192:inst11|77                ; out0             ;
 ; |clock|74192:inst2|25                 ; |clock|74192:inst2|25                 ; out              ;
 ; |clock|74192:inst2|53                 ; |clock|74192:inst2|53                 ; out0             ;
+; |clock|74192:inst2|14                 ; |clock|74192:inst2|14                 ; out0             ;
 ; |clock|74192:inst2|23                 ; |clock|74192:inst2|23                 ; out              ;
 ; |clock|74192:inst2|55                 ; |clock|74192:inst2|55                 ; out0             ;
+; |clock|74192:inst2|16                 ; |clock|74192:inst2|16                 ; out0             ;
 ; |clock|74192:inst2|100                ; |clock|74192:inst2|100                ; out0             ;
 ; |clock|74192:inst2|21                 ; |clock|74192:inst2|21                 ; out0             ;
 ; |clock|74192:inst2|26                 ; |clock|74192:inst2|26                 ; out              ;
 ; |clock|74192:inst2|52                 ; |clock|74192:inst2|52                 ; out0             ;
+; |clock|74192:inst2|13                 ; |clock|74192:inst2|13                 ; out0             ;
 ; |clock|74192:inst2|24                 ; |clock|74192:inst2|24                 ; out              ;
 ; |clock|74192:inst2|54                 ; |clock|74192:inst2|54                 ; out0             ;
+; |clock|74192:inst2|15                 ; |clock|74192:inst2|15                 ; out0             ;
 ; |clock|74192:inst2|51                 ; |clock|74192:inst2|51                 ; out0             ;
 ; |clock|74192:inst2|76                 ; |clock|74192:inst2|76                 ; out0             ;
 ; |clock|74192:inst2|73                 ; |clock|74192:inst2|73                 ; out0             ;
 ; |clock|74192:inst13|25                ; |clock|74192:inst13|25                ; out              ;
 ; |clock|74192:inst13|53                ; |clock|74192:inst13|53                ; out0             ;
+; |clock|74192:inst13|14                ; |clock|74192:inst13|14                ; out0             ;
 ; |clock|74192:inst13|23                ; |clock|74192:inst13|23                ; out              ;
 ; |clock|74192:inst13|55                ; |clock|74192:inst13|55                ; out0             ;
+; |clock|74192:inst13|16                ; |clock|74192:inst13|16                ; out0             ;
 ; |clock|74192:inst13|100               ; |clock|74192:inst13|100               ; out0             ;
 ; |clock|74192:inst13|21                ; |clock|74192:inst13|21                ; out0             ;
 ; |clock|74192:inst13|26                ; |clock|74192:inst13|26                ; out              ;
 ; |clock|74192:inst13|52                ; |clock|74192:inst13|52                ; out0             ;
+; |clock|74192:inst13|13                ; |clock|74192:inst13|13                ; out0             ;
 ; |clock|74192:inst13|24                ; |clock|74192:inst13|24                ; out              ;
 ; |clock|74192:inst13|54                ; |clock|74192:inst13|54                ; out0             ;
+; |clock|74192:inst13|15                ; |clock|74192:inst13|15                ; out0             ;
 ; |clock|74192:inst13|51                ; |clock|74192:inst13|51                ; out0             ;
 ; |clock|74192:inst13|76                ; |clock|74192:inst13|76                ; out0             ;
 ; |clock|74192:inst13|73                ; |clock|74192:inst13|73                ; out0             ;
 ; |clock|74192:inst13|77                ; |clock|74192:inst13|77                ; out0             ;
 ; |clock|74192:inst|53                  ; |clock|74192:inst|53                  ; out0             ;
+; |clock|74192:inst|14                  ; |clock|74192:inst|14                  ; out0             ;
 ; |clock|74192:inst|55                  ; |clock|74192:inst|55                  ; out0             ;
+; |clock|74192:inst|16                  ; |clock|74192:inst|16                  ; out0             ;
+; |clock|74192:inst|52                  ; |clock|74192:inst|52                  ; out0             ;
+; |clock|74192:inst|13                  ; |clock|74192:inst|13                  ; out0             ;
 ; |clock|74192:inst|54                  ; |clock|74192:inst|54                  ; out0             ;
+; |clock|74192:inst|15                  ; |clock|74192:inst|15                  ; out0             ;
 ; |clock|74192:inst1|53                 ; |clock|74192:inst1|53                 ; out0             ;
+; |clock|74192:inst1|14                 ; |clock|74192:inst1|14                 ; out0             ;
 ; |clock|74192:inst1|23                 ; |clock|74192:inst1|23                 ; out              ;
 ; |clock|74192:inst1|55                 ; |clock|74192:inst1|55                 ; out0             ;
+; |clock|74192:inst1|16                 ; |clock|74192:inst1|16                 ; out0             ;
 ; |clock|74192:inst1|100                ; |clock|74192:inst1|100                ; out0             ;
 ; |clock|74192:inst1|21                 ; |clock|74192:inst1|21                 ; out0             ;
+; |clock|74192:inst1|52                 ; |clock|74192:inst1|52                 ; out0             ;
+; |clock|74192:inst1|13                 ; |clock|74192:inst1|13                 ; out0             ;
 ; |clock|74192:inst1|54                 ; |clock|74192:inst1|54                 ; out0             ;
+; |clock|74192:inst1|15                 ; |clock|74192:inst1|15                 ; out0             ;
 ; |clock|74192:inst1|76                 ; |clock|74192:inst1|76                 ; out0             ;
 ; |clock|74192:inst3|25                 ; |clock|74192:inst3|25                 ; out              ;
 ; |clock|74192:inst3|53                 ; |clock|74192:inst3|53                 ; out0             ;
+; |clock|74192:inst3|14                 ; |clock|74192:inst3|14                 ; out0             ;
 ; |clock|74192:inst3|23                 ; |clock|74192:inst3|23                 ; out              ;
 ; |clock|74192:inst3|55                 ; |clock|74192:inst3|55                 ; out0             ;
+; |clock|74192:inst3|16                 ; |clock|74192:inst3|16                 ; out0             ;
 ; |clock|74192:inst3|100                ; |clock|74192:inst3|100                ; out0             ;
 ; |clock|74192:inst3|21                 ; |clock|74192:inst3|21                 ; out0             ;
 ; |clock|74192:inst3|26                 ; |clock|74192:inst3|26                 ; out              ;
 ; |clock|74192:inst3|52                 ; |clock|74192:inst3|52                 ; out0             ;
+; |clock|74192:inst3|13                 ; |clock|74192:inst3|13                 ; out0             ;
 ; |clock|74192:inst3|24                 ; |clock|74192:inst3|24                 ; out              ;
 ; |clock|74192:inst3|54                 ; |clock|74192:inst3|54                 ; out0             ;
+; |clock|74192:inst3|15                 ; |clock|74192:inst3|15                 ; out0             ;
 ; |clock|74192:inst3|51                 ; |clock|74192:inst3|51                 ; out0             ;
 ; |clock|74192:inst3|76                 ; |clock|74192:inst3|76                 ; out0             ;
 ; |clock|74192:inst3|73                 ; |clock|74192:inst3|73                 ; out0             ;
@@ -619,11 +622,8 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |clock|74192:inst65|24                ; |clock|74192:inst65|24                ; out              ;
 ; |clock|74192:inst65|54                ; |clock|74192:inst65|54                ; out0             ;
 ; |clock|74192:inst65|71                ; |clock|74192:inst65|71                ; out0             ;
-; |clock|74192:inst60|25                ; |clock|74192:inst60|25                ; out              ;
 ; |clock|74192:inst60|53                ; |clock|74192:inst60|53                ; out0             ;
-; |clock|74192:inst60|74                ; |clock|74192:inst60|74                ; out0             ;
 ; |clock|74192:inst60|55                ; |clock|74192:inst60|55                ; out0             ;
-; |clock|74192:inst60|71                ; |clock|74192:inst60|71                ; out0             ;
 ; |clock|startmod:inst220|74193:inst|23 ; |clock|startmod:inst220|74193:inst|23 ; out              ;
 ; |clock|74192:inst59|53                ; |clock|74192:inst59|53                ; out0             ;
 ; |clock|74192:inst59|55                ; |clock|74192:inst59|55                ; out0             ;
@@ -644,10 +644,9 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |clock|in_s0_1                        ; |clock|in_s0_1                        ; out              ;
 ; |clock|inst124                        ; |clock|inst124                        ; out0             ;
 ; |clock|in_s0_2                        ; |clock|in_s0_2                        ; out              ;
-; |clock|init                           ; |clock|init                           ; out              ;
+; |clock|start                          ; |clock|start                          ; out              ;
 ; |clock|inst131                        ; |clock|inst131                        ; out0             ;
 ; |clock|in_s1_8                        ; |clock|in_s1_8                        ; out              ;
-; |clock|inst130                        ; |clock|inst130                        ; out0             ;
 ; |clock|in_s1_4                        ; |clock|in_s1_4                        ; out              ;
 ; |clock|inst136                        ; |clock|inst136                        ; out0             ;
 ; |clock|in_m0_8                        ; |clock|in_m0_8                        ; out              ;
@@ -687,14 +686,17 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |clock|inst87                         ; |clock|inst87                         ; out0             ;
 ; |clock|inst110                        ; |clock|inst110                        ; out0             ;
 ; |clock|inst56                         ; |clock|inst56                         ; out0             ;
+; |clock|timeset                        ; |clock|timeset                        ; out              ;
 ; |clock|inst55                         ; |clock|inst55                         ; out0             ;
 ; |clock|inst53                         ; |clock|inst53                         ; out0             ;
 ; |clock|inst54                         ; |clock|inst54                         ; out0             ;
 ; |clock|inst34                         ; |clock|inst34                         ; out0             ;
 ; |clock|inst33                         ; |clock|inst33                         ; out0             ;
+; |clock|inst29                         ; |clock|inst29                         ; out0             ;
 ; |clock|inst30                         ; |clock|inst30                         ; out0             ;
 ; |clock|inst28                         ; |clock|inst28                         ; out0             ;
 ; |clock|inst27                         ; |clock|inst27                         ; out0             ;
+; |clock|inst25                         ; |clock|inst25                         ; out0             ;
 ; |clock|inst26                         ; |clock|inst26                         ; out0             ;
 ; |clock|inst51                         ; |clock|inst51                         ; out0             ;
 ; |clock|inst50                         ; |clock|inst50                         ; out0             ;
@@ -711,6 +713,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |clock|inst36                         ; |clock|inst36                         ; out0             ;
 ; |clock|inst37                         ; |clock|inst37                         ; out0             ;
 ; |clock|inst12                         ; |clock|inst12                         ; out0             ;
+; |clock|reset                          ; |clock|reset                          ; out              ;
 ; |clock|inst111                        ; |clock|inst111                        ; out0             ;
 ; |clock|inst112                        ; |clock|inst112                        ; out0             ;
 ; |clock|inst113                        ; |clock|inst113                        ; out0             ;
@@ -730,7 +733,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |clock|inst99                         ; |clock|inst99                         ; out0             ;
 ; |clock|inst100                        ; |clock|inst100                        ; out0             ;
 ; |clock|inst101                        ; |clock|inst101                        ; out0             ;
-; |clock|timing                         ; |clock|timing                         ; out              ;
+; |clock|alarm                          ; |clock|alarm                          ; out              ;
 ; |clock|inst188                        ; |clock|inst188                        ; out0             ;
 ; |clock|inst57                         ; |clock|inst57                         ; out0             ;
 ; |clock|inst189                        ; |clock|inst189                        ; out0             ;
@@ -749,65 +752,91 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |clock|inst22                         ; |clock|inst22                         ; out0             ;
 ; |clock|74192:inst11|25                ; |clock|74192:inst11|25                ; out              ;
 ; |clock|74192:inst11|53                ; |clock|74192:inst11|53                ; out0             ;
+; |clock|74192:inst11|14                ; |clock|74192:inst11|14                ; out0             ;
 ; |clock|74192:inst11|23                ; |clock|74192:inst11|23                ; out              ;
 ; |clock|74192:inst11|55                ; |clock|74192:inst11|55                ; out0             ;
+; |clock|74192:inst11|16                ; |clock|74192:inst11|16                ; out0             ;
 ; |clock|74192:inst11|100               ; |clock|74192:inst11|100               ; out0             ;
 ; |clock|74192:inst11|21                ; |clock|74192:inst11|21                ; out0             ;
 ; |clock|74192:inst11|26                ; |clock|74192:inst11|26                ; out              ;
 ; |clock|74192:inst11|52                ; |clock|74192:inst11|52                ; out0             ;
+; |clock|74192:inst11|13                ; |clock|74192:inst11|13                ; out0             ;
 ; |clock|74192:inst11|24                ; |clock|74192:inst11|24                ; out              ;
 ; |clock|74192:inst11|54                ; |clock|74192:inst11|54                ; out0             ;
+; |clock|74192:inst11|15                ; |clock|74192:inst11|15                ; out0             ;
 ; |clock|74192:inst11|51                ; |clock|74192:inst11|51                ; out0             ;
 ; |clock|74192:inst11|76                ; |clock|74192:inst11|76                ; out0             ;
 ; |clock|74192:inst11|73                ; |clock|74192:inst11|73                ; out0             ;
 ; |clock|74192:inst11|77                ; |clock|74192:inst11|77                ; out0             ;
 ; |clock|74192:inst2|25                 ; |clock|74192:inst2|25                 ; out              ;
 ; |clock|74192:inst2|53                 ; |clock|74192:inst2|53                 ; out0             ;
+; |clock|74192:inst2|14                 ; |clock|74192:inst2|14                 ; out0             ;
 ; |clock|74192:inst2|23                 ; |clock|74192:inst2|23                 ; out              ;
 ; |clock|74192:inst2|55                 ; |clock|74192:inst2|55                 ; out0             ;
+; |clock|74192:inst2|16                 ; |clock|74192:inst2|16                 ; out0             ;
 ; |clock|74192:inst2|100                ; |clock|74192:inst2|100                ; out0             ;
 ; |clock|74192:inst2|21                 ; |clock|74192:inst2|21                 ; out0             ;
 ; |clock|74192:inst2|26                 ; |clock|74192:inst2|26                 ; out              ;
 ; |clock|74192:inst2|52                 ; |clock|74192:inst2|52                 ; out0             ;
+; |clock|74192:inst2|13                 ; |clock|74192:inst2|13                 ; out0             ;
 ; |clock|74192:inst2|24                 ; |clock|74192:inst2|24                 ; out              ;
 ; |clock|74192:inst2|54                 ; |clock|74192:inst2|54                 ; out0             ;
+; |clock|74192:inst2|15                 ; |clock|74192:inst2|15                 ; out0             ;
 ; |clock|74192:inst2|51                 ; |clock|74192:inst2|51                 ; out0             ;
 ; |clock|74192:inst2|76                 ; |clock|74192:inst2|76                 ; out0             ;
 ; |clock|74192:inst2|73                 ; |clock|74192:inst2|73                 ; out0             ;
 ; |clock|74192:inst13|25                ; |clock|74192:inst13|25                ; out              ;
 ; |clock|74192:inst13|53                ; |clock|74192:inst13|53                ; out0             ;
+; |clock|74192:inst13|14                ; |clock|74192:inst13|14                ; out0             ;
 ; |clock|74192:inst13|23                ; |clock|74192:inst13|23                ; out              ;
 ; |clock|74192:inst13|55                ; |clock|74192:inst13|55                ; out0             ;
+; |clock|74192:inst13|16                ; |clock|74192:inst13|16                ; out0             ;
 ; |clock|74192:inst13|100               ; |clock|74192:inst13|100               ; out0             ;
 ; |clock|74192:inst13|21                ; |clock|74192:inst13|21                ; out0             ;
 ; |clock|74192:inst13|26                ; |clock|74192:inst13|26                ; out              ;
 ; |clock|74192:inst13|52                ; |clock|74192:inst13|52                ; out0             ;
+; |clock|74192:inst13|13                ; |clock|74192:inst13|13                ; out0             ;
 ; |clock|74192:inst13|24                ; |clock|74192:inst13|24                ; out              ;
 ; |clock|74192:inst13|54                ; |clock|74192:inst13|54                ; out0             ;
+; |clock|74192:inst13|15                ; |clock|74192:inst13|15                ; out0             ;
 ; |clock|74192:inst13|51                ; |clock|74192:inst13|51                ; out0             ;
 ; |clock|74192:inst13|76                ; |clock|74192:inst13|76                ; out0             ;
 ; |clock|74192:inst13|73                ; |clock|74192:inst13|73                ; out0             ;
 ; |clock|74192:inst13|77                ; |clock|74192:inst13|77                ; out0             ;
 ; |clock|74192:inst|53                  ; |clock|74192:inst|53                  ; out0             ;
+; |clock|74192:inst|14                  ; |clock|74192:inst|14                  ; out0             ;
 ; |clock|74192:inst|55                  ; |clock|74192:inst|55                  ; out0             ;
+; |clock|74192:inst|16                  ; |clock|74192:inst|16                  ; out0             ;
+; |clock|74192:inst|52                  ; |clock|74192:inst|52                  ; out0             ;
+; |clock|74192:inst|13                  ; |clock|74192:inst|13                  ; out0             ;
 ; |clock|74192:inst|54                  ; |clock|74192:inst|54                  ; out0             ;
+; |clock|74192:inst|15                  ; |clock|74192:inst|15                  ; out0             ;
 ; |clock|74192:inst1|53                 ; |clock|74192:inst1|53                 ; out0             ;
+; |clock|74192:inst1|14                 ; |clock|74192:inst1|14                 ; out0             ;
 ; |clock|74192:inst1|23                 ; |clock|74192:inst1|23                 ; out              ;
 ; |clock|74192:inst1|55                 ; |clock|74192:inst1|55                 ; out0             ;
+; |clock|74192:inst1|16                 ; |clock|74192:inst1|16                 ; out0             ;
 ; |clock|74192:inst1|100                ; |clock|74192:inst1|100                ; out0             ;
 ; |clock|74192:inst1|21                 ; |clock|74192:inst1|21                 ; out0             ;
+; |clock|74192:inst1|52                 ; |clock|74192:inst1|52                 ; out0             ;
+; |clock|74192:inst1|13                 ; |clock|74192:inst1|13                 ; out0             ;
 ; |clock|74192:inst1|54                 ; |clock|74192:inst1|54                 ; out0             ;
+; |clock|74192:inst1|15                 ; |clock|74192:inst1|15                 ; out0             ;
 ; |clock|74192:inst1|76                 ; |clock|74192:inst1|76                 ; out0             ;
 ; |clock|74192:inst3|25                 ; |clock|74192:inst3|25                 ; out              ;
 ; |clock|74192:inst3|53                 ; |clock|74192:inst3|53                 ; out0             ;
+; |clock|74192:inst3|14                 ; |clock|74192:inst3|14                 ; out0             ;
 ; |clock|74192:inst3|23                 ; |clock|74192:inst3|23                 ; out              ;
 ; |clock|74192:inst3|55                 ; |clock|74192:inst3|55                 ; out0             ;
+; |clock|74192:inst3|16                 ; |clock|74192:inst3|16                 ; out0             ;
 ; |clock|74192:inst3|100                ; |clock|74192:inst3|100                ; out0             ;
 ; |clock|74192:inst3|21                 ; |clock|74192:inst3|21                 ; out0             ;
 ; |clock|74192:inst3|26                 ; |clock|74192:inst3|26                 ; out              ;
 ; |clock|74192:inst3|52                 ; |clock|74192:inst3|52                 ; out0             ;
+; |clock|74192:inst3|13                 ; |clock|74192:inst3|13                 ; out0             ;
 ; |clock|74192:inst3|24                 ; |clock|74192:inst3|24                 ; out              ;
 ; |clock|74192:inst3|54                 ; |clock|74192:inst3|54                 ; out0             ;
+; |clock|74192:inst3|15                 ; |clock|74192:inst3|15                 ; out0             ;
 ; |clock|74192:inst3|51                 ; |clock|74192:inst3|51                 ; out0             ;
 ; |clock|74192:inst3|76                 ; |clock|74192:inst3|76                 ; out0             ;
 ; |clock|74192:inst3|73                 ; |clock|74192:inst3|73                 ; out0             ;
@@ -840,11 +869,8 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |clock|74192:inst65|24                ; |clock|74192:inst65|24                ; out              ;
 ; |clock|74192:inst65|54                ; |clock|74192:inst65|54                ; out0             ;
 ; |clock|74192:inst65|71                ; |clock|74192:inst65|71                ; out0             ;
-; |clock|74192:inst60|25                ; |clock|74192:inst60|25                ; out              ;
 ; |clock|74192:inst60|53                ; |clock|74192:inst60|53                ; out0             ;
-; |clock|74192:inst60|74                ; |clock|74192:inst60|74                ; out0             ;
 ; |clock|74192:inst60|55                ; |clock|74192:inst60|55                ; out0             ;
-; |clock|74192:inst60|71                ; |clock|74192:inst60|71                ; out0             ;
 ; |clock|startmod:inst220|74193:inst|28 ; |clock|startmod:inst220|74193:inst|28 ; out0             ;
 ; |clock|74192:inst59|53                ; |clock|74192:inst59|53                ; out0             ;
 ; |clock|74192:inst59|55                ; |clock|74192:inst59|55                ; out0             ;
@@ -865,7 +891,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Jul 05 10:41:51 2023
+    Info: Processing started: Fri Jul 07 12:11:19 2023
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off clock -c clock
 Info: Overwriting simulation input file with simulation results
     Info: A backup of clock.vwf called clock.sim_ori.vwf is created in the db folder
@@ -874,20 +900,15 @@ Info: Option to preserve fewer signal transitions to reduce memory requirements 
 Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|clock|74192:inst59|25"
 Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|clock|inst182"
 Warning: Found clock-sensitive change during active clock edge at time 450.0 ns on register "|clock|74192:inst58|23"
-Warning: Found clock-sensitive change during active clock edge at time 1.45 us on register "|clock|74192:inst|26"
-Warning: Found clock-sensitive change during active clock edge at time 1.45 us on register "|clock|74192:inst1|26"
-Warning: Found clock-sensitive change during active clock edge at time 1.45 us on register "|clock|74192:inst|23"
-Warning: Found clock-sensitive change during active clock edge at time 4.2 us on register "|clock|inst31"
-Warning: Found clock-sensitive change during active clock edge at time 38.21 us on register "|clock|inst4"
-Warning: Found clock-sensitive change during active clock edge at time 41.59 us on register "|clock|74192:inst59|24"
-Warning: Found clock-sensitive change during active clock edge at time 42.15 us on register "|clock|74192:inst58|24"
-Warning: Found clock-sensitive change during active clock edge at time 42.15 us on register "|clock|74192:inst58|25"
+Warning: Found clock-sensitive change during active clock edge at time 3.45 us on register "|clock|inst31"
+Warning: Found clock-sensitive change during active clock edge at time 6.96 us on register "|clock|inst4"
+Warning: Found clock-sensitive change during active clock edge at time 10.7 us on register "|clock|74192:inst58|25"
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      58.56 %
-Info: Number of transitions in simulation is 49762
+Info: Simulation coverage is      53.50 %
+Info: Number of transitions in simulation is 48325
 Info: Vector file clock.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II Simulator was successful. 0 errors, 11 warnings
-    Info: Processing ended: Wed Jul 05 10:41:51 2023
+Info: Quartus II Simulator was successful. 0 errors, 6 warnings
+    Info: Processing ended: Fri Jul 07 12:11:19 2023
     Info: Elapsed time: 00:00:00
 
 
