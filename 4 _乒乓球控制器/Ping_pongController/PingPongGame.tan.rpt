@@ -1,0 +1,1315 @@
+Timing Analyzer report for PingPongGame
+Thu Jul 06 02:40:23 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'B'
+  6. Clock Setup: 'A'
+  7. Clock Setup: 'TURN'
+  8. Clock Setup: 'GAME'
+  9. Clock Setup: 'CLK'
+ 10. Clock Hold: 'B'
+ 11. Clock Hold: 'A'
+ 12. Clock Hold: 'TURN'
+ 13. Clock Hold: 'GAME'
+ 14. Clock Hold: 'CLK'
+ 15. tsu
+ 16. tco
+ 17. tpd
+ 18. th
+ 19. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                            ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------+--------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From            ; To           ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------+--------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; -0.100 ns                        ; A               ; G            ; --         ; B        ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 62.100 ns                        ; 74160:inst|6    ; A0           ; GAME       ; --       ; 0            ;
+; Worst-case tpd               ; N/A                                      ; None          ; 16.600 ns                        ; GAME            ; L7           ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 31.200 ns                        ; B               ; inst7        ; --         ; GAME     ; 0            ;
+; Clock Setup: 'A'             ; N/A                                      ; None          ; 14.45 MHz ( period = 69.200 ns ) ; 74193:inst38|25 ; WZ           ; A          ; A        ; 0            ;
+; Clock Setup: 'B'             ; N/A                                      ; None          ; 14.53 MHz ( period = 68.800 ns ) ; 74193:inst38|25 ; WZ           ; B          ; B        ; 0            ;
+; Clock Setup: 'GAME'          ; N/A                                      ; None          ; 16.39 MHz ( period = 61.000 ns ) ; 74193:inst38|25 ; WZ           ; GAME       ; GAME     ; 0            ;
+; Clock Setup: 'TURN'          ; N/A                                      ; None          ; 16.39 MHz ( period = 61.000 ns ) ; 74193:inst38|25 ; WZ           ; TURN       ; TURN     ; 0            ;
+; Clock Setup: 'CLK'           ; N/A                                      ; None          ; 20.08 MHz ( period = 49.800 ns ) ; 74193:inst38|25 ; WZ           ; CLK        ; CLK      ; 0            ;
+; Clock Hold: 'B'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; 74160:inst|6    ; 74160:inst|6 ; B          ; B        ; 18           ;
+; Clock Hold: 'A'              ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; 74160:inst|6    ; 74160:inst|6 ; A          ; A        ; 18           ;
+; Clock Hold: 'TURN'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; 74160:inst|6    ; 74160:inst|6 ; TURN       ; TURN     ; 19           ;
+; Clock Hold: 'GAME'           ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; 74160:inst|6    ; 74160:inst|6 ; GAME       ; GAME     ; 19           ;
+; Clock Hold: 'CLK'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; 74160:inst|6    ; 74160:inst|6 ; CLK        ; CLK      ; 18           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                 ;              ;            ;          ; 92           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+-----------------+--------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1K30TC144-3      ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                         ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; B               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; A               ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; TURN            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; GAME            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; CLK             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'B'                                                                                                                                                                                       ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 14.53 MHz ( period = 68.800 ns )               ; 74193:inst38|25 ; WZ              ; B          ; B        ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 24.15 MHz ( period = 41.400 ns )               ; 74160:inst|6    ; 74160:inst|8    ; B          ; B        ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 24.27 MHz ( period = 41.200 ns )               ; 74160:inst|7    ; 74160:inst|8    ; B          ; B        ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 24.63 MHz ( period = 40.600 ns )               ; 74160:inst|6    ; 74160:inst|7    ; B          ; B        ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; 24.75 MHz ( period = 40.400 ns )               ; 74160:inst|9    ; 74160:inst|7    ; B          ; B        ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; 25.25 MHz ( period = 39.600 ns )               ; 74160:inst|8    ; 74160:inst|9    ; B          ; B        ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; 25.77 MHz ( period = 38.800 ns )               ; 74193:inst38|23 ; WZ              ; B          ; B        ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 25.84 MHz ( period = 38.700 ns )               ; 74160:inst|7    ; 74160:inst|9    ; B          ; B        ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 25.84 MHz ( period = 38.700 ns )               ; 74160:inst|9    ; 74160:inst|9    ; B          ; B        ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|6    ; 74160:inst|6    ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|7    ; 74160:inst|7    ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|8    ; 74160:inst|8    ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|6    ; 74160:inst|9    ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 34.36 MHz ( period = 29.100 ns )               ; 74193:inst38|25 ; 74193:inst38|25 ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 36.23 MHz ( period = 27.600 ns )               ; 74193:inst38|24 ; WZ              ; B          ; B        ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 87.72 MHz ( period = 11.400 ns )               ; 74193:inst38|23 ; 74193:inst38|23 ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 111.11 MHz ( period = 9.000 ns )               ; 74193:inst38|26 ; WZ              ; B          ; B        ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 169.49 MHz ( period = 5.900 ns )               ; 74193:inst38|24 ; 74193:inst38|24 ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74193:inst38|26 ; 74193:inst38|26 ; B          ; B        ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'A'                                                                                                                                                                                       ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 14.45 MHz ( period = 69.200 ns )               ; 74193:inst38|25 ; WZ              ; A          ; A        ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 24.15 MHz ( period = 41.400 ns )               ; 74160:inst|6    ; 74160:inst|8    ; A          ; A        ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 24.27 MHz ( period = 41.200 ns )               ; 74160:inst|7    ; 74160:inst|8    ; A          ; A        ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 24.63 MHz ( period = 40.600 ns )               ; 74160:inst|6    ; 74160:inst|7    ; A          ; A        ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; 24.75 MHz ( period = 40.400 ns )               ; 74160:inst|9    ; 74160:inst|7    ; A          ; A        ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; 25.25 MHz ( period = 39.600 ns )               ; 74160:inst|8    ; 74160:inst|9    ; A          ; A        ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; 25.51 MHz ( period = 39.200 ns )               ; 74193:inst38|23 ; WZ              ; A          ; A        ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 25.84 MHz ( period = 38.700 ns )               ; 74160:inst|7    ; 74160:inst|9    ; A          ; A        ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 25.84 MHz ( period = 38.700 ns )               ; 74160:inst|9    ; 74160:inst|9    ; A          ; A        ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|6    ; 74160:inst|6    ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|7    ; 74160:inst|7    ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|8    ; 74160:inst|8    ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 25.97 MHz ( period = 38.500 ns )               ; 74160:inst|6    ; 74160:inst|9    ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 34.36 MHz ( period = 29.100 ns )               ; 74193:inst38|25 ; 74193:inst38|25 ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 35.71 MHz ( period = 28.000 ns )               ; 74193:inst38|24 ; WZ              ; A          ; A        ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 87.72 MHz ( period = 11.400 ns )               ; 74193:inst38|23 ; 74193:inst38|23 ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 108.70 MHz ( period = 9.200 ns )               ; 74193:inst38|26 ; WZ              ; A          ; A        ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 169.49 MHz ( period = 5.900 ns )               ; 74193:inst38|24 ; 74193:inst38|24 ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74193:inst38|26 ; 74193:inst38|26 ; A          ; A        ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'TURN'                                                                                                                                                                                    ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 16.39 MHz ( period = 61.000 ns )               ; 74193:inst38|25 ; WZ              ; TURN       ; TURN     ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 27.62 MHz ( period = 36.200 ns )               ; 74160:inst|6    ; 74160:inst|8    ; TURN       ; TURN     ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 27.78 MHz ( period = 36.000 ns )               ; 74160:inst|7    ; 74160:inst|8    ; TURN       ; TURN     ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 28.25 MHz ( period = 35.400 ns )               ; 74160:inst|6    ; 74160:inst|7    ; TURN       ; TURN     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; 28.41 MHz ( period = 35.200 ns )               ; 74160:inst|9    ; 74160:inst|7    ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; 29.07 MHz ( period = 34.400 ns )               ; 74160:inst|8    ; 74160:inst|9    ; TURN       ; TURN     ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; 29.85 MHz ( period = 33.500 ns )               ; 74160:inst|7    ; 74160:inst|9    ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 29.85 MHz ( period = 33.500 ns )               ; 74160:inst|9    ; 74160:inst|9    ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|6    ; 74160:inst|6    ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|7    ; 74160:inst|7    ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|8    ; 74160:inst|8    ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|6    ; 74160:inst|9    ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.86 MHz ( period = 32.400 ns )               ; 74193:inst38|25 ; 74193:inst38|25 ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 32.26 MHz ( period = 31.000 ns )               ; 74193:inst38|23 ; WZ              ; TURN       ; TURN     ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; 74193:inst38|24 ; WZ              ; TURN       ; TURN     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 58.82 MHz ( period = 17.000 ns )               ; 74193:inst38|23 ; 74193:inst38|23 ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 86.96 MHz ( period = 11.500 ns )               ; 74193:inst38|24 ; 74193:inst38|24 ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 128.21 MHz ( period = 7.800 ns )               ; 74193:inst38|26 ; 74193:inst38|26 ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; 74160:inst3|9   ; 74160:inst3|7   ; TURN       ; TURN     ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; 74160:inst3|6   ; 74160:inst3|8   ; TURN       ; TURN     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; 74160:inst3|7   ; 74160:inst3|8   ; TURN       ; TURN     ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 181.82 MHz ( period = 5.500 ns )               ; 74160:inst10|6  ; 74160:inst10|8  ; TURN       ; TURN     ; None                        ; None                      ; 4.200 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; 74160:inst10|7  ; 74160:inst10|8  ; TURN       ; TURN     ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; 74160:inst11|6  ; 74160:inst11|7  ; TURN       ; TURN     ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; 74160:inst11|6  ; 74160:inst11|8  ; TURN       ; TURN     ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 196.08 MHz ( period = 5.100 ns )               ; 74193:inst38|26 ; WZ              ; TURN       ; TURN     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|7   ; TURN       ; TURN     ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|8   ; TURN       ; TURN     ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|7  ; 74160:inst10|9  ; TURN       ; TURN     ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|6  ; 74160:inst10|7  ; TURN       ; TURN     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|6  ; 74160:inst10|9  ; TURN       ; TURN     ; None                        ; None                      ; 2.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|8  ; 74160:inst10|9  ; TURN       ; TURN     ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|7   ; TURN       ; TURN     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|8   ; TURN       ; TURN     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|6   ; 74160:inst3|7   ; TURN       ; TURN     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|9  ; 74160:inst11|7  ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|7  ; 74160:inst11|8  ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|9   ; 74160:inst2|7   ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|7   ; 74160:inst2|8   ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|9   ; 74160:inst5|7   ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|7   ; 74160:inst5|8   ; TURN       ; TURN     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|9  ; 74160:inst10|7  ; TURN       ; TURN     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|7   ; 74160:inst3|9   ; TURN       ; TURN     ; None                        ; None                      ; 2.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|6  ; 74160:inst11|9  ; TURN       ; TURN     ; None                        ; None                      ; 2.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|6   ; 74160:inst3|9   ; TURN       ; TURN     ; None                        ; None                      ; 2.600 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.700 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|8  ; 74160:inst11|9  ; TURN       ; TURN     ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|8   ; 74160:inst2|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|8   ; 74160:inst5|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|8   ; 74160:inst3|9   ; TURN       ; TURN     ; None                        ; None                      ; 2.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|9  ; 74160:inst10|9  ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|7  ; 74160:inst11|9  ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|9  ; 74160:inst11|9  ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|7   ; 74160:inst2|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|9   ; 74160:inst2|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|7   ; 74160:inst5|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|9   ; 74160:inst5|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|9   ; 74160:inst3|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|6  ; 74160:inst10|6  ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|7  ; 74160:inst10|7  ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|8  ; 74160:inst10|8  ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|6  ; 74160:inst11|6  ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|7  ; 74160:inst11|7  ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|8  ; 74160:inst11|8  ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|6   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|7   ; 74160:inst2|7   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|8   ; 74160:inst2|8   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|6   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|7   ; 74160:inst5|7   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|8   ; 74160:inst5|8   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|9   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|6   ; 74160:inst3|6   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|7   ; 74160:inst3|7   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|8   ; 74160:inst3|8   ; TURN       ; TURN     ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'GAME'                                                                                                                                                                                    ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 16.39 MHz ( period = 61.000 ns )               ; 74193:inst38|25 ; WZ              ; GAME       ; GAME     ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 27.62 MHz ( period = 36.200 ns )               ; 74160:inst|6    ; 74160:inst|8    ; GAME       ; GAME     ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 27.78 MHz ( period = 36.000 ns )               ; 74160:inst|7    ; 74160:inst|8    ; GAME       ; GAME     ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 28.25 MHz ( period = 35.400 ns )               ; 74160:inst|6    ; 74160:inst|7    ; GAME       ; GAME     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; 28.41 MHz ( period = 35.200 ns )               ; 74160:inst|9    ; 74160:inst|7    ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; 29.07 MHz ( period = 34.400 ns )               ; 74160:inst|8    ; 74160:inst|9    ; GAME       ; GAME     ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; 29.85 MHz ( period = 33.500 ns )               ; 74160:inst|7    ; 74160:inst|9    ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 29.85 MHz ( period = 33.500 ns )               ; 74160:inst|9    ; 74160:inst|9    ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|6    ; 74160:inst|6    ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|7    ; 74160:inst|7    ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|8    ; 74160:inst|8    ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.03 MHz ( period = 33.300 ns )               ; 74160:inst|6    ; 74160:inst|9    ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 30.86 MHz ( period = 32.400 ns )               ; 74193:inst38|25 ; 74193:inst38|25 ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 32.26 MHz ( period = 31.000 ns )               ; 74193:inst38|23 ; WZ              ; GAME       ; GAME     ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; 74193:inst38|24 ; WZ              ; GAME       ; GAME     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 58.82 MHz ( period = 17.000 ns )               ; 74193:inst38|23 ; 74193:inst38|23 ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 86.96 MHz ( period = 11.500 ns )               ; 74193:inst38|24 ; 74193:inst38|24 ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 128.21 MHz ( period = 7.800 ns )               ; 74193:inst38|26 ; 74193:inst38|26 ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 161.29 MHz ( period = 6.200 ns )               ; 74160:inst3|9   ; 74160:inst3|7   ; GAME       ; GAME     ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; 74160:inst3|6   ; 74160:inst3|8   ; GAME       ; GAME     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; 74160:inst3|7   ; 74160:inst3|8   ; GAME       ; GAME     ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 181.82 MHz ( period = 5.500 ns )               ; 74160:inst10|6  ; 74160:inst10|8  ; GAME       ; GAME     ; None                        ; None                      ; 4.200 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; 74160:inst10|7  ; 74160:inst10|8  ; GAME       ; GAME     ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; 74160:inst11|6  ; 74160:inst11|7  ; GAME       ; GAME     ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; 74160:inst11|6  ; 74160:inst11|8  ; GAME       ; GAME     ; None                        ; None                      ; 4.100 ns                ;
+; N/A   ; 196.08 MHz ( period = 5.100 ns )               ; 74193:inst38|26 ; WZ              ; GAME       ; GAME     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|7   ; GAME       ; GAME     ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|8   ; GAME       ; GAME     ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|7  ; 74160:inst10|9  ; GAME       ; GAME     ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|6  ; 74160:inst10|7  ; GAME       ; GAME     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|6  ; 74160:inst10|9  ; GAME       ; GAME     ; None                        ; None                      ; 2.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|8  ; 74160:inst10|9  ; GAME       ; GAME     ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|7   ; GAME       ; GAME     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|8   ; GAME       ; GAME     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|6   ; 74160:inst3|7   ; GAME       ; GAME     ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|9  ; 74160:inst11|7  ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|7  ; 74160:inst11|8  ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|9   ; 74160:inst2|7   ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|7   ; 74160:inst2|8   ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|9   ; 74160:inst5|7   ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|7   ; 74160:inst5|8   ; GAME       ; GAME     ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|9  ; 74160:inst10|7  ; GAME       ; GAME     ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|7   ; 74160:inst3|9   ; GAME       ; GAME     ; None                        ; None                      ; 2.800 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|6  ; 74160:inst11|9  ; GAME       ; GAME     ; None                        ; None                      ; 2.000 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|6   ; 74160:inst3|9   ; GAME       ; GAME     ; None                        ; None                      ; 2.600 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.700 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|8  ; 74160:inst11|9  ; GAME       ; GAME     ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|8   ; 74160:inst2|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|8   ; 74160:inst5|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.400 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|8   ; 74160:inst3|9   ; GAME       ; GAME     ; None                        ; None                      ; 2.900 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|9  ; 74160:inst10|9  ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|7  ; 74160:inst11|9  ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|9  ; 74160:inst11|9  ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|7   ; 74160:inst2|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|9   ; 74160:inst2|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|7   ; 74160:inst5|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|9   ; 74160:inst5|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|9   ; 74160:inst3|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|6  ; 74160:inst10|6  ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|7  ; 74160:inst10|7  ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst10|8  ; 74160:inst10|8  ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|6  ; 74160:inst11|6  ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|7  ; 74160:inst11|7  ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst11|8  ; 74160:inst11|8  ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|6   ; 74160:inst2|6   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|7   ; 74160:inst2|7   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst2|8   ; 74160:inst2|8   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|6   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|7   ; 74160:inst5|7   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|8   ; 74160:inst5|8   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst5|6   ; 74160:inst5|9   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|6   ; 74160:inst3|6   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|7   ; 74160:inst3|7   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74160:inst3|8   ; 74160:inst3|8   ; GAME       ; GAME     ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK'                                                                                                                                                                                     ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From            ; To              ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 20.08 MHz ( period = 49.800 ns )               ; 74193:inst38|25 ; WZ              ; CLK        ; CLK      ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 32.68 MHz ( period = 30.600 ns )               ; 74160:inst|6    ; 74160:inst|8    ; CLK        ; CLK      ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 32.89 MHz ( period = 30.400 ns )               ; 74160:inst|7    ; 74160:inst|8    ; CLK        ; CLK      ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 33.56 MHz ( period = 29.800 ns )               ; 74160:inst|6    ; 74160:inst|7    ; CLK        ; CLK      ; None                        ; None                      ; 3.200 ns                ;
+; N/A   ; 33.78 MHz ( period = 29.600 ns )               ; 74160:inst|9    ; 74160:inst|7    ; CLK        ; CLK      ; None                        ; None                      ; 3.000 ns                ;
+; N/A   ; 34.72 MHz ( period = 28.800 ns )               ; 74160:inst|8    ; 74160:inst|9    ; CLK        ; CLK      ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; 35.84 MHz ( period = 27.900 ns )               ; 74160:inst|7    ; 74160:inst|9    ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 35.84 MHz ( period = 27.900 ns )               ; 74160:inst|9    ; 74160:inst|9    ; CLK        ; CLK      ; None                        ; None                      ; 1.300 ns                ;
+; N/A   ; 36.10 MHz ( period = 27.700 ns )               ; 74160:inst|6    ; 74160:inst|6    ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 36.10 MHz ( period = 27.700 ns )               ; 74160:inst|7    ; 74160:inst|7    ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 36.10 MHz ( period = 27.700 ns )               ; 74160:inst|8    ; 74160:inst|8    ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 36.10 MHz ( period = 27.700 ns )               ; 74160:inst|6    ; 74160:inst|9    ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 37.31 MHz ( period = 26.800 ns )               ; 74193:inst38|25 ; 74193:inst38|25 ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 50.51 MHz ( period = 19.800 ns )               ; 74193:inst38|23 ; WZ              ; CLK        ; CLK      ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 87.72 MHz ( period = 11.400 ns )               ; 74193:inst38|23 ; 74193:inst38|23 ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; 116.28 MHz ( period = 8.600 ns )               ; 74193:inst38|24 ; WZ              ; CLK        ; CLK      ; None                        ; None                      ; 3.900 ns                ;
+; N/A   ; 169.49 MHz ( period = 5.900 ns )               ; 74193:inst38|24 ; 74193:inst38|24 ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 200.00 MHz ( period = 5.000 ns ) ; 74193:inst38|26 ; 74193:inst38|26 ; CLK        ; CLK      ; None                        ; None                      ; 1.100 ns                ;
++-------+------------------------------------------------+-----------------+-----------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'B'                                                                                                                                                                           ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|6    ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|7    ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|8    ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|9    ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|9    ; B          ; B        ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|9    ; B          ; B        ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|9    ; B          ; B        ; None                       ; None                       ; 2.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|7    ; B          ; B        ; None                       ; None                       ; 3.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|7    ; B          ; B        ; None                       ; None                       ; 3.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|8    ; B          ; B        ; None                       ; None                       ; 3.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|8    ; B          ; B        ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; 74193:inst38|25 ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; WZ              ; B          ; B        ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; WZ              ; B          ; B        ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; WZ              ; B          ; B        ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; WZ              ; B          ; B        ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; 74193:inst38|23 ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; 74193:inst38|24 ; B          ; B        ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'A'                                                                                                                                                                           ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|6    ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|7    ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|8    ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|9    ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|9    ; A          ; A        ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|9    ; A          ; A        ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|9    ; A          ; A        ; None                       ; None                       ; 2.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|7    ; A          ; A        ; None                       ; None                       ; 3.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|7    ; A          ; A        ; None                       ; None                       ; 3.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|8    ; A          ; A        ; None                       ; None                       ; 3.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|8    ; A          ; A        ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; 74193:inst38|25 ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; WZ              ; A          ; A        ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; WZ              ; A          ; A        ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; WZ              ; A          ; A        ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; WZ              ; A          ; A        ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; 74193:inst38|23 ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; 74193:inst38|24 ; A          ; A        ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'TURN'                                                                                                                                                                        ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|6    ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|7    ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|8    ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|9    ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|9    ; TURN       ; TURN     ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|9    ; TURN       ; TURN     ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; 74193:inst38|25 ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|9    ; TURN       ; TURN     ; None                       ; None                       ; 2.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|7    ; TURN       ; TURN     ; None                       ; None                       ; 3.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|7    ; TURN       ; TURN     ; None                       ; None                       ; 3.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|8    ; TURN       ; TURN     ; None                       ; None                       ; 3.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|8    ; TURN       ; TURN     ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; WZ              ; TURN       ; TURN     ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; WZ              ; TURN       ; TURN     ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; WZ              ; TURN       ; TURN     ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; WZ              ; TURN       ; TURN     ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; 74193:inst38|23 ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; 74193:inst38|24 ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; 74193:inst38|26 ; TURN       ; TURN     ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'GAME'                                                                                                                                                                        ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|6    ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|7    ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|8    ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|9    ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|9    ; GAME       ; GAME     ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|9    ; GAME       ; GAME     ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; 74193:inst38|25 ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|9    ; GAME       ; GAME     ; None                       ; None                       ; 2.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|7    ; GAME       ; GAME     ; None                       ; None                       ; 3.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|7    ; GAME       ; GAME     ; None                       ; None                       ; 3.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|8    ; GAME       ; GAME     ; None                       ; None                       ; 3.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|8    ; GAME       ; GAME     ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; WZ              ; GAME       ; GAME     ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; WZ              ; GAME       ; GAME     ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; WZ              ; GAME       ; GAME     ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; WZ              ; GAME       ; GAME     ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; 74193:inst38|23 ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; 74193:inst38|24 ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; 74193:inst38|26 ; GAME       ; GAME     ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'CLK'                                                                                                                                                                         ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From            ; To              ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|6    ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|7    ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|8    ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|9    ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|9    ; CLK        ; CLK      ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|9    ; CLK        ; CLK      ; None                       ; None                       ; 1.300 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; 74193:inst38|25 ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|8    ; 74160:inst|9    ; CLK        ; CLK      ; None                       ; None                       ; 2.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|9    ; 74160:inst|7    ; CLK        ; CLK      ; None                       ; None                       ; 3.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|7    ; CLK        ; CLK      ; None                       ; None                       ; 3.200 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|7    ; 74160:inst|8    ; CLK        ; CLK      ; None                       ; None                       ; 3.800 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74160:inst|6    ; 74160:inst|8    ; CLK        ; CLK      ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|26 ; WZ              ; CLK        ; CLK      ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|25 ; WZ              ; CLK        ; CLK      ; None                       ; None                       ; 3.600 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; WZ              ; CLK        ; CLK      ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; WZ              ; CLK        ; CLK      ; None                       ; None                       ; 4.000 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|23 ; 74193:inst38|23 ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
+; Not operational: Clock Skew > Data Delay ; 74193:inst38|24 ; 74193:inst38|24 ; CLK        ; CLK      ; None                       ; None                       ; 1.100 ns                 ;
++------------------------------------------+-----------------+-----------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------+
+; tsu                                                         ;
++-------+--------------+------------+------+-------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To    ; To Clock ;
++-------+--------------+------------+------+-------+----------+
+; N/A   ; None         ; -0.100 ns  ; A    ; inst7 ; B        ;
+; N/A   ; None         ; -0.100 ns  ; A    ; G     ; B        ;
+; N/A   ; None         ; -0.300 ns  ; A    ; inst7 ; A        ;
+; N/A   ; None         ; -0.300 ns  ; A    ; G     ; A        ;
+; N/A   ; None         ; -0.300 ns  ; B    ; inst7 ; B        ;
+; N/A   ; None         ; -0.300 ns  ; B    ; G     ; B        ;
+; N/A   ; None         ; -0.500 ns  ; B    ; inst7 ; A        ;
+; N/A   ; None         ; -0.500 ns  ; B    ; G     ; A        ;
+; N/A   ; None         ; -9.700 ns  ; A    ; inst7 ; CLK      ;
+; N/A   ; None         ; -9.900 ns  ; B    ; inst7 ; CLK      ;
+; N/A   ; None         ; -12.900 ns ; A    ; inst7 ; TURN     ;
+; N/A   ; None         ; -13.100 ns ; A    ; inst7 ; GAME     ;
+; N/A   ; None         ; -13.100 ns ; B    ; inst7 ; TURN     ;
+; N/A   ; None         ; -13.300 ns ; B    ; inst7 ; GAME     ;
++-------+--------------+------------+------+-------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; tco                                                                                                                                             ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------+-----+------------+
+; Slack                                   ; Required tco                                        ; Actual tco ; From            ; To  ; From Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------+-----+------------+
+; N/A                                     ; None                                                ; 62.100 ns  ; 74160:inst|7    ; A1  ; GAME       ;
+; N/A                                     ; None                                                ; 62.100 ns  ; 74160:inst|6    ; A0  ; GAME       ;
+; N/A                                     ; None                                                ; 62.000 ns  ; 74160:inst|9    ; A3  ; GAME       ;
+; N/A                                     ; None                                                ; 62.000 ns  ; 74160:inst|8    ; A2  ; GAME       ;
+; N/A                                     ; None                                                ; 61.900 ns  ; 74160:inst|7    ; A1  ; TURN       ;
+; N/A                                     ; None                                                ; 61.900 ns  ; 74160:inst|6    ; A0  ; TURN       ;
+; N/A                                     ; None                                                ; 61.800 ns  ; 74160:inst|9    ; A3  ; TURN       ;
+; N/A                                     ; None                                                ; 61.800 ns  ; 74160:inst|8    ; A2  ; TURN       ;
+; N/A                                     ; None                                                ; 60.200 ns  ; 74160:inst|7    ; A1  ; A          ;
+; N/A                                     ; None                                                ; 60.200 ns  ; 74160:inst|6    ; A0  ; A          ;
+; N/A                                     ; None                                                ; 60.100 ns  ; 74160:inst|9    ; A3  ; A          ;
+; N/A                                     ; None                                                ; 60.100 ns  ; 74160:inst|8    ; A2  ; A          ;
+; N/A                                     ; None                                                ; 60.000 ns  ; 74160:inst|7    ; A1  ; B          ;
+; N/A                                     ; None                                                ; 60.000 ns  ; 74160:inst|6    ; A0  ; B          ;
+; N/A                                     ; None                                                ; 59.900 ns  ; 74160:inst|9    ; A3  ; B          ;
+; N/A                                     ; None                                                ; 59.900 ns  ; 74160:inst|8    ; A2  ; B          ;
+; N/A                                     ; None                                                ; 55.800 ns  ; 74193:inst38|25 ; L1  ; GAME       ;
+; N/A                                     ; None                                                ; 55.800 ns  ; 74193:inst38|25 ; L0  ; GAME       ;
+; N/A                                     ; None                                                ; 55.700 ns  ; 74193:inst38|25 ; L3  ; GAME       ;
+; N/A                                     ; None                                                ; 55.700 ns  ; 74193:inst38|25 ; L2  ; GAME       ;
+; N/A                                     ; None                                                ; 55.600 ns  ; 74193:inst38|25 ; L14 ; GAME       ;
+; N/A                                     ; None                                                ; 55.600 ns  ; 74193:inst38|25 ; L12 ; GAME       ;
+; N/A                                     ; None                                                ; 55.600 ns  ; 74193:inst38|25 ; L11 ; GAME       ;
+; N/A                                     ; None                                                ; 55.600 ns  ; 74193:inst38|25 ; L4  ; GAME       ;
+; N/A                                     ; None                                                ; 55.600 ns  ; 74193:inst38|25 ; L1  ; TURN       ;
+; N/A                                     ; None                                                ; 55.600 ns  ; 74193:inst38|25 ; L0  ; TURN       ;
+; N/A                                     ; None                                                ; 55.500 ns  ; 74193:inst38|25 ; L8  ; GAME       ;
+; N/A                                     ; None                                                ; 55.500 ns  ; 74193:inst38|25 ; L3  ; TURN       ;
+; N/A                                     ; None                                                ; 55.500 ns  ; 74193:inst38|25 ; L2  ; TURN       ;
+; N/A                                     ; None                                                ; 55.400 ns  ; 74193:inst38|25 ; L14 ; TURN       ;
+; N/A                                     ; None                                                ; 55.400 ns  ; 74193:inst38|25 ; L12 ; TURN       ;
+; N/A                                     ; None                                                ; 55.400 ns  ; 74193:inst38|25 ; L11 ; TURN       ;
+; N/A                                     ; None                                                ; 55.400 ns  ; 74193:inst38|25 ; L4  ; TURN       ;
+; N/A                                     ; None                                                ; 55.300 ns  ; 74193:inst38|25 ; L8  ; TURN       ;
+; N/A                                     ; None                                                ; 54.800 ns  ; 74193:inst38|25 ; L6  ; GAME       ;
+; N/A                                     ; None                                                ; 54.800 ns  ; 74193:inst38|25 ; L5  ; GAME       ;
+; N/A                                     ; None                                                ; 54.700 ns  ; 74193:inst38|25 ; L13 ; GAME       ;
+; N/A                                     ; None                                                ; 54.700 ns  ; 74193:inst38|25 ; L10 ; GAME       ;
+; N/A                                     ; None                                                ; 54.600 ns  ; 74193:inst38|25 ; L6  ; TURN       ;
+; N/A                                     ; None                                                ; 54.600 ns  ; 74193:inst38|25 ; L9  ; GAME       ;
+; N/A                                     ; None                                                ; 54.600 ns  ; 74193:inst38|25 ; L5  ; TURN       ;
+; N/A                                     ; None                                                ; 54.500 ns  ; 74193:inst38|25 ; L13 ; TURN       ;
+; N/A                                     ; None                                                ; 54.500 ns  ; 74193:inst38|25 ; L10 ; TURN       ;
+; N/A                                     ; None                                                ; 54.400 ns  ; 74193:inst38|25 ; L9  ; TURN       ;
+; N/A                                     ; None                                                ; 53.900 ns  ; 74193:inst38|25 ; L1  ; A          ;
+; N/A                                     ; None                                                ; 53.900 ns  ; 74193:inst38|25 ; L0  ; A          ;
+; N/A                                     ; None                                                ; 53.800 ns  ; 74193:inst38|25 ; L3  ; A          ;
+; N/A                                     ; None                                                ; 53.800 ns  ; 74193:inst38|25 ; L2  ; A          ;
+; N/A                                     ; None                                                ; 53.700 ns  ; 74193:inst38|25 ; L14 ; A          ;
+; N/A                                     ; None                                                ; 53.700 ns  ; 74193:inst38|25 ; L12 ; A          ;
+; N/A                                     ; None                                                ; 53.700 ns  ; 74193:inst38|25 ; L11 ; A          ;
+; N/A                                     ; None                                                ; 53.700 ns  ; 74193:inst38|25 ; L4  ; A          ;
+; N/A                                     ; None                                                ; 53.700 ns  ; 74193:inst38|25 ; L1  ; B          ;
+; N/A                                     ; None                                                ; 53.700 ns  ; 74193:inst38|25 ; L0  ; B          ;
+; N/A                                     ; None                                                ; 53.600 ns  ; 74193:inst38|25 ; L8  ; A          ;
+; N/A                                     ; None                                                ; 53.600 ns  ; 74193:inst38|25 ; L3  ; B          ;
+; N/A                                     ; None                                                ; 53.600 ns  ; 74193:inst38|25 ; L2  ; B          ;
+; N/A                                     ; None                                                ; 53.500 ns  ; 74193:inst38|25 ; L14 ; B          ;
+; N/A                                     ; None                                                ; 53.500 ns  ; 74193:inst38|25 ; L12 ; B          ;
+; N/A                                     ; None                                                ; 53.500 ns  ; 74193:inst38|25 ; L11 ; B          ;
+; N/A                                     ; None                                                ; 53.500 ns  ; 74193:inst38|25 ; L4  ; B          ;
+; N/A                                     ; None                                                ; 53.400 ns  ; 74193:inst38|25 ; L8  ; B          ;
+; N/A                                     ; None                                                ; 53.100 ns  ; 74160:inst|7    ; A1  ; CLK        ;
+; N/A                                     ; None                                                ; 53.100 ns  ; 74160:inst|6    ; A0  ; CLK        ;
+; N/A                                     ; None                                                ; 53.000 ns  ; 74160:inst|9    ; A3  ; CLK        ;
+; N/A                                     ; None                                                ; 53.000 ns  ; 74160:inst|8    ; A2  ; CLK        ;
+; N/A                                     ; None                                                ; 52.900 ns  ; 74193:inst38|25 ; L6  ; A          ;
+; N/A                                     ; None                                                ; 52.900 ns  ; 74193:inst38|25 ; L5  ; A          ;
+; N/A                                     ; None                                                ; 52.800 ns  ; 74193:inst38|25 ; L13 ; A          ;
+; N/A                                     ; None                                                ; 52.800 ns  ; 74193:inst38|25 ; L10 ; A          ;
+; N/A                                     ; None                                                ; 52.700 ns  ; 74193:inst38|25 ; L6  ; B          ;
+; N/A                                     ; None                                                ; 52.700 ns  ; 74193:inst38|25 ; L9  ; A          ;
+; N/A                                     ; None                                                ; 52.700 ns  ; 74193:inst38|25 ; L5  ; B          ;
+; N/A                                     ; None                                                ; 52.600 ns  ; 74193:inst38|25 ; L13 ; B          ;
+; N/A                                     ; None                                                ; 52.600 ns  ; 74193:inst38|25 ; L10 ; B          ;
+; N/A                                     ; None                                                ; 52.500 ns  ; 74193:inst38|25 ; L9  ; B          ;
+; N/A                                     ; None                                                ; 46.800 ns  ; 74193:inst38|25 ; L1  ; CLK        ;
+; N/A                                     ; None                                                ; 46.800 ns  ; 74193:inst38|25 ; L0  ; CLK        ;
+; N/A                                     ; None                                                ; 46.700 ns  ; 74193:inst38|25 ; L3  ; CLK        ;
+; N/A                                     ; None                                                ; 46.700 ns  ; 74193:inst38|25 ; L2  ; CLK        ;
+; N/A                                     ; None                                                ; 46.600 ns  ; 74193:inst38|25 ; L14 ; CLK        ;
+; N/A                                     ; None                                                ; 46.600 ns  ; 74193:inst38|25 ; L12 ; CLK        ;
+; N/A                                     ; None                                                ; 46.600 ns  ; 74193:inst38|25 ; L11 ; CLK        ;
+; N/A                                     ; None                                                ; 46.600 ns  ; 74193:inst38|25 ; L4  ; CLK        ;
+; N/A                                     ; None                                                ; 46.500 ns  ; 74193:inst38|25 ; L8  ; CLK        ;
+; N/A                                     ; None                                                ; 45.800 ns  ; 74193:inst38|25 ; L6  ; CLK        ;
+; N/A                                     ; None                                                ; 45.800 ns  ; 74193:inst38|25 ; L5  ; CLK        ;
+; N/A                                     ; None                                                ; 45.700 ns  ; 74193:inst38|25 ; L13 ; CLK        ;
+; N/A                                     ; None                                                ; 45.700 ns  ; 74193:inst38|25 ; L10 ; CLK        ;
+; N/A                                     ; None                                                ; 45.600 ns  ; 74193:inst38|25 ; L9  ; CLK        ;
+; N/A                                     ; None                                                ; 40.800 ns  ; 74193:inst38|23 ; L2  ; GAME       ;
+; N/A                                     ; None                                                ; 40.800 ns  ; 74193:inst38|23 ; L1  ; GAME       ;
+; N/A                                     ; None                                                ; 40.800 ns  ; 74193:inst38|23 ; L0  ; GAME       ;
+; N/A                                     ; None                                                ; 40.700 ns  ; 74193:inst38|23 ; L4  ; GAME       ;
+; N/A                                     ; None                                                ; 40.700 ns  ; 74193:inst38|23 ; L3  ; GAME       ;
+; N/A                                     ; None                                                ; 40.600 ns  ; 74193:inst38|23 ; L8  ; GAME       ;
+; N/A                                     ; None                                                ; 40.600 ns  ; 74193:inst38|23 ; L2  ; TURN       ;
+; N/A                                     ; None                                                ; 40.600 ns  ; 74193:inst38|23 ; L1  ; TURN       ;
+; N/A                                     ; None                                                ; 40.600 ns  ; 74193:inst38|23 ; L0  ; TURN       ;
+; N/A                                     ; None                                                ; 40.500 ns  ; 74193:inst38|23 ; L4  ; TURN       ;
+; N/A                                     ; None                                                ; 40.500 ns  ; 74193:inst38|23 ; L3  ; TURN       ;
+; N/A                                     ; None                                                ; 40.400 ns  ; 74193:inst38|23 ; L12 ; GAME       ;
+; N/A                                     ; None                                                ; 40.400 ns  ; 74193:inst38|23 ; L11 ; GAME       ;
+; N/A                                     ; None                                                ; 40.400 ns  ; 74193:inst38|23 ; L8  ; TURN       ;
+; N/A                                     ; None                                                ; 40.300 ns  ; 74193:inst38|23 ; L14 ; GAME       ;
+; N/A                                     ; None                                                ; 40.200 ns  ; 74193:inst38|23 ; L12 ; TURN       ;
+; N/A                                     ; None                                                ; 40.200 ns  ; 74193:inst38|23 ; L11 ; TURN       ;
+; N/A                                     ; None                                                ; 40.100 ns  ; 74193:inst38|23 ; L14 ; TURN       ;
+; N/A                                     ; None                                                ; 39.900 ns  ; 74193:inst38|23 ; L6  ; GAME       ;
+; N/A                                     ; None                                                ; 39.900 ns  ; 74193:inst38|23 ; L5  ; GAME       ;
+; N/A                                     ; None                                                ; 39.700 ns  ; 74193:inst38|23 ; L6  ; TURN       ;
+; N/A                                     ; None                                                ; 39.700 ns  ; 74193:inst38|23 ; L5  ; TURN       ;
+; N/A                                     ; None                                                ; 39.600 ns  ; 74193:inst38|23 ; L10 ; GAME       ;
+; N/A                                     ; None                                                ; 39.600 ns  ; 74193:inst38|23 ; L9  ; GAME       ;
+; N/A                                     ; None                                                ; 39.400 ns  ; 74193:inst38|23 ; L10 ; TURN       ;
+; N/A                                     ; None                                                ; 39.400 ns  ; 74193:inst38|23 ; L9  ; TURN       ;
+; N/A                                     ; None                                                ; 38.900 ns  ; 74193:inst38|23 ; L2  ; A          ;
+; N/A                                     ; None                                                ; 38.900 ns  ; 74193:inst38|23 ; L1  ; A          ;
+; N/A                                     ; None                                                ; 38.900 ns  ; 74193:inst38|23 ; L0  ; A          ;
+; N/A                                     ; None                                                ; 38.800 ns  ; 74193:inst38|23 ; L4  ; A          ;
+; N/A                                     ; None                                                ; 38.800 ns  ; 74193:inst38|23 ; L3  ; A          ;
+; N/A                                     ; None                                                ; 38.700 ns  ; 74193:inst38|23 ; L13 ; GAME       ;
+; N/A                                     ; None                                                ; 38.700 ns  ; 74193:inst38|23 ; L8  ; A          ;
+; N/A                                     ; None                                                ; 38.700 ns  ; 74193:inst38|23 ; L2  ; B          ;
+; N/A                                     ; None                                                ; 38.700 ns  ; 74193:inst38|23 ; L1  ; B          ;
+; N/A                                     ; None                                                ; 38.700 ns  ; 74193:inst38|23 ; L0  ; B          ;
+; N/A                                     ; None                                                ; 38.600 ns  ; 74193:inst38|23 ; L4  ; B          ;
+; N/A                                     ; None                                                ; 38.600 ns  ; 74193:inst38|23 ; L3  ; B          ;
+; N/A                                     ; None                                                ; 38.500 ns  ; 74193:inst38|23 ; L13 ; TURN       ;
+; N/A                                     ; None                                                ; 38.500 ns  ; 74193:inst38|23 ; L12 ; A          ;
+; N/A                                     ; None                                                ; 38.500 ns  ; 74193:inst38|23 ; L11 ; A          ;
+; N/A                                     ; None                                                ; 38.500 ns  ; 74193:inst38|23 ; L8  ; B          ;
+; N/A                                     ; None                                                ; 38.400 ns  ; 74193:inst38|23 ; L14 ; A          ;
+; N/A                                     ; None                                                ; 38.300 ns  ; 74193:inst38|23 ; L12 ; B          ;
+; N/A                                     ; None                                                ; 38.300 ns  ; 74193:inst38|23 ; L11 ; B          ;
+; N/A                                     ; None                                                ; 38.200 ns  ; 74193:inst38|23 ; L14 ; B          ;
+; N/A                                     ; None                                                ; 38.000 ns  ; 74193:inst38|23 ; L6  ; A          ;
+; N/A                                     ; None                                                ; 38.000 ns  ; 74193:inst38|23 ; L5  ; A          ;
+; N/A                                     ; None                                                ; 37.800 ns  ; 74193:inst38|23 ; L6  ; B          ;
+; N/A                                     ; None                                                ; 37.800 ns  ; 74193:inst38|23 ; L5  ; B          ;
+; N/A                                     ; None                                                ; 37.700 ns  ; 74193:inst38|23 ; L10 ; A          ;
+; N/A                                     ; None                                                ; 37.700 ns  ; 74193:inst38|23 ; L9  ; A          ;
+; N/A                                     ; None                                                ; 37.500 ns  ; 74193:inst38|23 ; L10 ; B          ;
+; N/A                                     ; None                                                ; 37.500 ns  ; 74193:inst38|23 ; L9  ; B          ;
+; N/A                                     ; None                                                ; 36.800 ns  ; 74193:inst38|23 ; L13 ; A          ;
+; N/A                                     ; None                                                ; 36.600 ns  ; 74193:inst38|23 ; L13 ; B          ;
+; N/A                                     ; None                                                ; 35.000 ns  ; 74193:inst38|24 ; L1  ; GAME       ;
+; N/A                                     ; None                                                ; 35.000 ns  ; 74193:inst38|24 ; L0  ; GAME       ;
+; N/A                                     ; None                                                ; 34.900 ns  ; 74193:inst38|24 ; L14 ; GAME       ;
+; N/A                                     ; None                                                ; 34.900 ns  ; 74193:inst38|24 ; L12 ; GAME       ;
+; N/A                                     ; None                                                ; 34.900 ns  ; 74193:inst38|24 ; L11 ; GAME       ;
+; N/A                                     ; None                                                ; 34.900 ns  ; 74193:inst38|24 ; L3  ; GAME       ;
+; N/A                                     ; None                                                ; 34.900 ns  ; 74193:inst38|24 ; L2  ; GAME       ;
+; N/A                                     ; None                                                ; 34.800 ns  ; 74193:inst38|24 ; L8  ; GAME       ;
+; N/A                                     ; None                                                ; 34.800 ns  ; 74193:inst38|24 ; L4  ; GAME       ;
+; N/A                                     ; None                                                ; 34.800 ns  ; 74193:inst38|24 ; L1  ; TURN       ;
+; N/A                                     ; None                                                ; 34.800 ns  ; 74193:inst38|24 ; L0  ; TURN       ;
+; N/A                                     ; None                                                ; 34.700 ns  ; 74193:inst38|24 ; L14 ; TURN       ;
+; N/A                                     ; None                                                ; 34.700 ns  ; 74193:inst38|24 ; L12 ; TURN       ;
+; N/A                                     ; None                                                ; 34.700 ns  ; 74193:inst38|24 ; L11 ; TURN       ;
+; N/A                                     ; None                                                ; 34.700 ns  ; 74193:inst38|24 ; L3  ; TURN       ;
+; N/A                                     ; None                                                ; 34.700 ns  ; 74193:inst38|24 ; L2  ; TURN       ;
+; N/A                                     ; None                                                ; 34.600 ns  ; 74193:inst38|24 ; L8  ; TURN       ;
+; N/A                                     ; None                                                ; 34.600 ns  ; 74193:inst38|24 ; L4  ; TURN       ;
+; N/A                                     ; None                                                ; 34.100 ns  ; 74193:inst38|24 ; L13 ; GAME       ;
+; N/A                                     ; None                                                ; 34.100 ns  ; 74193:inst38|24 ; L10 ; GAME       ;
+; N/A                                     ; None                                                ; 34.000 ns  ; 74193:inst38|24 ; L6  ; GAME       ;
+; N/A                                     ; None                                                ; 34.000 ns  ; 74193:inst38|24 ; L9  ; GAME       ;
+; N/A                                     ; None                                                ; 34.000 ns  ; 74193:inst38|24 ; L5  ; GAME       ;
+; N/A                                     ; None                                                ; 33.900 ns  ; 74193:inst38|24 ; L13 ; TURN       ;
+; N/A                                     ; None                                                ; 33.900 ns  ; 74193:inst38|24 ; L10 ; TURN       ;
+; N/A                                     ; None                                                ; 33.800 ns  ; 74193:inst38|24 ; L6  ; TURN       ;
+; N/A                                     ; None                                                ; 33.800 ns  ; 74193:inst38|24 ; L9  ; TURN       ;
+; N/A                                     ; None                                                ; 33.800 ns  ; 74193:inst38|24 ; L5  ; TURN       ;
+; N/A                                     ; None                                                ; 33.100 ns  ; 74193:inst38|24 ; L1  ; A          ;
+; N/A                                     ; None                                                ; 33.100 ns  ; 74193:inst38|24 ; L0  ; A          ;
+; N/A                                     ; None                                                ; 33.000 ns  ; 74193:inst38|24 ; L14 ; A          ;
+; N/A                                     ; None                                                ; 33.000 ns  ; 74193:inst38|24 ; L12 ; A          ;
+; N/A                                     ; None                                                ; 33.000 ns  ; 74193:inst38|24 ; L11 ; A          ;
+; N/A                                     ; None                                                ; 33.000 ns  ; 74193:inst38|24 ; L3  ; A          ;
+; N/A                                     ; None                                                ; 33.000 ns  ; 74193:inst38|24 ; L2  ; A          ;
+; N/A                                     ; None                                                ; 32.900 ns  ; 74193:inst38|24 ; L8  ; A          ;
+; N/A                                     ; None                                                ; 32.900 ns  ; 74193:inst38|24 ; L4  ; A          ;
+; N/A                                     ; None                                                ; 32.900 ns  ; 74193:inst38|24 ; L1  ; B          ;
+; N/A                                     ; None                                                ; 32.900 ns  ; 74193:inst38|24 ; L0  ; B          ;
+; N/A                                     ; None                                                ; 32.800 ns  ; 74193:inst38|24 ; L14 ; B          ;
+; N/A                                     ; None                                                ; 32.800 ns  ; 74193:inst38|24 ; L12 ; B          ;
+; N/A                                     ; None                                                ; 32.800 ns  ; 74193:inst38|24 ; L11 ; B          ;
+; N/A                                     ; None                                                ; 32.800 ns  ; 74193:inst38|24 ; L3  ; B          ;
+; N/A                                     ; None                                                ; 32.800 ns  ; 74193:inst38|24 ; L2  ; B          ;
+; N/A                                     ; None                                                ; 32.700 ns  ; 74193:inst38|24 ; L8  ; B          ;
+; N/A                                     ; None                                                ; 32.700 ns  ; 74193:inst38|24 ; L4  ; B          ;
+; N/A                                     ; None                                                ; 32.200 ns  ; 74193:inst38|24 ; L13 ; A          ;
+; N/A                                     ; None                                                ; 32.200 ns  ; 74193:inst38|24 ; L10 ; A          ;
+; N/A                                     ; None                                                ; 32.100 ns  ; 74193:inst38|24 ; L6  ; A          ;
+; N/A                                     ; None                                                ; 32.100 ns  ; 74193:inst38|24 ; L9  ; A          ;
+; N/A                                     ; None                                                ; 32.100 ns  ; 74193:inst38|24 ; L5  ; A          ;
+; N/A                                     ; None                                                ; 32.000 ns  ; 74193:inst38|24 ; L13 ; B          ;
+; N/A                                     ; None                                                ; 32.000 ns  ; 74193:inst38|24 ; L10 ; B          ;
+; N/A                                     ; None                                                ; 31.900 ns  ; 74193:inst38|24 ; L6  ; B          ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;                 ;     ;            ;
++-----------------------------------------+-----------------------------------------------------+------------+-----------------+-----+------------+
+
+
++---------------------------------------------------------+
+; tpd                                                     ;
++-------+-------------------+-----------------+------+----+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To ;
++-------+-------------------+-----------------+------+----+
+; N/A   ; None              ; 16.600 ns       ; GAME ; L7 ;
++-------+-------------------+-----------------+------+----+
+
+
++-------------------------------------------------------------------+
+; th                                                                ;
++---------------+-------------+-----------+------+-------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To    ; To Clock ;
++---------------+-------------+-----------+------+-------+----------+
+; N/A           ; None        ; 31.200 ns ; B    ; inst7 ; GAME     ;
+; N/A           ; None        ; 31.000 ns ; A    ; inst7 ; GAME     ;
+; N/A           ; None        ; 31.000 ns ; B    ; inst7 ; TURN     ;
+; N/A           ; None        ; 30.800 ns ; A    ; inst7 ; TURN     ;
+; N/A           ; None        ; 29.300 ns ; B    ; inst7 ; A        ;
+; N/A           ; None        ; 29.100 ns ; A    ; inst7 ; A        ;
+; N/A           ; None        ; 29.100 ns ; B    ; inst7 ; B        ;
+; N/A           ; None        ; 28.900 ns ; A    ; inst7 ; B        ;
+; N/A           ; None        ; 22.200 ns ; B    ; inst7 ; CLK      ;
+; N/A           ; None        ; 22.000 ns ; A    ; inst7 ; CLK      ;
+; N/A           ; None        ; 2.400 ns  ; B    ; G     ; A        ;
+; N/A           ; None        ; 2.200 ns  ; A    ; G     ; A        ;
+; N/A           ; None        ; 2.200 ns  ; B    ; G     ; B        ;
+; N/A           ; None        ; 2.000 ns  ; A    ; G     ; B        ;
++---------------+-------------+-----------+------+-------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Jul 06 02:40:22 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off PingPongGame -c PingPongGame
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "B" is an undefined clock
+    Info: Assuming node "A" is an undefined clock
+    Info: Assuming node "TURN" is an undefined clock
+    Info: Assuming node "GAME" is an undefined clock
+    Info: Assuming node "CLK" is an undefined clock
+Warning: Found 33 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "74193:inst38|93~56" as buffer
+    Info: Detected gated clock "74193:inst38|92~84" as buffer
+    Info: Detected gated clock "74193:inst38|91~112" as buffer
+    Info: Detected gated clock "inst31~70" as buffer
+    Info: Detected gated clock "inst20" as buffer
+    Info: Detected gated clock "74193:inst38|93~53" as buffer
+    Info: Detected gated clock "inst12" as buffer
+    Info: Detected gated clock "inst23" as buffer
+    Info: Detected gated clock "74193:inst38|92~81" as buffer
+    Info: Detected gated clock "inst12~45" as buffer
+    Info: Detected gated clock "74193:inst38|91~109" as buffer
+    Info: Detected gated clock "inst19" as buffer
+    Info: Detected gated clock "74160:inst1|45~20" as buffer
+    Info: Detected ripple clock "74160:inst11|6" as buffer
+    Info: Detected gated clock "74160:inst|45~20" as buffer
+    Info: Detected ripple clock "74160:inst10|6" as buffer
+    Info: Detected ripple clock "74160:inst1|9" as buffer
+    Info: Detected gated clock "inst24~29" as buffer
+    Info: Detected ripple clock "74193:inst38|25" as buffer
+    Info: Detected ripple clock "74193:inst38|26" as buffer
+    Info: Detected ripple clock "74193:inst38|24" as buffer
+    Info: Detected ripple clock "74193:inst38|23" as buffer
+    Info: Detected ripple clock "G" as buffer
+    Info: Detected gated clock "74154:inst43|32~70" as buffer
+    Info: Detected gated clock "inst92" as buffer
+    Info: Detected ripple clock "74160:inst1|6" as buffer
+    Info: Detected ripple clock "74160:inst|9" as buffer
+    Info: Detected gated clock "74154:inst43|32~69" as buffer
+    Info: Detected ripple clock "WZ" as buffer
+    Info: Detected ripple clock "inst7" as buffer
+    Info: Detected gated clock "inst44" as buffer
+    Info: Detected gated clock "inst91" as buffer
+    Info: Detected ripple clock "74160:inst|6" as buffer
+Info: Clock "B" has Internal fmax of 14.53 MHz between source register "74193:inst38|25" and destination register "WZ" (period= 68.8 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+        Info: 2: + IC(1.100 ns) + CELL(1.400 ns) = 2.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: Total cell delay = 2.200 ns ( 61.11 % )
+        Info: Total interconnect delay = 1.400 ns ( 38.89 % )
+    Info: - Smallest clock skew is -29.700 ns
+        Info: + Shortest clock path from clock "B" to destination register is 12.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_132; Fanout = 6; CLK Node = 'B'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC3_B6; Fanout = 1; COMB Node = 'inst31~70'
+            Info: 3: + IC(1.500 ns) + CELL(1.400 ns) = 12.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 4: + IC(0.300 ns) + CELL(0.000 ns) = 12.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: Total cell delay = 7.900 ns ( 62.70 % )
+            Info: Total interconnect delay = 4.700 ns ( 37.30 % )
+        Info: - Longest clock path from clock "B" to source register is 42.300 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_132; Fanout = 6; CLK Node = 'B'
+            Info: 2: + IC(2.900 ns) + CELL(1.400 ns) = 9.200 ns; Loc. = LC6_B6; Fanout = 1; COMB Node = 'inst23'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.000 ns; Loc. = LC2_B6; Fanout = 3; REG Node = 'G'
+            Info: 4: + IC(1.500 ns) + CELL(1.600 ns) = 13.100 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 5: + IC(1.500 ns) + CELL(1.700 ns) = 16.300 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 17.100 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 18.400 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 20.000 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 21.900 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 23.900 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 25.500 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 27.400 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 30.300 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 32.200 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 33.000 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 36.100 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 36.900 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 39.300 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 40.900 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.000 ns) = 42.300 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: Total cell delay = 25.000 ns ( 59.10 % )
+            Info: Total interconnect delay = 17.300 ns ( 40.90 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50, fmax is divided by two
+Info: Clock "A" has Internal fmax of 14.45 MHz between source register "74193:inst38|25" and destination register "WZ" (period= 69.2 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+        Info: 2: + IC(1.100 ns) + CELL(1.400 ns) = 2.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: Total cell delay = 2.200 ns ( 61.11 % )
+        Info: Total interconnect delay = 1.400 ns ( 38.89 % )
+    Info: - Smallest clock skew is -29.900 ns
+        Info: + Shortest clock path from clock "A" to destination register is 12.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_133; Fanout = 6; CLK Node = 'A'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC3_B6; Fanout = 1; COMB Node = 'inst31~70'
+            Info: 3: + IC(1.500 ns) + CELL(1.400 ns) = 12.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 4: + IC(0.300 ns) + CELL(0.000 ns) = 12.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: Total cell delay = 7.900 ns ( 62.70 % )
+            Info: Total interconnect delay = 4.700 ns ( 37.30 % )
+        Info: - Longest clock path from clock "A" to source register is 42.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_133; Fanout = 6; CLK Node = 'A'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC6_B6; Fanout = 1; COMB Node = 'inst23'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC2_B6; Fanout = 3; REG Node = 'G'
+            Info: 4: + IC(1.500 ns) + CELL(1.600 ns) = 13.300 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 5: + IC(1.500 ns) + CELL(1.700 ns) = 16.500 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 17.300 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 18.600 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 20.200 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 22.100 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 24.100 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 25.700 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 27.600 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 30.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 32.400 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 33.200 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 36.300 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 37.100 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 39.500 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 41.100 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.000 ns) = 42.500 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: Total cell delay = 25.200 ns ( 59.29 % )
+            Info: Total interconnect delay = 17.300 ns ( 40.71 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50, fmax is divided by two
+Info: Clock "TURN" has Internal fmax of 16.39 MHz between source register "74193:inst38|25" and destination register "WZ" (period= 61.0 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+        Info: 2: + IC(1.100 ns) + CELL(1.400 ns) = 2.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: Total cell delay = 2.200 ns ( 61.11 % )
+        Info: Total interconnect delay = 1.400 ns ( 38.89 % )
+    Info: - Smallest clock skew is -25.800 ns
+        Info: + Shortest clock path from clock "TURN" to destination register is 18.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_137; Fanout = 5; CLK Node = 'TURN'
+            Info: 2: + IC(3.100 ns) + CELL(1.400 ns) = 9.400 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 3: + IC(1.500 ns) + CELL(1.700 ns) = 12.600 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 4: + IC(0.300 ns) + CELL(0.500 ns) = 13.400 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 5: + IC(1.200 ns) + CELL(1.600 ns) = 16.200 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 6: + IC(0.300 ns) + CELL(1.600 ns) = 18.100 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 7: + IC(0.300 ns) + CELL(0.000 ns) = 18.400 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: Total cell delay = 11.700 ns ( 63.59 % )
+            Info: Total interconnect delay = 6.700 ns ( 36.41 % )
+        Info: - Longest clock path from clock "TURN" to source register is 44.200 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_137; Fanout = 5; CLK Node = 'TURN'
+            Info: 2: + IC(2.300 ns) + CELL(1.400 ns) = 8.600 ns; Loc. = LC2_E36; Fanout = 4; COMB Node = '74160:inst1|45~20'
+            Info: 3: + IC(2.100 ns) + CELL(0.500 ns) = 11.200 ns; Loc. = LC1_D24; Fanout = 6; REG Node = '74160:inst11|6'
+            Info: 4: + IC(1.200 ns) + CELL(1.400 ns) = 13.800 ns; Loc. = LC2_D32; Fanout = 8; COMB Node = 'inst20'
+            Info: 5: + IC(3.000 ns) + CELL(1.400 ns) = 18.200 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 19.000 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 20.300 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 21.900 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 23.800 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 25.800 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 27.400 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 29.300 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 32.200 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 34.100 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 34.900 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 38.000 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 38.800 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 41.200 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 42.800 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.000 ns) = 44.200 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: Total cell delay = 24.500 ns ( 55.43 % )
+            Info: Total interconnect delay = 19.700 ns ( 44.57 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50, fmax is divided by two
+Info: Clock "GAME" has Internal fmax of 16.39 MHz between source register "74193:inst38|25" and destination register "WZ" (period= 61.0 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+        Info: 2: + IC(1.100 ns) + CELL(1.400 ns) = 2.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: Total cell delay = 2.200 ns ( 61.11 % )
+        Info: Total interconnect delay = 1.400 ns ( 38.89 % )
+    Info: - Smallest clock skew is -25.800 ns
+        Info: + Shortest clock path from clock "GAME" to destination register is 18.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+            Info: 2: + IC(3.100 ns) + CELL(1.600 ns) = 9.600 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 3: + IC(1.500 ns) + CELL(1.700 ns) = 12.800 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 4: + IC(0.300 ns) + CELL(0.500 ns) = 13.600 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 5: + IC(1.200 ns) + CELL(1.600 ns) = 16.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 6: + IC(0.300 ns) + CELL(1.600 ns) = 18.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 7: + IC(0.300 ns) + CELL(0.000 ns) = 18.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: Total cell delay = 11.900 ns ( 63.98 % )
+            Info: Total interconnect delay = 6.700 ns ( 36.02 % )
+        Info: - Longest clock path from clock "GAME" to source register is 44.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+            Info: 2: + IC(2.300 ns) + CELL(1.600 ns) = 8.800 ns; Loc. = LC2_E36; Fanout = 4; COMB Node = '74160:inst1|45~20'
+            Info: 3: + IC(2.100 ns) + CELL(0.500 ns) = 11.400 ns; Loc. = LC1_D24; Fanout = 6; REG Node = '74160:inst11|6'
+            Info: 4: + IC(1.200 ns) + CELL(1.400 ns) = 14.000 ns; Loc. = LC2_D32; Fanout = 8; COMB Node = 'inst20'
+            Info: 5: + IC(3.000 ns) + CELL(1.400 ns) = 18.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 19.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 20.500 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 22.100 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 24.000 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 26.000 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 27.600 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 29.500 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 32.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 34.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 35.100 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 38.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 39.000 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 41.400 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 43.000 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.000 ns) = 44.400 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: Total cell delay = 24.700 ns ( 55.63 % )
+            Info: Total interconnect delay = 19.700 ns ( 44.37 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50, fmax is divided by two
+Info: Clock "CLK" has Internal fmax of 20.08 MHz between source register "74193:inst38|25" and destination register "WZ" (period= 49.8 ns)
+    Info: + Longest register to register delay is 3.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+        Info: 2: + IC(1.100 ns) + CELL(1.400 ns) = 2.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 3: + IC(0.300 ns) + CELL(0.800 ns) = 3.600 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: Total cell delay = 2.200 ns ( 61.11 % )
+        Info: Total interconnect delay = 1.400 ns ( 38.89 % )
+    Info: - Smallest clock skew is -20.200 ns
+        Info: + Shortest clock path from clock "CLK" to destination register is 15.200 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 4; CLK Node = 'CLK'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 4: + IC(1.200 ns) + CELL(1.600 ns) = 13.000 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 5: + IC(0.300 ns) + CELL(1.600 ns) = 14.900 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 6: + IC(0.300 ns) + CELL(0.000 ns) = 15.200 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: Total cell delay = 10.200 ns ( 67.11 % )
+            Info: Total interconnect delay = 5.000 ns ( 32.89 % )
+        Info: - Longest clock path from clock "CLK" to source register is 35.400 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 4; CLK Node = 'CLK'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 4: + IC(0.300 ns) + CELL(1.000 ns) = 11.500 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 5: + IC(0.000 ns) + CELL(1.600 ns) = 13.100 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 6: + IC(1.400 ns) + CELL(0.500 ns) = 15.000 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 7: + IC(1.200 ns) + CELL(0.800 ns) = 17.000 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 18.600 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 20.500 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 10: + IC(1.200 ns) + CELL(1.700 ns) = 23.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 11: + IC(0.300 ns) + CELL(1.600 ns) = 25.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 12: + IC(0.300 ns) + CELL(0.500 ns) = 26.100 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 13: + IC(1.400 ns) + CELL(1.700 ns) = 29.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 14: + IC(0.300 ns) + CELL(0.500 ns) = 30.000 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 15: + IC(1.600 ns) + CELL(0.800 ns) = 32.400 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 16: + IC(0.000 ns) + CELL(1.600 ns) = 34.000 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 17: + IC(1.400 ns) + CELL(0.000 ns) = 35.400 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: Total cell delay = 21.400 ns ( 60.45 % )
+            Info: Total interconnect delay = 14.000 ns ( 39.55 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50, fmax is divided by two
+Warning: Circuit may not operate. Detected 18 non-operational path(s) clocked by clock "B" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "74160:inst|6" and destination pin or register "74160:inst|6" for clock "B" (Hold time is 36.0 ns)
+    Info: + Largest clock skew is 36.300 ns
+        Info: + Longest clock path from clock "B" to destination register is 51.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_132; Fanout = 6; CLK Node = 'B'
+            Info: 2: + IC(2.900 ns) + CELL(1.400 ns) = 9.200 ns; Loc. = LC6_B6; Fanout = 1; COMB Node = 'inst23'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.000 ns; Loc. = LC2_B6; Fanout = 3; REG Node = 'G'
+            Info: 4: + IC(1.500 ns) + CELL(1.600 ns) = 13.100 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 5: + IC(1.500 ns) + CELL(1.700 ns) = 16.300 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 17.100 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 18.400 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 20.000 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 21.900 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 23.900 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 25.500 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 27.400 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 30.300 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 32.200 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 33.000 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 36.100 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 36.900 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 39.300 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 40.900 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.500 ns) = 42.800 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: 21: + IC(1.200 ns) + CELL(1.400 ns) = 45.400 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 22: + IC(1.400 ns) + CELL(1.400 ns) = 48.200 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 23: + IC(2.800 ns) + CELL(0.000 ns) = 51.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 28.300 ns ( 55.49 % )
+            Info: Total interconnect delay = 22.700 ns ( 44.51 % )
+        Info: - Shortest clock path from clock "B" to source register is 14.700 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_132; Fanout = 6; CLK Node = 'B'
+            Info: 2: + IC(2.900 ns) + CELL(1.400 ns) = 9.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.000 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 4: + IC(0.300 ns) + CELL(1.600 ns) = 11.900 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 5: + IC(2.800 ns) + CELL(0.000 ns) = 14.700 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 8.400 ns ( 57.14 % )
+            Info: Total interconnect delay = 6.300 ns ( 42.86 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 1.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: 2: + IC(0.300 ns) + CELL(0.800 ns) = 1.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: Total cell delay = 0.800 ns ( 72.73 % )
+        Info: Total interconnect delay = 0.300 ns ( 27.27 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Warning: Circuit may not operate. Detected 18 non-operational path(s) clocked by clock "A" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "74160:inst|6" and destination pin or register "74160:inst|6" for clock "A" (Hold time is 36.0 ns)
+    Info: + Largest clock skew is 36.300 ns
+        Info: + Longest clock path from clock "A" to destination register is 51.200 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_133; Fanout = 6; CLK Node = 'A'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC6_B6; Fanout = 1; COMB Node = 'inst23'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC2_B6; Fanout = 3; REG Node = 'G'
+            Info: 4: + IC(1.500 ns) + CELL(1.600 ns) = 13.300 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 5: + IC(1.500 ns) + CELL(1.700 ns) = 16.500 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 17.300 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 18.600 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 20.200 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 22.100 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 24.100 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 25.700 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 27.600 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 30.500 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 32.400 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 33.200 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 36.300 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 37.100 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 39.500 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 41.100 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.500 ns) = 43.000 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: 21: + IC(1.200 ns) + CELL(1.400 ns) = 45.600 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 22: + IC(1.400 ns) + CELL(1.400 ns) = 48.400 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 23: + IC(2.800 ns) + CELL(0.000 ns) = 51.200 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 28.500 ns ( 55.66 % )
+            Info: Total interconnect delay = 22.700 ns ( 44.34 % )
+        Info: - Shortest clock path from clock "A" to source register is 14.900 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_133; Fanout = 6; CLK Node = 'A'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 4: + IC(0.300 ns) + CELL(1.600 ns) = 12.100 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 5: + IC(2.800 ns) + CELL(0.000 ns) = 14.900 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 8.600 ns ( 57.72 % )
+            Info: Total interconnect delay = 6.300 ns ( 42.28 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 1.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: 2: + IC(0.300 ns) + CELL(0.800 ns) = 1.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: Total cell delay = 0.800 ns ( 72.73 % )
+        Info: Total interconnect delay = 0.300 ns ( 27.27 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Warning: Circuit may not operate. Detected 19 non-operational path(s) clocked by clock "TURN" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "74160:inst|6" and destination pin or register "74160:inst|6" for clock "TURN" (Hold time is 30.8 ns)
+    Info: + Largest clock skew is 31.100 ns
+        Info: + Longest clock path from clock "TURN" to destination register is 52.900 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_137; Fanout = 5; CLK Node = 'TURN'
+            Info: 2: + IC(2.300 ns) + CELL(1.400 ns) = 8.600 ns; Loc. = LC2_E36; Fanout = 4; COMB Node = '74160:inst1|45~20'
+            Info: 3: + IC(2.100 ns) + CELL(0.500 ns) = 11.200 ns; Loc. = LC1_D24; Fanout = 6; REG Node = '74160:inst11|6'
+            Info: 4: + IC(1.200 ns) + CELL(1.400 ns) = 13.800 ns; Loc. = LC2_D32; Fanout = 8; COMB Node = 'inst20'
+            Info: 5: + IC(3.000 ns) + CELL(1.400 ns) = 18.200 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 19.000 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 20.300 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 21.900 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 23.800 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 25.800 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 27.400 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 29.300 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 32.200 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 34.100 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 34.900 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 38.000 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 38.800 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 41.200 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 42.800 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.500 ns) = 44.700 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: 21: + IC(1.200 ns) + CELL(1.400 ns) = 47.300 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 22: + IC(1.400 ns) + CELL(1.400 ns) = 50.100 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 23: + IC(2.800 ns) + CELL(0.000 ns) = 52.900 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 27.800 ns ( 52.55 % )
+            Info: Total interconnect delay = 25.100 ns ( 47.45 % )
+        Info: - Shortest clock path from clock "TURN" to source register is 21.800 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_137; Fanout = 5; CLK Node = 'TURN'
+            Info: 2: + IC(3.100 ns) + CELL(1.400 ns) = 9.400 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 3: + IC(1.500 ns) + CELL(1.700 ns) = 12.600 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 4: + IC(0.300 ns) + CELL(0.500 ns) = 13.400 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 5: + IC(1.200 ns) + CELL(1.600 ns) = 16.200 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 6: + IC(1.400 ns) + CELL(1.400 ns) = 19.000 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 7: + IC(2.800 ns) + CELL(0.000 ns) = 21.800 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 11.500 ns ( 52.75 % )
+            Info: Total interconnect delay = 10.300 ns ( 47.25 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 1.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: 2: + IC(0.300 ns) + CELL(0.800 ns) = 1.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: Total cell delay = 0.800 ns ( 72.73 % )
+        Info: Total interconnect delay = 0.300 ns ( 27.27 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Warning: Circuit may not operate. Detected 19 non-operational path(s) clocked by clock "GAME" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "74160:inst|6" and destination pin or register "74160:inst|6" for clock "GAME" (Hold time is 30.8 ns)
+    Info: + Largest clock skew is 31.100 ns
+        Info: + Longest clock path from clock "GAME" to destination register is 53.100 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+            Info: 2: + IC(2.300 ns) + CELL(1.600 ns) = 8.800 ns; Loc. = LC2_E36; Fanout = 4; COMB Node = '74160:inst1|45~20'
+            Info: 3: + IC(2.100 ns) + CELL(0.500 ns) = 11.400 ns; Loc. = LC1_D24; Fanout = 6; REG Node = '74160:inst11|6'
+            Info: 4: + IC(1.200 ns) + CELL(1.400 ns) = 14.000 ns; Loc. = LC2_D32; Fanout = 8; COMB Node = 'inst20'
+            Info: 5: + IC(3.000 ns) + CELL(1.400 ns) = 18.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 19.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 20.500 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 22.100 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 24.000 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 26.000 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 27.600 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 29.500 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 32.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 34.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 35.100 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 38.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 39.000 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 41.400 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 43.000 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 20: + IC(1.400 ns) + CELL(0.500 ns) = 44.900 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: 21: + IC(1.200 ns) + CELL(1.400 ns) = 47.500 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 22: + IC(1.400 ns) + CELL(1.400 ns) = 50.300 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 23: + IC(2.800 ns) + CELL(0.000 ns) = 53.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 28.000 ns ( 52.73 % )
+            Info: Total interconnect delay = 25.100 ns ( 47.27 % )
+        Info: - Shortest clock path from clock "GAME" to source register is 22.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+            Info: 2: + IC(3.100 ns) + CELL(1.600 ns) = 9.600 ns; Loc. = LC1_B10; Fanout = 8; COMB Node = 'inst12~45'
+            Info: 3: + IC(1.500 ns) + CELL(1.700 ns) = 12.800 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 4: + IC(0.300 ns) + CELL(0.500 ns) = 13.600 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 5: + IC(1.200 ns) + CELL(1.600 ns) = 16.400 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 6: + IC(1.400 ns) + CELL(1.400 ns) = 19.200 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 7: + IC(2.800 ns) + CELL(0.000 ns) = 22.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 11.700 ns ( 53.18 % )
+            Info: Total interconnect delay = 10.300 ns ( 46.82 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 1.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: 2: + IC(0.300 ns) + CELL(0.800 ns) = 1.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: Total cell delay = 0.800 ns ( 72.73 % )
+        Info: Total interconnect delay = 0.300 ns ( 27.27 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Warning: Circuit may not operate. Detected 18 non-operational path(s) clocked by clock "CLK" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "74160:inst|6" and destination pin or register "74160:inst|6" for clock "CLK" (Hold time is 25.2 ns)
+    Info: + Largest clock skew is 25.500 ns
+        Info: + Longest clock path from clock "CLK" to destination register is 44.100 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 4; CLK Node = 'CLK'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 4: + IC(0.300 ns) + CELL(1.000 ns) = 11.500 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+            Info: 5: + IC(0.000 ns) + CELL(1.600 ns) = 13.100 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+            Info: 6: + IC(1.400 ns) + CELL(0.500 ns) = 15.000 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+            Info: 7: + IC(1.200 ns) + CELL(0.800 ns) = 17.000 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+            Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 18.600 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+            Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 20.500 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+            Info: 10: + IC(1.200 ns) + CELL(1.700 ns) = 23.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+            Info: 11: + IC(0.300 ns) + CELL(1.600 ns) = 25.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+            Info: 12: + IC(0.300 ns) + CELL(0.500 ns) = 26.100 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+            Info: 13: + IC(1.400 ns) + CELL(1.700 ns) = 29.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+            Info: 14: + IC(0.300 ns) + CELL(0.500 ns) = 30.000 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+            Info: 15: + IC(1.600 ns) + CELL(0.800 ns) = 32.400 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+            Info: 16: + IC(0.000 ns) + CELL(1.600 ns) = 34.000 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+            Info: 17: + IC(1.400 ns) + CELL(0.500 ns) = 35.900 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+            Info: 18: + IC(1.200 ns) + CELL(1.400 ns) = 38.500 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 19: + IC(1.400 ns) + CELL(1.400 ns) = 41.300 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 20: + IC(2.800 ns) + CELL(0.000 ns) = 44.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 24.700 ns ( 56.01 % )
+            Info: Total interconnect delay = 19.400 ns ( 43.99 % )
+        Info: - Shortest clock path from clock "CLK" to source register is 18.600 ns
+            Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_136; Fanout = 4; CLK Node = 'CLK'
+            Info: 2: + IC(2.900 ns) + CELL(1.600 ns) = 9.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+            Info: 3: + IC(0.300 ns) + CELL(0.500 ns) = 10.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+            Info: 4: + IC(1.200 ns) + CELL(1.600 ns) = 13.000 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+            Info: 5: + IC(1.400 ns) + CELL(1.400 ns) = 15.800 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+            Info: 6: + IC(2.800 ns) + CELL(0.000 ns) = 18.600 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+            Info: Total cell delay = 10.000 ns ( 53.76 % )
+            Info: Total interconnect delay = 8.600 ns ( 46.24 % )
+    Info: - Micro clock to output delay of source is 0.500 ns
+    Info: - Shortest register to register delay is 1.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: 2: + IC(0.300 ns) + CELL(0.800 ns) = 1.100 ns; Loc. = LC7_A23; Fanout = 7; REG Node = '74160:inst|6'
+        Info: Total cell delay = 0.800 ns ( 72.73 % )
+        Info: Total interconnect delay = 0.300 ns ( 27.27 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+Info: tsu for register "inst7" (data pin = "A", clock pin = "B") is -0.100 ns
+    Info: + Longest pin to register delay is 8.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_133; Fanout = 6; CLK Node = 'A'
+        Info: 2: + IC(2.900 ns) + CELL(1.000 ns) = 8.800 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+        Info: Total cell delay = 5.900 ns ( 67.05 % )
+        Info: Total interconnect delay = 2.900 ns ( 32.95 % )
+    Info: + Micro setup delay of destination is 0.600 ns
+    Info: - Shortest clock path from clock "B" to destination register is 9.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_132; Fanout = 6; CLK Node = 'B'
+        Info: 2: + IC(2.900 ns) + CELL(1.400 ns) = 9.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+        Info: 3: + IC(0.300 ns) + CELL(0.000 ns) = 9.500 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+        Info: Total cell delay = 6.300 ns ( 66.32 % )
+        Info: Total interconnect delay = 3.200 ns ( 33.68 % )
+Info: tco from clock "GAME" to destination pin "A1" through register "74160:inst|7" is 62.100 ns
+    Info: + Longest clock path from clock "GAME" to source register is 53.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+        Info: 2: + IC(2.300 ns) + CELL(1.600 ns) = 8.800 ns; Loc. = LC2_E36; Fanout = 4; COMB Node = '74160:inst1|45~20'
+        Info: 3: + IC(2.100 ns) + CELL(0.500 ns) = 11.400 ns; Loc. = LC1_D24; Fanout = 6; REG Node = '74160:inst11|6'
+        Info: 4: + IC(1.200 ns) + CELL(1.400 ns) = 14.000 ns; Loc. = LC2_D32; Fanout = 8; COMB Node = 'inst20'
+        Info: 5: + IC(3.000 ns) + CELL(1.400 ns) = 18.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+        Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 19.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+        Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 20.500 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+        Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 22.100 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+        Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 24.000 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+        Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 26.000 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+        Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 27.600 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+        Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 29.500 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+        Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 32.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 34.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+        Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 35.100 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 38.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+        Info: 17: + IC(0.300 ns) + CELL(0.500 ns) = 39.000 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+        Info: 18: + IC(1.600 ns) + CELL(0.800 ns) = 41.400 ns; Loc. = LC6_B12; Fanout = 1; COMB Node = '74193:inst38|93~56'
+        Info: 19: + IC(0.000 ns) + CELL(1.600 ns) = 43.000 ns; Loc. = LC7_B12; Fanout = 1; COMB Node = '74193:inst38|93~53'
+        Info: 20: + IC(1.400 ns) + CELL(0.500 ns) = 44.900 ns; Loc. = LC1_B11; Fanout = 19; REG Node = '74193:inst38|25'
+        Info: 21: + IC(1.200 ns) + CELL(1.400 ns) = 47.500 ns; Loc. = LC2_B5; Fanout = 3; COMB Node = '74154:inst43|32~69'
+        Info: 22: + IC(1.400 ns) + CELL(1.400 ns) = 50.300 ns; Loc. = LC1_B6; Fanout = 4; COMB Node = 'inst91'
+        Info: 23: + IC(2.800 ns) + CELL(0.000 ns) = 53.100 ns; Loc. = LC6_A23; Fanout = 4; REG Node = '74160:inst|7'
+        Info: Total cell delay = 28.000 ns ( 52.73 % )
+        Info: Total interconnect delay = 25.100 ns ( 47.27 % )
+    Info: + Micro clock to output delay of source is 0.500 ns
+    Info: + Longest register to pin delay is 8.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC6_A23; Fanout = 4; REG Node = '74160:inst|7'
+        Info: 2: + IC(2.200 ns) + CELL(6.300 ns) = 8.500 ns; Loc. = PIN_17; Fanout = 0; PIN Node = 'A1'
+        Info: Total cell delay = 6.300 ns ( 74.12 % )
+        Info: Total interconnect delay = 2.200 ns ( 25.88 % )
+Info: Longest tpd from source pin "GAME" to destination pin "L7" is 16.600 ns
+    Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+    Info: 2: + IC(3.100 ns) + CELL(1.400 ns) = 9.400 ns; Loc. = LC3_B11; Fanout = 1; COMB Node = 'L7~0'
+    Info: 3: + IC(0.900 ns) + CELL(6.300 ns) = 16.600 ns; Loc. = PIN_62; Fanout = 0; PIN Node = 'L7'
+    Info: Total cell delay = 12.600 ns ( 75.90 % )
+    Info: Total interconnect delay = 4.000 ns ( 24.10 % )
+Info: th for register "inst7" (data pin = "B", clock pin = "GAME") is 31.200 ns
+    Info: + Longest clock path from clock "GAME" to destination register is 38.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_138; Fanout = 19; CLK Node = 'GAME'
+        Info: 2: + IC(2.300 ns) + CELL(1.600 ns) = 8.800 ns; Loc. = LC2_E36; Fanout = 4; COMB Node = '74160:inst1|45~20'
+        Info: 3: + IC(2.100 ns) + CELL(0.500 ns) = 11.400 ns; Loc. = LC1_D24; Fanout = 6; REG Node = '74160:inst11|6'
+        Info: 4: + IC(1.200 ns) + CELL(1.400 ns) = 14.000 ns; Loc. = LC2_D32; Fanout = 8; COMB Node = 'inst20'
+        Info: 5: + IC(3.000 ns) + CELL(1.400 ns) = 18.400 ns; Loc. = LC3_B12; Fanout = 1; COMB Node = 'inst12'
+        Info: 6: + IC(0.300 ns) + CELL(0.500 ns) = 19.200 ns; Loc. = LC8_B12; Fanout = 20; REG Node = '74193:inst38|26'
+        Info: 7: + IC(0.300 ns) + CELL(1.000 ns) = 20.500 ns; Loc. = LC1_B12; Fanout = 1; COMB Node = '74193:inst38|92~84'
+        Info: 8: + IC(0.000 ns) + CELL(1.600 ns) = 22.100 ns; Loc. = LC2_B12; Fanout = 1; COMB Node = '74193:inst38|92~81'
+        Info: 9: + IC(1.400 ns) + CELL(0.500 ns) = 24.000 ns; Loc. = LC1_B13; Fanout = 18; REG Node = '74193:inst38|24'
+        Info: 10: + IC(1.200 ns) + CELL(0.800 ns) = 26.000 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = '74193:inst38|91~112'
+        Info: 11: + IC(0.000 ns) + CELL(1.600 ns) = 27.600 ns; Loc. = LC5_B12; Fanout = 1; COMB Node = '74193:inst38|91~109'
+        Info: 12: + IC(1.400 ns) + CELL(0.500 ns) = 29.500 ns; Loc. = LC1_B5; Fanout = 17; REG Node = '74193:inst38|23'
+        Info: 13: + IC(1.200 ns) + CELL(1.700 ns) = 32.400 ns; Loc. = LC3_B10; Fanout = 2; COMB Node = '74154:inst43|32~70'
+        Info: 14: + IC(0.300 ns) + CELL(1.600 ns) = 34.300 ns; Loc. = LC4_B10; Fanout = 1; COMB Node = 'inst31~71'
+        Info: 15: + IC(0.300 ns) + CELL(0.500 ns) = 35.100 ns; Loc. = LC2_B10; Fanout = 5; REG Node = 'WZ'
+        Info: 16: + IC(1.400 ns) + CELL(1.700 ns) = 38.200 ns; Loc. = LC5_B6; Fanout = 1; COMB Node = 'inst24~29'
+        Info: 17: + IC(0.300 ns) + CELL(0.000 ns) = 38.500 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+        Info: Total cell delay = 21.800 ns ( 56.62 % )
+        Info: Total interconnect delay = 16.700 ns ( 43.38 % )
+    Info: + Micro hold delay of destination is 1.300 ns
+    Info: - Shortest pin to register delay is 8.600 ns
+        Info: 1: + IC(0.000 ns) + CELL(4.900 ns) = 4.900 ns; Loc. = PIN_132; Fanout = 6; CLK Node = 'B'
+        Info: 2: + IC(2.900 ns) + CELL(0.800 ns) = 8.600 ns; Loc. = LC4_B6; Fanout = 6; REG Node = 'inst7'
+        Info: Total cell delay = 5.700 ns ( 66.28 % )
+        Info: Total interconnect delay = 2.900 ns ( 33.72 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Processing ended: Thu Jul 06 02:40:22 2023
+    Info: Elapsed time: 00:00:00
+
+

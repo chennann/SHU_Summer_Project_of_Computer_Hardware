@@ -1,0 +1,81 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		PingPongGame_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY ACEX1K
+set_global_assignment -name DEVICE "EP1K30TC144-3"
+set_global_assignment -name TOP_LEVEL_ENTITY PingPongGame
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "6.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:43:17  JUNE 15, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "6.0 SP1"
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE ANY
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name BDF_FILE PingPongGame.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE PingPongGame.vwf
+set_global_assignment -name VECTOR_INPUT_SOURCE PingPongGame.vwf
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_location_assignment PIN_138 -to GAME
+set_location_assignment PIN_137 -to TURN
+set_location_assignment PIN_136 -to CLK
+set_location_assignment PIN_133 -to A
+set_location_assignment PIN_132 -to B
+set_location_assignment PIN_131 -to A7
+set_location_assignment PIN_130 -to A6
+set_location_assignment PIN_135 -to A5
+set_location_assignment PIN_8 -to A4
+set_location_assignment PIN_9 -to A3
+set_location_assignment PIN_13 -to A2
+set_location_assignment PIN_17 -to A1
+set_location_assignment PIN_18 -to A0
+set_location_assignment PIN_19 -to B7
+set_location_assignment PIN_21 -to B6
+set_location_assignment PIN_23 -to B5
+set_location_assignment PIN_26 -to B4
+set_location_assignment PIN_27 -to B3
+set_location_assignment PIN_30 -to B1
+set_location_assignment PIN_29 -to B2
+set_location_assignment PIN_32 -to B0
+set_location_assignment PIN_33 -to AW3
+set_location_assignment PIN_36 -to AW2
+set_location_assignment PIN_37 -to AW1
+set_location_assignment PIN_38 -to AW0
+set_location_assignment PIN_39 -to BW3
+set_location_assignment PIN_41 -to BW2
+set_location_assignment PIN_43 -to BW1
+set_location_assignment PIN_44 -to BW0
+set_location_assignment PIN_46 -to L0
+set_location_assignment PIN_47 -to L1
+set_location_assignment PIN_48 -to L2
+set_location_assignment PIN_49 -to L3
+set_location_assignment PIN_51 -to L4
+set_location_assignment PIN_59 -to L5
+set_location_assignment PIN_60 -to L6
+set_location_assignment PIN_62 -to L7
+set_location_assignment PIN_63 -to L8
+set_location_assignment PIN_64 -to L9
+set_location_assignment PIN_65 -to L10
+set_location_assignment PIN_68 -to L11
+set_location_assignment PIN_70 -to L13
+set_location_assignment PIN_67 -to L12
+set_location_assignment PIN_69 -to L14

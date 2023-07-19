@@ -1,0 +1,156 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : -0.100 ns
+From           : A
+To             : G
+From Clock     : --
+To Clock       : B
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 62.100 ns
+From           : 74160:inst|6
+To             : A0
+From Clock     : GAME
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.600 ns
+From           : GAME
+To             : L7
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 31.200 ns
+From           : B
+To             : inst7
+From Clock     : --
+To Clock       : GAME
+Failed Paths   : 0
+
+Type           : Clock Setup: 'A'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.45 MHz ( period = 69.200 ns )
+From           : 74193:inst38|25
+To             : WZ
+From Clock     : A
+To Clock       : A
+Failed Paths   : 0
+
+Type           : Clock Setup: 'B'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 14.53 MHz ( period = 68.800 ns )
+From           : 74193:inst38|25
+To             : WZ
+From Clock     : B
+To Clock       : B
+Failed Paths   : 0
+
+Type           : Clock Setup: 'GAME'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.39 MHz ( period = 61.000 ns )
+From           : 74193:inst38|25
+To             : WZ
+From Clock     : GAME
+To Clock       : GAME
+Failed Paths   : 0
+
+Type           : Clock Setup: 'TURN'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.39 MHz ( period = 61.000 ns )
+From           : 74193:inst38|25
+To             : WZ
+From Clock     : TURN
+To Clock       : TURN
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 20.08 MHz ( period = 49.800 ns )
+From           : 74193:inst38|25
+To             : WZ
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Hold: 'B'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74160:inst|6
+To             : 74160:inst|6
+From Clock     : B
+To Clock       : B
+Failed Paths   : 18
+
+Type           : Clock Hold: 'A'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74160:inst|6
+To             : 74160:inst|6
+From Clock     : A
+To Clock       : A
+Failed Paths   : 18
+
+Type           : Clock Hold: 'TURN'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74160:inst|6
+To             : 74160:inst|6
+From Clock     : TURN
+To Clock       : TURN
+Failed Paths   : 19
+
+Type           : Clock Hold: 'GAME'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74160:inst|6
+To             : 74160:inst|6
+From Clock     : GAME
+To Clock       : GAME
+Failed Paths   : 19
+
+Type           : Clock Hold: 'CLK'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74160:inst|6
+To             : 74160:inst|6
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 18
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 92
+
+--------------------------------------------------------------------------------------
+

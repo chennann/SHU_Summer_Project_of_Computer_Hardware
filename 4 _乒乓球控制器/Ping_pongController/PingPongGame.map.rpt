@@ -1,0 +1,235 @@
+Analysis & Synthesis report for PingPongGame
+Thu Jul 06 02:40:19 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Thu Jul 06 02:40:19 2023         ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name               ; PingPongGame                                  ;
+; Top-level Entity Name       ; PingPongGame                                  ;
+; Family                      ; ACEX1K                                        ;
+; Total logic elements        ; 86                                            ;
+; Total pins                  ; 48                                            ;
+; Total memory bits           ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                              ;
++------------------------------------------------------------+---------------+---------------+
+; Option                                                     ; Setting       ; Default Value ;
++------------------------------------------------------------+---------------+---------------+
+; Device                                                     ; EP1K30TC144-3 ;               ;
+; Top-level entity name                                      ; PingPongGame  ; PingPongGame  ;
+; Family name                                                ; ACEX1K        ; Stratix       ;
+; Use smart compilation                                      ; Off           ; Off           ;
+; Create Debugging Nodes for IP Cores                        ; Off           ; Off           ;
+; Preserve fewer node names                                  ; On            ; On            ;
+; Disable OpenCore Plus hardware evaluation                  ; Off           ; Off           ;
+; Verilog Version                                            ; Verilog_2001  ; Verilog_2001  ;
+; VHDL Version                                               ; VHDL93        ; VHDL93        ;
+; State Machine Processing                                   ; Auto          ; Auto          ;
+; Extract Verilog State Machines                             ; On            ; On            ;
+; Extract VHDL State Machines                                ; On            ; On            ;
+; Add Pass-Through Logic to Inferred RAMs                    ; On            ; On            ;
+; NOT Gate Push-Back                                         ; On            ; On            ;
+; Power-Up Don't Care                                        ; On            ; On            ;
+; Remove Redundant Logic Cells                               ; Off           ; Off           ;
+; Remove Duplicate Registers                                 ; On            ; On            ;
+; Ignore CARRY Buffers                                       ; Off           ; Off           ;
+; Ignore CASCADE Buffers                                     ; Off           ; Off           ;
+; Ignore GLOBAL Buffers                                      ; Off           ; Off           ;
+; Ignore ROW GLOBAL Buffers                                  ; Off           ; Off           ;
+; Ignore LCELL Buffers                                       ; Off           ; Off           ;
+; Ignore SOFT Buffers                                        ; On            ; On            ;
+; Limit AHDL Integers to 32 Bits                             ; Off           ; Off           ;
+; Auto Implement in ROM                                      ; Off           ; Off           ;
+; Optimization Technique -- FLEX 10K/10KE/10KA/ACEX 1K       ; Area          ; Area          ;
+; Carry Chain Length -- FLEX 10K                             ; 32            ; 32            ;
+; Cascade Chain Length                                       ; 2             ; 2             ;
+; Auto Carry Chains                                          ; On            ; On            ;
+; Auto Open-Drain Pins                                       ; On            ; On            ;
+; Remove Duplicate Logic                                     ; On            ; On            ;
+; Auto ROM Replacement                                       ; On            ; On            ;
+; Auto RAM Replacement                                       ; On            ; On            ;
+; Auto Clock Enable Replacement                              ; On            ; On            ;
+; Auto Resource Sharing                                      ; Off           ; Off           ;
+; Allow Any RAM Size For Recognition                         ; Off           ; Off           ;
+; Allow Any ROM Size For Recognition                         ; Off           ; Off           ;
+; Ignore translate_off and translate_on Synthesis Directives ; Off           ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report         ; On            ; On            ;
+; HDL message level                                          ; Level2        ; Level2        ;
++------------------------------------------------------------+---------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                               ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+
+; PingPongGame.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/Users/yuan/Desktop/Ping_pongController/PingPongGame.bdf ;
+; 74160.bdf                        ; yes             ; Megafunction                       ; f:/quartusii6.0/libraries/others/maxplus2/74160.bdf        ;
+; 74154.bdf                        ; yes             ; Megafunction                       ; f:/quartusii6.0/libraries/others/maxplus2/74154.bdf        ;
+; 74193.bdf                        ; yes             ; Megafunction                       ; f:/quartusii6.0/libraries/others/maxplus2/74193.bdf        ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++---------------------------------+-----------+
+; Resource                        ; Usage     ;
++---------------------------------+-----------+
+; Total logic elements            ; 86        ;
+; Total combinational functions   ; 85        ;
+;     -- Total 4-input functions  ; 33        ;
+;     -- Total 3-input functions  ; 5         ;
+;     -- Total 2-input functions  ; 22        ;
+;     -- Total 1-input functions  ; 25        ;
+;     -- Total 0-input functions  ; 0         ;
+; Combinational cells for routing ; 0         ;
+; Total registers                 ; 35        ;
+; I/O pins                        ; 48        ;
+; Maximum fan-out node            ; inst44    ;
+; Maximum fan-out                 ; 21        ;
+; Total fan-out                   ; 348       ;
+; Average fan-out                 ; 2.60      ;
++---------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                            ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+----------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name        ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+----------------------------+
+; |PingPongGame              ; 86 (16)     ; 35           ; 0           ; 48   ; 51 (13)      ; 1 (1)             ; 34 (2)           ; 0 (0)           ; 0 (0)      ; |PingPongGame              ;
+;    |74154:inst43|          ; 16 (16)     ; 0            ; 0           ; 0    ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74154:inst43 ;
+;    |74160:inst10|          ; 6 (6)       ; 4            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst10 ;
+;    |74160:inst11|          ; 6 (6)       ; 4            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst11 ;
+;    |74160:inst1|           ; 7 (7)       ; 4            ; 0           ; 0    ; 3 (3)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst1  ;
+;    |74160:inst2|           ; 6 (6)       ; 4            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst2  ;
+;    |74160:inst3|           ; 6 (6)       ; 4            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst3  ;
+;    |74160:inst5|           ; 6 (6)       ; 4            ; 0           ; 0    ; 2 (2)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst5  ;
+;    |74160:inst|            ; 7 (7)       ; 4            ; 0           ; 0    ; 3 (3)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74160:inst   ;
+;    |74193:inst38|          ; 10 (10)     ; 4            ; 0           ; 0    ; 6 (6)        ; 0 (0)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |PingPongGame|74193:inst38 ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+----------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 35    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 35    ;
+; Number of registers using Asynchronous Load  ; 1     ;
+; Number of registers using Clock Enable       ; 14    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Jul 06 02:40:19 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PingPongGame -c PingPongGame
+Info: Found 1 design units, including 1 entities, in source file PingPongGame.bdf
+    Info: Found entity 1: PingPongGame
+Info: Elaborating entity "PingPongGame" for the top level hierarchy
+Warning: Block or symbol "NOT" of instance "inst4" overlaps another block or symbol
+Warning: Block or symbol "NOT" of instance "inst9" overlaps another block or symbol
+Warning: Port "D" of type 74193 and instance "inst38" is missing source signal
+Warning: Port "C" of type 74193 and instance "inst38" is missing source signal
+Warning: Port "B" of type 74193 and instance "inst38" is missing source signal
+Warning: Port "A" of type 74193 and instance "inst38" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst10" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst10" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst10" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst10" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst1" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst1" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst1" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst1" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst11" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst11" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst11" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst11" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst2" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst2" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst2" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst2" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst5" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst5" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst5" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst5" is missing source signal
+Warning: Port "A" of type 74160 and instance "inst3" is missing source signal
+Warning: Port "B" of type 74160 and instance "inst3" is missing source signal
+Warning: Port "C" of type 74160 and instance "inst3" is missing source signal
+Warning: Port "D" of type 74160 and instance "inst3" is missing source signal
+Info: Found 1 design units, including 1 entities, in source file f:/quartusii6.0/libraries/others/maxplus2/74160.bdf
+    Info: Found entity 1: 74160
+Info: Elaborating entity "74160" for hierarchy "74160:inst"
+Info: Elaborated megafunction instantiation "74160:inst"
+Info: Found 1 design units, including 1 entities, in source file f:/quartusii6.0/libraries/others/maxplus2/74154.bdf
+    Info: Found entity 1: 74154
+Info: Elaborating entity "74154" for hierarchy "74154:inst43"
+Info: Elaborated megafunction instantiation "74154:inst43"
+Info: Found 1 design units, including 1 entities, in source file f:/quartusii6.0/libraries/others/maxplus2/74193.bdf
+    Info: Found entity 1: 74193
+Info: Elaborating entity "74193" for hierarchy "74193:inst38"
+Info: Elaborated megafunction instantiation "74193:inst38"
+Info: Implemented 134 device resources after synthesis - the final resource count might be different
+    Info: Implemented 5 input pins
+    Info: Implemented 43 output pins
+    Info: Implemented 86 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Processing ended: Thu Jul 06 02:40:19 2023
+    Info: Elapsed time: 00:00:00
+
+

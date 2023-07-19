@@ -1,0 +1,555 @@
+Simulator report for PingPongGame
+Thu Jul 06 02:51:13 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 226 nodes    ;
+; Simulation Coverage         ;      24.22 % ;
+; Total Number of Transitions ; 573          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; ACEX1K       ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                            ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+; Option                                                                                     ; Setting          ; Default Value ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+; Simulation mode                                                                            ; Functional       ; Timing        ;
+; Start time                                                                                 ; 0 ns             ; 0 ns          ;
+; Vector input source                                                                        ; PingPongGame.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On               ; On            ;
+; Check outputs                                                                              ; Off              ; Off           ;
+; Report simulation coverage                                                                 ; On               ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On               ; On            ;
+; Display missing 1-value coverage report                                                    ; On               ; On            ;
+; Display missing 0-value coverage report                                                    ; On               ; On            ;
+; Detect setup and hold time violations                                                      ; Off              ; Off           ;
+; Detect glitches                                                                            ; Off              ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off              ; Off           ;
+; Generate Signal Activity File                                                              ; Off              ; Off           ;
+; Group bus channels in simulation results                                                   ; Off              ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On               ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE       ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off              ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On               ;               ;
+; Glitch Filtering                                                                           ; Off              ; Off           ;
++--------------------------------------------------------------------------------------------+------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      24.22 % ;
+; Total nodes checked                                 ; 226          ;
+; Total output ports checked                          ; 223          ;
+; Total output ports with complete 1/0-value coverage ; 54           ;
+; Total output ports with no 1/0-value coverage       ; 169          ;
+; Total output ports with no 1-value coverage         ; 169          ;
+; Total output ports with no 0-value coverage         ; 169          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                      ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |PingPongGame|inst7           ; |PingPongGame|inst7           ; out              ;
+; |PingPongGame|inst24          ; |PingPongGame|inst24          ; out0             ;
+; |PingPongGame|inst21          ; |PingPongGame|inst21          ; out0             ;
+; |PingPongGame|inst23          ; |PingPongGame|inst23          ; out0             ;
+; |PingPongGame|A               ; |PingPongGame|A               ; out              ;
+; |PingPongGame|B               ; |PingPongGame|B               ; out              ;
+; |PingPongGame|G               ; |PingPongGame|G               ; out              ;
+; |PingPongGame|inst35          ; |PingPongGame|inst35          ; out0             ;
+; |PingPongGame|inst18          ; |PingPongGame|inst18          ; out0             ;
+; |PingPongGame|inst92          ; |PingPongGame|inst92          ; out0             ;
+; |PingPongGame|inst6           ; |PingPongGame|inst6           ; out0             ;
+; |PingPongGame|inst12          ; |PingPongGame|inst12          ; out0             ;
+; |PingPongGame|CLK             ; |PingPongGame|CLK             ; out              ;
+; |PingPongGame|inst8           ; |PingPongGame|inst8           ; out0             ;
+; |PingPongGame|WZ              ; |PingPongGame|WZ              ; out              ;
+; |PingPongGame|inst31          ; |PingPongGame|inst31          ; out0             ;
+; |PingPongGame|inst17          ; |PingPongGame|inst17          ; out0             ;
+; |PingPongGame|inst28          ; |PingPongGame|inst28          ; out0             ;
+; |PingPongGame|inst14          ; |PingPongGame|inst14          ; out0             ;
+; |PingPongGame|L0              ; |PingPongGame|L0              ; pin_out          ;
+; |PingPongGame|L1              ; |PingPongGame|L1              ; pin_out          ;
+; |PingPongGame|L2              ; |PingPongGame|L2              ; pin_out          ;
+; |PingPongGame|L3              ; |PingPongGame|L3              ; pin_out          ;
+; |PingPongGame|L4              ; |PingPongGame|L4              ; pin_out          ;
+; |PingPongGame|L5              ; |PingPongGame|L5              ; pin_out          ;
+; |PingPongGame|L8              ; |PingPongGame|L8              ; pin_out          ;
+; |PingPongGame|L9              ; |PingPongGame|L9              ; pin_out          ;
+; |PingPongGame|L6              ; |PingPongGame|L6              ; pin_out          ;
+; |PingPongGame|74193:inst38|86 ; |PingPongGame|74193:inst38|86 ; out0             ;
+; |PingPongGame|74193:inst38|93 ; |PingPongGame|74193:inst38|93 ; out0             ;
+; |PingPongGame|74193:inst38|6  ; |PingPongGame|74193:inst38|6  ; out0             ;
+; |PingPongGame|74193:inst38|26 ; |PingPongGame|74193:inst38|26 ; out              ;
+; |PingPongGame|74193:inst38|85 ; |PingPongGame|74193:inst38|85 ; out0             ;
+; |PingPongGame|74193:inst38|94 ; |PingPongGame|74193:inst38|94 ; out0             ;
+; |PingPongGame|74193:inst38|5  ; |PingPongGame|74193:inst38|5  ; out0             ;
+; |PingPongGame|74193:inst38|87 ; |PingPongGame|74193:inst38|87 ; out0             ;
+; |PingPongGame|74193:inst38|92 ; |PingPongGame|74193:inst38|92 ; out0             ;
+; |PingPongGame|74193:inst38|50 ; |PingPongGame|74193:inst38|50 ; out0             ;
+; |PingPongGame|74193:inst38|51 ; |PingPongGame|74193:inst38|51 ; out0             ;
+; |PingPongGame|74193:inst38|88 ; |PingPongGame|74193:inst38|88 ; out0             ;
+; |PingPongGame|74193:inst38|91 ; |PingPongGame|74193:inst38|91 ; out0             ;
+; |PingPongGame|74193:inst38|22 ; |PingPongGame|74193:inst38|22 ; out0             ;
+; |PingPongGame|74193:inst38|21 ; |PingPongGame|74193:inst38|21 ; out0             ;
+; |PingPongGame|74154:inst43|32 ; |PingPongGame|74154:inst43|32 ; out0             ;
+; |PingPongGame|74154:inst43|31 ; |PingPongGame|74154:inst43|31 ; out0             ;
+; |PingPongGame|74154:inst43|30 ; |PingPongGame|74154:inst43|30 ; out0             ;
+; |PingPongGame|74154:inst43|29 ; |PingPongGame|74154:inst43|29 ; out0             ;
+; |PingPongGame|74154:inst43|28 ; |PingPongGame|74154:inst43|28 ; out0             ;
+; |PingPongGame|74154:inst43|27 ; |PingPongGame|74154:inst43|27 ; out0             ;
+; |PingPongGame|74154:inst43|26 ; |PingPongGame|74154:inst43|26 ; out0             ;
+; |PingPongGame|74154:inst43|25 ; |PingPongGame|74154:inst43|25 ; out0             ;
+; |PingPongGame|74154:inst43|24 ; |PingPongGame|74154:inst43|24 ; out0             ;
+; |PingPongGame|74154:inst43|23 ; |PingPongGame|74154:inst43|23 ; out0             ;
+; |PingPongGame|74154:inst43|22 ; |PingPongGame|74154:inst43|22 ; out0             ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |PingPongGame|A0              ; |PingPongGame|A0              ; pin_out          ;
+; |PingPongGame|inst91          ; |PingPongGame|inst91          ; out0             ;
+; |PingPongGame|inst44          ; |PingPongGame|inst44          ; out0             ;
+; |PingPongGame|TURN            ; |PingPongGame|TURN            ; out              ;
+; |PingPongGame|GAME            ; |PingPongGame|GAME            ; out              ;
+; |PingPongGame|inst34          ; |PingPongGame|inst34          ; out0             ;
+; |PingPongGame|inst56          ; |PingPongGame|inst56          ; out0             ;
+; |PingPongGame|inst19          ; |PingPongGame|inst19          ; out0             ;
+; |PingPongGame|inst20          ; |PingPongGame|inst20          ; out0             ;
+; |PingPongGame|inst16          ; |PingPongGame|inst16          ; out0             ;
+; |PingPongGame|A1              ; |PingPongGame|A1              ; pin_out          ;
+; |PingPongGame|A2              ; |PingPongGame|A2              ; pin_out          ;
+; |PingPongGame|A3              ; |PingPongGame|A3              ; pin_out          ;
+; |PingPongGame|B0              ; |PingPongGame|B0              ; pin_out          ;
+; |PingPongGame|B1              ; |PingPongGame|B1              ; pin_out          ;
+; |PingPongGame|B2              ; |PingPongGame|B2              ; pin_out          ;
+; |PingPongGame|B3              ; |PingPongGame|B3              ; pin_out          ;
+; |PingPongGame|A4              ; |PingPongGame|A4              ; pin_out          ;
+; |PingPongGame|A5              ; |PingPongGame|A5              ; pin_out          ;
+; |PingPongGame|A6              ; |PingPongGame|A6              ; pin_out          ;
+; |PingPongGame|A7              ; |PingPongGame|A7              ; pin_out          ;
+; |PingPongGame|B4              ; |PingPongGame|B4              ; pin_out          ;
+; |PingPongGame|B5              ; |PingPongGame|B5              ; pin_out          ;
+; |PingPongGame|B6              ; |PingPongGame|B6              ; pin_out          ;
+; |PingPongGame|B7              ; |PingPongGame|B7              ; pin_out          ;
+; |PingPongGame|AW0             ; |PingPongGame|AW0             ; pin_out          ;
+; |PingPongGame|AW1             ; |PingPongGame|AW1             ; pin_out          ;
+; |PingPongGame|AW2             ; |PingPongGame|AW2             ; pin_out          ;
+; |PingPongGame|AW3             ; |PingPongGame|AW3             ; pin_out          ;
+; |PingPongGame|T0              ; |PingPongGame|T0              ; pin_out          ;
+; |PingPongGame|T1              ; |PingPongGame|T1              ; pin_out          ;
+; |PingPongGame|T2              ; |PingPongGame|T2              ; pin_out          ;
+; |PingPongGame|T3              ; |PingPongGame|T3              ; pin_out          ;
+; |PingPongGame|L10             ; |PingPongGame|L10             ; pin_out          ;
+; |PingPongGame|L11             ; |PingPongGame|L11             ; pin_out          ;
+; |PingPongGame|L12             ; |PingPongGame|L12             ; pin_out          ;
+; |PingPongGame|L13             ; |PingPongGame|L13             ; pin_out          ;
+; |PingPongGame|L14             ; |PingPongGame|L14             ; pin_out          ;
+; |PingPongGame|L7              ; |PingPongGame|L7              ; pin_out          ;
+; |PingPongGame|BW0             ; |PingPongGame|BW0             ; pin_out          ;
+; |PingPongGame|BW1             ; |PingPongGame|BW1             ; pin_out          ;
+; |PingPongGame|BW2             ; |PingPongGame|BW2             ; pin_out          ;
+; |PingPongGame|BW3             ; |PingPongGame|BW3             ; pin_out          ;
+; |PingPongGame|74160:inst3|6   ; |PingPongGame|74160:inst3|6   ; out              ;
+; |PingPongGame|74160:inst3|10  ; |PingPongGame|74160:inst3|10  ; out0             ;
+; |PingPongGame|74160:inst3|32  ; |PingPongGame|74160:inst3|32  ; out0             ;
+; |PingPongGame|74160:inst3|9   ; |PingPongGame|74160:inst3|9   ; out              ;
+; |PingPongGame|74160:inst3|13  ; |PingPongGame|74160:inst3|13  ; out0             ;
+; |PingPongGame|74160:inst3|49  ; |PingPongGame|74160:inst3|49  ; out0             ;
+; |PingPongGame|74160:inst3|65  ; |PingPongGame|74160:inst3|65  ; out0             ;
+; |PingPongGame|74160:inst3|46  ; |PingPongGame|74160:inst3|46  ; out0             ;
+; |PingPongGame|74160:inst3|8   ; |PingPongGame|74160:inst3|8   ; out              ;
+; |PingPongGame|74160:inst3|12  ; |PingPongGame|74160:inst3|12  ; out0             ;
+; |PingPongGame|74160:inst3|27  ; |PingPongGame|74160:inst3|27  ; out0             ;
+; |PingPongGame|74160:inst3|25  ; |PingPongGame|74160:inst3|25  ; out0             ;
+; |PingPongGame|74160:inst3|28  ; |PingPongGame|74160:inst3|28  ; out0             ;
+; |PingPongGame|74160:inst3|7   ; |PingPongGame|74160:inst3|7   ; out              ;
+; |PingPongGame|74160:inst3|11  ; |PingPongGame|74160:inst3|11  ; out0             ;
+; |PingPongGame|74160:inst3|30  ; |PingPongGame|74160:inst3|30  ; out0             ;
+; |PingPongGame|74160:inst3|50  ; |PingPongGame|74160:inst3|50  ; out0             ;
+; |PingPongGame|74160:inst5|6   ; |PingPongGame|74160:inst5|6   ; out              ;
+; |PingPongGame|74160:inst5|10  ; |PingPongGame|74160:inst5|10  ; out0             ;
+; |PingPongGame|74160:inst5|32  ; |PingPongGame|74160:inst5|32  ; out0             ;
+; |PingPongGame|74160:inst5|9   ; |PingPongGame|74160:inst5|9   ; out              ;
+; |PingPongGame|74160:inst5|13  ; |PingPongGame|74160:inst5|13  ; out0             ;
+; |PingPongGame|74160:inst5|49  ; |PingPongGame|74160:inst5|49  ; out0             ;
+; |PingPongGame|74160:inst5|65  ; |PingPongGame|74160:inst5|65  ; out0             ;
+; |PingPongGame|74160:inst5|46  ; |PingPongGame|74160:inst5|46  ; out0             ;
+; |PingPongGame|74160:inst5|8   ; |PingPongGame|74160:inst5|8   ; out              ;
+; |PingPongGame|74160:inst5|12  ; |PingPongGame|74160:inst5|12  ; out0             ;
+; |PingPongGame|74160:inst5|27  ; |PingPongGame|74160:inst5|27  ; out0             ;
+; |PingPongGame|74160:inst5|25  ; |PingPongGame|74160:inst5|25  ; out0             ;
+; |PingPongGame|74160:inst5|28  ; |PingPongGame|74160:inst5|28  ; out0             ;
+; |PingPongGame|74160:inst5|7   ; |PingPongGame|74160:inst5|7   ; out              ;
+; |PingPongGame|74160:inst5|11  ; |PingPongGame|74160:inst5|11  ; out0             ;
+; |PingPongGame|74160:inst5|30  ; |PingPongGame|74160:inst5|30  ; out0             ;
+; |PingPongGame|74160:inst5|50  ; |PingPongGame|74160:inst5|50  ; out0             ;
+; |PingPongGame|74160:inst2|6   ; |PingPongGame|74160:inst2|6   ; out              ;
+; |PingPongGame|74160:inst2|10  ; |PingPongGame|74160:inst2|10  ; out0             ;
+; |PingPongGame|74160:inst2|32  ; |PingPongGame|74160:inst2|32  ; out0             ;
+; |PingPongGame|74160:inst2|9   ; |PingPongGame|74160:inst2|9   ; out              ;
+; |PingPongGame|74160:inst2|13  ; |PingPongGame|74160:inst2|13  ; out0             ;
+; |PingPongGame|74160:inst2|49  ; |PingPongGame|74160:inst2|49  ; out0             ;
+; |PingPongGame|74160:inst2|65  ; |PingPongGame|74160:inst2|65  ; out0             ;
+; |PingPongGame|74160:inst2|46  ; |PingPongGame|74160:inst2|46  ; out0             ;
+; |PingPongGame|74160:inst2|8   ; |PingPongGame|74160:inst2|8   ; out              ;
+; |PingPongGame|74160:inst2|12  ; |PingPongGame|74160:inst2|12  ; out0             ;
+; |PingPongGame|74160:inst2|27  ; |PingPongGame|74160:inst2|27  ; out0             ;
+; |PingPongGame|74160:inst2|25  ; |PingPongGame|74160:inst2|25  ; out0             ;
+; |PingPongGame|74160:inst2|28  ; |PingPongGame|74160:inst2|28  ; out0             ;
+; |PingPongGame|74160:inst2|7   ; |PingPongGame|74160:inst2|7   ; out              ;
+; |PingPongGame|74160:inst2|11  ; |PingPongGame|74160:inst2|11  ; out0             ;
+; |PingPongGame|74160:inst2|30  ; |PingPongGame|74160:inst2|30  ; out0             ;
+; |PingPongGame|74160:inst2|50  ; |PingPongGame|74160:inst2|50  ; out0             ;
+; |PingPongGame|74160:inst1|45  ; |PingPongGame|74160:inst1|45  ; out0             ;
+; |PingPongGame|74160:inst1|6   ; |PingPongGame|74160:inst1|6   ; out              ;
+; |PingPongGame|74160:inst1|10  ; |PingPongGame|74160:inst1|10  ; out0             ;
+; |PingPongGame|74160:inst1|32  ; |PingPongGame|74160:inst1|32  ; out0             ;
+; |PingPongGame|74160:inst1|9   ; |PingPongGame|74160:inst1|9   ; out              ;
+; |PingPongGame|74160:inst1|13  ; |PingPongGame|74160:inst1|13  ; out0             ;
+; |PingPongGame|74160:inst1|49  ; |PingPongGame|74160:inst1|49  ; out0             ;
+; |PingPongGame|74160:inst1|65  ; |PingPongGame|74160:inst1|65  ; out0             ;
+; |PingPongGame|74160:inst1|46  ; |PingPongGame|74160:inst1|46  ; out0             ;
+; |PingPongGame|74160:inst1|8   ; |PingPongGame|74160:inst1|8   ; out              ;
+; |PingPongGame|74160:inst1|12  ; |PingPongGame|74160:inst1|12  ; out0             ;
+; |PingPongGame|74160:inst1|27  ; |PingPongGame|74160:inst1|27  ; out0             ;
+; |PingPongGame|74160:inst1|25  ; |PingPongGame|74160:inst1|25  ; out0             ;
+; |PingPongGame|74160:inst1|28  ; |PingPongGame|74160:inst1|28  ; out0             ;
+; |PingPongGame|74160:inst1|7   ; |PingPongGame|74160:inst1|7   ; out              ;
+; |PingPongGame|74160:inst1|11  ; |PingPongGame|74160:inst1|11  ; out0             ;
+; |PingPongGame|74160:inst1|30  ; |PingPongGame|74160:inst1|30  ; out0             ;
+; |PingPongGame|74160:inst1|50  ; |PingPongGame|74160:inst1|50  ; out0             ;
+; |PingPongGame|74160:inst11|6  ; |PingPongGame|74160:inst11|6  ; out              ;
+; |PingPongGame|74160:inst11|10 ; |PingPongGame|74160:inst11|10 ; out0             ;
+; |PingPongGame|74160:inst11|32 ; |PingPongGame|74160:inst11|32 ; out0             ;
+; |PingPongGame|74160:inst11|9  ; |PingPongGame|74160:inst11|9  ; out              ;
+; |PingPongGame|74160:inst11|13 ; |PingPongGame|74160:inst11|13 ; out0             ;
+; |PingPongGame|74160:inst11|49 ; |PingPongGame|74160:inst11|49 ; out0             ;
+; |PingPongGame|74160:inst11|65 ; |PingPongGame|74160:inst11|65 ; out0             ;
+; |PingPongGame|74160:inst11|46 ; |PingPongGame|74160:inst11|46 ; out0             ;
+; |PingPongGame|74160:inst11|8  ; |PingPongGame|74160:inst11|8  ; out              ;
+; |PingPongGame|74160:inst11|12 ; |PingPongGame|74160:inst11|12 ; out0             ;
+; |PingPongGame|74160:inst11|27 ; |PingPongGame|74160:inst11|27 ; out0             ;
+; |PingPongGame|74160:inst11|25 ; |PingPongGame|74160:inst11|25 ; out0             ;
+; |PingPongGame|74160:inst11|28 ; |PingPongGame|74160:inst11|28 ; out0             ;
+; |PingPongGame|74160:inst11|7  ; |PingPongGame|74160:inst11|7  ; out              ;
+; |PingPongGame|74160:inst11|11 ; |PingPongGame|74160:inst11|11 ; out0             ;
+; |PingPongGame|74160:inst11|30 ; |PingPongGame|74160:inst11|30 ; out0             ;
+; |PingPongGame|74160:inst11|50 ; |PingPongGame|74160:inst11|50 ; out0             ;
+; |PingPongGame|74160:inst10|6  ; |PingPongGame|74160:inst10|6  ; out              ;
+; |PingPongGame|74160:inst10|10 ; |PingPongGame|74160:inst10|10 ; out0             ;
+; |PingPongGame|74160:inst10|32 ; |PingPongGame|74160:inst10|32 ; out0             ;
+; |PingPongGame|74160:inst10|9  ; |PingPongGame|74160:inst10|9  ; out              ;
+; |PingPongGame|74160:inst10|13 ; |PingPongGame|74160:inst10|13 ; out0             ;
+; |PingPongGame|74160:inst10|49 ; |PingPongGame|74160:inst10|49 ; out0             ;
+; |PingPongGame|74160:inst10|65 ; |PingPongGame|74160:inst10|65 ; out0             ;
+; |PingPongGame|74160:inst10|46 ; |PingPongGame|74160:inst10|46 ; out0             ;
+; |PingPongGame|74160:inst10|8  ; |PingPongGame|74160:inst10|8  ; out              ;
+; |PingPongGame|74160:inst10|12 ; |PingPongGame|74160:inst10|12 ; out0             ;
+; |PingPongGame|74160:inst10|27 ; |PingPongGame|74160:inst10|27 ; out0             ;
+; |PingPongGame|74160:inst10|25 ; |PingPongGame|74160:inst10|25 ; out0             ;
+; |PingPongGame|74160:inst10|28 ; |PingPongGame|74160:inst10|28 ; out0             ;
+; |PingPongGame|74160:inst10|7  ; |PingPongGame|74160:inst10|7  ; out              ;
+; |PingPongGame|74160:inst10|11 ; |PingPongGame|74160:inst10|11 ; out0             ;
+; |PingPongGame|74160:inst10|30 ; |PingPongGame|74160:inst10|30 ; out0             ;
+; |PingPongGame|74160:inst10|50 ; |PingPongGame|74160:inst10|50 ; out0             ;
+; |PingPongGame|74154:inst43|21 ; |PingPongGame|74154:inst43|21 ; out0             ;
+; |PingPongGame|74154:inst43|20 ; |PingPongGame|74154:inst43|20 ; out0             ;
+; |PingPongGame|74154:inst43|19 ; |PingPongGame|74154:inst43|19 ; out0             ;
+; |PingPongGame|74154:inst43|18 ; |PingPongGame|74154:inst43|18 ; out0             ;
+; |PingPongGame|74154:inst43|17 ; |PingPongGame|74154:inst43|17 ; out0             ;
+; |PingPongGame|74160:inst|45   ; |PingPongGame|74160:inst|45   ; out0             ;
+; |PingPongGame|74160:inst|6    ; |PingPongGame|74160:inst|6    ; out              ;
+; |PingPongGame|74160:inst|10   ; |PingPongGame|74160:inst|10   ; out0             ;
+; |PingPongGame|74160:inst|32   ; |PingPongGame|74160:inst|32   ; out0             ;
+; |PingPongGame|74160:inst|9    ; |PingPongGame|74160:inst|9    ; out              ;
+; |PingPongGame|74160:inst|13   ; |PingPongGame|74160:inst|13   ; out0             ;
+; |PingPongGame|74160:inst|49   ; |PingPongGame|74160:inst|49   ; out0             ;
+; |PingPongGame|74160:inst|65   ; |PingPongGame|74160:inst|65   ; out0             ;
+; |PingPongGame|74160:inst|46   ; |PingPongGame|74160:inst|46   ; out0             ;
+; |PingPongGame|74160:inst|8    ; |PingPongGame|74160:inst|8    ; out              ;
+; |PingPongGame|74160:inst|12   ; |PingPongGame|74160:inst|12   ; out0             ;
+; |PingPongGame|74160:inst|27   ; |PingPongGame|74160:inst|27   ; out0             ;
+; |PingPongGame|74160:inst|25   ; |PingPongGame|74160:inst|25   ; out0             ;
+; |PingPongGame|74160:inst|28   ; |PingPongGame|74160:inst|28   ; out0             ;
+; |PingPongGame|74160:inst|7    ; |PingPongGame|74160:inst|7    ; out              ;
+; |PingPongGame|74160:inst|11   ; |PingPongGame|74160:inst|11   ; out0             ;
+; |PingPongGame|74160:inst|30   ; |PingPongGame|74160:inst|30   ; out0             ;
+; |PingPongGame|74160:inst|50   ; |PingPongGame|74160:inst|50   ; out0             ;
++-------------------------------+-------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                         ;
++-------------------------------+-------------------------------+------------------+
+; Node Name                     ; Output Port Name              ; Output Port Type ;
++-------------------------------+-------------------------------+------------------+
+; |PingPongGame|A0              ; |PingPongGame|A0              ; pin_out          ;
+; |PingPongGame|inst91          ; |PingPongGame|inst91          ; out0             ;
+; |PingPongGame|inst44          ; |PingPongGame|inst44          ; out0             ;
+; |PingPongGame|TURN            ; |PingPongGame|TURN            ; out              ;
+; |PingPongGame|GAME            ; |PingPongGame|GAME            ; out              ;
+; |PingPongGame|inst34          ; |PingPongGame|inst34          ; out0             ;
+; |PingPongGame|inst56          ; |PingPongGame|inst56          ; out0             ;
+; |PingPongGame|inst19          ; |PingPongGame|inst19          ; out0             ;
+; |PingPongGame|inst20          ; |PingPongGame|inst20          ; out0             ;
+; |PingPongGame|inst16          ; |PingPongGame|inst16          ; out0             ;
+; |PingPongGame|A1              ; |PingPongGame|A1              ; pin_out          ;
+; |PingPongGame|A2              ; |PingPongGame|A2              ; pin_out          ;
+; |PingPongGame|A3              ; |PingPongGame|A3              ; pin_out          ;
+; |PingPongGame|B0              ; |PingPongGame|B0              ; pin_out          ;
+; |PingPongGame|B1              ; |PingPongGame|B1              ; pin_out          ;
+; |PingPongGame|B2              ; |PingPongGame|B2              ; pin_out          ;
+; |PingPongGame|B3              ; |PingPongGame|B3              ; pin_out          ;
+; |PingPongGame|A4              ; |PingPongGame|A4              ; pin_out          ;
+; |PingPongGame|A5              ; |PingPongGame|A5              ; pin_out          ;
+; |PingPongGame|A6              ; |PingPongGame|A6              ; pin_out          ;
+; |PingPongGame|A7              ; |PingPongGame|A7              ; pin_out          ;
+; |PingPongGame|B4              ; |PingPongGame|B4              ; pin_out          ;
+; |PingPongGame|B5              ; |PingPongGame|B5              ; pin_out          ;
+; |PingPongGame|B6              ; |PingPongGame|B6              ; pin_out          ;
+; |PingPongGame|B7              ; |PingPongGame|B7              ; pin_out          ;
+; |PingPongGame|AW0             ; |PingPongGame|AW0             ; pin_out          ;
+; |PingPongGame|AW1             ; |PingPongGame|AW1             ; pin_out          ;
+; |PingPongGame|AW2             ; |PingPongGame|AW2             ; pin_out          ;
+; |PingPongGame|AW3             ; |PingPongGame|AW3             ; pin_out          ;
+; |PingPongGame|T0              ; |PingPongGame|T0              ; pin_out          ;
+; |PingPongGame|T1              ; |PingPongGame|T1              ; pin_out          ;
+; |PingPongGame|T2              ; |PingPongGame|T2              ; pin_out          ;
+; |PingPongGame|T3              ; |PingPongGame|T3              ; pin_out          ;
+; |PingPongGame|L10             ; |PingPongGame|L10             ; pin_out          ;
+; |PingPongGame|L11             ; |PingPongGame|L11             ; pin_out          ;
+; |PingPongGame|L12             ; |PingPongGame|L12             ; pin_out          ;
+; |PingPongGame|L13             ; |PingPongGame|L13             ; pin_out          ;
+; |PingPongGame|L14             ; |PingPongGame|L14             ; pin_out          ;
+; |PingPongGame|L7              ; |PingPongGame|L7              ; pin_out          ;
+; |PingPongGame|BW0             ; |PingPongGame|BW0             ; pin_out          ;
+; |PingPongGame|BW1             ; |PingPongGame|BW1             ; pin_out          ;
+; |PingPongGame|BW2             ; |PingPongGame|BW2             ; pin_out          ;
+; |PingPongGame|BW3             ; |PingPongGame|BW3             ; pin_out          ;
+; |PingPongGame|74160:inst3|6   ; |PingPongGame|74160:inst3|6   ; out              ;
+; |PingPongGame|74160:inst3|10  ; |PingPongGame|74160:inst3|10  ; out0             ;
+; |PingPongGame|74160:inst3|32  ; |PingPongGame|74160:inst3|32  ; out0             ;
+; |PingPongGame|74160:inst3|9   ; |PingPongGame|74160:inst3|9   ; out              ;
+; |PingPongGame|74160:inst3|13  ; |PingPongGame|74160:inst3|13  ; out0             ;
+; |PingPongGame|74160:inst3|49  ; |PingPongGame|74160:inst3|49  ; out0             ;
+; |PingPongGame|74160:inst3|65  ; |PingPongGame|74160:inst3|65  ; out0             ;
+; |PingPongGame|74160:inst3|46  ; |PingPongGame|74160:inst3|46  ; out0             ;
+; |PingPongGame|74160:inst3|8   ; |PingPongGame|74160:inst3|8   ; out              ;
+; |PingPongGame|74160:inst3|12  ; |PingPongGame|74160:inst3|12  ; out0             ;
+; |PingPongGame|74160:inst3|27  ; |PingPongGame|74160:inst3|27  ; out0             ;
+; |PingPongGame|74160:inst3|25  ; |PingPongGame|74160:inst3|25  ; out0             ;
+; |PingPongGame|74160:inst3|28  ; |PingPongGame|74160:inst3|28  ; out0             ;
+; |PingPongGame|74160:inst3|7   ; |PingPongGame|74160:inst3|7   ; out              ;
+; |PingPongGame|74160:inst3|11  ; |PingPongGame|74160:inst3|11  ; out0             ;
+; |PingPongGame|74160:inst3|30  ; |PingPongGame|74160:inst3|30  ; out0             ;
+; |PingPongGame|74160:inst3|50  ; |PingPongGame|74160:inst3|50  ; out0             ;
+; |PingPongGame|74160:inst5|6   ; |PingPongGame|74160:inst5|6   ; out              ;
+; |PingPongGame|74160:inst5|10  ; |PingPongGame|74160:inst5|10  ; out0             ;
+; |PingPongGame|74160:inst5|32  ; |PingPongGame|74160:inst5|32  ; out0             ;
+; |PingPongGame|74160:inst5|9   ; |PingPongGame|74160:inst5|9   ; out              ;
+; |PingPongGame|74160:inst5|13  ; |PingPongGame|74160:inst5|13  ; out0             ;
+; |PingPongGame|74160:inst5|49  ; |PingPongGame|74160:inst5|49  ; out0             ;
+; |PingPongGame|74160:inst5|65  ; |PingPongGame|74160:inst5|65  ; out0             ;
+; |PingPongGame|74160:inst5|46  ; |PingPongGame|74160:inst5|46  ; out0             ;
+; |PingPongGame|74160:inst5|8   ; |PingPongGame|74160:inst5|8   ; out              ;
+; |PingPongGame|74160:inst5|12  ; |PingPongGame|74160:inst5|12  ; out0             ;
+; |PingPongGame|74160:inst5|27  ; |PingPongGame|74160:inst5|27  ; out0             ;
+; |PingPongGame|74160:inst5|25  ; |PingPongGame|74160:inst5|25  ; out0             ;
+; |PingPongGame|74160:inst5|28  ; |PingPongGame|74160:inst5|28  ; out0             ;
+; |PingPongGame|74160:inst5|7   ; |PingPongGame|74160:inst5|7   ; out              ;
+; |PingPongGame|74160:inst5|11  ; |PingPongGame|74160:inst5|11  ; out0             ;
+; |PingPongGame|74160:inst5|30  ; |PingPongGame|74160:inst5|30  ; out0             ;
+; |PingPongGame|74160:inst5|50  ; |PingPongGame|74160:inst5|50  ; out0             ;
+; |PingPongGame|74160:inst2|6   ; |PingPongGame|74160:inst2|6   ; out              ;
+; |PingPongGame|74160:inst2|10  ; |PingPongGame|74160:inst2|10  ; out0             ;
+; |PingPongGame|74160:inst2|32  ; |PingPongGame|74160:inst2|32  ; out0             ;
+; |PingPongGame|74160:inst2|9   ; |PingPongGame|74160:inst2|9   ; out              ;
+; |PingPongGame|74160:inst2|13  ; |PingPongGame|74160:inst2|13  ; out0             ;
+; |PingPongGame|74160:inst2|49  ; |PingPongGame|74160:inst2|49  ; out0             ;
+; |PingPongGame|74160:inst2|65  ; |PingPongGame|74160:inst2|65  ; out0             ;
+; |PingPongGame|74160:inst2|46  ; |PingPongGame|74160:inst2|46  ; out0             ;
+; |PingPongGame|74160:inst2|8   ; |PingPongGame|74160:inst2|8   ; out              ;
+; |PingPongGame|74160:inst2|12  ; |PingPongGame|74160:inst2|12  ; out0             ;
+; |PingPongGame|74160:inst2|27  ; |PingPongGame|74160:inst2|27  ; out0             ;
+; |PingPongGame|74160:inst2|25  ; |PingPongGame|74160:inst2|25  ; out0             ;
+; |PingPongGame|74160:inst2|28  ; |PingPongGame|74160:inst2|28  ; out0             ;
+; |PingPongGame|74160:inst2|7   ; |PingPongGame|74160:inst2|7   ; out              ;
+; |PingPongGame|74160:inst2|11  ; |PingPongGame|74160:inst2|11  ; out0             ;
+; |PingPongGame|74160:inst2|30  ; |PingPongGame|74160:inst2|30  ; out0             ;
+; |PingPongGame|74160:inst2|50  ; |PingPongGame|74160:inst2|50  ; out0             ;
+; |PingPongGame|74160:inst1|45  ; |PingPongGame|74160:inst1|45  ; out0             ;
+; |PingPongGame|74160:inst1|6   ; |PingPongGame|74160:inst1|6   ; out              ;
+; |PingPongGame|74160:inst1|10  ; |PingPongGame|74160:inst1|10  ; out0             ;
+; |PingPongGame|74160:inst1|32  ; |PingPongGame|74160:inst1|32  ; out0             ;
+; |PingPongGame|74160:inst1|9   ; |PingPongGame|74160:inst1|9   ; out              ;
+; |PingPongGame|74160:inst1|13  ; |PingPongGame|74160:inst1|13  ; out0             ;
+; |PingPongGame|74160:inst1|49  ; |PingPongGame|74160:inst1|49  ; out0             ;
+; |PingPongGame|74160:inst1|65  ; |PingPongGame|74160:inst1|65  ; out0             ;
+; |PingPongGame|74160:inst1|46  ; |PingPongGame|74160:inst1|46  ; out0             ;
+; |PingPongGame|74160:inst1|8   ; |PingPongGame|74160:inst1|8   ; out              ;
+; |PingPongGame|74160:inst1|12  ; |PingPongGame|74160:inst1|12  ; out0             ;
+; |PingPongGame|74160:inst1|27  ; |PingPongGame|74160:inst1|27  ; out0             ;
+; |PingPongGame|74160:inst1|25  ; |PingPongGame|74160:inst1|25  ; out0             ;
+; |PingPongGame|74160:inst1|28  ; |PingPongGame|74160:inst1|28  ; out0             ;
+; |PingPongGame|74160:inst1|7   ; |PingPongGame|74160:inst1|7   ; out              ;
+; |PingPongGame|74160:inst1|11  ; |PingPongGame|74160:inst1|11  ; out0             ;
+; |PingPongGame|74160:inst1|30  ; |PingPongGame|74160:inst1|30  ; out0             ;
+; |PingPongGame|74160:inst1|50  ; |PingPongGame|74160:inst1|50  ; out0             ;
+; |PingPongGame|74160:inst11|6  ; |PingPongGame|74160:inst11|6  ; out              ;
+; |PingPongGame|74160:inst11|10 ; |PingPongGame|74160:inst11|10 ; out0             ;
+; |PingPongGame|74160:inst11|32 ; |PingPongGame|74160:inst11|32 ; out0             ;
+; |PingPongGame|74160:inst11|9  ; |PingPongGame|74160:inst11|9  ; out              ;
+; |PingPongGame|74160:inst11|13 ; |PingPongGame|74160:inst11|13 ; out0             ;
+; |PingPongGame|74160:inst11|49 ; |PingPongGame|74160:inst11|49 ; out0             ;
+; |PingPongGame|74160:inst11|65 ; |PingPongGame|74160:inst11|65 ; out0             ;
+; |PingPongGame|74160:inst11|46 ; |PingPongGame|74160:inst11|46 ; out0             ;
+; |PingPongGame|74160:inst11|8  ; |PingPongGame|74160:inst11|8  ; out              ;
+; |PingPongGame|74160:inst11|12 ; |PingPongGame|74160:inst11|12 ; out0             ;
+; |PingPongGame|74160:inst11|27 ; |PingPongGame|74160:inst11|27 ; out0             ;
+; |PingPongGame|74160:inst11|25 ; |PingPongGame|74160:inst11|25 ; out0             ;
+; |PingPongGame|74160:inst11|28 ; |PingPongGame|74160:inst11|28 ; out0             ;
+; |PingPongGame|74160:inst11|7  ; |PingPongGame|74160:inst11|7  ; out              ;
+; |PingPongGame|74160:inst11|11 ; |PingPongGame|74160:inst11|11 ; out0             ;
+; |PingPongGame|74160:inst11|30 ; |PingPongGame|74160:inst11|30 ; out0             ;
+; |PingPongGame|74160:inst11|50 ; |PingPongGame|74160:inst11|50 ; out0             ;
+; |PingPongGame|74160:inst10|6  ; |PingPongGame|74160:inst10|6  ; out              ;
+; |PingPongGame|74160:inst10|10 ; |PingPongGame|74160:inst10|10 ; out0             ;
+; |PingPongGame|74160:inst10|32 ; |PingPongGame|74160:inst10|32 ; out0             ;
+; |PingPongGame|74160:inst10|9  ; |PingPongGame|74160:inst10|9  ; out              ;
+; |PingPongGame|74160:inst10|13 ; |PingPongGame|74160:inst10|13 ; out0             ;
+; |PingPongGame|74160:inst10|49 ; |PingPongGame|74160:inst10|49 ; out0             ;
+; |PingPongGame|74160:inst10|65 ; |PingPongGame|74160:inst10|65 ; out0             ;
+; |PingPongGame|74160:inst10|46 ; |PingPongGame|74160:inst10|46 ; out0             ;
+; |PingPongGame|74160:inst10|8  ; |PingPongGame|74160:inst10|8  ; out              ;
+; |PingPongGame|74160:inst10|12 ; |PingPongGame|74160:inst10|12 ; out0             ;
+; |PingPongGame|74160:inst10|27 ; |PingPongGame|74160:inst10|27 ; out0             ;
+; |PingPongGame|74160:inst10|25 ; |PingPongGame|74160:inst10|25 ; out0             ;
+; |PingPongGame|74160:inst10|28 ; |PingPongGame|74160:inst10|28 ; out0             ;
+; |PingPongGame|74160:inst10|7  ; |PingPongGame|74160:inst10|7  ; out              ;
+; |PingPongGame|74160:inst10|11 ; |PingPongGame|74160:inst10|11 ; out0             ;
+; |PingPongGame|74160:inst10|30 ; |PingPongGame|74160:inst10|30 ; out0             ;
+; |PingPongGame|74160:inst10|50 ; |PingPongGame|74160:inst10|50 ; out0             ;
+; |PingPongGame|74154:inst43|21 ; |PingPongGame|74154:inst43|21 ; out0             ;
+; |PingPongGame|74154:inst43|20 ; |PingPongGame|74154:inst43|20 ; out0             ;
+; |PingPongGame|74154:inst43|19 ; |PingPongGame|74154:inst43|19 ; out0             ;
+; |PingPongGame|74154:inst43|18 ; |PingPongGame|74154:inst43|18 ; out0             ;
+; |PingPongGame|74154:inst43|17 ; |PingPongGame|74154:inst43|17 ; out0             ;
+; |PingPongGame|74160:inst|45   ; |PingPongGame|74160:inst|45   ; out0             ;
+; |PingPongGame|74160:inst|6    ; |PingPongGame|74160:inst|6    ; out              ;
+; |PingPongGame|74160:inst|10   ; |PingPongGame|74160:inst|10   ; out0             ;
+; |PingPongGame|74160:inst|32   ; |PingPongGame|74160:inst|32   ; out0             ;
+; |PingPongGame|74160:inst|9    ; |PingPongGame|74160:inst|9    ; out              ;
+; |PingPongGame|74160:inst|13   ; |PingPongGame|74160:inst|13   ; out0             ;
+; |PingPongGame|74160:inst|49   ; |PingPongGame|74160:inst|49   ; out0             ;
+; |PingPongGame|74160:inst|65   ; |PingPongGame|74160:inst|65   ; out0             ;
+; |PingPongGame|74160:inst|46   ; |PingPongGame|74160:inst|46   ; out0             ;
+; |PingPongGame|74160:inst|8    ; |PingPongGame|74160:inst|8    ; out              ;
+; |PingPongGame|74160:inst|12   ; |PingPongGame|74160:inst|12   ; out0             ;
+; |PingPongGame|74160:inst|27   ; |PingPongGame|74160:inst|27   ; out0             ;
+; |PingPongGame|74160:inst|25   ; |PingPongGame|74160:inst|25   ; out0             ;
+; |PingPongGame|74160:inst|28   ; |PingPongGame|74160:inst|28   ; out0             ;
+; |PingPongGame|74160:inst|7    ; |PingPongGame|74160:inst|7    ; out              ;
+; |PingPongGame|74160:inst|11   ; |PingPongGame|74160:inst|11   ; out0             ;
+; |PingPongGame|74160:inst|30   ; |PingPongGame|74160:inst|30   ; out0             ;
+; |PingPongGame|74160:inst|50   ; |PingPongGame|74160:inst|50   ; out0             ;
++-------------------------------+-------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Thu Jul 06 02:51:13 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off PingPongGame -c PingPongGame
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of PingPongGame.vwf called PingPongGame.sim_ori.vwf is created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock-sensitive change during active clock edge at time 20.0 ns on register "|PingPongGame|G"
+Warning: Found clock-sensitive change during active clock edge at time 20.0 ns on register "|PingPongGame|inst7"
+Warning: Found clock-sensitive change during active clock edge at time 100.0 ns on register "|PingPongGame|WZ"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      24.22 %
+Info: Number of transitions in simulation is 573
+Info: Vector file PingPongGame.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 3 warnings
+    Info: Processing ended: Thu Jul 06 02:51:13 2023
+    Info: Elapsed time: 00:00:00
+Info: You are using the Quartus II software in "Evaluation Mode". You have 9 days left (until 15-jul-2023) before compilation and simulation support are disabled.
+
+
