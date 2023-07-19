@@ -1,0 +1,73 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		traffic_led_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY ACEX1K
+set_global_assignment -name DEVICE "EP1K30TC144-3"
+set_global_assignment -name TOP_LEVEL_ENTITY traffic_led
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "6.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:14:28  JUNE 27, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "6.0 SP1"
+set_global_assignment -name VERILOG_FILE bit_seg_module.v
+set_global_assignment -name VERILOG_FILE led_module.v
+set_global_assignment -name VERILOG_FILE state_trans_model.v
+set_global_assignment -name VERILOG_FILE test.v
+set_global_assignment -name VERILOG_FILE "C:/Documents and Settings/Administrator/×ÀÃæ/NEW PROJECT/traffic_led.v"
+set_global_assignment -name VERILOG_FILE traffic_led_inst.v
+set_location_assignment PIN_137 -to key[0]
+set_location_assignment PIN_136 -to key[1]
+set_location_assignment PIN_135 -to key[2]
+set_location_assignment PIN_133 -to key[3]
+set_location_assignment PIN_132 -to led[0]
+set_location_assignment PIN_131 -to led[1]
+set_location_assignment PIN_130 -to led[2]
+set_location_assignment PIN_121 -to led[3]
+set_location_assignment PIN_120 -to led[4]
+set_location_assignment PIN_119 -to led[5]
+set_location_assignment PIN_118 -to led[12]
+set_location_assignment PIN_117 -to led[13]
+set_location_assignment PIN_92 -to led[14]
+set_location_assignment PIN_91 -to led[15]
+set_location_assignment PIN_90 -to led[16]
+set_location_assignment PIN_88 -to led[17]
+set_location_assignment PIN_83 -to bit[0]
+set_location_assignment PIN_82 -to bit[1]
+set_location_assignment PIN_87 -to num_n_0[0]
+set_location_assignment PIN_81 -to num_n_0[1]
+set_location_assignment PIN_80 -to num_n_0[2]
+set_location_assignment PIN_79 -to num_n_0[3]
+set_location_assignment PIN_78 -to num_n_1[0]
+set_location_assignment PIN_73 -to num_n_1[1]
+set_location_assignment PIN_72 -to num_n_1[2]
+set_location_assignment PIN_70 -to num_n_1[3]
+set_location_assignment PIN_69 -to num_w_0[0]
+set_location_assignment PIN_68 -to num_w_0[1]
+set_location_assignment PIN_67 -to num_w_0[2]
+set_location_assignment PIN_65 -to num_w_0[3]
+set_location_assignment PIN_64 -to num_w_1[0]
+set_location_assignment PIN_63 -to num_w_1[1]
+set_location_assignment PIN_62 -to num_w_1[2]
+set_location_assignment PIN_60 -to num_w_1[3]
+set_location_assignment PIN_51 -to sys_clk
+set_location_assignment PIN_49 -to sys_rst_n

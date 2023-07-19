@@ -1,0 +1,54 @@
+--sign_div_unsign DEN_REPRESENTATION="UNSIGNED" DEN_WIDTH=4 LPM_PIPELINE=0 MAXIMIZE_SPEED=1 NUM_REPRESENTATION="UNSIGNED" NUM_WIDTH=10 SKIP_BITS=0 denominator numerator quotient remainder
+--VERSION_BEGIN 6.0 cbx_cycloneii 2006:02:07:15:19:20:SJ cbx_lpm_abs 2006:01:02:19:20:00:SJ cbx_lpm_add_sub 2006:01:09:11:17:20:SJ cbx_lpm_divide 2006:01:18:17:01:10:SJ cbx_mgl 2006:05:17:10:06:16:SJ cbx_stratix 2006:05:17:09:28:32:SJ cbx_stratixii 2006:03:03:09:35:36:SJ cbx_util_mgl 2006:01:09:10:46:36:SJ  VERSION_END
+
+
+--  Copyright (C) 1991-2006 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION alt_u_div_4le (denominator[3..0], numerator[9..0])
+RETURNS ( den_out[3..0], quotient[9..0], remainder[3..0]);
+FUNCTION add_sub_l3c (cin, dataa[3..0], datab[3..0])
+RETURNS ( result[3..0]);
+
+--synthesis_resources = lut 17 
+SUBDESIGN sign_div_unsign_glh
+( 
+	denominator[3..0]	:	input;
+	numerator[9..0]	:	input;
+	quotient[9..0]	:	output;
+	remainder[3..0]	:	output;
+) 
+VARIABLE 
+	divider : alt_u_div_4le;
+	adder : add_sub_l3c;
+	gnd_wire	: WIRE;
+	norm_num[9..0]	: WIRE;
+	protect_quotient[9..0]	: WIRE;
+	protect_remainder[3..0]	: WIRE;
+
+BEGIN 
+	divider.denominator[] = denominator[];
+	divider.numerator[] = norm_num[];
+	adder.cin = gnd_wire;
+	adder.dataa[] = denominator[];
+	adder.datab[] = protect_remainder[];
+	gnd_wire = B"0";
+	norm_num[] = numerator[];
+	protect_quotient[] = divider.quotient[];
+	protect_remainder[] = divider.remainder[];
+	quotient[] = protect_quotient[];
+	remainder[] = protect_remainder[];
+END;
+--VALID FILE

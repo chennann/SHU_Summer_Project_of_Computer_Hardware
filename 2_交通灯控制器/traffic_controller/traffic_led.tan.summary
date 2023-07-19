@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 7.300 ns
+From           : key[0]
+To             : led_module:u2_led_module|led[15]~497
+From Clock     : --
+To Clock       : sys_clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 17.700 ns
+From           : led_module:u2_led_module|led[17]~499
+To             : led[23]
+From Clock     : sys_clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.500 ns
+From           : sys_rst_n
+To             : state_trans_model:u0_state_trans_model|n_time[9]
+From Clock     : --
+To Clock       : sys_clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'sys_clk'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 16.98 MHz ( period = 58.900 ns )
+From           : state_trans_model:u0_state_trans_model|s_time[7]
+To             : bit_seg_module:u1_bit_seg_module|num[3]
+From Clock     : sys_clk
+To Clock       : sys_clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
