@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Jul 02 20:28:10 2023
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Full Version
+Revision Name : counter_v4
+Top-level Entity Name : counter_v4
+Family : ACEX1K
+Device : EP1K30TC144-1
+Timing Models : Final
+Total logic elements : 201 / 1,728 ( 12 % )
+Total pins : 57 / 102 ( 56 % )
+Total memory bits : 0 / 24,576 ( 0 % )
+Total PLLs : 0 / 1 ( 0 % )

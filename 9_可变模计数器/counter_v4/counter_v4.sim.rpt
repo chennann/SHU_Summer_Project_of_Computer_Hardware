@@ -1,0 +1,920 @@
+Simulator report for counter_v4
+Sun Jul 02 20:32:04 2023
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 496 nodes    ;
+; Simulation Coverage         ;      31.85 % ;
+; Total Number of Transitions ; 1357         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; ACEX1K       ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Glitch Filtering                                                                           ; Off        ; Off           ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      31.85 % ;
+; Total nodes checked                                 ; 496          ;
+; Total output ports checked                          ; 496          ;
+; Total output ports with complete 1/0-value coverage ; 158          ;
+; Total output ports with no 1/0-value coverage       ; 266          ;
+; Total output ports with no 1-value coverage         ; 314          ;
+; Total output ports with no 0-value coverage         ; 290          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                    ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |counter_v4|inst33                   ; |counter_v4|inst33                   ; out0             ;
+; |counter_v4|enter                    ; |counter_v4|enter                    ; out              ;
+; |counter_v4|inst40                   ; |counter_v4|inst40                   ; out0             ;
+; |counter_v4|inst36                   ; |counter_v4|inst36                   ; out0             ;
+; |counter_v4|inst188                  ; |counter_v4|inst188                  ; out0             ;
+; |counter_v4|inst30                   ; |counter_v4|inst30                   ; out0             ;
+; |counter_v4|inst44                   ; |counter_v4|inst44                   ; out0             ;
+; |counter_v4|inst48                   ; |counter_v4|inst48                   ; out0             ;
+; |counter_v4|inst52                   ; |counter_v4|inst52                   ; out0             ;
+; |counter_v4|o17                      ; |counter_v4|o17                      ; pin_out          ;
+; |counter_v4|inst214                  ; |counter_v4|inst214                  ; out0             ;
+; |counter_v4|inst210                  ; |counter_v4|inst210                  ; out0             ;
+; |counter_v4|inst199                  ; |counter_v4|inst199                  ; out0             ;
+; |counter_v4|o18                      ; |counter_v4|o18                      ; pin_out          ;
+; |counter_v4|inst215                  ; |counter_v4|inst215                  ; out0             ;
+; |counter_v4|inst211                  ; |counter_v4|inst211                  ; out0             ;
+; |counter_v4|o21                      ; |counter_v4|o21                      ; pin_out          ;
+; |counter_v4|o1                       ; |counter_v4|o1                       ; pin_out          ;
+; |counter_v4|inst255                  ; |counter_v4|inst255                  ; out0             ;
+; |counter_v4|inst220                  ; |counter_v4|inst220                  ; out0             ;
+; |counter_v4|inst104                  ; |counter_v4|inst104                  ; out0             ;
+; |counter_v4|inst                     ; |counter_v4|inst                     ; out0             ;
+; |counter_v4|inst17                   ; |counter_v4|inst17                   ; out0             ;
+; |counter_v4|inst13                   ; |counter_v4|inst13                   ; out0             ;
+; |counter_v4|CLK                      ; |counter_v4|CLK                      ; out              ;
+; |counter_v4|inst16                   ; |counter_v4|inst16                   ; out0             ;
+; |counter_v4|inst239                  ; |counter_v4|inst239                  ; out0             ;
+; |counter_v4|o2                       ; |counter_v4|o2                       ; pin_out          ;
+; |counter_v4|inst256                  ; |counter_v4|inst256                  ; out0             ;
+; |counter_v4|inst221                  ; |counter_v4|inst221                  ; out0             ;
+; |counter_v4|o3                       ; |counter_v4|o3                       ; pin_out          ;
+; |counter_v4|inst257                  ; |counter_v4|inst257                  ; out0             ;
+; |counter_v4|inst222                  ; |counter_v4|inst222                  ; out0             ;
+; |counter_v4|o4                       ; |counter_v4|o4                       ; pin_out          ;
+; |counter_v4|inst258                  ; |counter_v4|inst258                  ; out0             ;
+; |counter_v4|inst223                  ; |counter_v4|inst223                  ; out0             ;
+; |counter_v4|inst242                  ; |counter_v4|inst242                  ; out0             ;
+; |counter_v4|o5                       ; |counter_v4|o5                       ; pin_out          ;
+; |counter_v4|inst259                  ; |counter_v4|inst259                  ; out0             ;
+; |counter_v4|inst224                  ; |counter_v4|inst224                  ; out0             ;
+; |counter_v4|inst243                  ; |counter_v4|inst243                  ; out0             ;
+; |counter_v4|o8                       ; |counter_v4|o8                       ; pin_out          ;
+; |counter_v4|inst262                  ; |counter_v4|inst262                  ; out0             ;
+; |counter_v4|inst227                  ; |counter_v4|inst227                  ; out0             ;
+; |counter_v4|o9                       ; |counter_v4|o9                       ; pin_out          ;
+; |counter_v4|inst263                  ; |counter_v4|inst263                  ; out0             ;
+; |counter_v4|inst228                  ; |counter_v4|inst228                  ; out0             ;
+; |counter_v4|o12                      ; |counter_v4|o12                      ; pin_out          ;
+; |counter_v4|inst266                  ; |counter_v4|inst266                  ; out0             ;
+; |counter_v4|inst231                  ; |counter_v4|inst231                  ; out0             ;
+; |counter_v4|o13                      ; |counter_v4|o13                      ; pin_out          ;
+; |counter_v4|inst267                  ; |counter_v4|inst267                  ; out0             ;
+; |counter_v4|inst232                  ; |counter_v4|inst232                  ; out0             ;
+; |counter_v4|o16                      ; |counter_v4|o16                      ; pin_out          ;
+; |counter_v4|inst270                  ; |counter_v4|inst270                  ; out0             ;
+; |counter_v4|inst235                  ; |counter_v4|inst235                  ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|109 ; |counter_v4|7485:inst4|f7485:sub|109 ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|110 ; |counter_v4|7485:inst4|f7485:sub|110 ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|90  ; |counter_v4|7485:inst4|f7485:sub|90  ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|89  ; |counter_v4|7485:inst4|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|111 ; |counter_v4|7485:inst4|f7485:sub|111 ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|91  ; |counter_v4|7485:inst4|f7485:sub|91  ; out0             ;
+; |counter_v4|7485:inst4|f7485:sub|92  ; |counter_v4|7485:inst4|f7485:sub|92  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|109 ; |counter_v4|7485:inst5|f7485:sub|109 ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|110 ; |counter_v4|7485:inst5|f7485:sub|110 ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|90  ; |counter_v4|7485:inst5|f7485:sub|90  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|111 ; |counter_v4|7485:inst5|f7485:sub|111 ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|92  ; |counter_v4|7485:inst5|f7485:sub|92  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|108 ; |counter_v4|7485:inst5|f7485:sub|108 ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|109 ; |counter_v4|7485:inst6|f7485:sub|109 ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|110 ; |counter_v4|7485:inst6|f7485:sub|110 ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|90  ; |counter_v4|7485:inst6|f7485:sub|90  ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|111 ; |counter_v4|7485:inst6|f7485:sub|111 ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|92  ; |counter_v4|7485:inst6|f7485:sub|92  ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|108 ; |counter_v4|7485:inst6|f7485:sub|108 ; out0             ;
+; |counter_v4|74192:inst8|28           ; |counter_v4|74192:inst8|28           ; out0             ;
+; |counter_v4|74192:inst8|94           ; |counter_v4|74192:inst8|94           ; out0             ;
+; |counter_v4|74192:inst8|14           ; |counter_v4|74192:inst8|14           ; out0             ;
+; |counter_v4|74192:inst8|72           ; |counter_v4|74192:inst8|72           ; out0             ;
+; |counter_v4|74192:inst8|23           ; |counter_v4|74192:inst8|23           ; out              ;
+; |counter_v4|74192:inst8|92           ; |counter_v4|74192:inst8|92           ; out0             ;
+; |counter_v4|74192:inst8|16           ; |counter_v4|74192:inst8|16           ; out0             ;
+; |counter_v4|74192:inst8|100          ; |counter_v4|74192:inst8|100          ; out0             ;
+; |counter_v4|74192:inst8|26           ; |counter_v4|74192:inst8|26           ; out              ;
+; |counter_v4|74192:inst8|52           ; |counter_v4|74192:inst8|52           ; out0             ;
+; |counter_v4|74192:inst8|95           ; |counter_v4|74192:inst8|95           ; out0             ;
+; |counter_v4|74192:inst8|103          ; |counter_v4|74192:inst8|103          ; out0             ;
+; |counter_v4|74192:inst8|93           ; |counter_v4|74192:inst8|93           ; out0             ;
+; |counter_v4|74192:inst8|15           ; |counter_v4|74192:inst8|15           ; out0             ;
+; |counter_v4|74192:inst8|22           ; |counter_v4|74192:inst8|22           ; out0             ;
+; |counter_v4|74192:inst3|28           ; |counter_v4|74192:inst3|28           ; out0             ;
+; |counter_v4|74192:inst3|94           ; |counter_v4|74192:inst3|94           ; out0             ;
+; |counter_v4|74192:inst3|14           ; |counter_v4|74192:inst3|14           ; out0             ;
+; |counter_v4|74192:inst3|72           ; |counter_v4|74192:inst3|72           ; out0             ;
+; |counter_v4|74192:inst3|23           ; |counter_v4|74192:inst3|23           ; out              ;
+; |counter_v4|74192:inst3|92           ; |counter_v4|74192:inst3|92           ; out0             ;
+; |counter_v4|74192:inst3|16           ; |counter_v4|74192:inst3|16           ; out0             ;
+; |counter_v4|74192:inst3|100          ; |counter_v4|74192:inst3|100          ; out0             ;
+; |counter_v4|74192:inst3|26           ; |counter_v4|74192:inst3|26           ; out              ;
+; |counter_v4|74192:inst3|95           ; |counter_v4|74192:inst3|95           ; out0             ;
+; |counter_v4|74192:inst3|13           ; |counter_v4|74192:inst3|13           ; out0             ;
+; |counter_v4|74192:inst3|103          ; |counter_v4|74192:inst3|103          ; out0             ;
+; |counter_v4|74192:inst3|93           ; |counter_v4|74192:inst3|93           ; out0             ;
+; |counter_v4|74192:inst3|15           ; |counter_v4|74192:inst3|15           ; out0             ;
+; |counter_v4|74192:inst3|22           ; |counter_v4|74192:inst3|22           ; out0             ;
+; |counter_v4|74192:inst14|94          ; |counter_v4|74192:inst14|94          ; out0             ;
+; |counter_v4|74192:inst14|14          ; |counter_v4|74192:inst14|14          ; out0             ;
+; |counter_v4|74192:inst14|72          ; |counter_v4|74192:inst14|72          ; out0             ;
+; |counter_v4|74192:inst14|23          ; |counter_v4|74192:inst14|23          ; out              ;
+; |counter_v4|74192:inst14|92          ; |counter_v4|74192:inst14|92          ; out0             ;
+; |counter_v4|74192:inst14|16          ; |counter_v4|74192:inst14|16          ; out0             ;
+; |counter_v4|74192:inst14|100         ; |counter_v4|74192:inst14|100         ; out0             ;
+; |counter_v4|74192:inst14|26          ; |counter_v4|74192:inst14|26          ; out              ;
+; |counter_v4|74192:inst14|95          ; |counter_v4|74192:inst14|95          ; out0             ;
+; |counter_v4|74192:inst14|13          ; |counter_v4|74192:inst14|13          ; out0             ;
+; |counter_v4|74192:inst14|103         ; |counter_v4|74192:inst14|103         ; out0             ;
+; |counter_v4|74192:inst14|93          ; |counter_v4|74192:inst14|93          ; out0             ;
+; |counter_v4|74192:inst14|15          ; |counter_v4|74192:inst14|15          ; out0             ;
+; |counter_v4|74192:inst14|22          ; |counter_v4|74192:inst14|22          ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|109 ; |counter_v4|7485:inst9|f7485:sub|109 ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|110 ; |counter_v4|7485:inst9|f7485:sub|110 ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|90  ; |counter_v4|7485:inst9|f7485:sub|90  ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|111 ; |counter_v4|7485:inst9|f7485:sub|111 ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|92  ; |counter_v4|7485:inst9|f7485:sub|92  ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|108 ; |counter_v4|7485:inst9|f7485:sub|108 ; out0             ;
+; |counter_v4|74192:inst11|28          ; |counter_v4|74192:inst11|28          ; out0             ;
+; |counter_v4|74192:inst11|25          ; |counter_v4|74192:inst11|25          ; out              ;
+; |counter_v4|74192:inst11|94          ; |counter_v4|74192:inst11|94          ; out0             ;
+; |counter_v4|74192:inst11|14          ; |counter_v4|74192:inst11|14          ; out0             ;
+; |counter_v4|74192:inst11|102         ; |counter_v4|74192:inst11|102         ; out0             ;
+; |counter_v4|74192:inst11|74          ; |counter_v4|74192:inst11|74          ; out0             ;
+; |counter_v4|74192:inst11|72          ; |counter_v4|74192:inst11|72          ; out0             ;
+; |counter_v4|74192:inst11|23          ; |counter_v4|74192:inst11|23          ; out              ;
+; |counter_v4|74192:inst11|55          ; |counter_v4|74192:inst11|55          ; out0             ;
+; |counter_v4|74192:inst11|92          ; |counter_v4|74192:inst11|92          ; out0             ;
+; |counter_v4|74192:inst11|100         ; |counter_v4|74192:inst11|100         ; out0             ;
+; |counter_v4|74192:inst11|21          ; |counter_v4|74192:inst11|21          ; out0             ;
+; |counter_v4|74192:inst11|26          ; |counter_v4|74192:inst11|26          ; out              ;
+; |counter_v4|74192:inst11|95          ; |counter_v4|74192:inst11|95          ; out0             ;
+; |counter_v4|74192:inst11|13          ; |counter_v4|74192:inst11|13          ; out0             ;
+; |counter_v4|74192:inst11|103         ; |counter_v4|74192:inst11|103         ; out0             ;
+; |counter_v4|74192:inst11|24          ; |counter_v4|74192:inst11|24          ; out              ;
+; |counter_v4|74192:inst11|93          ; |counter_v4|74192:inst11|93          ; out0             ;
+; |counter_v4|74192:inst11|15          ; |counter_v4|74192:inst11|15          ; out0             ;
+; |counter_v4|74192:inst11|101         ; |counter_v4|74192:inst11|101         ; out0             ;
+; |counter_v4|74192:inst11|71          ; |counter_v4|74192:inst11|71          ; out0             ;
+; |counter_v4|74192:inst11|51          ; |counter_v4|74192:inst11|51          ; out0             ;
+; |counter_v4|74192:inst11|76          ; |counter_v4|74192:inst11|76          ; out0             ;
+; |counter_v4|74192:inst11|22          ; |counter_v4|74192:inst11|22          ; out0             ;
+; |counter_v4|74192:inst11|73          ; |counter_v4|74192:inst11|73          ; out0             ;
+; |counter_v4|74192:inst11|77          ; |counter_v4|74192:inst11|77          ; out0             ;
+; |counter_v4|74194:inst10|34          ; |counter_v4|74194:inst10|34          ; out0             ;
+; |counter_v4|74194:inst10|37          ; |counter_v4|74194:inst10|37          ; out0             ;
+; |counter_v4|74194:inst10|63          ; |counter_v4|74194:inst10|63          ; out0             ;
+; |counter_v4|74194:inst10|51          ; |counter_v4|74194:inst10|51          ; out0             ;
+; |counter_v4|74192:inst27|26          ; |counter_v4|74192:inst27|26          ; out              ;
+; |counter_v4|74192:inst27|73          ; |counter_v4|74192:inst27|73          ; out0             ;
+; |counter_v4|74138:inst26|16          ; |counter_v4|74138:inst26|16          ; out0             ;
++--------------------------------------+--------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                       ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |counter_v4|inst41                   ; |counter_v4|inst41                   ; out0             ;
+; |counter_v4|inst37                   ; |counter_v4|inst37                   ; out0             ;
+; |counter_v4|inst22                   ; |counter_v4|inst22                   ; out0             ;
+; |counter_v4|i4                       ; |counter_v4|i4                       ; out              ;
+; |counter_v4|i3                       ; |counter_v4|i3                       ; out              ;
+; |counter_v4|i2                       ; |counter_v4|i2                       ; out              ;
+; |counter_v4|d                        ; |counter_v4|d                        ; out              ;
+; |counter_v4|inst57                   ; |counter_v4|inst57                   ; out0             ;
+; |counter_v4|a                        ; |counter_v4|a                        ; out              ;
+; |counter_v4|b                        ; |counter_v4|b                        ; out              ;
+; |counter_v4|c                        ; |counter_v4|c                        ; out              ;
+; |counter_v4|inst42                   ; |counter_v4|inst42                   ; out0             ;
+; |counter_v4|inst38                   ; |counter_v4|inst38                   ; out0             ;
+; |counter_v4|inst23                   ; |counter_v4|inst23                   ; out0             ;
+; |counter_v4|inst58                   ; |counter_v4|inst58                   ; out0             ;
+; |counter_v4|inst209                  ; |counter_v4|inst209                  ; out0             ;
+; |counter_v4|pause                    ; |counter_v4|pause                    ; out              ;
+; |counter_v4|inst43                   ; |counter_v4|inst43                   ; out0             ;
+; |counter_v4|inst39                   ; |counter_v4|inst39                   ; out0             ;
+; |counter_v4|inst191                  ; |counter_v4|inst191                  ; out0             ;
+; |counter_v4|inst25                   ; |counter_v4|inst25                   ; out0             ;
+; |counter_v4|inst29                   ; |counter_v4|inst29                   ; out0             ;
+; |counter_v4|t2                       ; |counter_v4|t2                       ; pin_out          ;
+; |counter_v4|t3                       ; |counter_v4|t3                       ; pin_out          ;
+; |counter_v4|inst45                   ; |counter_v4|inst45                   ; out0             ;
+; |counter_v4|inst61                   ; |counter_v4|inst61                   ; out0             ;
+; |counter_v4|inst46                   ; |counter_v4|inst46                   ; out0             ;
+; |counter_v4|inst60                   ; |counter_v4|inst60                   ; out0             ;
+; |counter_v4|t6                       ; |counter_v4|t6                       ; pin_out          ;
+; |counter_v4|t7                       ; |counter_v4|t7                       ; pin_out          ;
+; |counter_v4|t8                       ; |counter_v4|t8                       ; pin_out          ;
+; |counter_v4|t9                       ; |counter_v4|t9                       ; pin_out          ;
+; |counter_v4|inst49                   ; |counter_v4|inst49                   ; out0             ;
+; |counter_v4|t10                      ; |counter_v4|t10                      ; pin_out          ;
+; |counter_v4|t11                      ; |counter_v4|t11                      ; pin_out          ;
+; |counter_v4|t12                      ; |counter_v4|t12                      ; pin_out          ;
+; |counter_v4|t13                      ; |counter_v4|t13                      ; pin_out          ;
+; |counter_v4|inst32                   ; |counter_v4|inst32                   ; out0             ;
+; |counter_v4|t14                      ; |counter_v4|t14                      ; pin_out          ;
+; |counter_v4|t15                      ; |counter_v4|t15                      ; pin_out          ;
+; |counter_v4|t16                      ; |counter_v4|t16                      ; pin_out          ;
+; |counter_v4|OE1                      ; |counter_v4|OE1                      ; pin_out          ;
+; |counter_v4|inst84                   ; |counter_v4|inst84                   ; out0             ;
+; |counter_v4|OE0                      ; |counter_v4|OE0                      ; pin_out          ;
+; |counter_v4|OE2                      ; |counter_v4|OE2                      ; pin_out          ;
+; |counter_v4|OE3                      ; |counter_v4|OE3                      ; pin_out          ;
+; |counter_v4|inst193                  ; |counter_v4|inst193                  ; out0             ;
+; |counter_v4|inst198                  ; |counter_v4|inst198                  ; out0             ;
+; |counter_v4|inst202                  ; |counter_v4|inst202                  ; out0             ;
+; |counter_v4|inst200                  ; |counter_v4|inst200                  ; out0             ;
+; |counter_v4|inst204                  ; |counter_v4|inst204                  ; out0             ;
+; |counter_v4|LD                       ; |counter_v4|LD                       ; out              ;
+; |counter_v4|inst203                  ; |counter_v4|inst203                  ; out0             ;
+; |counter_v4|inst194                  ; |counter_v4|inst194                  ; out0             ;
+; |counter_v4|o19                      ; |counter_v4|o19                      ; pin_out          ;
+; |counter_v4|inst216                  ; |counter_v4|inst216                  ; out0             ;
+; |counter_v4|inst196                  ; |counter_v4|inst196                  ; out0             ;
+; |counter_v4|inst212                  ; |counter_v4|inst212                  ; out0             ;
+; |counter_v4|inst213                  ; |counter_v4|inst213                  ; out0             ;
+; |counter_v4|o22                      ; |counter_v4|o22                      ; pin_out          ;
+; |counter_v4|o23                      ; |counter_v4|o23                      ; pin_out          ;
+; |counter_v4|inst197                  ; |counter_v4|inst197                  ; out0             ;
+; |counter_v4|o24                      ; |counter_v4|o24                      ; pin_out          ;
+; |counter_v4|inst69                   ; |counter_v4|inst69                   ; out0             ;
+; |counter_v4|inst77                   ; |counter_v4|inst77                   ; out0             ;
+; |counter_v4|inst72                   ; |counter_v4|inst72                   ; out0             ;
+; |counter_v4|inst82                   ; |counter_v4|inst82                   ; out0             ;
+; |counter_v4|inst80                   ; |counter_v4|inst80                   ; out0             ;
+; |counter_v4|inst74                   ; |counter_v4|inst74                   ; out0             ;
+; |counter_v4|inst70                   ; |counter_v4|inst70                   ; out0             ;
+; |counter_v4|inst78                   ; |counter_v4|inst78                   ; out0             ;
+; |counter_v4|inst83                   ; |counter_v4|inst83                   ; out0             ;
+; |counter_v4|inst71                   ; |counter_v4|inst71                   ; out0             ;
+; |counter_v4|inst76                   ; |counter_v4|inst76                   ; out0             ;
+; |counter_v4|inst81                   ; |counter_v4|inst81                   ; out0             ;
+; |counter_v4|inst75                   ; |counter_v4|inst75                   ; out0             ;
+; |counter_v4|inst169                  ; |counter_v4|inst169                  ; out0             ;
+; |counter_v4|inst172                  ; |counter_v4|inst172                  ; out0             ;
+; |counter_v4|inst151                  ; |counter_v4|inst151                  ; out0             ;
+; |counter_v4|inst155                  ; |counter_v4|inst155                  ; out0             ;
+; |counter_v4|inst159                  ; |counter_v4|inst159                  ; out0             ;
+; |counter_v4|inst177                  ; |counter_v4|inst177                  ; out0             ;
+; |counter_v4|inst167                  ; |counter_v4|inst167                  ; out0             ;
+; |counter_v4|inst171                  ; |counter_v4|inst171                  ; out0             ;
+; |counter_v4|inst154                  ; |counter_v4|inst154                  ; out0             ;
+; |counter_v4|inst163                  ; |counter_v4|inst163                  ; out0             ;
+; |counter_v4|inst161                  ; |counter_v4|inst161                  ; out0             ;
+; |counter_v4|inst156                  ; |counter_v4|inst156                  ; out0             ;
+; |counter_v4|inst176                  ; |counter_v4|inst176                  ; out0             ;
+; |counter_v4|inst166                  ; |counter_v4|inst166                  ; out0             ;
+; |counter_v4|inst165                  ; |counter_v4|inst165                  ; out0             ;
+; |counter_v4|inst152                  ; |counter_v4|inst152                  ; out0             ;
+; |counter_v4|inst160                  ; |counter_v4|inst160                  ; out0             ;
+; |counter_v4|inst164                  ; |counter_v4|inst164                  ; out0             ;
+; |counter_v4|inst174                  ; |counter_v4|inst174                  ; out0             ;
+; |counter_v4|inst168                  ; |counter_v4|inst168                  ; out0             ;
+; |counter_v4|inst170                  ; |counter_v4|inst170                  ; out0             ;
+; |counter_v4|inst153                  ; |counter_v4|inst153                  ; out0             ;
+; |counter_v4|inst158                  ; |counter_v4|inst158                  ; out0             ;
+; |counter_v4|inst162                  ; |counter_v4|inst162                  ; out0             ;
+; |counter_v4|inst157                  ; |counter_v4|inst157                  ; out0             ;
+; |counter_v4|inst175                  ; |counter_v4|inst175                  ; out0             ;
+; |counter_v4|inst138                  ; |counter_v4|inst138                  ; out0             ;
+; |counter_v4|inst141                  ; |counter_v4|inst141                  ; out0             ;
+; |counter_v4|inst120                  ; |counter_v4|inst120                  ; out0             ;
+; |counter_v4|inst124                  ; |counter_v4|inst124                  ; out0             ;
+; |counter_v4|inst128                  ; |counter_v4|inst128                  ; out0             ;
+; |counter_v4|inst146                  ; |counter_v4|inst146                  ; out0             ;
+; |counter_v4|inst136                  ; |counter_v4|inst136                  ; out0             ;
+; |counter_v4|inst140                  ; |counter_v4|inst140                  ; out0             ;
+; |counter_v4|inst123                  ; |counter_v4|inst123                  ; out0             ;
+; |counter_v4|inst132                  ; |counter_v4|inst132                  ; out0             ;
+; |counter_v4|inst130                  ; |counter_v4|inst130                  ; out0             ;
+; |counter_v4|inst125                  ; |counter_v4|inst125                  ; out0             ;
+; |counter_v4|inst145                  ; |counter_v4|inst145                  ; out0             ;
+; |counter_v4|inst135                  ; |counter_v4|inst135                  ; out0             ;
+; |counter_v4|inst134                  ; |counter_v4|inst134                  ; out0             ;
+; |counter_v4|inst121                  ; |counter_v4|inst121                  ; out0             ;
+; |counter_v4|inst129                  ; |counter_v4|inst129                  ; out0             ;
+; |counter_v4|inst133                  ; |counter_v4|inst133                  ; out0             ;
+; |counter_v4|inst143                  ; |counter_v4|inst143                  ; out0             ;
+; |counter_v4|inst137                  ; |counter_v4|inst137                  ; out0             ;
+; |counter_v4|inst139                  ; |counter_v4|inst139                  ; out0             ;
+; |counter_v4|inst122                  ; |counter_v4|inst122                  ; out0             ;
+; |counter_v4|inst127                  ; |counter_v4|inst127                  ; out0             ;
+; |counter_v4|inst131                  ; |counter_v4|inst131                  ; out0             ;
+; |counter_v4|inst126                  ; |counter_v4|inst126                  ; out0             ;
+; |counter_v4|inst144                  ; |counter_v4|inst144                  ; out0             ;
+; |counter_v4|inst107                  ; |counter_v4|inst107                  ; out0             ;
+; |counter_v4|inst110                  ; |counter_v4|inst110                  ; out0             ;
+; |counter_v4|inst89                   ; |counter_v4|inst89                   ; out0             ;
+; |counter_v4|inst93                   ; |counter_v4|inst93                   ; out0             ;
+; |counter_v4|inst97                   ; |counter_v4|inst97                   ; out0             ;
+; |counter_v4|inst115                  ; |counter_v4|inst115                  ; out0             ;
+; |counter_v4|inst105                  ; |counter_v4|inst105                  ; out0             ;
+; |counter_v4|inst109                  ; |counter_v4|inst109                  ; out0             ;
+; |counter_v4|inst92                   ; |counter_v4|inst92                   ; out0             ;
+; |counter_v4|inst101                  ; |counter_v4|inst101                  ; out0             ;
+; |counter_v4|inst99                   ; |counter_v4|inst99                   ; out0             ;
+; |counter_v4|inst94                   ; |counter_v4|inst94                   ; out0             ;
+; |counter_v4|inst114                  ; |counter_v4|inst114                  ; out0             ;
+; |counter_v4|inst103                  ; |counter_v4|inst103                  ; out0             ;
+; |counter_v4|inst90                   ; |counter_v4|inst90                   ; out0             ;
+; |counter_v4|inst98                   ; |counter_v4|inst98                   ; out0             ;
+; |counter_v4|inst102                  ; |counter_v4|inst102                  ; out0             ;
+; |counter_v4|inst106                  ; |counter_v4|inst106                  ; out0             ;
+; |counter_v4|inst108                  ; |counter_v4|inst108                  ; out0             ;
+; |counter_v4|inst91                   ; |counter_v4|inst91                   ; out0             ;
+; |counter_v4|inst96                   ; |counter_v4|inst96                   ; out0             ;
+; |counter_v4|inst100                  ; |counter_v4|inst100                  ; out0             ;
+; |counter_v4|inst95                   ; |counter_v4|inst95                   ; out0             ;
+; |counter_v4|inst113                  ; |counter_v4|inst113                  ; out0             ;
+; |counter_v4|inst240                  ; |counter_v4|inst240                  ; out0             ;
+; |counter_v4|inst241                  ; |counter_v4|inst241                  ; out0             ;
+; |counter_v4|o6                       ; |counter_v4|o6                       ; pin_out          ;
+; |counter_v4|inst260                  ; |counter_v4|inst260                  ; out0             ;
+; |counter_v4|inst225                  ; |counter_v4|inst225                  ; out0             ;
+; |counter_v4|inst244                  ; |counter_v4|inst244                  ; out0             ;
+; |counter_v4|o7                       ; |counter_v4|o7                       ; pin_out          ;
+; |counter_v4|inst261                  ; |counter_v4|inst261                  ; out0             ;
+; |counter_v4|inst226                  ; |counter_v4|inst226                  ; out0             ;
+; |counter_v4|inst245                  ; |counter_v4|inst245                  ; out0             ;
+; |counter_v4|inst246                  ; |counter_v4|inst246                  ; out0             ;
+; |counter_v4|inst247                  ; |counter_v4|inst247                  ; out0             ;
+; |counter_v4|o10                      ; |counter_v4|o10                      ; pin_out          ;
+; |counter_v4|inst264                  ; |counter_v4|inst264                  ; out0             ;
+; |counter_v4|inst229                  ; |counter_v4|inst229                  ; out0             ;
+; |counter_v4|inst248                  ; |counter_v4|inst248                  ; out0             ;
+; |counter_v4|inst250                  ; |counter_v4|inst250                  ; out0             ;
+; |counter_v4|o11                      ; |counter_v4|o11                      ; pin_out          ;
+; |counter_v4|inst265                  ; |counter_v4|inst265                  ; out0             ;
+; |counter_v4|inst230                  ; |counter_v4|inst230                  ; out0             ;
+; |counter_v4|inst249                  ; |counter_v4|inst249                  ; out0             ;
+; |counter_v4|inst251                  ; |counter_v4|inst251                  ; out0             ;
+; |counter_v4|o14                      ; |counter_v4|o14                      ; pin_out          ;
+; |counter_v4|inst268                  ; |counter_v4|inst268                  ; out0             ;
+; |counter_v4|inst233                  ; |counter_v4|inst233                  ; out0             ;
+; |counter_v4|inst252                  ; |counter_v4|inst252                  ; out0             ;
+; |counter_v4|o15                      ; |counter_v4|o15                      ; pin_out          ;
+; |counter_v4|inst269                  ; |counter_v4|inst269                  ; out0             ;
+; |counter_v4|inst234                  ; |counter_v4|inst234                  ; out0             ;
+; |counter_v4|inst253                  ; |counter_v4|inst253                  ; out0             ;
+; |counter_v4|inst254                  ; |counter_v4|inst254                  ; out0             ;
+; |counter_v4|inst178                  ; |counter_v4|inst178                  ; out0             ;
+; |counter_v4|inst179                  ; |counter_v4|inst179                  ; out0             ;
+; |counter_v4|inst180                  ; |counter_v4|inst180                  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|89  ; |counter_v4|7485:inst5|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|91  ; |counter_v4|7485:inst5|f7485:sub|91  ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|89  ; |counter_v4|7485:inst6|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|91  ; |counter_v4|7485:inst6|f7485:sub|91  ; out0             ;
+; |counter_v4|74192:inst8|25           ; |counter_v4|74192:inst8|25           ; out              ;
+; |counter_v4|74192:inst8|53           ; |counter_v4|74192:inst8|53           ; out0             ;
+; |counter_v4|74192:inst8|102          ; |counter_v4|74192:inst8|102          ; out0             ;
+; |counter_v4|74192:inst8|74           ; |counter_v4|74192:inst8|74           ; out0             ;
+; |counter_v4|74192:inst8|55           ; |counter_v4|74192:inst8|55           ; out0             ;
+; |counter_v4|74192:inst8|21           ; |counter_v4|74192:inst8|21           ; out0             ;
+; |counter_v4|74192:inst8|13           ; |counter_v4|74192:inst8|13           ; out0             ;
+; |counter_v4|74192:inst8|24           ; |counter_v4|74192:inst8|24           ; out              ;
+; |counter_v4|74192:inst8|54           ; |counter_v4|74192:inst8|54           ; out0             ;
+; |counter_v4|74192:inst8|101          ; |counter_v4|74192:inst8|101          ; out0             ;
+; |counter_v4|74192:inst8|71           ; |counter_v4|74192:inst8|71           ; out0             ;
+; |counter_v4|74192:inst8|51           ; |counter_v4|74192:inst8|51           ; out0             ;
+; |counter_v4|74192:inst8|76           ; |counter_v4|74192:inst8|76           ; out0             ;
+; |counter_v4|74192:inst8|73           ; |counter_v4|74192:inst8|73           ; out0             ;
+; |counter_v4|74192:inst8|77           ; |counter_v4|74192:inst8|77           ; out0             ;
+; |counter_v4|74192:inst3|25           ; |counter_v4|74192:inst3|25           ; out              ;
+; |counter_v4|74192:inst3|53           ; |counter_v4|74192:inst3|53           ; out0             ;
+; |counter_v4|74192:inst3|102          ; |counter_v4|74192:inst3|102          ; out0             ;
+; |counter_v4|74192:inst3|74           ; |counter_v4|74192:inst3|74           ; out0             ;
+; |counter_v4|74192:inst3|55           ; |counter_v4|74192:inst3|55           ; out0             ;
+; |counter_v4|74192:inst3|21           ; |counter_v4|74192:inst3|21           ; out0             ;
+; |counter_v4|74192:inst3|52           ; |counter_v4|74192:inst3|52           ; out0             ;
+; |counter_v4|74192:inst3|24           ; |counter_v4|74192:inst3|24           ; out              ;
+; |counter_v4|74192:inst3|54           ; |counter_v4|74192:inst3|54           ; out0             ;
+; |counter_v4|74192:inst3|101          ; |counter_v4|74192:inst3|101          ; out0             ;
+; |counter_v4|74192:inst3|71           ; |counter_v4|74192:inst3|71           ; out0             ;
+; |counter_v4|74192:inst3|51           ; |counter_v4|74192:inst3|51           ; out0             ;
+; |counter_v4|74192:inst3|76           ; |counter_v4|74192:inst3|76           ; out0             ;
+; |counter_v4|74192:inst3|73           ; |counter_v4|74192:inst3|73           ; out0             ;
+; |counter_v4|74192:inst3|77           ; |counter_v4|74192:inst3|77           ; out0             ;
+; |counter_v4|74192:inst14|25          ; |counter_v4|74192:inst14|25          ; out              ;
+; |counter_v4|74192:inst14|53          ; |counter_v4|74192:inst14|53          ; out0             ;
+; |counter_v4|74192:inst14|102         ; |counter_v4|74192:inst14|102         ; out0             ;
+; |counter_v4|74192:inst14|74          ; |counter_v4|74192:inst14|74          ; out0             ;
+; |counter_v4|74192:inst14|55          ; |counter_v4|74192:inst14|55          ; out0             ;
+; |counter_v4|74192:inst14|21          ; |counter_v4|74192:inst14|21          ; out0             ;
+; |counter_v4|74192:inst14|52          ; |counter_v4|74192:inst14|52          ; out0             ;
+; |counter_v4|74192:inst14|24          ; |counter_v4|74192:inst14|24          ; out              ;
+; |counter_v4|74192:inst14|54          ; |counter_v4|74192:inst14|54          ; out0             ;
+; |counter_v4|74192:inst14|101         ; |counter_v4|74192:inst14|101         ; out0             ;
+; |counter_v4|74192:inst14|71          ; |counter_v4|74192:inst14|71          ; out0             ;
+; |counter_v4|74192:inst14|51          ; |counter_v4|74192:inst14|51          ; out0             ;
+; |counter_v4|74192:inst14|76          ; |counter_v4|74192:inst14|76          ; out0             ;
+; |counter_v4|74192:inst14|73          ; |counter_v4|74192:inst14|73          ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|89  ; |counter_v4|7485:inst9|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|91  ; |counter_v4|7485:inst9|f7485:sub|91  ; out0             ;
+; |counter_v4|74192:inst11|53          ; |counter_v4|74192:inst11|53          ; out0             ;
+; |counter_v4|74192:inst11|16          ; |counter_v4|74192:inst11|16          ; out0             ;
+; |counter_v4|74192:inst11|52          ; |counter_v4|74192:inst11|52          ; out0             ;
+; |counter_v4|74192:inst11|54          ; |counter_v4|74192:inst11|54          ; out0             ;
+; |counter_v4|74194:inst19|38          ; |counter_v4|74194:inst19|38          ; out              ;
+; |counter_v4|74194:inst19|34          ; |counter_v4|74194:inst19|34          ; out0             ;
+; |counter_v4|74194:inst19|53          ; |counter_v4|74194:inst19|53          ; out0             ;
+; |counter_v4|74194:inst19|39          ; |counter_v4|74194:inst19|39          ; out              ;
+; |counter_v4|74194:inst19|35          ; |counter_v4|74194:inst19|35          ; out0             ;
+; |counter_v4|74194:inst19|57          ; |counter_v4|74194:inst19|57          ; out0             ;
+; |counter_v4|74194:inst19|40          ; |counter_v4|74194:inst19|40          ; out              ;
+; |counter_v4|74194:inst19|36          ; |counter_v4|74194:inst19|36          ; out0             ;
+; |counter_v4|74194:inst19|61          ; |counter_v4|74194:inst19|61          ; out0             ;
+; |counter_v4|74194:inst19|41          ; |counter_v4|74194:inst19|41          ; out              ;
+; |counter_v4|74194:inst19|37          ; |counter_v4|74194:inst19|37          ; out0             ;
+; |counter_v4|74194:inst19|65          ; |counter_v4|74194:inst19|65          ; out0             ;
+; |counter_v4|74194:inst19|63          ; |counter_v4|74194:inst19|63          ; out0             ;
+; |counter_v4|74194:inst19|59          ; |counter_v4|74194:inst19|59          ; out0             ;
+; |counter_v4|74194:inst19|55          ; |counter_v4|74194:inst19|55          ; out0             ;
+; |counter_v4|74194:inst19|51          ; |counter_v4|74194:inst19|51          ; out0             ;
+; |counter_v4|74194:inst18|38          ; |counter_v4|74194:inst18|38          ; out              ;
+; |counter_v4|74194:inst18|34          ; |counter_v4|74194:inst18|34          ; out0             ;
+; |counter_v4|74194:inst18|53          ; |counter_v4|74194:inst18|53          ; out0             ;
+; |counter_v4|74194:inst18|39          ; |counter_v4|74194:inst18|39          ; out              ;
+; |counter_v4|74194:inst18|35          ; |counter_v4|74194:inst18|35          ; out0             ;
+; |counter_v4|74194:inst18|57          ; |counter_v4|74194:inst18|57          ; out0             ;
+; |counter_v4|74194:inst18|40          ; |counter_v4|74194:inst18|40          ; out              ;
+; |counter_v4|74194:inst18|36          ; |counter_v4|74194:inst18|36          ; out0             ;
+; |counter_v4|74194:inst18|61          ; |counter_v4|74194:inst18|61          ; out0             ;
+; |counter_v4|74194:inst18|41          ; |counter_v4|74194:inst18|41          ; out              ;
+; |counter_v4|74194:inst18|65          ; |counter_v4|74194:inst18|65          ; out0             ;
+; |counter_v4|74194:inst18|59          ; |counter_v4|74194:inst18|59          ; out0             ;
+; |counter_v4|74194:inst18|55          ; |counter_v4|74194:inst18|55          ; out0             ;
+; |counter_v4|74194:inst18|51          ; |counter_v4|74194:inst18|51          ; out0             ;
+; |counter_v4|74194:inst10|38          ; |counter_v4|74194:inst10|38          ; out              ;
+; |counter_v4|74194:inst10|53          ; |counter_v4|74194:inst10|53          ; out0             ;
+; |counter_v4|74194:inst10|39          ; |counter_v4|74194:inst10|39          ; out              ;
+; |counter_v4|74194:inst10|35          ; |counter_v4|74194:inst10|35          ; out0             ;
+; |counter_v4|74194:inst10|57          ; |counter_v4|74194:inst10|57          ; out0             ;
+; |counter_v4|74194:inst10|40          ; |counter_v4|74194:inst10|40          ; out              ;
+; |counter_v4|74194:inst10|36          ; |counter_v4|74194:inst10|36          ; out0             ;
+; |counter_v4|74194:inst10|61          ; |counter_v4|74194:inst10|61          ; out0             ;
+; |counter_v4|74194:inst10|59          ; |counter_v4|74194:inst10|59          ; out0             ;
+; |counter_v4|74194:inst10|55          ; |counter_v4|74194:inst10|55          ; out0             ;
+; |counter_v4|74192:inst27|23          ; |counter_v4|74192:inst27|23          ; out              ;
+; |counter_v4|74192:inst27|100         ; |counter_v4|74192:inst27|100         ; out0             ;
+; |counter_v4|74192:inst27|21          ; |counter_v4|74192:inst27|21          ; out0             ;
+; |counter_v4|74192:inst27|24          ; |counter_v4|74192:inst27|24          ; out              ;
+; |counter_v4|74192:inst27|51          ; |counter_v4|74192:inst27|51          ; out0             ;
+; |counter_v4|74192:inst27|76          ; |counter_v4|74192:inst27|76          ; out0             ;
+; |counter_v4|74138:inst26|18          ; |counter_v4|74138:inst26|18          ; out0             ;
+; |counter_v4|74138:inst26|15          ; |counter_v4|74138:inst26|15          ; out0             ;
+; |counter_v4|74138:inst34|22          ; |counter_v4|74138:inst34|22          ; out0             ;
+; |counter_v4|74138:inst34|21          ; |counter_v4|74138:inst34|21          ; out0             ;
+; |counter_v4|74138:inst34|20          ; |counter_v4|74138:inst34|20          ; out0             ;
+; |counter_v4|74138:inst34|19          ; |counter_v4|74138:inst34|19          ; out0             ;
+; |counter_v4|74138:inst34|18          ; |counter_v4|74138:inst34|18          ; out0             ;
+; |counter_v4|74138:inst34|17          ; |counter_v4|74138:inst34|17          ; out0             ;
+; |counter_v4|74138:inst34|16          ; |counter_v4|74138:inst34|16          ; out0             ;
+; |counter_v4|74138:inst34|15          ; |counter_v4|74138:inst34|15          ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|109 ; |counter_v4|7485:inst2|f7485:sub|109 ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|111 ; |counter_v4|7485:inst2|f7485:sub|111 ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|85  ; |counter_v4|7485:inst2|f7485:sub|85  ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|88  ; |counter_v4|7485:inst2|f7485:sub|88  ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|113 ; |counter_v4|7485:inst2|f7485:sub|113 ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|129 ; |counter_v4|7485:inst2|f7485:sub|129 ; out0             ;
+; |counter_v4|74194:inst1|34           ; |counter_v4|74194:inst1|34           ; out0             ;
+; |counter_v4|74194:inst1|39           ; |counter_v4|74194:inst1|39           ; out              ;
+; |counter_v4|74194:inst1|35           ; |counter_v4|74194:inst1|35           ; out0             ;
+; |counter_v4|74194:inst1|57           ; |counter_v4|74194:inst1|57           ; out0             ;
+; |counter_v4|74194:inst1|40           ; |counter_v4|74194:inst1|40           ; out              ;
+; |counter_v4|74194:inst1|36           ; |counter_v4|74194:inst1|36           ; out0             ;
+; |counter_v4|74194:inst1|61           ; |counter_v4|74194:inst1|61           ; out0             ;
+; |counter_v4|74194:inst1|37           ; |counter_v4|74194:inst1|37           ; out0             ;
+; |counter_v4|74194:inst1|63           ; |counter_v4|74194:inst1|63           ; out0             ;
+; |counter_v4|74194:inst1|59           ; |counter_v4|74194:inst1|59           ; out0             ;
+; |counter_v4|74194:inst1|55           ; |counter_v4|74194:inst1|55           ; out0             ;
+; |counter_v4|74194:inst1|51           ; |counter_v4|74194:inst1|51           ; out0             ;
++--------------------------------------+--------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                       ;
++--------------------------------------+--------------------------------------+------------------+
+; Node Name                            ; Output Port Name                     ; Output Port Type ;
++--------------------------------------+--------------------------------------+------------------+
+; |counter_v4|t1                       ; |counter_v4|t1                       ; pin_out          ;
+; |counter_v4|inst41                   ; |counter_v4|inst41                   ; out0             ;
+; |counter_v4|inst37                   ; |counter_v4|inst37                   ; out0             ;
+; |counter_v4|inst22                   ; |counter_v4|inst22                   ; out0             ;
+; |counter_v4|i1                       ; |counter_v4|i1                       ; out              ;
+; |counter_v4|d                        ; |counter_v4|d                        ; out              ;
+; |counter_v4|inst57                   ; |counter_v4|inst57                   ; out0             ;
+; |counter_v4|a                        ; |counter_v4|a                        ; out              ;
+; |counter_v4|b                        ; |counter_v4|b                        ; out              ;
+; |counter_v4|c                        ; |counter_v4|c                        ; out              ;
+; |counter_v4|inst42                   ; |counter_v4|inst42                   ; out0             ;
+; |counter_v4|inst38                   ; |counter_v4|inst38                   ; out0             ;
+; |counter_v4|inst23                   ; |counter_v4|inst23                   ; out0             ;
+; |counter_v4|inst58                   ; |counter_v4|inst58                   ; out0             ;
+; |counter_v4|inst209                  ; |counter_v4|inst209                  ; out0             ;
+; |counter_v4|inst25                   ; |counter_v4|inst25                   ; out0             ;
+; |counter_v4|inst21                   ; |counter_v4|inst21                   ; out0             ;
+; |counter_v4|t2                       ; |counter_v4|t2                       ; pin_out          ;
+; |counter_v4|t3                       ; |counter_v4|t3                       ; pin_out          ;
+; |counter_v4|t4                       ; |counter_v4|t4                       ; pin_out          ;
+; |counter_v4|t5                       ; |counter_v4|t5                       ; pin_out          ;
+; |counter_v4|inst45                   ; |counter_v4|inst45                   ; out0             ;
+; |counter_v4|inst61                   ; |counter_v4|inst61                   ; out0             ;
+; |counter_v4|inst46                   ; |counter_v4|inst46                   ; out0             ;
+; |counter_v4|inst60                   ; |counter_v4|inst60                   ; out0             ;
+; |counter_v4|t6                       ; |counter_v4|t6                       ; pin_out          ;
+; |counter_v4|t7                       ; |counter_v4|t7                       ; pin_out          ;
+; |counter_v4|t8                       ; |counter_v4|t8                       ; pin_out          ;
+; |counter_v4|t9                       ; |counter_v4|t9                       ; pin_out          ;
+; |counter_v4|inst49                   ; |counter_v4|inst49                   ; out0             ;
+; |counter_v4|inst31                   ; |counter_v4|inst31                   ; out0             ;
+; |counter_v4|t10                      ; |counter_v4|t10                      ; pin_out          ;
+; |counter_v4|t11                      ; |counter_v4|t11                      ; pin_out          ;
+; |counter_v4|t12                      ; |counter_v4|t12                      ; pin_out          ;
+; |counter_v4|t13                      ; |counter_v4|t13                      ; pin_out          ;
+; |counter_v4|inst32                   ; |counter_v4|inst32                   ; out0             ;
+; |counter_v4|t14                      ; |counter_v4|t14                      ; pin_out          ;
+; |counter_v4|t15                      ; |counter_v4|t15                      ; pin_out          ;
+; |counter_v4|t16                      ; |counter_v4|t16                      ; pin_out          ;
+; |counter_v4|inst193                  ; |counter_v4|inst193                  ; out0             ;
+; |counter_v4|inst201                  ; |counter_v4|inst201                  ; out0             ;
+; |counter_v4|U_D_switch               ; |counter_v4|U_D_switch               ; out              ;
+; |counter_v4|LD                       ; |counter_v4|LD                       ; out              ;
+; |counter_v4|inst194                  ; |counter_v4|inst194                  ; out0             ;
+; |counter_v4|o19                      ; |counter_v4|o19                      ; pin_out          ;
+; |counter_v4|inst216                  ; |counter_v4|inst216                  ; out0             ;
+; |counter_v4|inst196                  ; |counter_v4|inst196                  ; out0             ;
+; |counter_v4|inst212                  ; |counter_v4|inst212                  ; out0             ;
+; |counter_v4|o20                      ; |counter_v4|o20                      ; pin_out          ;
+; |counter_v4|inst217                  ; |counter_v4|inst217                  ; out0             ;
+; |counter_v4|inst208                  ; |counter_v4|inst208                  ; out0             ;
+; |counter_v4|inst213                  ; |counter_v4|inst213                  ; out0             ;
+; |counter_v4|o23                      ; |counter_v4|o23                      ; pin_out          ;
+; |counter_v4|inst197                  ; |counter_v4|inst197                  ; out0             ;
+; |counter_v4|o24                      ; |counter_v4|o24                      ; pin_out          ;
+; |counter_v4|inst69                   ; |counter_v4|inst69                   ; out0             ;
+; |counter_v4|inst73                   ; |counter_v4|inst73                   ; out0             ;
+; |counter_v4|inst72                   ; |counter_v4|inst72                   ; out0             ;
+; |counter_v4|inst82                   ; |counter_v4|inst82                   ; out0             ;
+; |counter_v4|inst80                   ; |counter_v4|inst80                   ; out0             ;
+; |counter_v4|inst74                   ; |counter_v4|inst74                   ; out0             ;
+; |counter_v4|inst71                   ; |counter_v4|inst71                   ; out0             ;
+; |counter_v4|inst76                   ; |counter_v4|inst76                   ; out0             ;
+; |counter_v4|inst81                   ; |counter_v4|inst81                   ; out0             ;
+; |counter_v4|inst75                   ; |counter_v4|inst75                   ; out0             ;
+; |counter_v4|inst151                  ; |counter_v4|inst151                  ; out0             ;
+; |counter_v4|inst155                  ; |counter_v4|inst155                  ; out0             ;
+; |counter_v4|inst159                  ; |counter_v4|inst159                  ; out0             ;
+; |counter_v4|inst177                  ; |counter_v4|inst177                  ; out0             ;
+; |counter_v4|inst167                  ; |counter_v4|inst167                  ; out0             ;
+; |counter_v4|inst171                  ; |counter_v4|inst171                  ; out0             ;
+; |counter_v4|inst154                  ; |counter_v4|inst154                  ; out0             ;
+; |counter_v4|inst163                  ; |counter_v4|inst163                  ; out0             ;
+; |counter_v4|inst161                  ; |counter_v4|inst161                  ; out0             ;
+; |counter_v4|inst156                  ; |counter_v4|inst156                  ; out0             ;
+; |counter_v4|inst176                  ; |counter_v4|inst176                  ; out0             ;
+; |counter_v4|inst152                  ; |counter_v4|inst152                  ; out0             ;
+; |counter_v4|inst160                  ; |counter_v4|inst160                  ; out0             ;
+; |counter_v4|inst164                  ; |counter_v4|inst164                  ; out0             ;
+; |counter_v4|inst174                  ; |counter_v4|inst174                  ; out0             ;
+; |counter_v4|inst168                  ; |counter_v4|inst168                  ; out0             ;
+; |counter_v4|inst170                  ; |counter_v4|inst170                  ; out0             ;
+; |counter_v4|inst153                  ; |counter_v4|inst153                  ; out0             ;
+; |counter_v4|inst158                  ; |counter_v4|inst158                  ; out0             ;
+; |counter_v4|inst162                  ; |counter_v4|inst162                  ; out0             ;
+; |counter_v4|inst157                  ; |counter_v4|inst157                  ; out0             ;
+; |counter_v4|inst175                  ; |counter_v4|inst175                  ; out0             ;
+; |counter_v4|inst120                  ; |counter_v4|inst120                  ; out0             ;
+; |counter_v4|inst124                  ; |counter_v4|inst124                  ; out0             ;
+; |counter_v4|inst128                  ; |counter_v4|inst128                  ; out0             ;
+; |counter_v4|inst146                  ; |counter_v4|inst146                  ; out0             ;
+; |counter_v4|inst136                  ; |counter_v4|inst136                  ; out0             ;
+; |counter_v4|inst140                  ; |counter_v4|inst140                  ; out0             ;
+; |counter_v4|inst123                  ; |counter_v4|inst123                  ; out0             ;
+; |counter_v4|inst132                  ; |counter_v4|inst132                  ; out0             ;
+; |counter_v4|inst130                  ; |counter_v4|inst130                  ; out0             ;
+; |counter_v4|inst125                  ; |counter_v4|inst125                  ; out0             ;
+; |counter_v4|inst145                  ; |counter_v4|inst145                  ; out0             ;
+; |counter_v4|inst121                  ; |counter_v4|inst121                  ; out0             ;
+; |counter_v4|inst129                  ; |counter_v4|inst129                  ; out0             ;
+; |counter_v4|inst133                  ; |counter_v4|inst133                  ; out0             ;
+; |counter_v4|inst143                  ; |counter_v4|inst143                  ; out0             ;
+; |counter_v4|inst137                  ; |counter_v4|inst137                  ; out0             ;
+; |counter_v4|inst139                  ; |counter_v4|inst139                  ; out0             ;
+; |counter_v4|inst122                  ; |counter_v4|inst122                  ; out0             ;
+; |counter_v4|inst127                  ; |counter_v4|inst127                  ; out0             ;
+; |counter_v4|inst131                  ; |counter_v4|inst131                  ; out0             ;
+; |counter_v4|inst126                  ; |counter_v4|inst126                  ; out0             ;
+; |counter_v4|inst144                  ; |counter_v4|inst144                  ; out0             ;
+; |counter_v4|inst93                   ; |counter_v4|inst93                   ; out0             ;
+; |counter_v4|inst115                  ; |counter_v4|inst115                  ; out0             ;
+; |counter_v4|inst105                  ; |counter_v4|inst105                  ; out0             ;
+; |counter_v4|inst109                  ; |counter_v4|inst109                  ; out0             ;
+; |counter_v4|inst92                   ; |counter_v4|inst92                   ; out0             ;
+; |counter_v4|inst101                  ; |counter_v4|inst101                  ; out0             ;
+; |counter_v4|inst99                   ; |counter_v4|inst99                   ; out0             ;
+; |counter_v4|inst94                   ; |counter_v4|inst94                   ; out0             ;
+; |counter_v4|inst114                  ; |counter_v4|inst114                  ; out0             ;
+; |counter_v4|inst112                  ; |counter_v4|inst112                  ; out0             ;
+; |counter_v4|inst106                  ; |counter_v4|inst106                  ; out0             ;
+; |counter_v4|inst108                  ; |counter_v4|inst108                  ; out0             ;
+; |counter_v4|inst91                   ; |counter_v4|inst91                   ; out0             ;
+; |counter_v4|inst96                   ; |counter_v4|inst96                   ; out0             ;
+; |counter_v4|inst100                  ; |counter_v4|inst100                  ; out0             ;
+; |counter_v4|inst95                   ; |counter_v4|inst95                   ; out0             ;
+; |counter_v4|inst113                  ; |counter_v4|inst113                  ; out0             ;
+; |counter_v4|inst240                  ; |counter_v4|inst240                  ; out0             ;
+; |counter_v4|inst241                  ; |counter_v4|inst241                  ; out0             ;
+; |counter_v4|o6                       ; |counter_v4|o6                       ; pin_out          ;
+; |counter_v4|inst260                  ; |counter_v4|inst260                  ; out0             ;
+; |counter_v4|inst225                  ; |counter_v4|inst225                  ; out0             ;
+; |counter_v4|inst244                  ; |counter_v4|inst244                  ; out0             ;
+; |counter_v4|o7                       ; |counter_v4|o7                       ; pin_out          ;
+; |counter_v4|inst261                  ; |counter_v4|inst261                  ; out0             ;
+; |counter_v4|inst226                  ; |counter_v4|inst226                  ; out0             ;
+; |counter_v4|inst245                  ; |counter_v4|inst245                  ; out0             ;
+; |counter_v4|inst246                  ; |counter_v4|inst246                  ; out0             ;
+; |counter_v4|inst247                  ; |counter_v4|inst247                  ; out0             ;
+; |counter_v4|o10                      ; |counter_v4|o10                      ; pin_out          ;
+; |counter_v4|inst264                  ; |counter_v4|inst264                  ; out0             ;
+; |counter_v4|inst229                  ; |counter_v4|inst229                  ; out0             ;
+; |counter_v4|inst248                  ; |counter_v4|inst248                  ; out0             ;
+; |counter_v4|inst250                  ; |counter_v4|inst250                  ; out0             ;
+; |counter_v4|o11                      ; |counter_v4|o11                      ; pin_out          ;
+; |counter_v4|inst265                  ; |counter_v4|inst265                  ; out0             ;
+; |counter_v4|inst230                  ; |counter_v4|inst230                  ; out0             ;
+; |counter_v4|inst249                  ; |counter_v4|inst249                  ; out0             ;
+; |counter_v4|inst251                  ; |counter_v4|inst251                  ; out0             ;
+; |counter_v4|o14                      ; |counter_v4|o14                      ; pin_out          ;
+; |counter_v4|inst268                  ; |counter_v4|inst268                  ; out0             ;
+; |counter_v4|inst233                  ; |counter_v4|inst233                  ; out0             ;
+; |counter_v4|inst252                  ; |counter_v4|inst252                  ; out0             ;
+; |counter_v4|o15                      ; |counter_v4|o15                      ; pin_out          ;
+; |counter_v4|inst269                  ; |counter_v4|inst269                  ; out0             ;
+; |counter_v4|inst234                  ; |counter_v4|inst234                  ; out0             ;
+; |counter_v4|inst253                  ; |counter_v4|inst253                  ; out0             ;
+; |counter_v4|inst254                  ; |counter_v4|inst254                  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|89  ; |counter_v4|7485:inst5|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst5|f7485:sub|91  ; |counter_v4|7485:inst5|f7485:sub|91  ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|89  ; |counter_v4|7485:inst6|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst6|f7485:sub|91  ; |counter_v4|7485:inst6|f7485:sub|91  ; out0             ;
+; |counter_v4|74192:inst8|25           ; |counter_v4|74192:inst8|25           ; out              ;
+; |counter_v4|74192:inst8|53           ; |counter_v4|74192:inst8|53           ; out0             ;
+; |counter_v4|74192:inst8|102          ; |counter_v4|74192:inst8|102          ; out0             ;
+; |counter_v4|74192:inst8|74           ; |counter_v4|74192:inst8|74           ; out0             ;
+; |counter_v4|74192:inst8|55           ; |counter_v4|74192:inst8|55           ; out0             ;
+; |counter_v4|74192:inst8|21           ; |counter_v4|74192:inst8|21           ; out0             ;
+; |counter_v4|74192:inst8|13           ; |counter_v4|74192:inst8|13           ; out0             ;
+; |counter_v4|74192:inst8|24           ; |counter_v4|74192:inst8|24           ; out              ;
+; |counter_v4|74192:inst8|54           ; |counter_v4|74192:inst8|54           ; out0             ;
+; |counter_v4|74192:inst8|101          ; |counter_v4|74192:inst8|101          ; out0             ;
+; |counter_v4|74192:inst8|71           ; |counter_v4|74192:inst8|71           ; out0             ;
+; |counter_v4|74192:inst8|51           ; |counter_v4|74192:inst8|51           ; out0             ;
+; |counter_v4|74192:inst8|76           ; |counter_v4|74192:inst8|76           ; out0             ;
+; |counter_v4|74192:inst8|73           ; |counter_v4|74192:inst8|73           ; out0             ;
+; |counter_v4|74192:inst8|77           ; |counter_v4|74192:inst8|77           ; out0             ;
+; |counter_v4|74192:inst3|25           ; |counter_v4|74192:inst3|25           ; out              ;
+; |counter_v4|74192:inst3|53           ; |counter_v4|74192:inst3|53           ; out0             ;
+; |counter_v4|74192:inst3|102          ; |counter_v4|74192:inst3|102          ; out0             ;
+; |counter_v4|74192:inst3|74           ; |counter_v4|74192:inst3|74           ; out0             ;
+; |counter_v4|74192:inst3|55           ; |counter_v4|74192:inst3|55           ; out0             ;
+; |counter_v4|74192:inst3|21           ; |counter_v4|74192:inst3|21           ; out0             ;
+; |counter_v4|74192:inst3|52           ; |counter_v4|74192:inst3|52           ; out0             ;
+; |counter_v4|74192:inst3|24           ; |counter_v4|74192:inst3|24           ; out              ;
+; |counter_v4|74192:inst3|54           ; |counter_v4|74192:inst3|54           ; out0             ;
+; |counter_v4|74192:inst3|101          ; |counter_v4|74192:inst3|101          ; out0             ;
+; |counter_v4|74192:inst3|71           ; |counter_v4|74192:inst3|71           ; out0             ;
+; |counter_v4|74192:inst3|51           ; |counter_v4|74192:inst3|51           ; out0             ;
+; |counter_v4|74192:inst3|76           ; |counter_v4|74192:inst3|76           ; out0             ;
+; |counter_v4|74192:inst3|73           ; |counter_v4|74192:inst3|73           ; out0             ;
+; |counter_v4|74192:inst3|77           ; |counter_v4|74192:inst3|77           ; out0             ;
+; |counter_v4|74192:inst14|25          ; |counter_v4|74192:inst14|25          ; out              ;
+; |counter_v4|74192:inst14|53          ; |counter_v4|74192:inst14|53          ; out0             ;
+; |counter_v4|74192:inst14|102         ; |counter_v4|74192:inst14|102         ; out0             ;
+; |counter_v4|74192:inst14|74          ; |counter_v4|74192:inst14|74          ; out0             ;
+; |counter_v4|74192:inst14|55          ; |counter_v4|74192:inst14|55          ; out0             ;
+; |counter_v4|74192:inst14|21          ; |counter_v4|74192:inst14|21          ; out0             ;
+; |counter_v4|74192:inst14|52          ; |counter_v4|74192:inst14|52          ; out0             ;
+; |counter_v4|74192:inst14|24          ; |counter_v4|74192:inst14|24          ; out              ;
+; |counter_v4|74192:inst14|54          ; |counter_v4|74192:inst14|54          ; out0             ;
+; |counter_v4|74192:inst14|101         ; |counter_v4|74192:inst14|101         ; out0             ;
+; |counter_v4|74192:inst14|71          ; |counter_v4|74192:inst14|71          ; out0             ;
+; |counter_v4|74192:inst14|51          ; |counter_v4|74192:inst14|51          ; out0             ;
+; |counter_v4|74192:inst14|76          ; |counter_v4|74192:inst14|76          ; out0             ;
+; |counter_v4|74192:inst14|73          ; |counter_v4|74192:inst14|73          ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|89  ; |counter_v4|7485:inst9|f7485:sub|89  ; out0             ;
+; |counter_v4|7485:inst9|f7485:sub|91  ; |counter_v4|7485:inst9|f7485:sub|91  ; out0             ;
+; |counter_v4|74192:inst11|53          ; |counter_v4|74192:inst11|53          ; out0             ;
+; |counter_v4|74192:inst11|16          ; |counter_v4|74192:inst11|16          ; out0             ;
+; |counter_v4|74192:inst11|52          ; |counter_v4|74192:inst11|52          ; out0             ;
+; |counter_v4|74192:inst11|54          ; |counter_v4|74192:inst11|54          ; out0             ;
+; |counter_v4|74194:inst19|38          ; |counter_v4|74194:inst19|38          ; out              ;
+; |counter_v4|74194:inst19|34          ; |counter_v4|74194:inst19|34          ; out0             ;
+; |counter_v4|74194:inst19|53          ; |counter_v4|74194:inst19|53          ; out0             ;
+; |counter_v4|74194:inst19|39          ; |counter_v4|74194:inst19|39          ; out              ;
+; |counter_v4|74194:inst19|35          ; |counter_v4|74194:inst19|35          ; out0             ;
+; |counter_v4|74194:inst19|57          ; |counter_v4|74194:inst19|57          ; out0             ;
+; |counter_v4|74194:inst19|40          ; |counter_v4|74194:inst19|40          ; out              ;
+; |counter_v4|74194:inst19|36          ; |counter_v4|74194:inst19|36          ; out0             ;
+; |counter_v4|74194:inst19|61          ; |counter_v4|74194:inst19|61          ; out0             ;
+; |counter_v4|74194:inst19|41          ; |counter_v4|74194:inst19|41          ; out              ;
+; |counter_v4|74194:inst19|37          ; |counter_v4|74194:inst19|37          ; out0             ;
+; |counter_v4|74194:inst19|65          ; |counter_v4|74194:inst19|65          ; out0             ;
+; |counter_v4|74194:inst19|63          ; |counter_v4|74194:inst19|63          ; out0             ;
+; |counter_v4|74194:inst19|59          ; |counter_v4|74194:inst19|59          ; out0             ;
+; |counter_v4|74194:inst19|55          ; |counter_v4|74194:inst19|55          ; out0             ;
+; |counter_v4|74194:inst19|51          ; |counter_v4|74194:inst19|51          ; out0             ;
+; |counter_v4|74194:inst18|38          ; |counter_v4|74194:inst18|38          ; out              ;
+; |counter_v4|74194:inst18|34          ; |counter_v4|74194:inst18|34          ; out0             ;
+; |counter_v4|74194:inst18|53          ; |counter_v4|74194:inst18|53          ; out0             ;
+; |counter_v4|74194:inst18|39          ; |counter_v4|74194:inst18|39          ; out              ;
+; |counter_v4|74194:inst18|35          ; |counter_v4|74194:inst18|35          ; out0             ;
+; |counter_v4|74194:inst18|57          ; |counter_v4|74194:inst18|57          ; out0             ;
+; |counter_v4|74194:inst18|40          ; |counter_v4|74194:inst18|40          ; out              ;
+; |counter_v4|74194:inst18|36          ; |counter_v4|74194:inst18|36          ; out0             ;
+; |counter_v4|74194:inst18|61          ; |counter_v4|74194:inst18|61          ; out0             ;
+; |counter_v4|74194:inst18|41          ; |counter_v4|74194:inst18|41          ; out              ;
+; |counter_v4|74194:inst18|37          ; |counter_v4|74194:inst18|37          ; out0             ;
+; |counter_v4|74194:inst18|65          ; |counter_v4|74194:inst18|65          ; out0             ;
+; |counter_v4|74194:inst18|63          ; |counter_v4|74194:inst18|63          ; out0             ;
+; |counter_v4|74194:inst18|59          ; |counter_v4|74194:inst18|59          ; out0             ;
+; |counter_v4|74194:inst18|55          ; |counter_v4|74194:inst18|55          ; out0             ;
+; |counter_v4|74194:inst18|51          ; |counter_v4|74194:inst18|51          ; out0             ;
+; |counter_v4|74194:inst10|38          ; |counter_v4|74194:inst10|38          ; out              ;
+; |counter_v4|74194:inst10|53          ; |counter_v4|74194:inst10|53          ; out0             ;
+; |counter_v4|74194:inst10|39          ; |counter_v4|74194:inst10|39          ; out              ;
+; |counter_v4|74194:inst10|35          ; |counter_v4|74194:inst10|35          ; out0             ;
+; |counter_v4|74194:inst10|57          ; |counter_v4|74194:inst10|57          ; out0             ;
+; |counter_v4|74194:inst10|40          ; |counter_v4|74194:inst10|40          ; out              ;
+; |counter_v4|74194:inst10|36          ; |counter_v4|74194:inst10|36          ; out0             ;
+; |counter_v4|74194:inst10|61          ; |counter_v4|74194:inst10|61          ; out0             ;
+; |counter_v4|74194:inst10|41          ; |counter_v4|74194:inst10|41          ; out              ;
+; |counter_v4|74194:inst10|65          ; |counter_v4|74194:inst10|65          ; out0             ;
+; |counter_v4|74194:inst10|59          ; |counter_v4|74194:inst10|59          ; out0             ;
+; |counter_v4|74194:inst10|55          ; |counter_v4|74194:inst10|55          ; out0             ;
+; |counter_v4|74192:inst27|25          ; |counter_v4|74192:inst27|25          ; out              ;
+; |counter_v4|74192:inst27|23          ; |counter_v4|74192:inst27|23          ; out              ;
+; |counter_v4|74192:inst27|100         ; |counter_v4|74192:inst27|100         ; out0             ;
+; |counter_v4|74192:inst27|21          ; |counter_v4|74192:inst27|21          ; out0             ;
+; |counter_v4|74192:inst27|24          ; |counter_v4|74192:inst27|24          ; out              ;
+; |counter_v4|74192:inst27|51          ; |counter_v4|74192:inst27|51          ; out0             ;
+; |counter_v4|74192:inst27|76          ; |counter_v4|74192:inst27|76          ; out0             ;
+; |counter_v4|74138:inst26|18          ; |counter_v4|74138:inst26|18          ; out0             ;
+; |counter_v4|74138:inst26|17          ; |counter_v4|74138:inst26|17          ; out0             ;
+; |counter_v4|74138:inst34|22          ; |counter_v4|74138:inst34|22          ; out0             ;
+; |counter_v4|74138:inst34|21          ; |counter_v4|74138:inst34|21          ; out0             ;
+; |counter_v4|74138:inst34|20          ; |counter_v4|74138:inst34|20          ; out0             ;
+; |counter_v4|74138:inst34|19          ; |counter_v4|74138:inst34|19          ; out0             ;
+; |counter_v4|74138:inst34|18          ; |counter_v4|74138:inst34|18          ; out0             ;
+; |counter_v4|74138:inst34|17          ; |counter_v4|74138:inst34|17          ; out0             ;
+; |counter_v4|74138:inst34|16          ; |counter_v4|74138:inst34|16          ; out0             ;
+; |counter_v4|74138:inst34|15          ; |counter_v4|74138:inst34|15          ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|109 ; |counter_v4|7485:inst2|f7485:sub|109 ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|110 ; |counter_v4|7485:inst2|f7485:sub|110 ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|111 ; |counter_v4|7485:inst2|f7485:sub|111 ; out0             ;
+; |counter_v4|7485:inst2|f7485:sub|113 ; |counter_v4|7485:inst2|f7485:sub|113 ; out0             ;
+; |counter_v4|74194:inst1|38           ; |counter_v4|74194:inst1|38           ; out              ;
+; |counter_v4|74194:inst1|34           ; |counter_v4|74194:inst1|34           ; out0             ;
+; |counter_v4|74194:inst1|53           ; |counter_v4|74194:inst1|53           ; out0             ;
+; |counter_v4|74194:inst1|39           ; |counter_v4|74194:inst1|39           ; out              ;
+; |counter_v4|74194:inst1|35           ; |counter_v4|74194:inst1|35           ; out0             ;
+; |counter_v4|74194:inst1|57           ; |counter_v4|74194:inst1|57           ; out0             ;
+; |counter_v4|74194:inst1|40           ; |counter_v4|74194:inst1|40           ; out              ;
+; |counter_v4|74194:inst1|36           ; |counter_v4|74194:inst1|36           ; out0             ;
+; |counter_v4|74194:inst1|61           ; |counter_v4|74194:inst1|61           ; out0             ;
+; |counter_v4|74194:inst1|41           ; |counter_v4|74194:inst1|41           ; out              ;
+; |counter_v4|74194:inst1|37           ; |counter_v4|74194:inst1|37           ; out0             ;
+; |counter_v4|74194:inst1|65           ; |counter_v4|74194:inst1|65           ; out0             ;
+; |counter_v4|74194:inst1|59           ; |counter_v4|74194:inst1|59           ; out0             ;
+; |counter_v4|74194:inst1|55           ; |counter_v4|74194:inst1|55           ; out0             ;
++--------------------------------------+--------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Sun Jul 02 20:32:03 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off counter_v4 -c counter_v4
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of counter_v4.vwf called counter_v4.sim_ori.vwf is created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      31.85 %
+Info: Number of transitions in simulation is 1357
+Info: Vector file counter_v4.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sun Jul 02 20:32:04 2023
+    Info: Elapsed time: 00:00:01
+
+

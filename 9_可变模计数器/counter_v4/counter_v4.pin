@@ -1,0 +1,187 @@
+ -- Copyright (C) 1991-2006 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ------------------------------------------------------------------------------
+
+
+
+ ------------------------------------------------------------------------------
+ -- NC         : No Connect. This pin has no internal connection to the device.
+ -- VCC_INT    : Dedicated power pin, which MUST be connected to VCC  (2.5V).
+ -- VCC_IO     : Dedicated power pin, which MUST be connected to VCC  (Refer to
+ --              the table below for voltage).
+ -- GND        : Dedicated ground pin, which MUST be connected to GND.
+ -- GND+       : Unused input. This pin should be connected to GND. It may also
+ --              be connected  to a  valid signal  on the board  (low, high, or
+ --              toggling)  if that signal is required for a different revision
+ --              of the design.
+ -- GND*       : Unused  I/O  pin.   This pin can either be left unconnected or
+ --              connected to GND.  Connecting this pin to GND will improve the
+ --              device's immunity to noise.
+ ------------------------------------------------------------------------------
+
+
+Quartus II Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+CHIP  "counter_v4"  ASSIGNED TO AN: EP1K30TC144-1
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+TCK                          : 1         : input  :                   :         :           :                
+CONF_DONE                    : 2         : bidir  :                   :         :           :                
+nCEO                         : 3         : output :                   :         :           :                
+TDO                          : 4         : output :                   :         :           :                
+VCC_IO                       : 5         : power  :                   : 3.3V    :           :                
+GND_INT                      : 6         : gnd    :                   :         :           :                
+t10                          : 7         : output : LVTTL/LVCMOS      :         :           : N              
+o24                          : 8         : output : LVTTL/LVCMOS      :         :           : Y              
+t16                          : 9         : output : LVTTL/LVCMOS      :         :           : N              
+t11                          : 10        : output : LVTTL/LVCMOS      :         :           : N              
+t1                           : 11        : output : LVTTL/LVCMOS      :         :           : N              
+t6                           : 12        : output : LVTTL/LVCMOS      :         :           : N              
+t13                          : 13        : output : LVTTL/LVCMOS      :         :           : N              
+t15                          : 14        : output : LVTTL/LVCMOS      :         :           : N              
+GND_INT                      : 15        : gnd    :                   :         :           :                
+VCC_INT                      : 16        : power  :                   : 2.5V    :           :                
+t2                           : 17        : output : LVTTL/LVCMOS      :         :           : N              
+o23                          : 18        : output : LVTTL/LVCMOS      :         :           : Y              
+o22                          : 19        : output : LVTTL/LVCMOS      :         :           : Y              
+o21                          : 20        : output : LVTTL/LVCMOS      :         :           : Y              
+o20                          : 21        : output : LVTTL/LVCMOS      :         :           : Y              
+o19                          : 22        : output : LVTTL/LVCMOS      :         :           : Y              
+o18                          : 23        : output : LVTTL/LVCMOS      :         :           : Y              
+VCC_IO                       : 24        : power  :                   : 3.3V    :           :                
+GND_INT                      : 25        : gnd    :                   :         :           :                
+o17                          : 26        : output : LVTTL/LVCMOS      :         :           : Y              
+o16                          : 27        : output : LVTTL/LVCMOS      :         :           : Y              
+o15                          : 28        : output : LVTTL/LVCMOS      :         :           : Y              
+o14                          : 29        : output : LVTTL/LVCMOS      :         :           : Y              
+o13                          : 30        : output : LVTTL/LVCMOS      :         :           : Y              
+o12                          : 31        : output : LVTTL/LVCMOS      :         :           : Y              
+o11                          : 32        : output : LVTTL/LVCMOS      :         :           : Y              
+o10                          : 33        : output : LVTTL/LVCMOS      :         :           : Y              
+TMS                          : 34        : input  :                   :         :           :                
+nSTATUS                      : 35        : bidir  :                   :         :           :                
+o9                           : 36        : output : LVTTL/LVCMOS      :         :           : Y              
+o8                           : 37        : output : LVTTL/LVCMOS      :         :           : Y              
+o7                           : 38        : output : LVTTL/LVCMOS      :         :           : Y              
+o6                           : 39        : output : LVTTL/LVCMOS      :         :           : Y              
+GND_INT                      : 40        : gnd    :                   :         :           :                
+o5                           : 41        : output : LVTTL/LVCMOS      :         :           : Y              
+GND*                         : 42        :        :                   :         :           :                
+o4                           : 43        : output : LVTTL/LVCMOS      :         :           : Y              
+o3                           : 44        : output : LVTTL/LVCMOS      :         :           : Y              
+VCC_IO                       : 45        : power  :                   : 3.3V    :           :                
+o2                           : 46        : output : LVTTL/LVCMOS      :         :           : Y              
+o1                           : 47        : output : LVTTL/LVCMOS      :         :           : Y              
+GND*                         : 48        :        :                   :         :           :                
+GND*                         : 49        :        :                   :         :           :                
+VCC_INT                      : 50        : power  :                   : 2.5V    :           :                
+GND*                         : 51        :        :                   :         :           :                
+GND_INT                      : 52        : gnd    :                   :         :           :                
+VCC_CKLK                     : 53        : power  :                   : 2.5V    :           :                
+CLK                          : 54        : input  : LVTTL/LVCMOS      :         :           : N              
+GND+                         : 55        :        :                   :         :           :                
+GND+                         : 56        :        :                   :         :           :                
+GND_CKLK                     : 57        : gnd    :                   :         :           :                
+GND_INT                      : 58        : gnd    :                   :         :           :                
+GND*                         : 59        :        :                   :         :           :                
+GND*                         : 60        :        :                   :         :           :                
+VCC_IO                       : 61        : power  :                   : 3.3V    :           :                
+GND*                         : 62        :        :                   :         :           :                
+GND*                         : 63        :        :                   :         :           :                
+GND*                         : 64        :        :                   :         :           :                
+GND*                         : 65        :        :                   :         :           :                
+GND_INT                      : 66        : gnd    :                   :         :           :                
+GND*                         : 67        :        :                   :         :           :                
+GND*                         : 68        :        :                   :         :           :                
+GND*                         : 69        :        :                   :         :           :                
+GND*                         : 70        :        :                   :         :           :                
+VCC_IO                       : 71        : power  :                   : 3.3V    :           :                
+GND*                         : 72        :        :                   :         :           :                
+GND*                         : 73        :        :                   :         :           :                
+nCONFIG                      : 74        : input  :                   :         :           :                
+VCC_INT                      : 75        : power  :                   : 2.5V    :           :                
+MSEL1                        : 76        : input  :                   :         :           :                
+MSEL0                        : 77        : input  :                   :         :           :                
+t9                           : 78        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 79        :        :                   :         :           :                
+GND*                         : 80        :        :                   :         :           :                
+t3                           : 81        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 82        :        :                   :         :           :                
+OE2                          : 83        : output : LVTTL/LVCMOS      :         :           : N              
+GND_INT                      : 84        : gnd    :                   :         :           :                
+VCC_INT                      : 85        : power  :                   : 2.5V    :           :                
+t5                           : 86        : output : LVTTL/LVCMOS      :         :           : N              
+OE3                          : 87        : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 88        :        :                   :         :           :                
+OE1                          : 89        : output : LVTTL/LVCMOS      :         :           : N              
+enter                        : 90        : input  : LVTTL/LVCMOS      :         :           : Y              
+pause                        : 91        : input  : LVTTL/LVCMOS      :         :           : Y              
+U_D_switch                   : 92        : input  : LVTTL/LVCMOS      :         :           : Y              
+GND_INT                      : 93        : gnd    :                   :         :           :                
+VCC_IO                       : 94        : power  :                   : 3.3V    :           :                
+a                            : 95        : input  : LVTTL/LVCMOS      :         :           : Y              
+b                            : 96        : input  : LVTTL/LVCMOS      :         :           : Y              
+c                            : 97        : input  : LVTTL/LVCMOS      :         :           : Y              
+d                            : 98        : input  : LVTTL/LVCMOS      :         :           : Y              
+i1                           : 99        : input  : LVTTL/LVCMOS      :         :           : Y              
+i2                           : 100       : input  : LVTTL/LVCMOS      :         :           : Y              
+i3                           : 101       : input  : LVTTL/LVCMOS      :         :           : Y              
+i4                           : 102       : input  : LVTTL/LVCMOS      :         :           : Y              
+VCC_INT                      : 103       : power  :                   : 2.5V    :           :                
+GND_INT                      : 104       : gnd    :                   :         :           :                
+TDI                          : 105       : input  :                   :         :           :                
+nCE                          : 106       : input  :                   :         :           :                
+DCLK                         : 107       : bidir  :                   :         :           :                
+DATA0                        : 108       : input  :                   :         :           :                
+GND*                         : 109       :        :                   :         :           :                
+GND*                         : 110       :        :                   :         :           :                
+GND*                         : 111       :        :                   :         :           :                
+GND*                         : 112       :        :                   :         :           :                
+GND*                         : 113       :        :                   :         :           :                
+GND*                         : 114       :        :                   :         :           :                
+VCC_IO                       : 115       : power  :                   : 3.3V    :           :                
+GND*                         : 116       :        :                   :         :           :                
+GND*                         : 117       :        :                   :         :           :                
+GND*                         : 118       :        :                   :         :           :                
+GND*                         : 119       :        :                   :         :           :                
+GND*                         : 120       :        :                   :         :           :                
+GND*                         : 121       :        :                   :         :           :                
+GND*                         : 122       :        :                   :         :           :                
+GND_INT                      : 123       : gnd    :                   :         :           :                
+LD                           : 124       : input  : LVTTL/LVCMOS      :         :           : N              
+GND+                         : 125       :        :                   :         :           :                
+GND+                         : 126       :        :                   :         :           :                
+VCC_INT                      : 127       : power  :                   : 2.5V    :           :                
+GND*                         : 128       :        :                   :         :           :                
+GND_INT                      : 129       : gnd    :                   :         :           :                
+GND*                         : 130       :        :                   :         :           :                
+GND*                         : 131       :        :                   :         :           :                
+GND*                         : 132       :        :                   :         :           :                
+GND*                         : 133       :        :                   :         :           :                
+VCC_IO                       : 134       : power  :                   : 3.3V    :           :                
+GND*                         : 135       :        :                   :         :           :                
+OE0                          : 136       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 137       :        :                   :         :           :                
+t8                           : 138       : output : LVTTL/LVCMOS      :         :           : N              
+GND_INT                      : 139       : gnd    :                   :         :           :                
+t12                          : 140       : output : LVTTL/LVCMOS      :         :           : N              
+GND*                         : 141       :        :                   :         :           :                
+t14                          : 142       : output : LVTTL/LVCMOS      :         :           : N              
+t4                           : 143       : output : LVTTL/LVCMOS      :         :           : N              
+t7                           : 144       : output : LVTTL/LVCMOS      :         :           : N              

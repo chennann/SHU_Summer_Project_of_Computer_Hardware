@@ -1,0 +1,136 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 0.800 ns
+From           : i1
+To             : 74194:inst10|40
+From Clock     : --
+To Clock       : pause
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 62.700 ns
+From           : 74192:inst14|25
+To             : o14
+From Clock     : pause
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.900 ns
+From           : pause
+To             : o22
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 5.200 ns
+From           : c
+To             : 74194:inst1|40
+From Clock     : --
+To Clock       : d
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pause'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.58 MHz ( period = 42.400 ns )
+From           : 74192:inst14|25
+To             : 74192:inst14|25
+From Clock     : pause
+To Clock       : pause
+Failed Paths   : 0
+
+Type           : Clock Setup: 'CLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 23.64 MHz ( period = 42.300 ns )
+From           : 74192:inst14|25
+To             : 74192:inst14|25
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 0
+
+Type           : Clock Setup: 'U_D_switch'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 24.15 MHz ( period = 41.400 ns )
+From           : 74192:inst14|25
+To             : 74192:inst14|25
+From Clock     : U_D_switch
+To Clock       : U_D_switch
+Failed Paths   : 0
+
+Type           : Clock Setup: 'enter'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 161.29 MHz ( period = 6.200 ns )
+From           : 74192:inst27|24
+To             : 74194:inst18|38
+From Clock     : enter
+To Clock       : enter
+Failed Paths   : 0
+
+Type           : Clock Hold: 'pause'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74192:inst14|25
+To             : 74192:inst14|25
+From Clock     : pause
+To Clock       : pause
+Failed Paths   : 15
+
+Type           : Clock Hold: 'CLK'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74192:inst14|25
+To             : 74192:inst14|25
+From Clock     : CLK
+To Clock       : CLK
+Failed Paths   : 15
+
+Type           : Clock Hold: 'U_D_switch'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74192:inst14|25
+To             : 74192:inst14|25
+From Clock     : U_D_switch
+To Clock       : U_D_switch
+Failed Paths   : 15
+
+Type           : Clock Hold: 'enter'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : 74192:inst27|25
+To             : 74192:inst27|25
+From Clock     : enter
+To Clock       : enter
+Failed Paths   : 50
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 95
+
+--------------------------------------------------------------------------------------
+
